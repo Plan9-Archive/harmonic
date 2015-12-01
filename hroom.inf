@@ -1,0 +1,659 @@
+!============================================================================
+! The game locations
+
+Room    milw_street "Outside my house"
+	with	
+	name 'milwaukee' 'street',
+	description "Your section of Milwaukee Street is directly across from a small farm which remains as an agricultural island within the city. An open field and a barn are across the street. Toward the southwest is Atwood Street leading toward downtown. Monona Drive is to the south. The edge of town lies toward the northeast.",
+	before [;
+		go: 
+			if((introgoal == 0) || (introgoal == 2))
+				if((noun ~= s_obj) && (noun ~= e_obj) && (noun ~= in_obj))
+					"You feel compelled to go south to Coffee Lion Cafe for coffee instead.";
+			if(introgoal == 1)
+				if(noun ~= ne_obj) 
+					"You feel compelled to go northeast to the 24-hour restaurant instead.";
+			if(introgoal == 3)
+				if((noun ~= e_obj) && (noun ~= in_obj)) 
+					"You feel compelled to go inside and investigate your grid hardware in the basement instead.";
+	],
+	in_to home,
+	e_to home,
+	sw_to atwood_av,
+	s_to mon_cot,
+	ne_to etown,
+	cant_go "You go for a brief walk in the neighborhood, then return home. You may travel sw, s, ne, or enter your house.";
+
+Room	home "Inside my house"
+	with	
+	name 'home' 'residence' 'house',
+	antsreleased 0,
+	housekeepers 0,
+	description [;
+		print "This is a modest one-story house, cluttered by a decade of being lived-in. Bookshelves line the walls. Your Plan 9 terminal is here, connected to the grid servers downstairs.";
+		if (home.housekeepers >= 3)
+			print " There is a sign on the wall which says 'Best Spring Ever!'";
+		switch(artifacts.buycount) {
+			0: ;
+			1: print " A few trinkets from Astral Enchantments are scattered about.";
+			2: print " A Grateful Dead tapestry hangs on the wall. Several items from Astral Enchantments decorate the room.";
+			3: print " A Goddess banner, a Pan scarf, and a Grateful Dead tapestry hang on the walls. A wide variety of mystic totems from Astral Enchatnments sit on top of the piano and bookshelves.";
+			default: print " A Goddess banner, a Pan scarf, and a Grateful Dead tapestry hang on the walls. Every flat surface has a different charm or sculpture resting on it. Mystic totems and trinkets are everywhere.";
+		}
+		switch(curiosities.buycount) {
+			0: ;
+			1: print " A portrait of Beethoven looks across the room at you.";
+			2: print " A radio with a pink BOSS sticker sits underneath a portrait of Beethoven.";
+			3: print " A pair of turkey claws hangs over the doorway. A radio with a pink BOSS sticker sits underneath a portrait of Beethoven.";
+			default: print " A pair of turkey claws looms over the doorway. You are watched by a purple wizard candle sitting next to a pink VALISpectrum radio. A portrait of Beethoven gazes at you with steely eyes.";
+		}
+		switch(piano.obsessionclear) {
+			0: print " Somewhere amidst the piles of books and papers is an upright piano.^";
+			2: print " You have recently cleared the clutter away from your piano.^";
+			default: print " Your dark wooden upright piano has a collection of Schumann's music open on the music rack.^";
+		}
+	],
+	initial [;
+		if (self hasnt visited)
+			print "^(30 months earlier)
+^(1 April 2013)
+^
+^After working obsessively since the New Year, you are finally ready to officially announce and release your software. You feel tense yet eager anticipation for the reaction from other Plan 9 users. Type >help for information. When you are ready to unleash the Advanced Namespace Tools on the world, >release ANTS.^";
+	],
+	after [; go:
+		if (piano.obsessionclear == 1) {
+			print "^You spend a few minutes moving and rearranging books and papers, and soon enough, your piano is cleared of obstructions. You are eager with anticipation to play it and feel your fingers moving across the keys.^";
+			piano.obsessionclear = 2;
+		}
+		if (willy_coop.singing == 2) {
+			Housekeepers_home_storyline();
+			return false;
+		}
+	],			
+	before [; go:
+		if (self.antsreleased == 1) return false;
+		if ((noun == w_obj) || (noun == out_obj))
+			"You are ready to release ANTS and you need to do that before leaving.";
+	],
+	out_to milw_street,
+	w_to milw_street,
+	d_to basement,
+	cant_go "You can go down to the basement or out to Milwaukee St.";
+
+Room	basement "My house, in the basement"
+	with	
+	name 'basement' 'downstairs' 'storage',
+	description [;
+		print "Your ex-girlfriend used to stay down here, but now the area is mostly storage...and your grid hardware. In the center of the dark concrete floor is a flimsy table with numerous aging computers both under it and on top. A tangle of ethernet and power cables criss-cross the room like spiderwebs.^";
+	],
+	after [; go:
+		if (introgoal == 3)
+			print "^As soon as you enter the room, you sense something deeply unusual, but intriguing. The code running on your grid of Plan 9 machines, the complicated interwoven mesh of namespaces, seems to have hooked into the low-level machine code of the universe. New file descriptors have been mounted allowing access to fundamental abstractions. If you dare, you could bind two normally distinct perceptual constructs into a single union.^";
+	],
+	u_to home,
+	cant_go "The only exit is up.";
+
+Room	atwood_av "Atwood Avenue"
+	with	
+	name 'atwood' 'street' 'avenue',
+	description "Atwood Avenue is one of the streets that defines the character of the near east side. The feel is funky and freak-friendly. North of you is a cluster of intriguing stores: Astral Enchantments, Turning Wheel Cycles, and Essentially Art. Willy street is to the west, your home is northeast, and Atwood becomes Monona Drive to the southeast.",
+	n_to atwood_shops,
+	ne_to milw_street,
+	se_to mon_cot,
+	w_to willy_east,
+	cant_go "You can go w, n, ne, and se.";
+
+Room	atwood_shops "Atwood and Ohio shopping block"
+	with	
+	name 'atwood' 'shops' 'ohio' 'shopping' 'block' 'street' 'avenue',
+	description [;
+		print "Several appealing establishments are clustered here. On the east end of the block is Astral Enchantments, offering crystals, stickers, incense, tapestries, and other hippie-style woo-woo. North is Turning Wheel Cycles, your local counterculture-friendly bike store. To the west is Essentially Art, a small gallery store exhibiting the arts and crafts of several local artists. You can rejoin the flow of Atwood Avenue to the south. ";
+		if(afterlife_door has locked)
+			print "Northeast is a small doorway with a Coming Soon sign.^";
+		if(afterlife_door hasnt locked)
+			print "Northeast is Afterlife Antiques and Oddities.^";
+	],
+	s_to atwood_av,
+	e_to astral_enchantments,
+	n_to turning_wheel,
+	w_to essentially_art,
+	ne_to afterlife_door,
+	cant_go "You can go n, e, s, w, and ne.";
+
+Room	astral_enchantments "Astral Enchantments"
+	with	
+	description [;
+		print "This store buzzes with mystic energies. Complex artworks with twisting lines interweaving runic symbols adorn the walls. A glass display case of crystals, jewelry, and small sculptures is against the far wall. Bins of polished minerals are in the center, along with sage and incense. Buttons and stickers with provocative slogans, tapestries featuring Grateful Dead iconography, water pipes and rolling papers, printed guides to meditation and higher consciousness...your eyes can hardly absorb the profusion of beautiful, wonderful, enchanting artifacts of the paisley-and-patchouli tribe.^";
+		if (self hasnt visited)
+			print "^You can't believe you hadn't noticed this store before, it must be new - or perhaps your feeling that you are in a new and better universe is literally true, and you have ascended into a dimension with retail stores more attuned to your sensibilities. There is a tall man standing behind the counter. You launch into a fast-paced monologue about the stories we create amidst the branching of the quantum multiverse. He introduces himself as Chip and says 'I think you are definitely in the right place, and we can help you.' You agree completely.^";
+	],
+	out_to atwood_shops,
+	w_to atwood_shops,
+	cant_go "The only exit is out.";
+
+Room	turning_wheel "Turning Wheel Cycles"
+	with
+	description [;
+		print "Madison has many bike shops, but this is the one for you. A wide variety of bicycles and accessories fills the front of the store, and a workshop is toward the rear. Someone is working on a partly disassembled bicycle on a maintenance mount.^";
+		if (self hasnt visited)
+			print "^Getting back into bicycling has been something you have been meaning to do for a few years. You tell the owner you are in search of the 'ultimate hippiecycle' and he sends you down into the basement to search for a suitable prototype amongst the forest of old bikes. Your eye is caught by a Salsa covered with colorful peppers - which turns out to be the owner's former touring bike, which he criss-crossed the country on during his 20s. 'I'll find something special for you as soon as I can,' he promises.^";
+	],
+	out_to atwood_shops,
+	s_to atwood_shops,
+	cant_go "The only exit is out.";
+
+Room	essentially_art "Essentially Art"
+	with
+	description "This local gallery has a mix of prints, paintings, and sculptures on display.",
+	out_to atwood_shops,
+	e_to atwood_shops,
+	cant_go "The only exit is out.";
+
+Room	afterlife_antiques "Afterlife"
+	with
+	description [;
+		print "This is a small and cluttered antique and curiosity shop. Many items have a strange familiarity to them, yet you feel like you are in an entirely different dimension.^";
+		if (self hasnt visited) {
+			achieved(16);
+			print "^You knew a place like this would have to come into existence. Clearly, artifacts from this store can be used as information seeds for virtual reality reincarnation of their previous owners or individuals to whom they are symbolically connected. Perhaps items that need to leave ordinary reality could do so here as well.^";
+		}
+	],
+	out_to atwood_shops,
+	sw_to atwood_shops,
+	cant_go "The only exit is out.";
+
+object	afterlife_door "door to the Afterlife" atwood_shops
+	with	
+	name 'door' 'doorway' 'afterlife',
+	description "A wooden door with glass panels.",
+	door_to afterlife_antiques,
+	door_dir ne_to,
+	has door scenery openable lockable locked;
+
+Room	willy_east "Willy Street, east end"
+	with	
+	description "The east end of Williamson street is vibrant with a wide assortment of stores and an eclectic mix of pedestrians and potential time travelers. Traffic is thick around the Willy St. grocery co-op, a neighborhood institution.",
+	s_to willy_coop,
+	in_to willy_coop,
+	e_to atwood_av,
+	w_to willy_west,
+	cant_go "You can go e, w, or in.";
+
+Room	willy_coop "Willy St. Grocery Co-op"
+	with
+	singing 0,
+	description [;
+		print "The Willy street co-op has been selling organic foods and Dr. Bronner's magic soaps to the local crunchies for decades.^";
+	],
+	each_turn [;
+		if (self.singing == 0) {
+			Housekeepersmeet_storyline();
+		}
+	],
+	before [;
+		take:
+			if ((noun == food) || (noun == soap))
+				"You need to buy that instead.";
+		buy: 
+			bankaccount = bankaccount - 5;
+			if (noun == food)
+				"Your house is already well stocked with groceries, but a salad would be nice. You mix some greens and add a splash of 'Goddess' dressing and eat it at the tables near the front of the store. Tasty!";
+			if (noun == soap) {
+				bankaccount = bankaccount - 10;
+				move soap to player;
+				"You buy a bottle of Dr. Bronner's Pepermint Soap, the closest you can get to having God in a bottle.";
+			}
+	],
+	out_to willy_east,
+	n_to willy_east,
+	cant_go "The only exit is out.";
+
+Room	willy_west "Willy Street, west end"
+	with	
+	description [;
+		print "The west end of Williamson street is where the east side of Madison ends and the downtown area begins. A tangle of memories from different decades of your life is woven into the landscape of the city here. Lady Wisdom's coffeeshop is on the south side of the street, radiating bohemian charm acquired from decades of service to local culture. John Nolen drive curves around the lake to the west.^";
+	],
+	after [; go:
+		if (elginbday == 1) {
+			if ((expertmode == true) && (turning_wheel hasnt visited))
+				return false;
+			Bdayinvite_storyline();
+		}
+	],
+	daemon [;
+		if (location == turning_wheel) {
+			remove xochi;
+			move xelia to coffee_lion;
+			print "^The owner catches your eye. 'Actually, now that I think about it, I realize we have something that might be perfect for you.' He points at the beautiful red and blue bicycle with lightning bolts in the center of the store. 'We call this one Lunar Lightning.'^";
+			stopdaemon(self);
+		}
+	],
+	before [; go:
+		if ((noun == s_obj) || (noun == in_obj) || (noun == e_obj)) return false;
+		if (player in lunar_lightning) return false;
+		"You need to ride a bicycle to continue further towards downtown. If you own one, call it with the command >lunar.";
+	],
+	s_to lady_wisdom,
+	in_to lady_wisdom,
+	e_to willy_east,
+	w_to john_nolen,
+	cant_go "You can go e, nw, w, or in.";
+
+Room	lady_wisdom "Lady Wisdom's Coffeeshop"
+	with	
+	description [;
+		print "Small, funky, and redolent of the blood sweat and tears of artists trying to transform caffeine into inspiration.^";
+	],
+	each_turn [;
+		if (elginbday == 0) {
+			Matthewmeet_storyline();
+			return true;
+		}
+	],
+	before [;
+		buy: 
+			if (noun == coffee) {
+				bankaccount = bankaccount -5;
+				"You spend five dollars on a delicious coffee drink and a generous tip for the staff.";
+			}
+	],
+	n_to willy_west,
+	out_to willy_west,
+	cant_go "The only exit is out.";
+
+Room	john_nolen "John Nolen Drive"
+	with	
+	description [;
+		print "Adjacent to lake Monona, John Nolen Drive is a wide multi-lane road which passes underneath the curved contours of the Monona Terrace convention center. The view from across the lake looking toward downtown is Madison's skyline-postcard view. A heavily used bike path teems with cyclists and joggers. The Capitol square is north, Williamson St. to the east, and the Miffyland residential neighborwood is west.^";
+		if (self hasnt visited)
+			print "^Arriving downtown on a bike has always been one of your favorite things. There was always the possibility of an unexpected encounter with a friend, always the chance someone interesting would call out to you and you would be drawn into an escapade. It can be a dangerous thing riding out from your front door onto the path - you might be swept up into adventure and find yourself anywhere. Right now, the breeze feels it promises complete freedom to attain dreams you had long since abandoned.^";
+	],
+	n_to cap_square,
+	w_to miffyland,
+	e_to willy_west,
+	cant_go "You can go n, nw, w, or e.";
+
+Room	cap_square "Capitol Square"
+	with	
+	description [;
+		print "On a hill in the center of downtown, the Capitol building is a smaller imitation of the federal Capitol building in Washington D.C. The street grid converges to a perfect square around it, and it acts as the 0,0 origin of the street numbering system. Notable streets and landmarks lie south, west, and north.^";
+		if (self hasnt visited)
+			print "^Various rumors and legends are passed around the local countercultural community - it is claimed to be built on top of an ancient sacred spring. You remember being a teenager and carrying out the ritual of ingesting psychedelics and using your rights as a citizen to enter the building and lay flat in the center of the marble floor, staring upwards into the dome and watching the mural melt and transform.^";
+	],
+	s_to john_nolen,
+	w_to state_street,
+	n_to james_madison,
+	cant_go "You can go n, w, s, or se.";
+
+Room	state_street "State Street"
+	with
+	peds 0,
+	description [; 
+		print "The downtown and campus are focused on this pedestrian-only open air shopping mall. Dozens of shops and throngs of pedestrians create a big-city feel for a few blocks. The proximity of the large state university campus means the crowd is quite young, and weekend nights are often a mix of the charming antics of local eccentrics with less charming rowdy sophomoric intoxication. The Miffyland neighborhood is south, the Capitol is east, and the lakeshore residential neighborhood is north.^";
+		if (self hasnt visited)
+			print "^You often feel like you could slip backward in time here. Your teenage years were spent wandering up and down this street, part of an amorphous group of downtown punks, goths, and hippies who were all happy to share joints and beers with each other. The video arcade 'Challenges', 'Cellar Subs' in a graffiti-covered basement, the fire escape behind the Civic Center - if you closed your eyes for a moment and opened them, they might all be back, just as you remembered.
+^
+^A sudden feeling you are being observed pulls you out of this reverie, and you look up to see a passing bus with an ad for an eyewear store featuring a translucent green pair of glasses.^";
+	],
+	each_turn [;
+		state_street.peds++;
+		switch(state_street.peds) {
+		1: return false;
+		2: "^Somewhere near, a street musician plays jazz standards on saxophone.";
+		3: "^A pair of college girls stagger nearby, arguing about which one is drunker.";
+		4: "^You hear guitar and kazoo played by Art Paul.";
+		5: "^You cross the street to avoid Scanner Dan.";
+		6: "^A pedal-powered mobile bar slowly pedals by, a cacophany of songs and shouts.";
+		7: "^You notice UFO Jim and wave. He waves back as he walks around the corner.";
+		8: "^You try not to stare as a strikingly attractive stranger walks by.";
+		9: "^A pair of police officers walk by and you hope you don't smell too skunky.";
+		10: "^A panhandler asks you for change, and you give him a dollar.";
+		11: "^A large group of young men wearing red and white shout sports related slogans from a bar patio.";
+		12: "^You cough as a cloud of exhaust from a passing bus envelops you.";
+		13: "^Three ferrets on leashes scamper by, held by a tall woman with abundant piercings.";
+		14: "^For a moment, the street is quiet apart from the squawk of a few gulls flying toward the lake.";
+		15: "^A religious zealot for some Christian sect offers you a pamphlet. You accept it in exchange for making him listen to your explanation of the Moon Tears Ceremony.";
+		16: state_street.peds = 1;
+		default: "REALITY BREAKDOWN - PED TEXT BUGGED";
+		}
+	],
+	s_to miffyland,
+	e_to cap_square,
+	n_to mendota_lakeside,
+	cant_go "You can go s, n or e.";
+
+Room	miffyland "Miffyland, the student ghetto"
+	with
+	summernight 0,
+	description [;
+		print "This small residential neighborhood is a mix of old quasi-victorian houses subdivided into apartments, and more recent larger apartment buildings. Many university students move here after their time in the dorms, and on summer nights the porches are full of young people taking a break from their studies with the traditional libations of beer and weed. State Street is north, and John Nolen Drive is east. The bike trail continues southwest.^";
+		if (self hasnt visited)
+			print "^You lived here yourself about fifteen years ago, first on Doty, then on Main. The late 90s. You can date it perfectly, because you remember you owned a Playstation and your neighbor owned a Nintendo 64, and you traded back and forth. The first Metal Gear Solid, Goldeneye. Beers at the Main St. Depot, jamming piano and acoustic guitar with your roommate. A beautiful blond haired girl who lived at Nottingham co-op.^";
+	],
+	each_turn [;
+		if((elginbday >= 8) && (miffyland.summernight == 0))
+			"^The sound of acoustic guitars and a familiar melody catches your ear.";
+	],
+	before [;
+		listen: 
+			if((elginbday >= 8) && (miffyland.summernight == 0)) {
+				Miffyland_storyline();
+				return true;
+			}
+	],
+	e_to john_nolen,
+	n_to state_street,
+	sw_to [;
+		if ((player notin lunar_lightning) || (bikeskill < 1))
+			"You need to be in strong biking condition in addition to riding your bicycle to ride in that direction.";
+		return sw_trail;
+	],
+	cant_go "You can go n or e. You need to be a strong cyclist to ride sw.";
+
+Room	sw_trail "Southwest greenspace, on the bike trail"
+	with
+	description "You are in a large expanse of forest and prairie that rings the southern side of Madison. The bike trail wends its way alongside ponds, railroad tracks, and parks. The air is several degrees cooler than it is downtown. The trail curves alongside cattails toward the southeast.",
+	ne_to miffyland,
+	se_to countryside,
+	cant_go "You can ride southeast into the countryside, or return to the city to the northeast.";
+
+Room	countryside "Countryside, on the bike trail"
+	with
+	description "You have reached the rolling hills and farmland of the southern Wisconsin countryside. The narrow highway nearby passes cornfields, small streams, and traverses a one-lane bridge. Without buildings to hold it up, the sky comes right down to the ground here, and you are biking through it, hardly conscious of your legs moving, just long quiet minutes of the landscape rolling by alongside you. Forks of the path return to the city northwest and northeast.",
+	nw_to sw_trail,
+	ne_to se_trail,
+	cant_go "This is as far away from the city as you feel like biking. You can head back to the nw or ne.";
+
+Room	se_trail	"Southeast bike trail, by the marshes"
+	with
+	description "A series of marshes follow the chain of lakes southeast of the city, Monona, Waubesa, and Kegonsa. The bike path meanders alongside them, and a wide variety of birds call out to each other, commenting on you as you pass. The open countryside lies to the southwest.",
+	nw_to mon_mid,
+	sw_to countryside,
+	cant_go "You can head back into the city to the northwest, or ride southwest to the countryside.";
+
+Room	james_madison "James Madison Park"
+	with
+	description [;
+		print "A wide park on the shore of Lake Mendota, this is often a perfect place. Gulls circle on wind currents above the waves that break against the shore. A frisbee floats back and forth between a pair of baseball caps. During summer, sunbathers appear like flowers on the grass. The Capitol Square is to the south, and the shoreline residential neighborhood is west.^";
+		if (self hasnt visited)
+			print "^As you arrive at the park, you think you hear a voice say 'He's here already' from behind you. You glance backwards, and see nothing but a brief flash of pale green light, sun on the lake reflected in a window.^";
+	],
+	s_to cap_square,
+	w_to mendota_lakeside,
+	cant_go "You can go s or w.";
+
+Room	mendota_lakeside "Lake Mendota shoreline residences"
+	with
+	description "Downtown Madison is an isthmus between two lakes, and the south shore of Lake Mendota is lined by tall stone buildings. Some are new construction, expensive apartments, but many buildings from a century ago remain. Some are occupied by fraternities, but nestled among them are several large housing co-operatives founded during the height of Madison's counterculture in the 1970s. One of them, Lothlorien co-op, is to your west, and its backyard is northwest, sloping downwards toward the lakeshore.",
+	before [; go:
+		if((elginbday < 5) && ((noun == nw_obj) || (noun == w_obj) || (noun == in_obj)))
+			"You need an invitation from a friend to visit Lothlorien.";
+		if((elginbday == 5) && ((noun == w_obj) || (noun == in_obj))) {
+			print "^Staci's email said to look for her in the backyard, so you decide to look there rather than going inside the house.^";
+			playerto(loth_backyard);
+			return true;
+		}
+	],
+	s_to state_street,
+	e_to james_madison,
+	nw_to loth_backyard,
+	w_to loth_greatroom,
+	in_to loth_greatroom,
+	cant_go "You can go s, e, nw, or in.";
+
+Room	loth_backyard "Lothlorien co-op, the back yard"
+	with
+	description "(Loth back yard)",
+	each_turn [;
+		if (elginbday == 5) {
+			if ((expertmode == true) && (xochi.email < 7)) {
+				print "^You look around the back yard for Staci, but don't see her. This feels like where your story is leading, but you realize you aren't quite ready to be here yet. It feels like things with Xochi need more resolution.^";
+				playerto(mendota_lakeside,1);
+				return true;
+			}
+			Lothbackyard_storyline();
+			return true;
+		}
+	],
+	before [; go:
+		if ((elginbday == 6) && ((noun == d_obj) || (noun == n_obj)))
+			"There is something you need to do before you follow Staci to the dock.";
+	],
+	d_to loth_dock,
+	n_to loth_dock,
+	s_to loth_kitchen,
+	in_to loth_kitchen,
+	se_to mendota_lakeside,
+	cant_go "You can go n to the dock, in to the kitchen, or se.";
+
+Room	loth_dock "Lothlorien co-op, on the dock"
+	with
+	description "(Loth dock)",
+	each_turn [;
+		if (elginbday == 7) {
+			Lothdock_storyline();
+			return true;
+		}
+	],
+	s_to loth_backyard,
+	u_to loth_backyard,
+	cant_go "You can only go south.";
+
+Room	loth_greatroom "Lothlorien co-op, the Great Room (1st floor)"
+	with 
+	description "(The great room)",
+	after [; go:
+		if (elginbday == 5){
+			playerto(loth_backyard);
+			print "^Staci's email said to meet her in the back yard, so you head downstairs and out through the kitchen door.^";
+			return true;
+		}
+	],
+	e_to mendota_lakeside,
+	out_to mendota_lakeside,
+	d_to loth_kitchen,
+	u_to loth_upstairs,
+	in_to loth_porch,
+	n_to loth_porch,
+	cant_go "You can go in to the porch, down to the kitchen, up to the upper floors, or back out.";
+
+Room	loth_porch "Lothlorien co-op, the first floor porch"
+	with
+	description "(The first floor porch)",
+	s_to loth_greatroom,
+	out_to loth_greatroom,
+	cant_go "You can go out from the porch to the Great Room.";
+
+Room	loth_kitchen "Lothlorien co-op, in the kitchen"
+	with
+	description "(The kitchen)",
+	n_to loth_backyard,
+	out_to loth_backyard,
+	up_to loth_greatroom,
+	cant_go "You can go out to the backyard or up to the Great Room.";
+
+Room	loth_upstairs "Lothlorien co-op, upstairs"
+	with
+	description "(upstairs)",
+	d_to loth_greatroom,
+	cant_go "You can go down to the Great Room.";
+
+Room	mon_cot "Monona Drive and Cottage Grove Road"
+	with
+	description "Traffic is heavy at the intersection of these roads. Nearby to the east is Coffee Lion Cafe. Monona Drive continues to the south, Atwood Avenue is northwest, and your home is to the north.",
+	after [; go:
+		if ((elginbday == 2) && (player in lunar_lightning) && (rose_heart in xochi)) {
+			Xochionbike_storyline();
+		}
+	],
+	before [; go:
+		if ((introgoal == 3) && (noun ~= n_obj))
+			"You feel the need to return home and check your grid in the basement.";
+		if ((introgoal < 4) && ((noun ~= e_obj) && (noun ~= in_obj) && (noun ~= n_obj)))
+			"You feel a strong need for coffee from the Coffee Lion.";
+		if (noun ~= s_obj) return false;
+		if ((expertmode == true) && (forseewhy notin colette))
+			"You don't feel ready to go to Elgin's party yet. Something from your past is burdening you. You need to give away something from your past, symbolically turn the page - or better yet, put the whole book of your past into the next world.";
+		if (player in lunar_lightning) return false;
+		"You need to ride a bicycle to continue south. If you own one, call it with the command >lunar.";
+	],
+	in_to coffee_lion,
+	e_to coffee_lion,
+	n_to milw_street,
+	nw_to atwood_av,
+	s_to mon_mid,
+	cant_go "Exits are n, nw, s, and in.";
+
+Room	coffee_lion "Coffee Lion Cafe"
+	with
+	xeliaseen 0,
+	description [;
+		print "Light streams in through the tall glass windows at the front of the cafe. A display case of homemade gelato flavors is by the door. A window for drive-through customers is in the rear corner. Numerous cat-themed decorations adorn the walls and counters.^";
+	],
+	after [; go:
+		if (introgoal == 0) {
+			Xochimeet_storyline();
+			return true;
+		}
+		if (self.xeliaseen == 1) {
+			self.xeliaseen = 2;
+			print "^Xochi isn't working today, but Xelia is. You have noticed she and Xochi seem to be friends. You are interested in talking to her, too.^";
+			return false;
+		}
+	],
+	before [;
+		buy:
+			if (noun == coffee) {
+				bankaccount = bankaccount -5;
+				"You spend five dollars on a delicious coffee drink and a generous tip for the staff.";
+			}
+	],
+	out_to mon_cot,
+	w_to mon_cot,
+	cant_go "The only exit is out.";
+
+Room	mon_mid "Monona Drive, by a weathered strip-mall"
+	with
+	description [;
+		print "Monona drive becomes more suburban as it heads south, but there is still character in the businesses here. A neighborhood pizzeria has recently moved into this location on the west side of the street.^";
+		if (self hasnt visited)
+			print "^It has felt wonderful to get back on a bicycle and ride. The rhythm of pedaling makes you feel synchronized to the beat of the world around you. Your relationship with reality is musical, flowing, spontaneous yet goal-directed. This rendezvous with the past feels like a turning point in the narrative. You feel completely ready for whatever is to unfold.^";
+	],
+	in_to rossinis_pizza,
+	w_to rossinis_pizza,
+	n_to mon_cot,
+	se_to [;
+		if ((player notin lunar_lightning) || (bikeskill < 1))
+			"You need to be in strong biking condition in addition to riding your bicycle to ride in that direction.";
+		return se_trail;
+	],
+	cant_go "You can go n or in.";
+
+Room	rossinis_pizza "Rossini's Pizza and Vintage Arcade"
+	with
+	description [;
+		print "Memorabilia from classic 50s, 60s, 70s, and 80s movies and tv shows covers the walls of this neighborhood pizzeria. The smell of spicy-sweet tomato sauce and brown-crisp pizza crust fills the air. A lava lamp sits on one of the tables. From the back room, you hear the alluring sound of the 8-bit sound effects of your youth.^";
+	],
+	after [; go:
+		if (elginbday < 4)
+			Stacimeet_storyline();
+	],
+	each_turn [;
+		if (elginbday < 4) {
+			Bdayparty_storyline();
+			return true;
+		}
+	],
+	out_to mon_mid,
+	e_to mon_mid,
+	in_to rossinis_arcade,
+	n_to rossinis_arcade,
+	cant_go "You can go out to the street or in to the vintage arcade room.";
+
+Room	rossinis_arcade "Rossini's Pizza, in the Vintage Arcade room"
+	with
+	description "A time-warped paradise. Vintage arcade cabinets surround you. The CRT displays glow with color-bleed, the sound effects are a symphonic rhapsody of buzzing lasers, and each machine is a digital poem tattooed on your heart during the 1980s. Back then, you never had enough quarters...but now, you finally do.",
+	out_to rossinis_pizza,
+	s_to rossinis_pizza,
+	cant_go "The only exit is out.";
+
+Room	etown "Northeast edge of town"
+	with
+	description "This is the northeast edge of town, by the shopping mall and the interstate. It is mostly lacking in the distinctive charms of the rest of the city. The usual reason for being out here is to visit the 24-hour restaurant to the north, whose sign faces the highway, glowing like a green beacon.",
+	in_to eside_hq,
+	n_to eside_hq,
+	sw_to milw_street,
+	ne_to [;
+		if (player notin lunar_lightning)
+			"You need to ride a bicycle to continue in that direction. If you own one, call it with the command >lunar.";
+		return ritual_spot;
+	],
+	cant_go "You can go ne, sw, or in.";
+
+Room	ritual_spot "Ritual spot"
+	with
+	description "Past the edge of the city, a short path leads away from the road to a small clearing in a ring of boulders. It feels like a perfect place for performing a ceremony or ritual.",
+	sw_to etown,
+	cant_go "The way back into the city is se.";
+
+Room	eside_hq "24-hour family restaurant"
+	with
+	metjay 0,
+	description [;
+		print "This national chain restaurant serves edible food around the clock. There are a few other patrons, a mix of business travelers staying at the nearby hotels, late-night partiers out after the bar, and random eccentrics such as yourself.^";
+	],
+	after [; go:
+		if(introgoal == 1) {
+			Tarotreading_storyline();
+			return true;
+		}
+		if(self.metjay == 1)
+			self.metjay = 2;
+		if(self.metjay == 0) {
+			Jaymeet_storyline();
+		}
+	],
+	each_turn [;
+		if (self.metjay == 2){
+			if ((expertmode == true) && (shelves.readcounter < 4))
+				return false;
+			Spacepancakes_storyline();
+		}
+	],
+	out_to etown,
+	s_to etown,
+	cant_go "The only exit is out.";
+
+Room	andrews_cabin "Andrew's Cabin"
+	with
+	description "You are on the shore of Sturgeon Bay. There is a beautiful wood and stone cabin home here. After Halloween night out on the town, you visited Birmingham's, a family owned tavern full of tradition and memory. You bought firewood there, and after a brief struggle with wind and damp, you are circled round a roaring, crackling fire. Sitting and talking with friends old and new, you feel deep joy and contentment. The warmth of the fire circle is within your heart now, warming you from within on the rest of your journey.";
+
+Room	tempest_gameworld "Tempest gameworld"
+	with
+	description "You are in an abstract realm of bright red lines. You are atop a hollow multisided shape, looking downward. Far below, geometric demons are crawling up the walls toward you. Dodge, shoot, and bomb to survive!",
+	enemies 0,
+	enemytype "noneyet",
+	before [;
+		if (tempest_gameworld.enemies == 0)
+			return false;
+		dodge: "You dodge the incoming enemy fire successfully.";
+		shoot: "You destroy a wave of enemies, but they are soon replaced.";
+		bomb: 
+			achieved(27);
+			print "ZAP! With a spectacular burst of digital destructiveness, your enemies are vanquished. You find yourself back in the arcade, with a new high score.^";
+			playerto(rossinis_arcade, 1);
+			return true;
+		default:
+			deadflag = 1;
+			"In the gameworld, death is instant for those who don't play the game. Dodge, shoot, or bomb is the only way to survive.";
+	],
+	each_turn [;
+		tempest_gameworld.enemies = random(2, 3, 4);
+		switch(random(1,2,3,4)) {
+		1: tempest_gameworld.enemytype = "flippers";
+		2: tempest_gameworld.enemytype = "spikers";
+		3: tempest_gameworld.enemytype = "fuseballs";
+		4: tempest_gameworld.enemytype = "pulsars";
+		}
+		print "^There are ", (number)tempest_gameworld.enemies, " ", (string) tempest_gameworld.enemytype, " coming towards you from the demon well.^";
+	];

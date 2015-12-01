@@ -1,0 +1,574 @@
+!============================================================================
+! The room decorations
+
+Decor	farm	"farm" milw_street
+	with 	
+	name 'farm' 'barn' 'corn' 'agriculture' 'field',
+	description "The farm across the street is one of the main reasons you chose to move into this house ten years ago. The way property development goes in Madison, it seems like a miracle that the farmer has held onto this land in the midst of the city. The barn is run-down and decrepit and the field is not yet planted for the season.";
+
+Decor	house	"house exterior" milw_street
+	with	
+	name 'house' 'home' 'dwelling',
+	description "Your house is on the corner of the block. It is painted a light yellow and has a fenced in side yard. You have lived here for the past decade.",
+	before [; enter: <<go e_obj>>; ];
+
+Decor	schumann	"music" home
+	with
+	name 'music' 'sheet' 'schumann',
+	description "The sheet music on the piano is a Henle Urtext of some of Schumann's finest compositions, including the Dichterliebe.";
+
+Decor	grid "grid" basement
+	with	
+	name 'grid' 'table' 'computer' 'computers' 'cables' 'ethernet' 'servers' 'spiderwebs' 'power' 'desk' '9grid',
+	description [; 
+		print "The physical hardware of your grid is cheap and worn. A mixture of no-name hardware and old dell minitowers, the processor speed, RAM, and storage space is all well below the current standard. The software is a different story - your Advanced Namespace Tools weave the physical boxes together into a coordinated whole. Sometimes you feel like the data within, how it is organized and flows, is like a living thing.^";
+		if (introgoal >= 3)
+			print "^The connection between the servers and the abstraction layers of the universe is hard to see clearly. Somewhere in the tangle of cables is a higher-dimensional bend, a knot that would be impossibe in three dimensions. Around that locus, your mind tries to map the information to color and shape and texture, but the perceptual constructs are unstable, constantly shifting. Staring directly at the point of connection is like watching through a kaleidoscope as chrome snakes crawl through a maze of mirrors.^";
+	];
+
+Decor	ants "ANTS"
+	with	
+	name 'ants' 'advanced' 'namespace' 'tools' 'software',
+	description "The Advanced Namespace Tools software is designed to build on Plan 9's strengths, using per-process namespace manipulation to allow multiple independent computing environments to coexist and share data easily. The central concept is breaking hierarchical dependencies and allowing free-form interconnections.",
+	found_in home basement;
+
+Decor	coffee "coffee"
+	with	
+	name 'coffee' 'java' 'joe' 'espresso' 'cappucino' 'latte',
+	description "Caffeine, your favorite of all drugs, is found abundantly within the dark foamy brew.",
+	found_in coffee_lion lady_wisdom;
+
+Decor	food "food" willy_coop
+	with	
+	name 'food' 'produce' 'groceries' 'vegetables' 'meat' 'dairy' 'deli' 'aisles',
+	description "Organic fruit and vegetables, bulk pasta, nuts and other dry goods in bag-your-own bulk bins, a deli with numerous vegetarian and vegan homemade food items, free-range eggs and antibiotic-free meats, and herbal supplements fille the aisles.";
+
+Decor	cats "cat decorations" coffee_lion
+	with
+	name 'decorations' 'cat' 'cats',
+	description "Small metal cat sculptures, large wooden cat sculptures, cat paintings, prints, postcards, medium-sized ceramic cat sculptures, and wall calendars cover every visible surface."
+	has pluralname;
+
+Decor	gelato "gelato" coffee_lion
+	with
+	name 'gelato' 'case' 'homemade' 'freezer',
+	description "A large number of delicious-sounding flavors of gelato are on display in large cylinders in the freezer.",
+	before [;
+		take: "You need to buy that instead";
+		buy:
+			bankaccount = bankaccount - 5;
+			"You order a scoop of peanut butter habanero gelato dropped into a few shots of espresso. The spicy yet sweet frozen gelato and the dark hot espresso mingle on your tongue in an almost unbearably sensual fashion.";
+	];
+
+Decor	bike_path "bike path" john_nolen
+	with
+	name 'path' 'cyclists' 'joggers',
+	description "The bike path emerges from the east side and runs along the shore of Lake Monona. This is its busiest point. You have spent many hours on this trail, both in the nearby downtown section and the distant loops southwest of the city.";
+
+Decor	capitol "Capitol building" cap_square
+	with
+	name 'capitol' 'building',
+	description "This large white granite building is topped by a tall dome. It rises above the rest of the low skyline.",
+	before [;
+		enter: "You are in no mood for hanging out with legislators.";
+	];
+
+Decor	restaurant "restaurant exterior" etown
+	with
+	name 'restaurant' 'late' 'night' 'late-night',
+	description "It may be just another outpost of a national chain, but you are fond of this place. Life would be more difficult without the occasional round of pancakes at 3 am.",
+	before [; enter: <<go n_obj>>; ];
+
+Decor	clion "coffee lion exterior" mon_cot
+	with
+	name 'coffee' 'lion' 'cafe' 'coffeeshop',
+	description "The Coffee Lion is in an undistinguished building that used to be a dry-cleaners, but you can't judge a coffee by the cup.",
+	before [; enter: <<go e_obj>>; ];
+
+Decor	allshops "atwood shopping block exterior" atwood_shops
+	with
+	name 'shops' 'shop' 'store' 'stores' 'astral' 'enchantments' 'turning' 'wheel' 'afterlife' 'essentially' 'art',
+	description "All of the stores look interesting and worth checking out.",
+	before [; enter: "Use compass directions to choose a store to enter."; ];
+
+Decor	wfoodcoop "willy food coop exterior" willy_east
+	with
+	name 'co-op' 'willy' 'market' 'coop',
+	description "When you started shopping at the co-op, it was an old fashioned small corner market. Now, it is a mid-sized full service grocery store. It retains strong neighborhood support, and traffic on Williamson is often snarled by cars squeezing in and out of the crowded parking lot.",
+	before [; enter: <<go s_obj>>; ];
+
+Decor	ladywis "lady wisdom exterior" willy_west
+	with
+	name 'lady' 'wisdom' 'cafe' 'coffeeshop',
+	description "The small brick building housing the cafe has a gorgeous sunburst mural painted on the side.",
+	before [; enter: <<go s_obj>>; ];
+
+Decor	lothext "lothlorien exterior" mendota_lakeside
+	with
+	name 'lothlorien' 'loth' 'coop' 'co-op',
+	description "The Castle is five stories tall and painted light yellow. A mural of a tree stretches up the side of the building which faces the street.",
+	before [; enter: <<go w_obj>>; ];
+
+Decor	rossext "rossinis exterior" mon_mid
+	with
+	name 'rossinis' 'pizza' 'restaurant' 'arcade' 'vintage' 'pizzeria',
+	description "Rossini's looks like an embodiment of the timeless archetype of neighborhood pizzeria and arcade. You can smell the pizzas in the oven.",
+	before [; enter: <<go w_obj>>; ];
+
+Decor	artifacts "astral enchantment artifacts" astral_enchantments
+	with
+	name 'art' 'artworks' 'sculptures' 'sage' 'incense' 'buttons' 'stickers' 'tapestries' 'papers' 'pipes' 'guides' 'artifacts',
+	buycount 0,
+	description "All of the items in the store are well-suited to decorative and spiritual use.",
+	before [;
+		take: "You need to buy that instead.";
+		buy: 
+			bankaccount = bankaccount - 20;
+			artifacts.buycount++;
+			"You spend twenty dollars on a few items from the store. Your purchases will be delivered to your house automatically.";
+	],
+	has pluralname;
+
+Decor	home_artifacts "house decorations from Astral Enchantments" home
+	with
+	name 'trinkets' 'totems' 'banner' 'tapestry' 'scarf' 'pan' 'charms' 'mystic' 'goddess' 'pan' 'scultpure',
+	description "You think your decorations from Astral Enchantments improve the look of your home considerably. It definitely seems like a loonie lives here.",
+	before [;
+		take: "You prefer to leave it where it is.";
+	],
+	has pluralname;
+
+Decor	curiosities "antiques and curiosities in afterlife" afterlife_antiques
+	with
+	name 'antiques' 'curiosities' 'antique' 'curiosity' 'tchotchke' 'heirloom' 'paintings' 'medical' 'equipment' 'animals' 'taxidermy' 'furniture' 'lamps',
+	buycount 0,
+	description "The density and diversity of the items for sale here is almost indescribable. Strange paintings cover the walls, old and scary looking medical equipment bristles from cabinets, taxidermied animals stare at you from every direction, peculiar tools are piled atop one-of-a-kind furniture and illuminated by the glow of a dozen strange sculptural lamps.",
+	before [;
+		take: "You need to buy items here in the store.";
+		buy:
+			bankaccount = bankaccount - 25;
+			self.buycount++;
+			print "Your purchases will be delivered to your home automatically. ";
+			switch(self.buycount) {
+			1: "You find a perfect portrait of Beethoven and buy it.";
+			2: "You find an old transistor radio. It has a sticker attached which says 'BOSS' inside a pink hand pointing upward. Perfect for receiving transmissions from the VALIS satellite!";
+			3: "You find a set of taxidermied turkey claws nailed to a wooden board. The representation of the purifying claws of a lion deity!";
+			4: "You find a large purple candle in the shape of a wizard. Another manifestation of the VALISpectrum purple!";
+			default: "You find a few interesting old postcards that will vanish into the vastness of your library of papers.";
+			}
+	],
+	has pluralname;
+
+Decor	home_curiosities "house antiques from Afterlife" home
+	with
+	name 'portrait' 'beethoven' 'radio' 'taxidermy' 'turkey' 'claws' 'purple' 'candle' 'postcards' 'antiques' 'curiosities',
+	description "The aura of strange magic in your house, a heady blend of woo-woo and spiritualism, is enhanced by your collection of curiosities.",
+	before [;
+		take: "You have arranged your mystic objects carefully and you don't want to disturb their positioning.";
+	],
+	has pluralname;
+
+Decor	wheel_decor "items inside Turning Wheel" turning_wheel
+	with
+	name 'bicycles' 'accessories' 'workshop' 'maintenance' 'mount' 'disassembled',
+	description "Bikes are heavily used for transportation in this neighborhood, and the store is full of the bikes of customers, waiting for maintenance. The variety is staggering, and most of them show signs of years of heavy use and abuse.",
+	has pluralname;
+
+Decor	lake_mendota "Lake Mendota"
+	with
+	name 'lake' 'mendota' 'water',
+	description "Madison's largest lake is an old friend. Its waves speak an ancient and complex language. It explores the shoreline in constant undulating caresses.",
+	found_in mendota_lakeside james_madison loth_backyard loth_dock;
+
+Decor	lake_monona "Lake Monona" john_nolen
+	with
+	name 'lake' 'monona' 'water',
+	description "Madison's smaller lake and its bay reflect the skyline of the south side of the isthmus. You have spent many a summer night biking along the path by the shore.";
+
+Decor	lava_lamp "Lava Lamp" rossinis_pizza
+	with
+	name 'lava' 'lamp',
+	description "You spend a moment hypnotized by the flowing orange amorphous shapes within the glowing cylindrical lamp.",
+	before [; take: "Not yours to take."; ];
+
+Decor	pizza "pizza" rossinis_pizza
+	with
+	name 'pizza' 'food' 'breadsticks' 'garlic' 'bread',
+	description "The pizza here has a thin, chewy, crispy-edged crust. The cheese and toppings are generous, and the sauce is savory.",
+	before [;
+		take: "You should probably buy your own.";
+		buy:
+			bankaccount = bankaccount - 10;
+			"You buy a small mushroom pizza and some garlic bread. It makes a perfect meal.";
+		smell: "The food smells wonderful.";
+	];
+
+Decor	patrons "restaurant patrons" eside_hq,
+	with
+	name 'patrons' 'partiers' 'travelers' 'eccentrics',
+	description "Two collegiate men with baseball caps and a beery demeanor. A quiet man in a suit reading a newspaper. A large woman with her eyes half-closed, holding her head in her hands. A heavily tattooed couple of uncertain genders. These are your companions tonight.",
+	has pluralname animate;
+
+Decor	breakfast "breakfast" eside_hq
+	with
+	name 'breakfast' 'food' 'lunch' 'dinner' 'pancakes' 'eggs' 'bacon' 'sausage' 'french' 'toast',
+	description "The food here is ordinary but acceptable. ",
+	before [;
+		take: "You need to buy that instead.";
+		buy:
+			bankaccount = bankaccount - 15;
+			print "You order your usual, pancakes, eggs, and potatoes.^";
+			if ((space_pancakes notin player) && (eside_hq.metjay >= 3)) {
+				move space_pancakes to player;
+				print "^You take your Space Pancakes with you, just in case.^";
+			}
+			return true;
+	];
+
+Decor	arcade "arcade machines" rossinis_arcade,
+	with
+	name 'arcade' 'machines' 'cabinets' 'games' 'crt' 'displays' 'video' 'pac-man' 'pacman' 'space' 'invaders' 'galaga' 'pong' 'street' 'fighter' 'mortal' 'kombat' 'missile' 'command' 'pinball' 'donkey' 'kong' 'robotron',
+	description "Almost every classic arcade cabinet of the 1980s - circles eating dots, plumbers fighting monkeys, screenfulls of low resolution robots, alien ships marching in rows across the top of the screen, world tours of one-on-one marital arts, and the timeless rattle and thump of pinball machines.",
+	before [;
+		play: "Your bottomless pocket of quarters is put to use as you wander from machine to machine, trying to surpass your scores and progress from decades ago. These games are fast, fun, and unforgiving. After a few 'practice' attempts, you finally do well enough to get your initials on the high-score board.";
+	],
+	has pluralname;
+
+!============================================================================
+! The immobile prop objects
+
+Prop	shelves "bookshelves" home
+	with	
+	name 'shelves' 'bookshelves' 'books' 'book' 'library',
+	readcounter 0,
+	description [;
+		self.readcounter = self.readcounter +1;
+		switch(self.readcounter) {
+		1: move forseewhy to player;
+			"As you look at your bookshelves, you notice an embarassing book called 4CY UNI R2B 1 that you wrote a decade earlier, and an odd urge compels you to put it in your pocket.
+^
+^You have been reading books and collecting a personal library for your whole life, and have recently inherited your father's collection as well. There is a loose topical organization, with one bookshelf devoted to math and science, one to music theory and history, one to fiction, and one to oddities. You can just >x shelves repeatedly to revisit some of your favorites.";
+		2: "You pick up 'The Moon is a Harsh Mistress' by Robert Heinlein. It tells the story of a future in which the moon is a penal colony. An administrative supercomputer there acquires sentience, and becomes the leader of a revolution against Lunar Authority. The Loonies, as they call themselves, are multicultural free-love techno-anarchists. Years ago, when you started your Plan 9 programming and internet projects, you chose the name 'mycroftiv' as a reference to the intelligent computer in the novel.";
+		3: "You pick up 'VALIS' by Philip K. Dick. It tells the story of a science-fiction author who is contacted by a beam of divine pink light and begins to experience multiple simultaneous identities and temporal locations. The pink light comes from the VALIS satellite, a benign godlike intelligence which helped guide immortal teacher-prophets on Earth.";
+		4: "You pick up 'Cosmic Trigger' by Robert Anton Wilson. It tells many stories to emphasize that what we call reality is actually a collectively-agreed upon fiction, and there is no single objective reality shared by all observers. It ends with the story of an Iowa farmer who was given 'pancakes from space' by visiting aliens.";
+		5: "You pick up 'Lost Goddesses of Early Greece' by Charlene Spretnak. It tells the story of pre-Homeric myths including 'The Triad of the Moon' which describes rituals for Artemis, Selene, and Hecate. There is a place outside the city limits that is appropriate for the ritual for Hecate, which involves eating while facing away from a crossroads and leaving some of the food as an offering.";
+		6: "You pick up 'Moon Palace' by Paul Auster. It tells the story of a fatherless young man whose life is interwoven with coincidences involving the moon. Attending college in the late 60s, he voluntarily embraces poverty and madness and finally homelessness until a chance meeting with a stranger leads to a redemptive love affair. He gets a job caring for a mysterious old man on the verge of death, who tells him a fantastic story of a career as a painter who created a series of lost artistic masterpieces while living in a cave in the deserts of the southwest US.";
+		7: "You pick up 'Labyrinths' by Jorge Luis Borges. Many of the stories are set in fantastic universes which illuminate something important in our world: the power of language and naming, the branching stories created by free will and randomness, the author of dreams who is also a dream-image.";
+		8: "You pick up 'Godel Escher Bach' by Douglas Hofstadter. It tells the story of self-referential strange loops in mathematics and consciousness.";
+		default: "You browse your shelves and read a few random lines from Yeats for inspiration.";
+		}
+	],
+	has pluralname;
+
+Prop	terminal "terminal" home
+	with	
+	name 'terminal' 'computer' 'plan' 'plan9' 'grid' '9grid' 'system',
+	acted 0,
+	description [; print "Your terminal glows with a Mondrian-like arrangement of pastel windows, each rio bound into a different namespace. Multiple rc shells are running, acme is open, and several irc channels are available within hubfs. You can just type >email to check for messages.^";
+		if (introgoal == 3) print "^You check the namespace of your main shell, and you see some unexpected devices. ^^mount #x/fiction /loc/basement ^mount #x/reality /loc/basement. ^^You should probably check out the servers in the downstairs to see what is happening.^";
+	],
+	before [;
+		use:
+			if (introgoal == 3) 
+				"The monitor is covered with a flickering pattern of rainbow static. You need to find out what the hardware downstairs is doing.";
+			print "You perform your usual cycle of checking email and irc...^";
+			if (xochi.email == 1)
+				Heartbeat_term_storyline();
+			if (xochi.email == 5)
+				Schumann_term_storyline();
+			if (willy_coop.singing == 1)
+				Housekeepers_term_storyline();
+			if (elginbday == 4)
+				Bday_term_storyline();
+			if (elginbday == 8)
+				Bday_visit_storyline();
+			if (self.acted == 0)
+				print "^Your irc friends offer some valuable perspective on keeping your fictional self in contact with shared social reality.^";
+			self.acted = 0;
+			return true;
+	];
+
+Prop	piano "piano" home
+	with	
+	name 'piano' 'upright' 'walter',
+	obsessionclear 0,
+	playcount 0,
+	description [;
+		if (piano.obsessionclear == 0) "Your piano is almost completely buried beneath an avalanche of papers and books, and you are too obsessed with Plan 9 to bother cleaning it off.";
+		"Your trusty upright piano is made of dark polished wood. It was a gift for your sixteenth birthday, and it has been your companion for countless hours practicing, improvising, and composing.";
+	],
+	before [; play: 
+		if (piano.obsessionclear == 0) "^Your piano is almost completely buried beneath an avalanche of papers and books, and you are too obsessed with Plan 9 to bother cleaning it off.";
+		switch(self.playcount) {
+		0:	piano.playcount = piano.playcount + 1;
+			piano.obsessionclear = 3;
+			achieved(3);
+			"You sit at the keyboard, and your fingers find a leitmotiv-like descending sequence of a Db-major chord and a series of descending overlapping thids that trace out an Ab-major ninth. Played as a repeating pattern spanning the whole keyboard, this becomes a central refrain of your improvisations for the next several months, the core melodic seed of the Harmonic Time-Bind Ritual Symphony.";
+		1:	if (xochi.email == 2) {
+				Schumann_piano_storyline();
+				return true;
+			}
+			"You fool around with a rough idea for a song about a cute barista at your local coffeeshop. Your favorite lyric is 'My latte is strong but my heartbeat is stronger.'";
+		2:	piano.playcount = 3;
+			Bluelight_storyline();
+			return true;
+		3:	if (elginbday >= 8) {
+				piano.playcount = 4;
+				Maysong_storyline();
+				return true;
+			}
+			"You experiment with an uptempo two-chord swing which seems full of spring energy.";
+		4:	piano.playcount = 5;
+			Outonthedock_storyline();
+			return true;
+		5:	piano.playcount = 6;
+			Alwayswillremember_storyline();
+			return true;
+		6:	piano.playcount = 7;
+			Lastfullmoon_storyline();
+			return true;
+		7:	piano.playcount = 8;
+			Mooncomputer_storyline();
+			return true;
+		8:	if (miffyland.summernight >= 1) {
+				piano.playcount = 9;
+				Donttellme_storyline();
+				return true;
+			}
+			"You play with a sequence of major chords, looking for something bright and hopeful to use as a refrain along with the words 'don't tell me what year it is.'";
+		default: "You sit and improvise a few new variations on the harmonic time-bind ritual symphony main theme.";
+		}
+	];
+
+Prop	tempest "Tempest arcade cabinet" rossinis_arcade
+	with	
+	name 'tempest' 'cabinet',
+	playcount 0,
+	description "Your favorite game of the 1980s, Tempest is a fast moving vector graphics masterpiece of abstract action. Each screen is an outline of a three dimensional shape, and an assortment of geometric enemies approaches from the center toward the edge. The pace and feel and style of this game have never been suprassed.",
+	before [; play:
+		self.playcount++;
+		switch(self.playcount) {
+		1:	achieved(23);
+			"You drop a quarter in the slot and take hold of the control wheel. The game's first level is easy, and you clear it without dying, but the pace increases rapidly, and you run out of lives before finishing the first set of blue boards.";
+		2: "You do considerably better than last time, but still don't make it to the lemnascate shaped board at the end of the blue levels.";
+		3: "You finally make it to the last board of the first color set, but die before clearing it.";
+		4: print "This time, you put in some extra quarters for continues, and with focus and determination you clear the infinite hourglass shape and warp to the next dimension of red boards...^";
+			playerto(tempest_gameworld);
+			return true;
+		default: "You play well, but not well enough to surpass your previous high score.";
+		}
+	];
+
+Prop 	fiction "Fiction"
+	with	
+	name 'fiction' 'stories' 'imagination' 'dreams' 'narrative',
+	textspool basement,
+	textcount 1,
+	description "Fiction, imagination, dreams, stories, the power of narrative - somehow the air is thick and heavy with these intangibles, almost shimmering, almost humming, almost full of the scent of light blue flowers.",
+	before [; 
+		take: "You pick up fiction and it collapses into an uncountable number of tiny fictions and then reassembles itself on the floor.";
+	],
+	daemon [;
+		if(location ~= self.textspool){
+			self.textspool = location;
+			self.textcount = self.textcount + 1;
+			switch(self.textcount){
+			1: rfalse;
+			2: "^Now that fiction and reality are merged, your mind begins to contemplate your life and actions from the perspective of a character who knows that they are inside a story, but also that the story is not linear - you realize you are a fictional protagonist, but one with valid free will to navigate the multiple universes in which your story appears.";
+			3: "^You bound the name 'mycroftiv' to yourself years ago, and now that your reality has become fictional, you understand why the narrative associated with that name is playing out in your own life. The artificially intelligent prankster computer that was the leader of a rebellion against authority on the moon is actually your true identity. You know you are crazy - but it is time for a Loonie Revolution.";
+			4: "^Awareness of your higher-dimensional Narrative Identity feels breathtaking. The slow, jellylike neural tissue of your brain is augmented by the computational speed and storage capacity of sci-fi technology. Your perceptions and memories have become hyperdetailed and your mind feels big as a planet inside.
+^
+^You have become the Moon Computer.";
+			5: stopdaemon(self);
+			default: "BUG - End of text spool, should never be printed.";
+			}
+		}
+	],
+	has proper;
+
+Prop 	reality "Reality"
+	with	
+	name 'reality' 'actuality' 'tangibility' 'materiality' 'physicality',
+	description "Reality, the tangible material actuality of physics, is dense here. The stable objective information weave of particles and fields provides the substrate of your cognition and perception.",
+	has proper;
+
+Prop	fire "fire within the firepit" andrews_cabin
+	with
+	name 'fire' 'firepit' 'flames',
+	description "The fire is burning bright and hot despite the brisk wind blowing off the lake. Yellow flames dance atop the orange-glowing logs. The fire is contained within a ring of loosely piled stone, and you and your friends sit on a circle of log benches. The present is layered with memories of past campfires in Hoyt park, on road trips, and at Lothlorien by the lakeshore. Deeper yet is the resonance of human history, the mythic past of tending the fire at the mouth of the cave and waiting for the hunters to return with food. Further, further - you stare at the purple-blue glow above the inner embers, and try to imagine the cosmic heat of stars, and hotter still, the blaze of the young universe forging the hydrogen atoms that would eventually be fused and dispersed and take shape eons later as a cluster of humans gathered around a small mirror of the originating Light.",
+	cant_go "From this enchanted place, the only way to return home is to use the magic word 'xyzzy'.";
+
+Prop	crystals "crystals and polished stones" astral_enchantments
+	with
+	name 'crystal' 'crystals' 'stone' 'stones' 'polished',
+	stonetype 0,
+	description [;
+		print "Display shelves and bins are full of a wide variety of large and small quartz and amethyst points and a wide variety of tumble-polished stones of all sizes, shapes, and colors. You feel a strong urge to buy something to give away as a gift.^";
+	],
+	before [;
+		take: "Use the command >buy crystal and a suitable mineral will be given to you.";
+		buy: 
+			self.stonetype = self.stonetype + 1;
+			switch(self.stonetype) {
+			1:	move rose_heart to player;
+				bankaccount = bankaccount - 10;
+				"Your eye falls on a piece of rose quartz carved into a heart shape. You buy it for $10 and put it in your pocket. It seems like it would make a perfect gift for Xochi.";
+			default: "You buy a small quartz point and hand it back to Chip to give as a gift to the next customer.";
+			}
+	],
+	has pluralname;
+
+Prop	past "Past" loth_backyard
+	with
+	name 'past' 'history',
+	description "Contemplating the Past, you see your life in this city as a complex weave of places and people, with many strands that connect to the present moment. Your first visit to one of the lakeside co-ops as a teenager, staying with an old girlfriend in a different lakeside co-op, concerts played at co-op parties, and many hours spent at different spots on the shore of the lake.",
+	has proper;
+
+Prop	future "Future" loth_backyard
+	with
+	name 'future' 'possibilities',
+	description "Looking towards the Future, you see different stories tangled like climbing vines anchored to the ground here. The connections you are making now are seeds that will grow and yield a rich harvest. Songs around a fire, a rocking porch swing, long bike rides into the unknown, and the taste of long-forbidden fruits.",
+	has proper;
+
+!============================================================================
+! The takeable objects
+
+object forseewhy "Forsee Why You And I Are To Be One (4CY UNI R2B 1)"
+	with
+	name 'forsee' 'forseewhy' '4cy' '4c' '4cyunir2b1' 'foresee' 'foreseewhy' 'book',
+	description "The book you wrote in your mid-20s is an unreadable and embarassing mish-mash of philosophy and autobiography. It represents a failed approach to creation, communication, and life. You feel a powerful desire to express your break with the past by exiling this book to an entirely different dimension.",
+	has proper;
+
+object rose_heart "rose quartz heart"
+	with
+	name 'quartz' 'heart' 'rose',
+	description "The heart is made from shaped and polished translucent pink rose quartz. It fits nicely in the center of your palm and feels pleasantly smooth.";
+
+object	wallet "wallet"
+	with	
+	name 'wallet' 'money',
+	description [;
+		print "An old black leather wallet containing the standard mix of cash, credit cards, and random scraps of paper.";
+		print "^Your bank account balance is $", bankaccount;
+	];
+
+object	pendant "pendant" chip
+	with	
+	name 'pendant' 'loonie' 'power' 'revolution' 'necklace',
+	description "The pendant is made from orgone plastic in the shape of a moon-face. The front is colored brownish-gold with a faint sparkle, the back is transparent and shows small pieces of stone and metal embedded within. It hangs from a black cloth cord.",
+	before [; 
+		wear: achieved(22);
+	],
+	has clothing;
+
+object 	mirror_shades "pair of mirror shades"
+	with	
+	name 'mirror' 'shades' 'pair' 'glasses' 'aviators',
+	description "The silvered surface of the lenses reflects a slightly warped image of yourself and the world around you.",
+	before [; wear: print "The mirror shades filter the brightness of day perfectly, removing your squint and making it easier to smile. Careful wearing them indoors though.^"; ],
+	has clothing;
+
+object 	lunar_lightning "Lunar Lightning"
+	with
+	name 'bike' 'bicycle' 'lunar' 'lightning' 'cycle',
+	bought 0,
+	description "The ultimate Deadhead bicycle, Lunar Lightning is painted with a red to blue fade and has a Steal-Your-Face sticker on the front fork. Lightning bolt stickers follow the line of each tube of the frame. Black moustache-style handlebars and a generator-hub powered front headlight show that this is a bike for relaxed recreational city riding, not racing.",
+	before [; 
+		go: 
+			if((self in etown) && ((noun == n_obj) || (noun == in_obj))) {
+				print "You can't ride your bike into the late night restaurant.^";
+				return false;
+			}
+			if((self in mon_cot) && ((noun == e_obj) || (noun == in_obj))) {
+				print "You can't ride your bike into Coffee Lion.^";
+				return false;
+			}
+			if((self in willy_west) && ((noun == s_obj) || (noun == in_obj))) {
+				print "You can't ride your bike into Lady Wisdom's.^";
+				return false;
+			}
+			if((self in willy_east) && ((noun == s_obj) || (noun == in_obj))) {
+				print "You can't ride your bike into the food co-op.^";
+				return false;
+			}
+			if((self in atwood_shops) && ((noun == w_obj) || (noun == n_obj) || (noun == ne_obj) || (noun == e_obj))) {
+				print "You can't ride your bike into the shop.^";
+				return false;
+			}
+			if((self in mon_mid) && ((noun == w_obj) || (noun == in_obj))) {
+				print "You can't ride your bike into Rossini's.^";
+				return false;
+			}
+			if((self in milw_street) && ((noun == e_obj) || (noun == in_obj))) {
+				print "You can't ride your bike into your house.^";
+				return false;
+			}
+			if((self in mendota_lakeside) && ((noun == w_obj) || (noun == nw_obj) || (noun == in_obj))) {
+				print "You park your bike by the co-op.^";
+				return false;
+			}
+			"You pedal effortlessly.";
+		buy:
+			if (self.bought == 1)
+				"You already bought Lunar Lightning.";
+			self.bought = 1; 
+			bankaccount = bankaccount - 1000;
+			"The bicycle you have chosen has a funny story behind it. Weeks earlier, a mysterious stranger had commissioned this custom bicycle, but just this morning he had called to say he would be unable to purchase it. It almost seems as if things had been set up as a conspiracy to provide you with the perfect hippiecycle. If you leave it behind, you can summon it to your current location with the command >lunar. Just >ride lunar and then navigate as normal to access new locations. Your first order of business is making it to Elgin's party at Rossini's pizza, further south of Coffee Lion on Monona drive.
+^
+^You spend $1000 to buy Lunar Lightning, you have $", bankaccount, " remaining.";
+		enter: 
+			if (self.bought == 0) "You need to buy the bicycle before you can ride it.";
+			if (self in player) {
+				print "You set down Lunar Lightning to ride it.^";
+				move self to location;
+			}
+		ride: 
+			if (self.bought == 0) "You need to buy the bicycle before you can ride it.";
+			<<enter self>>;
+		use: 
+			if (self.bought == 0) "You need to buy the bicycle before you can ride it.";
+			<<enter self>>;
+		take: 
+			if (self.bought == 0) "You need to buy the bicycle before you can take it.";
+	],
+	has proper enterable supporter;
+
+object 	artemis_prints "Artemis prints" essentially_art
+	with
+	article "the",
+	name 'prints' 'artemis' 'art' 'pictures',
+	bought 0,
+	description "Each of these three prints shows a modern incarnation of Artemis the hunter; she is aiming her bow toward the viewer, with the dark outline of an industrial skyline behind her. Each print is slightly different in color, and in one of them, rows of words intersect the image, taken from a poem: 'sometimes in its box of sky, lavender and cornerless, the moon rattles like a fragment of angry candy.'",
+	before [; 
+		buy: 
+			if (self.bought == 1)
+				"You already bought the Artemis prints.";
+			self.bought = 1; 
+			bankaccount = bankaccount - 500;
+			"As you declare your intention to purchase the prints, the clerk in the store looks surprised. It turns out she is the artist that created them during the past several months, at the same time you were working on ANTS. The symbolism of the artwork seems perfectly aligned with the story of the Loonie Revolution.
+^
+^You spend $500 on the prints, you have $", bankaccount, " remaining.";
+		take: if (self.bought == 0) "You need to buy the prints before you take them.";
+	];
+
+object 	soap "Dr. Bronner's Peppermint Soap" willy_coop
+	with	
+	name 'soap' 'dr.' 'bronners' 'peppermint',
+	description "Absolute cleanliness is Godliness! Teach the Moral ABC that unites all of mankind free, instantly 6 billion strong & we're All-one. 'Listen Children Eternal Father Eternally One!' Dilute! Dilute! OK!",
+	before [;
+		use: "The fresh peppermint scent seems to clean your mind of anxiety and distraction as the soap cleans your body.";
+	];
+
+object	space_pancakes "Space Pancakes"
+	with
+	name 'pancakes' 'pancake' 'space',
+	ritual 0,
+	description "These perfectly ordinary looking pancakes may be destined to be taken by space aliens and given to an Iowa farmer several decades in the past.",
+	each_turn [;
+		if (location == ritual_spot) {
+			if ((expertmode == true) && (shelves.readcounter < 5))
+				return false;
+			Hecateritual_storyline();
+		}
+	],
+	has pluralname edible;

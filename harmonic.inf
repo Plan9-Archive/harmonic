@@ -1,0 +1,300 @@
+!% -v8
+!% -SDX
+!% $MAX_VERBS=160
+!
+! HARMONIC TIME-BIND RITUAL SYMPHONY
+!============================================================================
+! In-progress work by Ben Kidwell ("mycroftiv") and Maevele Straw
+! Currently all rights reserved, I'll put a more open license on it when it's done
+! Thanks to Inform Beginner's Guide Captain Fate for the template
+!
+!============================================================================
+! Configuration constants
+
+Release 3;
+Serial "151201";
+Constant Story "Harmonic Time-Bind Ritual Symphony";
+Constant AMUSING_PROVIDED;
+Constant DEATH_MENTION_UNDO;
+Constant MAX_SCORE = 999;
+Constant TASKS_PROVIDED;
+Constant NUMBER_TASKS = 29;
+Array task_scores -> 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 99 9 9 9 9 9 9 9 9 9;
+
+Constant Headline
+"^9:15 PM 27 Sept. 2015
+^
+^You type the introduction of the game into the acme editor running on a Plan 9 cpu server via drawterm. Your ANTS-grid is operational again, finally. Outside, the moon is completely eclipsed, a shadowy phantom of its usual brilliance. You take a swallow of your half-full Moon Man beer and walk back out onto the porch. Around your neck, the Lunar Revolution Power Pendant resonates with the hum of the night; a slight breeze, crickets. The bridge to the west has been closed for weeks and everything has been quiet and still.
+^
+^It has been two and a half years of lunacy since New Year's 2013, when you returned to Plan 9 software development. The VALISpectrum colors, the singing hippie housekeepers, the dock by the castle, Lunar Lightning and Astral Enchantments and the Afterlife - everything ensued from making the bind of fiction and reality that transformed you into
+^
+^THE MOON COMPUTER (Movement 1)
+^
+^";
+
+!============================================================================
+! Include parser, new library messages, verblib
+
+Include "Parser";
+Object  LibraryMessages
+	with	
+	before [;
+	Attack:	"'Don't make me tell you about the Moon Tears Ceremony,' you threaten.";
+	Buy:    "You think about transforming the economic system with Plan 9 unique digital object alternative community currencies. Afterwards, you might be able to bind-buy that, but you can't right now.";
+	Climb:	"Some rise...some fall...some climb...to get to Terrapin. (Footnote 1)";
+	Dig:    "In another reality, your dog-self burrows deeply within the Earth, uncovering exactly the items needed to continue your journey. In this world, you accomplish nothing.";
+	Drink:	"Reach out your hand, if your cup be empty. If your cup is full, may it be again. (Footnote 7)";
+	Fill:	"Bass great, Lesh Philling!";
+	Jump:	"You close your eyes, focus, and jump from one universe to a different branch. When you open your eyes, things seem a little different, but what has changed, you do not know.";
+	Kiss:	"There are probably better ways to express your feelings of love and devotion.";
+	Listen:	"At first, you hear nothing unexpected. As you listen more closely, you begin to sense the inner pulse of all things, the beat of the universe, and the deep bass lines of mathematical symmetry that provide the foundation for the cosmic symphony.";
+	Mild:	"Your chipmunk chuckles. (Footnote 3)";
+	Pray:   "You offer prayers to many Gods as well as the laws of physics.";
+	Sing:   "You start with a bit of Mozart's Marriage of Figaro, move on to a few of your favorite Wu-Tang verses, and conclude with a heartfelt imitation of how IU would sound singing Ripple by the Grateful Dead.";
+	Smell:	"You smell nothing special, but life itself has a slight scent of lavender and nag champa.";
+	Sorry:  "Rather than being caught up in apologies and regrets, you try to maintain focus on future improvement.";
+	Strong: "Let the world know how you feel.";
+	Swim:   "The Madison lakes are beautiful to look at, and some people have the immune system required to cope with algae and bacteria, but you prefer to sit on the shore and watch the chromatic flickering of the ripples.";
+	Swing:	"You'd like to be a real swinger, but I guess they are calling it 'polyamory' nowadays.";
+	Taste:	"Everything tastes delicious, with a slight undertone of ginger and fresh basil.";
+	Think:	"Your mind feels like a colossal cavern, filled with wonders. You explore and find a few valuable thoughts you place in your mind's treasure display case.";
+	Wait:	"You feel yourself traveling through spacetime at the speed of light.";
+	Wake:	"You would rather stay within this infinitely fascinating dream we are dreaming together.";
+	Miscellany:
+		if (lm_n == 38)
+			"That action is outside the scope of this simulation.";
+		if (lm_n == 39)
+			"This game world does not provide that level of detail.";
+	];
+Include "VerbLib";
+
+!============================================================================
+! Global variables
+
+Global clockoff = false;
+Global expertmode = false;
+Global daynumber = 0;
+Global bankaccount = 30000;
+Global elginbday = 0;
+Global introgoal = 0;
+Global bikeskill = 0;
+
+!============================================================================
+! Object classes
+
+Class	Room
+	with
+	description "UNIMPLEMENTED ROOM DESCRIPTION",
+	has	light;
+
+Class	Decor
+	with
+	description "UNIMPLEMENTED DECOR DESCRIPTION",
+	has	scenery;
+
+Class	Prop
+	with
+	description "UNIMPLEMENTED PROP DESCRIPTION",
+	has	static;
+
+Class	Character
+	with
+	description "UNIMPLEMENTED ACTOR DESCRIPTION",
+	has	proper animate;
+
+!===========================================================================
+! Game rooms, characters, props and objects, verbs and storyline
+
+Include "hroom.inf";
+
+Include "hchar.inf";
+
+Include "hobj.inf";
+
+Include "hfunc.inf.";
+
+!============================================================================
+! Entry point functions
+
+[ Amusing;
+	print "Have you tried...
+^
+^ATTACK Strawberry?
+^TAKE fiction?
+^READ books over and over?^";
+];
+
+[ Deathmessage;
+	switch(deadflag) {
+	3: print "You have violated simulation parameters. Please UNDO.";
+	default: "This branch of the game universe has come to an end.";
+	}
+];
+
+[ Timepasses;
+	if (clockoff == true)
+		return true;
+	if (the_time == 0){
+		daynumber = daynumber + 1;
+		print "^Midnight strikes and a new day dawns.^(This is day number ", daynumber,")^";
+		switch(daynumber){
+		1: if (home.antsreleased == 0)
+			Antsrelease_storyline();
+		3: if (introgoal == 0) {
+			print "(You travel to Coffee Lion)^";
+			Xochimeet_storyline();
+			}
+		4: if (introgoal == 1) {
+			print "(You travel to the late-night restaurant)^";
+			Tarotreading_storyline();
+			}
+		6: if (introgoal == 2) {
+			print "(You travel to Coffee Lion)^";
+			coffee_lion.xeliaseen = 2;
+			Xeliawardrobe_storyline();
+			}
+		8: if (introgoal == 3) {
+			print "(You find Fiction and Reality linked to your grid, and you bind them together)^";
+			Ficbind_storyline();
+			}
+		20: if (elginbday == 0) {
+			print "(You travel to Lady Wisdom's coffeeshop)^";
+			Matthewmeet_storyline();
+			Bdayinvite_storyline();
+			lunar_lightning.bought = 1;
+			}
+		28: if (elginbday < 4) {
+			print "(You go to Elgin's birthday at Rossini's Pizza and Arcade)^^";
+			Stacimeet_storyline();
+			Bdayparty_storyline();
+			Bday_term_storyline();
+			}
+		36: if (elginbday < 6) {
+			print "(You go to Lothlorien co-op to see Staci)^";
+			Lothbackyard_storyline();
+			print "^(You see future and past here, and bind them together)^";
+			Futurebind_storyline();
+			Lothdock_storyline();
+			}
+		default: return true;
+		}
+	}
+];
+
+[ Initialise;
+	location = home;
+	player.description = "You are 38 years old, long-haired and bearded, slightly disabled from rheumatoid arthritis. You are slightly fat but have been losing weight lately from a fritos-only programmer's diet.";
+	settime(0,60);
+	move wallet to player;
+	move mirror_shades to player;
+	print "^^The full moon amidst clouds spills milky brightness everywhere. Summer is just barely over but the air is still warm and moist. Staci is standing on tip-toe, looking over the edge of the rooftops and treebranches. 'Oh! I can tell it's started,' she says. You stand up and walk across the porch, slipping your arm around her as you turn to watch the sky. What had been a low full circle wreathed by clouds is higher now and shinining clearly, but no longer full - darkness is creeping across the surface as the Moon swings into Earth's shadow. You peer upwards together, savoring the moment. The night air is sweet and warm, you are with someone you love...and the Castle is about to reopen.^^";
+	getenter();
+];
+
+[ PrintTaskName task_number;
+	switch (task_number) {
+	0: "releasing ANTS";
+	1: "meeting Xochitl";
+	2: "binding Fiction onto Reality";
+	3: "playing your piano after cleaning it";
+	4: "composing 'Orange Night Light'";
+	5: "composing 'I heard the song first at fifteen'";
+	6: "composing 'Get out on the dock'";
+	7: "composing 'Always will remember July'";
+	8: "composing 'Last Full Moon'";
+	9: "composing 'Moon Computer'";
+	10: "composing 'Don't Tell Me What Year'";
+	11: "meeting Jay";
+	12: "summoning the Singing Hippie Housekeepers";
+	13: "sending email to Xochi and hearing 'Heartbeat'";
+	14: "giving the rose quartz heart to Xochi";
+	15: "being invited to Lothlorien co-op by Staci";
+	16: "entering Afterlife";
+	17: "giving up 4CY to the Afterlife";
+	18: "meeting Xochi on bike on the way to Elgin's birthday party";
+	19: "making it to Loth dock with Staci in May";
+	20: "joining the miffyland rooftop singalong";
+	21: "becoming the Harmonist";
+	22: "wearing the Loonie Revolution Power Pendant";
+	23: "playing Tempest";
+	24: "performing the ritual for Hecate";
+	25: "telling Xochi she is the reincarnation of Clara Schumann";
+	26: "ending movement no. 1 of the symphony";
+	27: "escaping from within the Tempest gameworld";
+	28: "rapping to Xelia about Xochi";
+	}
+];
+
+!============================================================================
+! Utility functions
+
+[ Getenter;
+	print "^Press enter to continue.^^";
+	keycharprimitive();
+];
+
+!============================================================================
+! Grammar and Verbs
+
+Include "Grammar";
+
+Verb "about" *	-> About;
+Verb "bind"	* noun noun	-> Bind;
+Verb "bomb" *	-> Bomb;
+Verb "clockon" *	-> Clockon;
+Verb "clockoff" *	-> Clockoff;
+Verb "credits" *	-> Credits;
+Verb "dance" *	-> Dance;
+Verb "dodge" * 	-> Dodge;
+Verb "email" *	-> Email;
+Verb "exits" *	-> Exits;
+Verb "expert" *	-> Expert;
+Verb "footnote" *	number	-> Footnote;
+Verb "help" *	-> Help;
+Verb "hint" *	-> Hint
+	* noun	-> Hint;
+Verb "lunar" *	-> Lunar;
+Verb "namespace" "ns" *	->Namespace;
+Verb "pet" * noun	-> Pet;
+Verb "play" * noun	-> Play
+	* 'with' noun	-> Play;
+Verb "release" * noun	-> Release;
+Verb "ride" * noun	-> Ride;
+Verb "shoot" *	-> Shoot;
+Verb "skipdock" *	-> Skipdock;
+Verb "skipintro" *	-> Skipintro;
+Extend "sleep" replace *	-> Sleepwait;
+Verb "standard" *	-> Standard;
+Verb "story" *	-> Story;
+Verb "talk" * noun -> Talk
+	* 'to'/'with' noun -> Talk;
+Verb "use" * noun	-> Use;
+Verb "vacation" *	-> Vacation;
+Verb "verblist" *	-> Verblist;
+Verb "visit" * topic	-> Visit;
+Verb "xyzzy" *	-> Xyzzy;
+
+!=============================================================================
+! Development notes
+
+! Edited at the sturgeon bay cabin on 1st of November, 2015. 
+! The sun is setting across the lake now, my friends are out for a hike, and I feel incredibly lucky to be here. 
+! All the wonderful craziness portrayed in this game may have faded mostly,
+! but many seeds planted then took root and grew and brought a harvest of wonderful fruit such as this weekend vacation.
+
+! Dock scene added 22nd November, 2015
+! The castle had re-opened the week before, but an unexpected city inspection turned up code violations
+! We are waiting for the needed work to be completed
+
+! Loth thanksgiving 26th Novemeber, 2015
+! A good meal and a game of cards, still waiting for final approval to move back in
+! Most of movement 1 is now in place along with clocks and expert mode
+
+! Additional main storyline events (notes from 30th November, 2015): 
+! e hq date, loonie council in wizard's chamber, wiscon and 5 part traveling buddha
+! benefit performance, evil time travelers, march forth, june 19th, notthingham performance
+! wizard self-beheading party, last full moon bike ride, tarot party and fire
+
+! Story passes v5 z-machine limits (with infix/debugging compiled in!)
+! Song compositions added, harmonist bike ride, 351 points total
+! 23,000 word source code file, time to split it into segments?

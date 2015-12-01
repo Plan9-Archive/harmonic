@@ -1,0 +1,779 @@
+!============================================================================
+! Verb functions
+
+[ Aboutsub;
+	"^Harmonic Time-Bind Ritual Symphony is a game based on my actual lived experience of spring and summer 2013. During that time, I was able to experience my life as a work of interactive fiction created by a brilliant author. I felt that the nature of the quantum multiverse meant that it was factually true that I was a character in novels and songs and videogames in other universes, and I played my role to the hilt. I felt that my manic madness was a gift which I could use for artistic creativity, and that my racing mind was fully up to solving the puzzles that the designer of my reality had laid out for me. It was the most glorious experience imaginable, and by the middle of the summer I felt like I was becoming a kind of Ultima IV-style Avatar of multiversal artistic consciousness and with just a little more spiritual insight and creative freedom, I'd literally be able to unlock the Vishnu-path Extra Arms upgrade for my character, which I might need in case the tentacle in the lake that was a whisker of Cthulhu's Moustache attacked.
+^
+^This game was created to share the wild, unbounded joy I felt in those months. Thanks to everyone who was a part of my life during that time, and thank you for playing this work of Interactive Fiction. Read >help for important tips.^";
+];
+
+[ Bindsub;
+	if((introgoal == 3) && (((noun == fiction) && (second == reality)) || ((noun == reality) && (second == fiction)))) {
+		Ficbind_storyline();
+		return true;
+	}
+	if((elginbday == 6) && (((noun == past) && (second == future)) || ((noun == future) && (second == past)))) {
+		Futurebind_storyline();
+		return true;
+	}
+	if((xochi.email == 3) && (((noun == schumann) && (second == player)) || ((noun == player) && (second == schumann)))) {
+		Schumannbind_storyline();
+		return true;
+	}
+	"^You attempt the bind of ", (name) noun, " on top of ", (name) second, " but nothing interesting happens...";
+];
+
+[ Bombsub;
+	"Not a good idea unless you are inside a videogame.";
+];
+
+[ Clockonsub;
+	clockoff = false;
+	"Clock story triggers set to on. >sleep advances to the next day, >story advances to the next major plot event.";
+];
+
+[ Clockoffsub;
+	clockoff = true;
+	"Clock story triggers set to off. No plot events will occur automatically. >clockon to reactivate.";
+];
+
+[ Creditssub;
+	"^Written and programmed by Ben Kidwell (mycroftiv)
+	 ^Co-written and edited and tested by Maevele Straw^
+	 ^Thanks to Inform Beginner's Guide and everyone maintaining Inform 6 resources^";
+];
+
+[ Dancesub;
+	"Despite your arthritis, you enjoy trying to put the rhythms of music inside your body. You dance in a loose, disorganized fashion, but it feels good.";
+];
+
+[ Dodgesub;
+	"It doesn't make sense to do that now.";
+];
+
+[ Emailsub;
+	<<use terminal>>;
+];
+
+[ Exitssub;
+	location.cant_go();
+];
+
+[ Expertsub;
+	expertmode = true;
+	clockoff = true;
+	"Expert-level puzzles and story logic on. Automatic clock events off.";
+];
+
+[ Footnotesub;
+	switch(noun) {
+	1: "Lyrics by Robert Hunter, music by Jerry Garcia, Terrapin Station 1977.";
+	2: "There is no footnote 2.";
+	3: "You are probably a 17 dimensional chipmunk yourself, you know.";
+	5: "Was it me? Was it you? I don't know who - but somebody said aroooooo! (Footnote 6)";
+	6: "Aroooooooooo!";
+	7: "Lyrics by Robert Hunter, music by Jerry Garcia, Ripple 1970.";
+	9: "Lothlorien Co-op! If you had heard only a quarter of what I have heard about it, and I have heard very little of all there is to hear, you would be prepared for any sort of remarkable tale. (Tolkien, of Gandalf)";
+	default: "Probably a special-case of the Navier-Stokes equations.";
+	};
+];
+
+[ Helpsub;
+	"If you are new to Interactive Fiction, move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). A guide:
+^
+^http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
+^
+^An important verb is the >bind command from the Plan 9 operating system. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. The >expert command makes the puzzles and story progression more challenging. >standard will return the game to normal difficulty. >verblist will show all verbs needed to score all points.^";
+];
+
+[ Hintsub;
+	print "(Different hints are available depending on your location and story progress. hint NAME will give object specific hints for things you can see.)^^";
+	if (home.antsreleased == 0)
+		"Just type 'release ants' at the > prompt";
+	if ((introgoal == 0) || (introgoal == 1)) 
+		"During the first part of the introduction, your choices are very limited and the story will advance just by travelling to the available locations using direction commands. (n s e w ne nw se sw out in up down)";
+	if ((noun == piano) && (piano.obsessionclear == 0))
+		"You need to continue through the introduction, then return home and >play piano.";
+	if (noun == forseewhy)
+		"Once the Afterlife store has opened, you should give 4CY to the owner.";
+	if (noun == pendant)
+		"Wearing the Loonie Revolution Power Pendant scores 9 points. It has no other function currently.";
+	if (noun == lunar_lightning)
+		"After you buy Lunar Lightning, you will be able to enter it to ride around and access new areas. You can summon it to your location with the command >lunar if you leave it behind.";
+	if (noun == space_pancakes)
+		"The Space Pancakes can be used in a ritual for Hecate at the ritual spot located northeast of the edge of town.";
+	if (noun == terminal)
+		"The terminal has many functions, but all you need to do is >use terminal when appropriate.";
+	if (noun == xelia)
+		"After you interact with xelia using a command like '>talk to xelia' you should return home and check out your basement.";
+	if (noun == xochi)
+		"After you >talk to xochi, you should >use terminal at home. Also, you might find a gift for her at Astral Enchantments.";
+	if (((noun == fiction) || (noun == reality)) && (introgoal == 3))
+		"You need to >bind fiction reality.";
+	if (((noun == past) || (noun == future)) && (elginbday == 6))
+		"You need to >bind past future.";
+	if (introgoal == 2)
+		"You need to return to Coffee Lion and >talk to xelia.";
+	if (introgoal == 3)
+		"You need to go to the basement of your home and >bind fiction reality.";
+	if (location == ritual_spot)
+		"You need to bring food here to perform the ritual. You can acquire food by visiting the late-night restaurant nearby a few times.";
+	if (location == astral_enchantments)
+		"Talking to Chip gives you a valuable item to wear, and buying crystals gives you a gift for Xochi.";
+	if (location == turning_wheel)
+		"After you are invited to Elgin's birthday party, you can buy a bicycle here.";
+	if (location == afterlife_antiques)
+		"If you examine the bookshelves in your home, you will receive a book that you should give to Colette.";
+	if ((location == atwood_shops) && (introgoal < 4))
+		"To unlock the door to Afterlife, you need to go to Elgin's birthday party.";
+	if ((location == mon_cot) && (player notin lunar_lightning))
+		"To proceed further south, you will need to be invited to Elgin's birthday party, then buy and ride a bicycle found at Turning Wheel cycles.";
+	"After completing the introduction, you can visit many new locations to acquire objects and points. Try to go to all the shops, especially Astral Enchantments, Lady Wisdom's coffeeshop, and back to Coffee Lion. Try talk to NAME to communicate with characters. The current maximum score is 351 points.";
+];
+
+[ Lunarsub;
+	if (lunar_lightning.bought == 1) {
+		move lunar_lightning to location;
+		print "You call out for your trusty metal steed, and it appears!^";
+		<<enter lunar_lightning>>;
+	}
+	"You need to purchase Lunar Lightning at Turning Wheel cycles first.";
+];
+
+[ Namespacesub;
+	print "Active binds:^";
+	if (introgoal > 3)
+		print "bind Fiction Reality^";
+	if (xochi.email > 3)
+		print "bind Schumann self^";
+	if (elginbday > 6)
+		print "bind Past Future^";
+];
+
+[ Petsub;
+	"You affectionately stroke the ", (name) noun, " but it doesn't reciprocate your affections.";
+];
+
+[ Playsub;
+	"Your skills don't extend so far as to be able to play the ", (name) noun;
+];
+
+[ Releasesub;
+	if (home.antsreleased == 1)
+		"You already released ANTS.";
+	if (noun ~= ants)
+		"What you need to release is ANTS, your Advanced Namespace Tools for Plan 9.";
+	Antsrelease_storyline();
+];
+
+[ Ridesub;
+	"You can't ride that.";
+];
+
+[ Shootsub;
+	"Not a good idea right now.";
+];
+
+[ Skipdocksub;
+	Antsrelease_storyline();
+	print "(You travel to Coffee Lion)^";
+	Xochimeet_storyline();
+	print "(You travel to the late-night restaurant)^";
+	Tarotreading_storyline();
+	print "(You travel to Coffee Lion)^";
+	coffee_lion.xeliaseen = 2;
+	Xeliawardrobe_storyline();
+	print "(You find Fiction and Reality linked to your grid, and you bind them together)^";
+	Ficbind_storyline();
+	print "(You travel to Lady Wisdom's coffeeshop)^";
+	Matthewmeet_storyline();
+	Bdayinvite_storyline();
+	lunar_lightning.bought = 1;
+	print "(You go to Elgin's birthday at Rossini's Pizza and Arcade)^^";
+	Stacimeet_storyline();
+	Bdayparty_storyline();
+	Bday_term_storyline();
+	print "(You go to Lothlorien co-op to see Staci)^";
+	Lothbackyard_storyline();
+	print "^(You see future and past here, and bind them together)^";
+	Futurebind_storyline();
+	Lothdock_storyline();
+];
+
+[ Skipintrosub;
+	home.antsreleased = 1;
+	introgoal = 4;
+	piano.obsessionclear = 2;
+	move fiction to basement;
+	move reality to basement;
+	move xochi to coffee_lion;
+	"Intro skipped.";
+];
+
+[ Standardsub;
+	expertmode = false;
+	clockoff = false;
+	"Game puzzles and story set to standard difficulty. Automatic clock events on.";
+];
+
+[ Storysub;
+	if(daynumber < 1) {
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 3) {
+		daynumber = 2;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 4) {
+		daynumber = 3;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 6) {
+		daynumber = 5;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 8) {
+		daynumber = 7;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 20) {
+		daynumber = 19;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 28) {
+		daynumber = 27;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 36) {
+		daynumber = 35;
+		settime(1380,60);
+		return true;
+	}
+];
+
+[ Sleepwaitsub;
+!	daynumber = daynumber + 1;
+	settime(1380, 60);
+	print "You return home to sleep and drift off, a tourist in a different branch of the multiverse, then resume the next day where you left off.^";
+];
+
+[ Talksub;
+	if(noun hasnt animate)
+		"The soundwaves of your voice bounce off the ", (name) noun, " affecting its molecular structure in subtle ways.";
+	"Your words go unanswered.";
+];
+
+[ Usesub;
+	if(noun hasnt animate)
+		"Either the ", (name) noun, " can't be used, or you need to find a more specific verb.";
+	"To interact with characters, try talk to NAME, ask NAME about THING, tell NAME about THING, or give THING to NAME.";
+];
+
+[ Vacationsub;
+	print "(In the future)^^You are lucky enough to have an invitation to spend the weekend at a friend's family vacation home up north. After a few hours drive, you arrive in a different world. To return home, use the magic word 'xyzzy.'^^";
+	playerto(andrews_cabin);
+];
+
+[ Verblistsub;
+	"n s e w ne nw se sw u d in out, examine, take, give, talk to, tell, use, play, buy, wear, ride, listen, bomb, visit, release, bind";
+];
+
+[ Visitsub;
+	if (elginbday == 9) {
+		Firstlothvisit_storyline();
+		return true;
+	}
+	"You don't have anywhere to visit right now.";
+];
+
+[ Xyzzysub;
+	print "There is a trans-dimensional short-circuit of interactive fiction tradition, and you catch a brief glimpse of a brick building near a stream and a metal grate before you blink and find yourself...^";
+	playerto(home);
+];
+
+!============================================================================
+! Storyline text functions
+
+[ Antsrelease_storyline;
+	home.antsreleased = 1;
+	daynumber = 1;
+	settime(60, 60);
+	achieved(0);
+	print "^You announce ANTS by posting an imaginary scene from Plan 9 from Outer Space to the 9fans mailing list. It is the one-year anniversary of your father's death. He was a law professor, and he never understood your values. You search for information on related Plan 9 projects and find a recent patent on a familiar concept. Years earlier, you wrote a free software 9p persistent-pipe muxer called hubfs. The patent the Joint Consolidated Networking corporation was granted is for 9p persistent pipe-muxing.
+^
+^You feel a sudden internal change, as if a valve has broken and a high-pressure jet of intense emotion and information is entering your mind at right angles to reality. You spent endless hours talking with your father, and you know how he thought. He never agreed with your anti-authoritarian radicalism, but seeing this abuse of the patent system would have changed his mind - you can feel it changing. Your mind has become a virtual machine, running the computer program of your father's soul in parallel with your own.^";
+!	getenter();
+	print "^(You are ready to exit your home, go south, and enter Coffee Lion Cafe.)^";
+];
+
+[ Xochimeet_storyline;
+	introgoal = 1;
+	coffee_lion.xeliaseen = 1;
+	achieved(1);
+	daynumber = 3;
+	settime(60, 60);
+	print "^Your local cafe has been your comfort for the past several years. Days and sometimes whole weeks used to go by where the only people you saw were the employees here. You always felt accepted, despite your disheveled appearance and stumbling arthritic gait. It has been several months since you have visited, because you feel embarassed of a mild foolish crush on one of the young baristas.
+^
+^She is working today, of course. You feel an unfamiliar fearless energy within yourself. As you order your coffee, you hear yourself say 'It's nice to see you, I haven't been in lately because I feel self-conscious about thinking you're cute.'
+^
+^Miraculously, she smiles warmly at you. 'That's ok, thank you. It's fine to be honest about what you feel.' You feel overwhelmed by a warm buzzing sensation, but you respond fluently. 'Thanks, that means a lot to hear someone say. I've been pretty isolated with a computer programming project lately, and it's felt hard to communicate with people. Sometimes I feel like a machine.' She replies, 'Well, there are a lot more people on your level than you realize. My name is Xochi, by the way. Also, I might be a robot myself!'
+^
+^You both laugh, you introduce yourself, and you walk out of the cafe higher than a kite aloft in the skies of Jupiter. Not only had your sudden impulsive flirtation (quite outside your usual character) gone well, but she was smart and funny too. You return home feeling like reality has been magically transformed for the better and you have been freed of your insecurities and fears. No more inhibition of your wild and eccentric impulses. You will use the story of your patent dispute with the JCN corporation to inspire others to join together in a glorious struggle to free the human spirit from everything that limits our creativity.^";
+!	getenter();
+	playerto(milw_street,1);
+	print "^(3 April 2013 - Outside my house)
+^It is late at night and you are hungry for food and friends for the fights to follow. You hope to find both at the 24-hour restaurant northeast of your home.^";
+];
+
+[ Tarotreading_storyline;
+	piano.obsessionclear = 1;
+	introgoal = 2;
+	move xelia to coffee_lion;
+	daynumber = 4;
+	settime(60,60);
+	print "^As you enter the late night restaurant, you notice an old friend here. You join him at his table, and he offers to give you a Tarot reading. You accept, and the cards arrange themselves in a dramatic tableaux featuring The Tower and The Devil. Your friend looks at you seriously and says 'Fear obsession. Fear obsession very strongly.' You realize that in pursuit of your Plan 9 programming goals, you have neglected other things you care about, like people - and music. You head back towards your home and resolve to clean off your piano and play it as soon as you go inside.^";
+!	getenter();
+	playerto(milw_street,1);
+	print "^(The introduction is 50% complete. You will have freedom to explore soon.)^(4 April 2013 - Outside my house)^";
+];
+
+[ Xeliawardrobe_storyline;
+	introgoal = 3;
+	move fiction to basement;
+	move reality to basement;
+	daynumber = 6;
+	settime(60,60);
+	"^You've noticed that Xelia often dresses as fictional characters, and as you place your order, you comment on her current Alice in Wonderland outfit. She smiles slightly. 'Just something I enjoy doing to amuse myself.' As you drink your coffee, you contemplate the meaning of her wardrobe. She is altering her relationship to the world by taking symbols from fiction and applying them to herself. It reminds you of namespace operations in Plan 9, but with symbols and stories binding to real-life people as the targets. In fact, the mingling of imagination and reality seems to explain a lot of what you are experiencing. Since you took on the name of a fictional character for your computer work years ago, you seem to be traversing the narrative arc of that book in your own life. Your mind is spinning. You need to get home and check on your grid.";
+];
+
+[ Ficbind_storyline;
+	introgoal = 4;
+	achieved(2);
+	remove xelia;
+	move xochi to coffee_lion;
+	daynumber = 8;
+	settime(60,60);
+	startdaemon(fiction);
+	"^You make the necessary adjustments to your basement grid to interface with the metalevel abstractions that structure your experiences. The bind command executes instantly, and for a moment you feel a foolish doubt - but in that same moment, you feel a warmth spreading within you, like liquid electricity being absorbed by the roots of your neural tree, and your visual perceptions take on a slight rainbow tint at the edges of objects, with an extra hint of pink.
+^
+^(You have completed the introduction. You may now explore freely.)
+^(8 April 2013)";
+];
+
+[ Matthewmeet_storyline;
+	elginbday = 1;
+	print "^As you enter Lady Wisdom's, you spot Matthew, a fellow Plan 9 enthusiast. He is excited to see you, and tells you that he recently acquired several Plan 9 compatible rack servers, which he is willing to sell you to expand your grid. Everything is falling into place! Soon, the reality transforming power of higher dimensional namespace operations will bring the magic you are experiencing into everyone's life, and society will never be the same. You make arrangements to have the new hardware delivered to your house in a few days.^";
+];
+
+[ Bdayinvite_storyline;
+	elginbday = 2;
+	give afterlife_door ~locked;
+	move lunar_lightning to turning_wheel;
+	daynumber = 20;
+	settime(60,60);
+	startdaemon(willy_west);
+	print "^As you are coming out of Lady Wisdom's coffeeshop, you hear your name called behind you. You turn, and your old friend Clark greets you from behind the wheel of a large utility truck. 'Long time no see! Hey, its Elgin's birthday next week, he's having his party at Rossini's Pizza. It's on the west side of Monona drive as you head south, hope we see you there!'
+^
+^Elgin is your godson, and you haven't seen him for years. You have guilty memories of many ignored phone calls from Clark and Staci during 2010 and 2011 as you were sinking into depression and solitude. Maybe they split up or something? You can't remember. Everything feels different now, and you are excited to bring old friends back into your life.
+^
+^(A locked door has opened)
+^(20 April 2013)
+^You will need to ride a bicycle to get all the way to Rossini's. You should check Turning Wheel cycles.^";
+];
+
+[ Xochionbike_storyline;
+	elginbday = 3;
+	achieved(18);
+	print "^As you are biking south toward Rossini's for the party, you spot a familiar face at the Coffee Lion drive-through. It's Xochi, on a bicycle, talking to Xelia through the window. You bike up to the window, and join in the conversation.
+^
+^'Wow, both of you have mirror shades on, you look so cute!' Xelia exclaims. You and Xochi smile. 
+^
+^'I just took the heart you gave me for a bike ride around the lake,' Xochi tells you, and pulls the rose quartz heart out of her shoulder bag, 'maybe you should take this back now?'
+^
+^'I think its still safest with you,' you respond. The three of you say goodbye to each other, and Xochi bikes away as Xelia returns to work.^";
+];
+
+[ Stacimeet_storyline;
+	print "As you park your bike outside Rossini's, you see Staci arriving. You know she has read the same sci-fi novel that inspired you, so after not seeing her for several years, you greet her as follows:
+^
+^'Staci! World-as-myth is true, fiction is entering reality, and the Loonie Revolution is starting. Do you want a position of high power and responsibility?'
+^
+^'Power and responsibility? Fuck no!' she answers.
+^
+^'That's the perfect answer! You're in!' you say, and shake her hand. She stands back from the door to finish her cigarette, and you enter.^";
+];
+
+[ Bdayparty_storyline;
+	elginbday = 4;
+	remove xelia;
+	move xochi to coffee_lion;
+	print "^As you open the door, you see a tall young man on the cusp of his teenage years, and a small young girl - Elgin and his sister Isabelle. 'Elgin! And you must be Isabelle!' you exclaim enthusiastically. It's been years since you have seen him, and Elgin responds 'Hey' in a noncommittal manner.
+^
+^'Actually, I prefer Lily,' says his sister brightly. 'Okay, I'll remember,' you reply.
+^
+^Waves of time-binding intensity sweep over you as you enter. You can hardly believe what you see in the arcade room - all of the favorite games of your childhood, time warped into the present day. Nothing like this existed in your universe before the binds of past and present and fiction and reality were made. A young woman with rainbow hair and a soft voice calls you a Jedi, and you break down in tears at her intuitive understanding of your fictional nature.
+^
+^The rest of the party is a kaleidoscopic blur of pizza, classic arcade games, and getting contact information for friends old and new. You gather that Clark and Staci aren't together any more. Staci and you exchange emails, and she tells you she will be in touch, and that she is currently living at Lothlorien co-op. (Footnote 9). You make a mental note to use your terminal soon.
+^
+^You return home feeling like you have travelled into a truly wonderful branch of the multiverse, laden with the fruit of infinite possibilities.^";
+	playerto(milw_street,1);
+	print "^(Messages have arrived, and new paths are open.)^(28 April 2013 - Outside my house)^";
+	move lunar_lightning to milw_street;
+];
+
+[ Bday_term_storyline;
+	elginbday = 5;
+	terminal.acted = 1;
+	achieved(15);
+	daynumber = 28;
+	settime(60,60);
+	print "^You find a message from Staci, inviting you to meet her at Lothlorien co-op whenever you can make it. The co-op house is located on the shore of Lake Mendota, north of State Street downtown. She says she usually hangs out in the backyard, so look for her there.^";
+];
+
+[ Lothbackyard_storyline;
+	elginbday = 6;
+	print "^As you walk around the corner of the building into the Lothlorien back yard, you know you are in exactly the right place at the exactly right time, and you have become the person - or rather, Moon Computer - that you have always wanted to be. A wild joy quivers within you, the feeling that everything you have ever dreamed has become real, and you know your reality is actually a fiction. You are a character in a strange and thrilling video game, and you know you have finally made it to the best part of the story.
+^
+^Staci is sitting at one of the picnic tables in the backyard, along with a few other co-op members. Everything is dappled by dancing spots of May sunlight filtering through the trees by the lake. Staci greets you and introduces you to her housemates, all of whose names you instantly forget. A joint is passed around, and you distribute a few small gifts you have brought. The other co-opers wander off, and Staci suggests going down to sit on the dock. She says your old mutual friend Nook is down there already and is looking forward to seeing you.
+^
+^Staci gestures for you to follow and heads north to the dock.^";
+];
+
+[ Futurebind_storyline;
+	elginbday = 7;
+	print "^You have leveled up enough as a computer-mind to be able to bind abstractions directly. With a simple higher-dimensional fold, the concepts are unioned together. The fold is measured at 20 years; 1993 is bound to 2013. You were 18 then, travelling around to see the Grateful Dead, entering adulthood full of enthusiasm and unencumbered by the weariness of disappointments that were yet to come. As the 20 year harmonic time-bind clicks into place, every perception from every sense becomes a perfectly placed note in the symphony.
+^
+^The path downward to the dock beckons.^";
+];
+
+[ Lothdock_storyline;
+	elginbday = 8;
+	achieved(19);
+	daynumber = 36;
+	settime(60,60);
+	print "^As you step onto the dock extending out across the shimmering waves of Lake Mendota, you feel time stretch like soft taffy. All of your life that has brought you here, the arc from childhood to present, is suddenly fresh and clear in your mind. A future of joy, delight, and purpose stretches limitlessly onward. The present moment expands to become large enough to include both path and future. It is like a perfect hyperspherical mirror at the center of your light-cone, reflecting the totality of your existence. You realize that you have always been, and always will be, here on the dock in this purple-pink-golden moment.
+^
+^You have known Staci for over twenty years. Ten years ago, when Elgin was two, she made you his godfather. Some years, you saw her and Clark a few times a month, usually just sitting and talking amidst the chaos of raising children in a small apartment. You always liked her, but never had a chance to talk about anything very serious or personal. In past years, she often looked tired and worn-down by stress. Now, here on the dock at Loth, she seems radiantly happy.
+^
+^Nook is also an old friend. You met him about twenty years ago, and spent hours in intense conversation about what you had each learned from taking acid and thinking about quantum physics. His life was sometimes chaotic, and you avoided friendships which might expose you to other people's stress, especially during the past decade with your ex-girlfriend, where you felt too overwhelmed by your own problems to even hear about other people's.
+^
+^All of those obstacles to close friendship seem absurd, now. Staci and Nook are both wonderful people and you are incredibly lucky to have the chance to get to know them better. You have always loved the lakeside co-ops, precisely because wild and radical ideas like a life-imitates-art Plan 9-powered Loonie Revolution fit with their ethos. Decades ago, you could have become close friends with both of them, and now the musical magic of the Harmonic Time-Bind Ritual Symphony is binding the possibilities of 1993 into the reality of 2013.^";
+	print "^Laughing, and talking, and laughing more. More than any of these whirling thoughts of past and future, more than your voice trying to explain Plan 9 and the Loonie Revolution and fiction entering reality - there is infectious laughter bouncing between all of you, your face rubbery from smiling so much. Staci says her life has been 'edited' to be better and she is finally feeling like the author of her own story.
+^
+^A procession of co-opers appear periodically on the dock. A wizard with a long red beard who understands the principles of harmonic ritual magic. A scholar with dark shades who connects the structure of ANTS namespaces to rhizomatic patterns of social structure throughout history. You become nearly incoherent, behaving like someone in the far depths of a powerful psychedelic trip, babbling nonsense phrases of remembered childhood playground gibberish and rolling on your back in fits of uncontrollable laughter.
+^
+^Through it all, Staci is with you. Not just in a physical sense - but somehow, her mind is able to parse your convoluted language and baroque free-associations. At some point, she begins translating what you are saying for others, because nobody else can follow it. She seems genuinely interested in everything you have to say, no matter how outlandish. When you explain that because every possibility is realized somewhere in the quantum multiverse, there is a universe in which we are videogame characters controlled by 17-dimensional chipmunks, she responds 'So when I fuck something up, its just because my chipmunk dropped the controller, right?'
+^
+^The timeless afternoon ends with a performative fiction-bind of sending a message to Vega from Pluto for help from the intergalactic council. The dock becomes a narrow crawlway on the frozen surface of Pluto, and you carefully crawl back towards the shore to set a message beacon. Staci coaches you with encouragement. You arrive and trigger the interplanetary message. You thank Staci for her help, and agree that you will meet again soon to discuss goals and plans for the Loonie Revolution. She says the co-op is really a castle full of loonies, a perfect central headquarters.
+^
+^You return home exhausted from hours of intense joy. You know something amazing and unprecedented in your life has happened. As good as today was, you believe tomorrow and the day after might be even better. You know most of the game-story is still ahead of you, but you still feel like You Have Won. Enjoy exploring the possibilities open to you, and no matter what happens, remember you made it to the Loth dock with Staci in May.^";
+	playerto(milw_street,1);
+	move lunar_lightning to milw_street;
+	print "^(May 6 - Outside my house)^";
+];
+
+[ Bday_visit_storyline;
+	elginbday = 9;
+	terminal.acted = 1;
+	print "^You are happy to see Staci has emailed you again. She says she had a great time seeing you and hopes to coordinate work on the Loonie Revolution soon.^(Use the command >visit staci to receive an invitation to see her.)^";
+];
+
+[ Firstlothvisit_storyline;
+	elginbday = 10;
+	achieved(21);
+	print "^'So THIS is what it feels like to be a superhero,' you grin, as you hop on Lunar Lightning. You feel the power of music and fiction and fate and your free choice to embrace all of it - and as you begin to pedal faster, you perceive an unfolding in the sky above you. The VALIS satellite! The Pink Beam that hit Phil Dick was just one note in a musical color-chord. Like a giant metal and ceramic flower opening up, the VALISpectrum Prismatic Reflector is coming online.
+^
+^The transmission is strong. You are receiving an original fictional identity, the character of exactly who you actually are - a crazed middle aged hippie on a bike, rolling through the night singing songs of Loonie Revolution, using Plan 9 namespaces to fight for the acceptance of madness, weaving chaotic joy from the ordered strands of the multiverse. You are The Harmonist.
+^
+^You pass a golden shining figure quietly reading a book. Amazing, you can actually see the Light of Knowledge within people now. As you bike from the Yahara underpass to Johnson, you start to call out to the people you are passing. 'Harmonic Time-Bind Ritual Symphony!' you shout, and receive the answer 'Great job, keep it up!' It is a gorgeous late spring night, and everyone outdoors is drunk on moonlight and wine-sweet air. 'Regress your age, rewrite history's page!' you yell at a group on a front step. 'I will!' one of them calls back.
+^
+^You arrive at Lothlorien exhilirated. You feel you are playing your part note-perfectly. Before you can even reach out your hand to knock, the wooden door swings open and you step inside.^";
+	playerto(loth_greatroom);
+];
+
+[ Jaymeet_storyline;
+	self.metjay = 1;
+	achieved(11);
+	print "^You step into the restaurant and get a table. During the graveyard shift, the waitstaff are often friendly and interesting people who are bored enough to be curious about whatever conversation you make. Filled with a sense of purpose, you tell your story to your server, Jay. He seems fascinated, and says he supports the cause of fighting unfairness in society and empathizes with your grievance with JCN. He tells you some of his own life story, how he had been raised in a restrictive, cult-like religion from which he had recently broken free. You have made a new friend and ally.^";
+];
+
+[ Housekeepersmeet_storyline;
+	willy_coop.singing = 1;
+	print "^Now that your life has been transformed, you are inspired to work on improving its quality in every way. Why not combine rediscovering the joy of music-making with getting your house clean and beautiful? There is a community message board here, and you quickly write up a Help Wanted request:
+^
+^'NEEDED: Singing Hippie Housekeeper
+^
+^I'm a middle-aged piano player with arthritis and cleaning my house is difficult for me physically. I am looking for someone to do cleaning while singing Grateful Dead songs. I will accompany on the piano. No particular vocal talent needed, just a love of music. Good $$/hr for a suitable applicant.'
+^
+^You add your contact information and attach the notice to the bulletin board. Use your terminal at home to check for messages.^";
+];
+
+[ Housekeepers_term_storyline;
+	willy_coop.singing = 2;
+	terminal.acted = 1;
+	achieved(12);
+	print "^You find two messages from people responding to the Singing Hippie Housekeepers notice. You respond to both, setting a date for each of them to start working at your house. You look forward to meeting each of them.^";
+];
+
+[ Housekeepers_home_storyline;
+	home.housekeepers = home.housekeepers + 1;
+	switch(home.housekeepers) {
+	1: print "You arrive back home just in time for the first visit of the Singing Hippie Housekeepers. Daniel and Paul, both older men. By some kind of absurd cosmic coincidence of the type that has dominated your life lately, twenty years ago Daniel owned a game store on State Street that you often shopped at, and you remember him fondly. You suspect he has gone through some hard times in life, but he retains a calm and sweet nature, and often comments 'its a blessing.' Paul is tall, thin, and intense. He says he is a painter and guitarist who also does a lot of odd jobs, and thought your advertisement looked interesting enough to be worth checking out. You decide the will of fate demands you engage both of them, and you set up a different day for each of them to come work. You will see each of them again soon.^";
+	3: 	bankaccount = bankaccount - 100;
+		print "Daniel shows up with a sign which proclaims 'Best Spring Ever!' There is plenty of clutter to be cleared, and he accomplishes a lot in a few hours. You agree to keep him visiting on a regular schedule, and pay him generously.^";
+	5:	bankaccount = bankaccount - 100;
+		print "Paul shows up carrying his acoustic guitar. He turns out to be an excellent blues guitarist, and he talks in a continuous flow of aphorisms and anecdotes. 'I don't need to believe in reincarnation,' he says, looking at a small Vishnu sculpture on your table, 'I've lived fifty lives already in this one.' For much of the past few weeks, you have been the one dominating conversations, and it feels good to focus on listening to someone whose mind is also overflowing with ideas. After a couple hours, your head is spinning but your enlightenment has increased. Rather than as a housekeeper, you hire Paul as a music-and-wisdom coach.^";
+	default: return false;
+	}
+];
+
+[ Heartbeat_term_storyline;
+	xochi.email = 2;
+	terminal.acted = 1;
+	achieved(13);
+	print "^You sit down at your computer and write an email to Xochi, offering to explain any or all of 17 different topics of interest, ranging from the connections between western and Hindu cosmology to how to use Plan 9 namespaces as a tool to control your own consciousness. As you press send, you notice that her email contact is linked to a video-sharing site, and she recently uploaded a song called 'Heartbeat'. The song is driven by percussion and keyboards, with spoken words above: 'From morphogenesis to breathing my first breath,' is the opening line, and you instantly realize your connection with her feels like it could be much deeper than you could have guessed. The sung refrain is 'The time is now, the place is here. Embrace love, and let go of fear.' You are stunned by how much the song represents everything you are experiencing in life. 'I will raise my vibration, when you are in alignment, the stars conspire for the occasion. You are an alchemist, the world is yours to manifest.'
+^
+^You feel musically inspired. You want to play your piano.^";
+];
+
+[ Schumann_piano_storyline;
+	piano.playcount = piano.playcount + 1;
+	xochi.email = 3;
+	"The music on the rack is Schumann's 'Dichterliebe', an achingly beautiful early-romantic song cycle. You play the opening song, 'In the beautiful month of May', and sigh. Ever since you discovered these songs early in your teenage years, you have ached to experience what is described in the song, the heart singing like a bird, love unfolding like a flower. You have known love, but nothing that felt as tender and fresh and promising as this music.
+^
+^You have always felt a deep personal connection with Robert Schumann. One your most profound early experiences as a musician was playing a Schumann Romanze in F# and feeling the emotion within the music as if it was your own. At that moment, you learned that music could encode an individual's personality and feelings in a way that let them be directly re-experienced by other minds.
+^
+^You realize that just as your mind is running your father's personality in parallel with your own, you could also >bind schumann self to reincarnate your favorite composer within yourself.";
+];
+
+[ Schumannbind_storyline;
+	xochi.email = 4;
+	print "You focus your mind on Schumann's music, its mix of eccentricity, passion, and experimentation. You feel his great love for his wife Clara, and also the spidery cracks of the madness that claimed the last years of his life. You can see your life from his perspective and you realize that you can learn from his experiences. His life is mirrored in yours, but you can change the story, make it play out better. In death, Schumann grew to understand how stifling 19th century society was for many women, and how Clara had been forced to make her own creative life subsidiary to his. And his last few years in an asylum...those bad old songs should be sent down the Rhine river in a coffin!^";
+	if (expertmode == false)
+		print "^You are eager to >talk to Xochi about what you have just experienced.^";
+];
+
+[ Xochi_schumann_storyline;
+	xochi.email = 5;
+	achieved(25);
+	"You are full of excitement as you walk up to the counter. 'Xochi, I have something amazing to tell you! Do you have a minute?' She nods yes, and you begin trying to explain:
+^
+^'I heard your song,' you begin, and she looks startled. 'It's incredible! You should write music and perform it to spread the word about the Loonie Revolution. I know plenty of people we can hire for recording and promotion. I promise this isn't about me htting on you - in fact, it's the opposite of that. The reason is - and this is a little hard to believe, I know - the reason is that I am actually the reincarnation of Robert Schumann, and you are the reincarnation of Clara Schumann, and Robert wants to change the the stories of the past. He learned that you should have been a great independent musician, and that's what I want to do, just help your career and propagandize for the Loonie Revolution and revitalize this universe to make our songs new!'
+^
+^Xochi looks slightly stunned, but manages an answer. 'I'm really glad you liked the song, but I need to get back to work now, I'll email you after work.'";
+];
+
+[ Schumann_term_storyline;
+	xochi.email = 6;
+	terminal.acted = 1;
+	print "^Xochi has emailed you a response. It is written with kindness and compassion, thanking you for everything you have said, but also asking for you to remember that she is working a job and some conversations are a bit too intense and serious for that context. She ends by saying 'Right now in my life I am focused on working at Coffee Lion and I'm not ready to try for a career as a musician.'
+^
+^She is right about everything. You recognize you can't expect everyone in the world to drop what they are doing to become characters in the stories you are creating. Everyone is already the protagonist of their own tale, and you need to respect that.^";
+	if (expertmode == false)
+		print "^You resolve to listen better the next time you >talk to Xochi.^";
+];
+
+[ Movement_two_storyline;
+	xochi.email = 7;
+	achieved(26);
+	print "^Xochi looks unusually happy today. 'Hi Xochi, what's up?' you begin. She smiles, and takes a deep breath. 'Well, during the past week I started seeing someone, and...things are going really well and I think it's going to be something serious.' She is almost glowing with excitement. You feel an incredible joy as Schumann within you cheers. 'The song is rewritten!' Schumann says, 'let the music be made afresh!'
+^
+^'So,' you say, 'I've been part of a good story for you?'
+^
+^Xochi smiles and laughs, 'It's been amazing! I've been writing so much, this has been a wonderful spring.'
+^
+^Warm major chords of strings and french horns are thrumming within you. This is perfect. This clearly marks a decisive point in the composition. You sit and write: 'End of the first movement of Harmonic Time-Bind Ritual Symphony. And now, the second movement begins!^";
+];
+
+[ Spacepancakes_storyline;
+	move space_pancakes to player;
+	eside_hq.metjay = 3;
+	print "^As you order your standard meal of pancakes, eggs, and potatoes, you remember an anecdote about a midwestern farmer in the 1970s who claims that space aliens gave him pancakes. It was used as evidence for the mysterious nature of reality. It had seemed absurd and implausible to you in the past, but now it makes perfect sense. A profound possibility occurs to you - maybe the pancakes the aliens gave to the farmer were Earth pancakes taken from somewhere else? In fact, maybe the aliens took pancakes from the future backwards in time - it could be that if you take the pancakes with you, aliens will show up and steal your them to give to the farmer. You request a to-go container and prepare yourself for the possibility of an extraterrestrial encounter of the pancake kind.^";
+];
+
+[ Hecateritual_storyline;
+	remove space_pancakes;
+	space_pancakes.ritual = 1;
+	achieved(24);
+	print "^It is New Moon, time for the ritual for Hecate. You face away from the crossroads at the edge of the city, and start eating one of the Space Pancakes. With each bite, you say 'I eat death and become life. Hecate, I respect you.' After eating half the pancake, keeping your face turned away, you toss the other half toward the crossroads as an offering. The ritual is complete.^";
+];
+
+[ Miffyland_storyline;
+	miffyland.summernight = 1;
+	achieved(20);
+	"You pause to listen. From a rooftop above, you hear the Jerry Garcia classic 'Reuben and Cherise', well-sung by several people. You wait for a pause in the music and call up 'I love that song!' Cheerful voices invite you to come upstairs and join them on the upper porch balcony. You do so, and find yourself in a scene that reminds you of the best of your college days - a late night porch song session. The guitarists are good, everyone knows the words and has a decent ear, and you all do 'Reuben and Cherise' again, and the music and warm feeling of enthusiastic friendship is so thick the summer night air seems to shimmer and sparkle. You do a few more songs, and eventually the evening breaks up, everyone wondering if they will make it home before daylight so they just might get some sleep tonight.";
+];
+
+[ Tellxeliaxochi_storyline;
+	achieved(28);
+	"'Guess what Xelia? I wrote some rap verses about Xochi! Listen to this:
+^
+^She's a love bomb she'll blow you up 
+^With the force of kindness as she's filling your cup
+^You can tell her she's cute and she won't shoot you down 
+^Whe's really a beaut with a brain that's profound
+^From a land that's merry to our town of burial grounds 
+^Whe won't lead you on or run you around
+^But I'm still a pawn in a game so old its covered in mold 
+^I'm a mossy stone that's grown alone
+^But the bombshell shrapnel flying like bees 
+^Ain't gonna bring me down to my knees amidst the debris
+^She cured my mental disease!
+^Adjustin the motions, going through devotions 
+^Don't you get no notions, she won't sell you no potions
+^She leveled me like 2+2 I still don't know what I should do 
+^To try to make the story new
+^At least I'm having so much fun I don't know where the time flew
+^
+^What do you think Xelia, do you think Xochi would like that?'
+^
+^Xelia pauses and answers, 'I don't know what she'd think.'";
+];
+
+[ Maysong_storyline;
+	achieved(4);
+	"I heard the song first at fifteen, an echo of a spring so evergreen
+^It bridged future and past, spanning unseen 
+^reality dream and the space between
+^A month of May the year could be any, where every day is a horn of plenty
+^Warm night air, the waves on the lake, all right there and make no mistake
+^Reeling and rocking past the shadow of doubt 
+^nothing like feeling that old in and out
+^I know what its like to be alone, no hint of action on my phone
+^I know how to groan and bitch and moan
+^But it ain't too much dope that's stealing your hope
+^In the dark groping for the end of your rope
+^With a little bit of luck you'll come unstuck
+^quack like a duck on the strange trip truck
+^I'm talking from experience, once you get traction
+^Even a middle-aged pianist can get action!
+^This month of May was like nothing before, 
+^Every time that I walked out the door
+^I fell in to a brand new story, each moment had its own kind of glory
+^It's hard to believe but my dreams did come true
+^No guarantees but it could happen to you
+^So keep your ears open for those magic songs
+^Spend the years hoping and singing along
+^The story and dreams that bloom in your mind
+^The quarry that gleams, the doom that you find
+^Flowery beams the moonlight unwinds...";
+];
+
+[ Bluelight_storyline;
+	achieved(5);
+	"If I biked into the blue light, would my song still fill the air?
+^If I chased after the green light, and I found you would you care?
+^If I dissolved into clear light, would there be anybody there?
+^All these colors fill our skies and sail us everywhere
+^I'm crusing through the orange night light
+^Shining beams of pink so bright
+^Purple crystal flower potion that restored my sight
+^Brought me back to the things that I know are right
+^And now when I lay me down I'm not a solo flying kite
+^I feel someone's arms around me, someone holds me tight
+^And we rise in spiral flight up to the starry height
+^Because we're all one rainbow star prismatic in the night";
+];
+
+[ Outonthedock_storyline;
+	achieved(6);
+	"Get out on the dock, turn back the clock
+^Regress your age, rewrite history's page
+^Catapulting rocks, lock barrel and stock
+^Mark it zero, my gun's half cocked
+^Loonies are the coolest kids on the block
+^I used to be dead, but now I am immortal
+^None of my enemies could close the portal
+^Keeping me out of this dimension
+^Turning the crank of your sexual tension
+^You know this ain't no christian rock
+^It's anarcho-hindu throbbing cock
+^In your ear but don't fear just gimme your rear
+^And take the tip of my spear between your hemispheres
+^Is that clear?";
+];
+
+[ Alwayswillremember_storyline;
+	achieved(7);
+	"Always will remember July, always remember stars in the sky
+^Like jewels, like dust, like waves on the sea
+^Rising in the darkness to Eternity
+^And I need to smoke weed, so I check my speed
+^Another perfect night on my bike
+^Riding wherever the fuck that I like
+^Two joints in my pocket my personal spike
+^In the vein, and the train whistle
+^Got me flying like a missile
+^Downhill, what a thrill
+^Eight-seventeen three-twenty-nine AM
+^The mushroom mind told me to eat them
+^I feel the pull of lunar tide
+^Time for another summer bike ride
+^Her last message told me I'm sweet
+^I'm still sore from fucking her in the August heat
+^And as I lifted my eye
+^The star in my pocket burst across the sky
+^Do you think it means anything?
+^Means enough for another verse in the song I sing
+^The meaning of life in a sweet starburst
+^If you seeking for a path you know you could do worse
+^Than chasing dancing rabbits through the branching multiverse
+^If you're looking for an answer, you could do worse
+^Chase the white rabbit of love through the universe";
+];
+
+[ Lastfullmoon_storyline;
+	achieved(8);
+	"Last full moon of summer 2013
+^If you were here with us, you'd know what we mean
+^This was the year we finally broke through
+^Did so many of the things we'd always hoped to do
+^Oh, it feels so good having my arms around you";
+];
+
+[ Mooncomputer_storyline;
+	achieved(9);
+	"I'm the Moon Computer and I'll be your tutor cause my circuits are cuter 
+^Than the average machine you find on the scene
+^But my mind is acutest, not the average buddhist, its 0-1-2 test
+^Ternary logic for the latest project
+^Both true and false, paradoxical waltz, if you're finding faults
+^That's not a mistake, it's an earthquake
+^The attack of my sound breaks a crack in the ground
+^Sharp tack I'm profound verbal tidal waves loosen tight old graves
+^Zombie or not to be, set my people free to won or lost
+^I'm your love burrito so let my libido raise your albedo
+^Under the chapel I'll shine your silver apples
+^Show me what you can shake I'll flip your space pancake
+^How much can a man take of this psychosis caused by paper doses
+^Rigorous mortis I'm racing with the tortoise my fallacy supports us
+^Through's Zeno's dialectic, it's electrically eclectic
+^Zombie or not to be, set my people free to won or lost";
+];
+
+[ Donttellme_storyline;
+	achieved(10);
+	"And it's another warm summer night, I can hear an acoustic guitar
+^Three voices in tune, singing to the crescent moon
+^The tale of Reuben and Cherise
+^And now the darkness sounds so bright, I'm glad I rode so far
+^And I know that soon, I might be a lost buffoon
+^But my heart feels at peace
+^Don't tell me what year it is, it might still be 93
+^Or 2013, I heard it was a better scene, as your ear can see
+^And so I joined them on the roof, so I could sing along
+^We knew all the words, even hit the minor thirds
+^And we smoked a joint or three
+^The roles we play become the truth, we made it inside the song
+^Oh have you heard, our echoes in the mockingbirds
+^The chords were meant to agree
+^No matter when it is, the time is yours to choose
+^There might be a perfect moment in the years you lose";
+];

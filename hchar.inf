@@ -1,0 +1,222 @@
+!============================================================================
+! The characters
+
+Character	strawberry "Strawberry" basement
+	with
+	name 'strawberry' 'cat' 'kitty' 'kitten',
+	action_count 0,
+	description "Your cat is small, orange with white chest and paws, female, and feisty.",
+	life [;
+		attack: "Strawberry is a battle-hardened combat kitty and springs into action. She grabs your hand with both paws, and nips lightly at your knuckles with her teeth. You pull your hand back, and she leaps up to chase it, sinking her claws into your knee. You fight back with a quick belly-tickle and she rolls onto her back, ready to deploy the full power of her back legs. You are beaten yet again. You have never defeated her.";
+		kiss: "You sneak up on Strawberry and then gather her up with a gentle swoop. She utters a slightly surprised blert, and you bring her close to your head. 'Such a good kitty!' you say as you lightly brush her forehead with your lips. She glances at you for a moment with mild outrage and wiggles from your grasp. Such a silly human! She arches her back and rubs against your shins for a moment.";
+		wakeother: "You give Strawberry a light scratch behind the ears. She yawns and stretches...and then resumes her previous position.";
+		throwat: "Strawberry chases the ", (name) noun, " and bats at it with her paw.";
+		give: "Strawberry sniffs the ", (name) noun, " but decides it is inedible and uninteresting.";
+		show: "Strawberry indicates her disinterest by choosing this moment to clean underneath her tail.";
+		tell: "Strawberry listens politely, and answers with a reassuring meow.";
+		ask: "If cats could shrug, Strawberry would answer with one.";
+		order: "Strawberry has never followed orders.";
+		answer: "Strawberry says arooooo. (Footnote 5)";
+	],
+	before [; 
+		pet: "Strawberry begins to purr as you stroke her, but after a few seconds, she decides that she is a fighter, not a lover. She bats at your hand with a paw, and looks up at you expecantly, hoping you will attack her.";
+		play: "You find one of your cat toys (a cloth catnip-filled rabbit on a string dangling from a stick) and spend wiggle it back and forth a few inches from Strawberry's nose. She blinks rapidly, and tries to catch it. You pull it back from her claws, and she pounces. Her paws are on the rabbit for a moment, but you lift it up quickly, and she jumps up to follow, spending a second or two on her back legs waving her paws in the air. After another few moments, Strawberry loses interest and you put the cat toy away.";
+		take: "Strawberry lets you hold her for about fifteen seconds before squirming free of your grasp, climbing your shoulder with help from sharp tiny claws, and hops to the floor behind you.";
+		talk: "Strawberry responds with a quizzical 'yerp?' You explain yourself more clearly, and she answer 'pllrrrmm..' in a non-committal manner.";
+	],
+	each_turn [; 
+		if (noun == self) return false;
+		self.action_count = self.action_count + 1;
+		switch(self.action_count) {
+		1: "^Strawberry looks at you with mild curiosity.";
+		2: "^Strawberry perches atop the router and studies you.";
+		3: "^Strawberry deftly steps through the maze of cords and vanishes behind some boxes.";
+		4: "^Strawberry nimbly hops up onto the computer desk, thankfully avoiding the keyboards.";
+		5: "^Strawberry's head peeks out from behind one of the grid computers.";
+		6: "^Strawberry meows and sharpens her claws on the carpeting of the stairway.";
+		7: "^Strawberry's tail brushes by your leg as she sniffs at your toes.";
+		8: "^Strawberry is standing still, tail twitching slightly.";
+		9: "^Strawberry licks a paw and washes her forehead with it.";
+		13: if (self in basement) { 
+				move self to home; 
+				self.action_count = 6;
+				"^Strawberry wakes up and wanders upstairs."; 
+			};
+			move self to basement;
+			self.action_count = 0;
+			"^Strawberry yawns, stretches, and heads to the basement.";		
+		default: "^Strawberry is curled up and napping in the corner."; };
+	],
+	has	female;
+
+Character	chip "Chip" astral_enchantments
+	with
+	name 'chip',
+	description "Chip is very tall - the topmost point of his dark mohawk a full seven feet off the ground. He radiates a peaceful, calming energy. He watches the world around himself with relaxed curiosity.",
+	life [;
+		if (pendant in self) {
+			move pendant to player;
+			print "Chip looks you over carefully, and says 'I'd like you to have this.' He presents you with a moon-faced pendant necklace. 'May you vibrate harmoniously on your journeys.'^";
+		}
+		ask: 
+			switch(second) {
+			'chip', 'himself': "'I'm visiting this reality to be of service to fellow explorers.'";
+			'me', 'myself', 'moon', 'computer', 'mycroftiv': "'I'm glad your path brought you to this doorway, I hope passing through is enlightening.'";
+			'pendant', 'necklace': "'It's made from orgone plastic. We make it ourselves, it combines an organic base with metal and mineral elements to focus your energetic field.'";
+			'astral', 'enchantments', 'shop', 'store': "'We do many things here, including harmonic time-binding ceremonies in the acoustic resonator vault.'";
+			'ceremony', 'ceremonies', 'harmonic', 'acoustic', 'resonator', 'vault': "'When we acquired this space, we discovered it has a back room which was an old bank vault, which works perfectly for focusing sound energy. My wife Astra works with her voice and singing bowls, she is a Sound Oracle.'";
+			'astra', 'wife', 'sound', 'oracle', 'back', 'room', 'bank', 'vault': "'She and I have been doing about what you see here in various places for a few years now, but this new location seems very powerful and auspicious. Sometime in the future I'm sure she'd be happy to perform a sound ceremony for you.";
+			'crystal', 'crystals', 'stone', 'stones', 'mineral', 'gemstones': "'Crystals and other gemstones and minerals are useful spiritual tools. Quartz is the base, it can transmit any kind of energy or vibration. Others have a more specific purpose.'";
+			'quartz': "'You can use quartz for almost any ritual purpose. If you have a collection of quartz crystals, you can amplify their power by placing them in a geometric arrangement.'";
+			default: print "'I have not yet been granted that knowledge.'^";
+				<<wakeother chip>>;
+			}
+		tell:
+			switch(second) {
+			'me', 'myself', 'mycroftiv','loonie', 'revolution', 'ants', 'plan': "You launch enthusiastically into the long-form account of your work and goals. Just as you are reaching a pitch of excitement, a few other customers wander in and ask Chip for help picking some incense to enhance their sexual energy.";
+			'him', 'himself', 'astral', 'enchanments', 'store', 'shop': "You tell Chip that his store is exactly what you have been looking for and is clearly a focal resonant point of harmonic time-binding fictionalization technological magic. He bows slightly and thanks you.";
+			default: print "Chip listens with interest, but has no insight to offer.^";
+				<<wakeother chip>>;
+			}
+		default:
+			"(You can ask chip about: chip, myself, pendant, store, ceremonies, astra, crystals, or quartz. You can tell him about: myself, himself.)";
+	],
+	before [; talk:
+		<<wakeother chip>>;	
+	],
+	has male;
+
+Character	xelia "Xelia"
+	with
+	name 'xelia',		
+	description "Xelia is a slender young woman with black hair and glasses. She is dressed as Alice as drawn by Tenniel.",
+	life [;
+		if (introgoal == 2) {
+			Xeliawardrobe_storyline();
+			return true;
+		}
+		tell: switch(second) {
+			'xelia', 'her', 'herself': "'Xelia, from you I learned something incredible: the principle of fiction-binding! I was wondering how and why my life had become a story just like my favorite novels, but you revealed the secret of navigating the multiverse by choosing what character you are playing.' Xelia smiles and says she is glad to help.";
+			'me', 'myself', 'mycroftiv', 'loonie', 'revolution', 'ants', 'plan': "'So now that you've helped me learn my true fictional identity, I realize it is my role in the story to try to use Plan 9 and music and art to fight for the Loonie Revolution, so all the amazing creative people working jobs like yours will take over society. I want to write a comic opera about Coffee Lion, and then hire all of you to perform in it!'";
+			'xochi': 
+				Tellxeliaxochi_storyline();
+				return true;
+			default: "Xelia listens. You could ask or tell her about herself, myself, or Xochi.";
+		}
+		ask: switch(second) {
+			'xelia', 'her', 'herself': "'I agree life is a pretty crazy story.'";
+			'xochi': "'She and I are good friends and it helps make the job a lot more fun.'";
+			'me', 'myself', 'loonie', 'revolution', 'mycroftiv', 'ants', 'plan': "'I really enjoy hearing everything you have to say, but I don't think I can help out with any of the loonie projects you are starting.'";
+			default: "Xelia says she doesn't have much to say about that. You could ask or tell her about herself, myself, or Xochi.";
+		}
+		default: "You deliver a long rant about quantum free will, fiction and reality, and Plan 9 namespaces. Xelia listens with a slightly concerned look on her face. You could try asking or telling her about herself, myself, or Xochi.";
+	],
+	before [; talk:
+		<<wakeother xelia>>;
+	],
+	has female;
+
+Character	jay "Jay" eside_hq
+	with
+	name 'jay',
+	description "Jay is a thin young man with short black hair, dressed in the standard uniform of late-night restaurant servers: slacks, button-up black shirt with a gold nametag, and a black apron.",
+	life [;
+		"Jay is a good listener, and seems to really understand your story. You outline some of your grandiose schemes and plans to use Plan 9 technology to change society, and he agrees to tell some of his friends about the Loonie Revolution.";
+	],
+	before [; talk:
+		<<wakeother jay>>;
+	],
+	has male;
+
+Character	colette "Colette" afterlife_antiques
+	with
+	name 'colette',
+	description "Colette is young but is dressed in the style of the early 20th century. She is unfazed and amused by your eccentricity.",
+	life [;
+		ask: 
+			switch(second) {
+			'colette', 'herself', 'afterlife', 'antiques', 'curiosities', 'store', 'shop': "'Special circumstances have given me the chance to open the door to the Afterlife and let these unique objects enter your story.'";
+			'me', 'myself', 'mycroftiv', 'loonie', 'revolution', 'plan', 'ants': "'You are already one of my favorite customers. It seems like you've been having some amazing adventures lately.'";
+			'forseewhy', '4cy', 'forsee', 'book': "'If you want to give the book to me to symbolize casting away the past, I am willing to accept it into the Afterlife.";
+			default: print "'That isn't something I've heard about in particular.'^";
+				<<wakeother colette>>;
+			}
+		tell:
+			switch(second) {
+			'me', 'myself', 'mycroftiv', 'loonie', 'revolution', 'plan', 'ants': "You tell the story of Plan 9 ANTS, fiction entering reality and becoming the Moon Computer, and how items from her store will be used in the future to provide a focal point for virtual reality resurrection by binding information from parallel universes into our minds. Colette says she is happy to be helping.";
+			'colette', 'herself', 'afterlife', 'antiques', 'curiosities', 'store', 'shop': "You explain your theory that the easiest way for a radical restructuring of reality into fiction to happen for everyone is with virtual reality. The information encoded in the objects in her store should allow for future computers to provide guided VR dreaming and visualization combined with psychedelic drugs and enable in-brain parallel reincarnation of departed souls, just like you are now the reincarnation of your father. 'And that is why this store is so important to the Loonie Revolution!' you conclude. Colette is smiling, and you are confident she understands completely.";
+			'forseewhy', '4cy', 'forsee', 'book': "'Years ago, I wrote the worst book ever. I wrote it to try to explain my philosophy, and to impress girls. Nobody cared about my philosophy, and what's worse, it didn't even get me laid. I'd like to give the book to you as a symbolic gesture of leaving my past behind.' Colette laughs at your description of the book and says you are welcome to give the book to her if you wish.";
+			default: <<wakeother colette>>;
+			}
+		give:
+			if (noun == forseewhy) {
+				move forseewhy to self;
+				achieved(17);
+				"Colette blinks and says it is fine for you to place your book in her store as a symbolic gesture. She accepts it and places it within a stack of books.";
+			}
+			"'Thanks for the offer, but we don't need that here.'";
+		default: 
+			"Colette listens to all your stories, laughing with you at their absurdity. (You can ask or tell her about herself, myself, or forseewhy.)";
+	],
+	react_before [; drop:
+		if (noun == forseewhy)
+			<<give forseewhy colette>>;
+	],
+	before [; talk:
+		<<wakeother colette>>;
+	],
+	has female;
+
+Character	xochi "Xochi"
+	with
+	name 'xochi',
+	email 0,
+	description "Xochi looks to you like an ancient Mayan Wisdom Goddess. Her long black hair has a few silver-white strands in it, despite her young age. Her physical beauty is appealing, the intelligence and kindness in her eyes and voice even more so.",
+	life [;
+		ask:
+			switch(second) {
+			'me', 'myself', 'mycroftiv', 'plan', 'ants', 'loonie', 'revolution': "'You're a good friend, but I do need to stay focused on my job while I'm at work.'";
+			'xochi', 'her', 'herself': "'A friend recommended that I read Bhagavad-Gita, so I've been doing that lately.'";
+			'bike', 'bicycle', 'lunar': "'It seems like an awesome bike'";
+			'pendant', 'necklace': "'I like it, it suits you.'";
+			'email', 'phone': <<wakeother xochi>>;
+			default: "'You'll have to figure that out on your own.'";
+			}
+		attack:
+			deadflag = 3;
+			"You would never do that.";
+		tell:
+			switch(second) {
+			'potion', 'potions': "You explain that you need beneficial potions to help your character stats. Xochi looks taken aback, and says she can't help with that.";
+			'loonie', 'revolution': "You explain that it is time for social power to pass away from outdated patriarchal institutions like governments, and for community focal points like coffeeshops to take the lead. The baristas should be in charge! Xochi looks amused and thoughtful.";
+			default: "'That's very interesting.'";
+			}
+		give:
+			if (noun == rose_heart) {
+				move rose_heart to self;
+				achieved(14);
+				"Xochi looks slightly uncomfortable as you give her the heart. The symbolism is a little too heavy, perhaps, but she decides to go with it and says she will keep it safe.";
+			}
+			"'Thanks, but I can't accept that!'";
+		kiss: "You are crazy, but not THAT crazy.";
+		default: 
+			if (self.email == 0) {
+				self.email = 1;
+				"You start trying to explain how fiction is entering reality because you can navigate the infinite possibilities of the quantum multiverse by using your free will to bind the narrative symbols you choose to shape your existence. She seems interested, and while you are talking, she writes a note on a piece of paper. She interrupts you a minute into your monologue to say 'It seems like you have a lot you want to say, I'm working right now but you can email me if you'd like.' You are surprised and happy. You can use your terminal to email her when you get back home.";
+			}
+			if (self.email == 1) 
+				"Xochi smiles warmly and says she is busy now but you can email her some of your thoughts.";
+			if (self.email == 4) {
+				Xochi_schumann_storyline();
+				return true;
+			}
+			if (self.email == 6) {
+				Movement_two_storyline();
+				return true;
+			}
+			"Xochi is busy helping other customers right now.";
+	],
+	before [; talk:
+		<<wakeother xochi>>;
+	],
+	has female;
