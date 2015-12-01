@@ -178,12 +178,14 @@ Decor	lake_mendota "Lake Mendota"
 	with
 	name 'lake' 'mendota' 'water',
 	description "Madison's largest lake is an old friend. Its waves speak an ancient and complex language. It explores the shoreline in constant undulating caresses.",
-	found_in mendota_lakeside james_madison loth_backyard loth_dock;
+	found_in mendota_lakeside james_madison loth_backyard loth_dock,
+	has proper;
 
 Decor	lake_monona "Lake Monona" john_nolen
 	with
 	name 'lake' 'monona' 'water',
-	description "Madison's smaller lake and its bay reflect the skyline of the south side of the isthmus. You have spent many a summer night biking along the path by the shore.";
+	description "Madison's smaller lake and its bay reflect the skyline of the south side of the isthmus. You have spent many a summer night biking along the path by the shore.",
+	has proper;
 
 Decor	lava_lamp "Lava Lamp" rossinis_pizza
 	with

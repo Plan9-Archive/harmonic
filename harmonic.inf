@@ -1,13 +1,38 @@
 !% -v8
 !% -SDX
 !% $MAX_VERBS=160
-!
+
 ! HARMONIC TIME-BIND RITUAL SYMPHONY
 !============================================================================
 ! In-progress work by Ben Kidwell ("mycroftiv") and Maevele Straw
 ! Currently all rights reserved, I'll put a more open license on it when it's done
 ! Thanks to Inform Beginner's Guide Captain Fate for the template
 !
+!=============================================================================
+! Development notes
+!
+! Edited at the sturgeon bay cabin on 1st of November, 2015. 
+! The sun is setting across the lake now, my friends are out for a hike, and I feel incredibly lucky to be here. 
+! All the wonderful craziness portrayed in this game may have faded mostly,
+! but many seeds planted then took root and grew and brought a harvest of wonderful fruit such as this weekend vacation.
+!
+! Dock scene added 22nd November, 2015
+! The castle had re-opened the week before, but an unexpected city inspection turned up code violations
+! We are waiting for the needed work to be completed
+!
+! Loth thanksgiving 26th Novemeber, 2015
+! A good meal and a game of cards, still waiting for final approval to move back in
+! Most of movement 1 is now in place along with clocks and expert mode
+!
+! Additional main storyline events (notes from 30th November, 2015): 
+! e hq date, loonie council in wizard's chamber, wiscon and 5 part traveling buddha
+! benefit performance, evil time travelers, march forth, june 19th, notthingham performance
+! wizard self-beheading party, last full moon bike ride, tarot party and fire
+!
+! Story passes v5 z-machine limits (with infix/debugging compiled in!)
+! Song compositions added, harmonist bike ride, 351 points total
+! 23,000 word source code file, time to split it into segments
+
 !============================================================================
 ! Configuration constants
 
@@ -103,7 +128,7 @@ Class	Character
 	has	proper animate;
 
 !===========================================================================
-! Game rooms, characters, props and objects, verbs and storyline
+! Game rooms, characters, props and objects, storyline and verbs
 
 Include "hroom.inf";
 
@@ -111,190 +136,7 @@ Include "hchar.inf";
 
 Include "hobj.inf";
 
-Include "hfunc.inf.";
+Include "hstor.inf";
 
-!============================================================================
-! Entry point functions
+Include "hverb.inf";
 
-[ Amusing;
-	print "Have you tried...
-^
-^ATTACK Strawberry?
-^TAKE fiction?
-^READ books over and over?^";
-];
-
-[ Deathmessage;
-	switch(deadflag) {
-	3: print "You have violated simulation parameters. Please UNDO.";
-	default: "This branch of the game universe has come to an end.";
-	}
-];
-
-[ Timepasses;
-	if (clockoff == true)
-		return true;
-	if (the_time == 0){
-		daynumber = daynumber + 1;
-		print "^Midnight strikes and a new day dawns.^(This is day number ", daynumber,")^";
-		switch(daynumber){
-		1: if (home.antsreleased == 0)
-			Antsrelease_storyline();
-		3: if (introgoal == 0) {
-			print "(You travel to Coffee Lion)^";
-			Xochimeet_storyline();
-			}
-		4: if (introgoal == 1) {
-			print "(You travel to the late-night restaurant)^";
-			Tarotreading_storyline();
-			}
-		6: if (introgoal == 2) {
-			print "(You travel to Coffee Lion)^";
-			coffee_lion.xeliaseen = 2;
-			Xeliawardrobe_storyline();
-			}
-		8: if (introgoal == 3) {
-			print "(You find Fiction and Reality linked to your grid, and you bind them together)^";
-			Ficbind_storyline();
-			}
-		20: if (elginbday == 0) {
-			print "(You travel to Lady Wisdom's coffeeshop)^";
-			Matthewmeet_storyline();
-			Bdayinvite_storyline();
-			lunar_lightning.bought = 1;
-			}
-		28: if (elginbday < 4) {
-			print "(You go to Elgin's birthday at Rossini's Pizza and Arcade)^^";
-			Stacimeet_storyline();
-			Bdayparty_storyline();
-			Bday_term_storyline();
-			}
-		36: if (elginbday < 6) {
-			print "(You go to Lothlorien co-op to see Staci)^";
-			Lothbackyard_storyline();
-			print "^(You see future and past here, and bind them together)^";
-			Futurebind_storyline();
-			Lothdock_storyline();
-			}
-		default: return true;
-		}
-	}
-];
-
-[ Initialise;
-	location = home;
-	player.description = "You are 38 years old, long-haired and bearded, slightly disabled from rheumatoid arthritis. You are slightly fat but have been losing weight lately from a fritos-only programmer's diet.";
-	settime(0,60);
-	move wallet to player;
-	move mirror_shades to player;
-	print "^^The full moon amidst clouds spills milky brightness everywhere. Summer is just barely over but the air is still warm and moist. Staci is standing on tip-toe, looking over the edge of the rooftops and treebranches. 'Oh! I can tell it's started,' she says. You stand up and walk across the porch, slipping your arm around her as you turn to watch the sky. What had been a low full circle wreathed by clouds is higher now and shinining clearly, but no longer full - darkness is creeping across the surface as the Moon swings into Earth's shadow. You peer upwards together, savoring the moment. The night air is sweet and warm, you are with someone you love...and the Castle is about to reopen.^^";
-	getenter();
-];
-
-[ PrintTaskName task_number;
-	switch (task_number) {
-	0: "releasing ANTS";
-	1: "meeting Xochitl";
-	2: "binding Fiction onto Reality";
-	3: "playing your piano after cleaning it";
-	4: "composing 'Orange Night Light'";
-	5: "composing 'I heard the song first at fifteen'";
-	6: "composing 'Get out on the dock'";
-	7: "composing 'Always will remember July'";
-	8: "composing 'Last Full Moon'";
-	9: "composing 'Moon Computer'";
-	10: "composing 'Don't Tell Me What Year'";
-	11: "meeting Jay";
-	12: "summoning the Singing Hippie Housekeepers";
-	13: "sending email to Xochi and hearing 'Heartbeat'";
-	14: "giving the rose quartz heart to Xochi";
-	15: "being invited to Lothlorien co-op by Staci";
-	16: "entering Afterlife";
-	17: "giving up 4CY to the Afterlife";
-	18: "meeting Xochi on bike on the way to Elgin's birthday party";
-	19: "making it to Loth dock with Staci in May";
-	20: "joining the miffyland rooftop singalong";
-	21: "becoming the Harmonist";
-	22: "wearing the Loonie Revolution Power Pendant";
-	23: "playing Tempest";
-	24: "performing the ritual for Hecate";
-	25: "telling Xochi she is the reincarnation of Clara Schumann";
-	26: "ending movement no. 1 of the symphony";
-	27: "escaping from within the Tempest gameworld";
-	28: "rapping to Xelia about Xochi";
-	}
-];
-
-!============================================================================
-! Utility functions
-
-[ Getenter;
-	print "^Press enter to continue.^^";
-	keycharprimitive();
-];
-
-!============================================================================
-! Grammar and Verbs
-
-Include "Grammar";
-
-Verb "about" *	-> About;
-Verb "bind"	* noun noun	-> Bind;
-Verb "bomb" *	-> Bomb;
-Verb "clockon" *	-> Clockon;
-Verb "clockoff" *	-> Clockoff;
-Verb "credits" *	-> Credits;
-Verb "dance" *	-> Dance;
-Verb "dodge" * 	-> Dodge;
-Verb "email" *	-> Email;
-Verb "exits" *	-> Exits;
-Verb "expert" *	-> Expert;
-Verb "footnote" *	number	-> Footnote;
-Verb "help" *	-> Help;
-Verb "hint" *	-> Hint
-	* noun	-> Hint;
-Verb "lunar" *	-> Lunar;
-Verb "namespace" "ns" *	->Namespace;
-Verb "pet" * noun	-> Pet;
-Verb "play" * noun	-> Play
-	* 'with' noun	-> Play;
-Verb "release" * noun	-> Release;
-Verb "ride" * noun	-> Ride;
-Verb "shoot" *	-> Shoot;
-Verb "skipdock" *	-> Skipdock;
-Verb "skipintro" *	-> Skipintro;
-Extend "sleep" replace *	-> Sleepwait;
-Verb "standard" *	-> Standard;
-Verb "story" *	-> Story;
-Verb "talk" * noun -> Talk
-	* 'to'/'with' noun -> Talk;
-Verb "use" * noun	-> Use;
-Verb "vacation" *	-> Vacation;
-Verb "verblist" *	-> Verblist;
-Verb "visit" * topic	-> Visit;
-Verb "xyzzy" *	-> Xyzzy;
-
-!=============================================================================
-! Development notes
-
-! Edited at the sturgeon bay cabin on 1st of November, 2015. 
-! The sun is setting across the lake now, my friends are out for a hike, and I feel incredibly lucky to be here. 
-! All the wonderful craziness portrayed in this game may have faded mostly,
-! but many seeds planted then took root and grew and brought a harvest of wonderful fruit such as this weekend vacation.
-
-! Dock scene added 22nd November, 2015
-! The castle had re-opened the week before, but an unexpected city inspection turned up code violations
-! We are waiting for the needed work to be completed
-
-! Loth thanksgiving 26th Novemeber, 2015
-! A good meal and a game of cards, still waiting for final approval to move back in
-! Most of movement 1 is now in place along with clocks and expert mode
-
-! Additional main storyline events (notes from 30th November, 2015): 
-! e hq date, loonie council in wizard's chamber, wiscon and 5 part traveling buddha
-! benefit performance, evil time travelers, march forth, june 19th, notthingham performance
-! wizard self-beheading party, last full moon bike ride, tarot party and fire
-
-! Story passes v5 z-machine limits (with infix/debugging compiled in!)
-! Song compositions added, harmonist bike ride, 351 points total
-! 23,000 word source code file, time to split it into segments?

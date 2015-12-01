@@ -79,7 +79,7 @@ Character	chip "Chip" astral_enchantments
 				<<wakeother chip>>;
 			}
 		default:
-			"(You can ask chip about: chip, myself, pendant, store, ceremonies, astra, crystals, or quartz. You can tell him about: myself, himself.)";
+			"^(You can ask Chip about: chip, myself, pendant, store, ceremonies, astra, crystals, or quartz. You can tell him about: myself, himself.)";
 	],
 	before [; talk:
 		<<wakeother chip>>;	
