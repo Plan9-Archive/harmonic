@@ -112,6 +112,7 @@
 	27: "escaping from within the Tempest gameworld";
 	28: "rapping to Xelia about Xochi";
 	29: "binding Chaos onto Substance in Atlantis";
+	30: "touring related Fictions with Ernest";
 	}
 ];
 
@@ -282,7 +283,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 360 points. 27 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 369 points. 27 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Lunarsub;

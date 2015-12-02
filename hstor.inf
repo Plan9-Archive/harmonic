@@ -188,6 +188,7 @@
 
 [ Firstlothvisit_storyline;
 	elginbday = 10;
+	eside_hq.fictour = 1;
 	daynumber = 42;
 	settime(60,60);
 	achieved(21);
@@ -306,6 +307,16 @@
 	space_pancakes.ritual = 1;
 	achieved(24);
 	print "^It is New Moon, time for the ritual for Hecate. You face away from the crossroads at the edge of the city, and start eating one of the Space Pancakes. With each bite, you say 'I eat death and become life. Hecate, I respect you.' After eating half the pancake, keeping your face turned away, you toss the other half toward the crossroads as an offering. The ritual is complete.^";
+];
+
+[ Hqfictour_storyline;
+	eside_hq.fictour = 2;
+	print "^After you take your seat, your attention is drawn to an older man with a long beard and a cap which proclaims 'Looney Toons'. You catch his eye and ask, 'Are you a traveler?'
+^
+^'We are all travelers in time,' he replies, and you do a double-take. 'This seems like it might be an important meeting,' you say, trying to display some tokens and charms of your work as loonie revolutionary. 'Historic,' he says, and whispers something I am not at liberty to divulge here, followed by 'meet me in the charging room.' Your food arrives.
+^
+^He is gone when you have finished your meal. You don't know what he meant by charging room, but you walk back towards the restroom. You see three doors, Women, Men, and Bots. The Bots door has an icon of a power cord connected to a Dalek. This must be the charging room. You step through and find yourself...^";
+	playerto(orbital_command);
 ];
 
 [ Astral_ceremony_storyline;

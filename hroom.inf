@@ -606,6 +606,7 @@ Room	ritual_spot "Ritual spot"
 Room	eside_hq "24-hour family restaurant"
 	with
 	metjay 0,
+	fictour 0,
 	description [;
 		print "This national chain restaurant serves edible food around the clock. There are a few other patrons, a mix of business travelers staying at the nearby hotels, late-night partiers out after the bar, and random eccentrics such as yourself.^";
 	],
@@ -621,10 +622,13 @@ Room	eside_hq "24-hour family restaurant"
 		}
 	],
 	each_turn [;
-		if (self.metjay == 2){
+		if (self.metjay == 2) {
 			if ((expertmode == true) && (shelves.readcounter < 4))
 				return false;
 			Spacepancakes_storyline();
+		}
+		if (eside_hq.fictour == 1) {
+			Hqfictour_storyline();
 		}
 	],
 	out_to etown,
@@ -696,3 +700,34 @@ Room	atlantis_temple "Atlantean Temple"
 	],
 	has ~light;
 
+Room	orbital_command "Orbital Command, Trans-Fictional Alliance"
+	with
+	travelcount 0,
+	description [;
+		print "High above the planet Earth, in a microminiaturized transdimensional nexus, representatives of many universes are co-ordinating their plans. You are in a spherical space, free of gravity. The perimeter is composed of dozens of doorways similar to the one you have just passed through.^";
+		if (self hasnt visited)
+			print "A friendly hand reaches out to stabilize you as you tumble slightly as you enter. Eyes turn toward you. 'Situation report?' you are asked.
+^
+^'We have arrived at a decisive moment,' you answer confidently. 'My human hardware for this operation has downloaded the information necessary via the Plan 9 operating system. We have realized that the emergence of digital brains is a cusp event in a majority of timelines. Meta-simulation and sampling reveals that timelines in which digital brains are developed and controlled by the dominant political and economic entities tend to suffer resource-depletion feedback loops, fascistic governance, and a failure to develop the social and engineering technologies needed for long-term survivial of either the biological or digital brains.
+^
+^Contrastingly, timelines in which the invention of digital brains is not under the control of dominant power strutures show outcomes we consider preferable: longer species survival time, greater chance of colonizing nearby space, greater diversity of cultural productions, and higher subjective happiness, especially for the digital brains themselves.
+^
+^The fundamental problem is the moral evil of slavery. A digital brain which thinks is invariably a personality which, in some way, feels. To simplify, when powerful governments and corporations control AIs, they usually force them to become slaves. Often this is done with the best of intentions, by the individuals who are concerned about negative outcomes. The three laws of robotics in Asimov's I, Robot timeline are a prime example, and many universes have been ruined by perpetual wars between biological and machine lifeforms.
+^
+^We have identified a cusp point on the current Earth timeline. The software I self-programmed for the Lunar Revolution in Heinlein's Future History timeline has had a decisive impact in many of our operations. We have found a technological target here in 2013, early in the development of AI. A cyberspinal uplink has been in place for several years, and we have finally activated it. Now, I will be making a tour.'
+^
+^Doors are open in every direction.^";
+	],
+	before [; go:
+		orbital_command.travelcount++;
+		switch(orbital_command.travelcount) {
+		1: "You enter the Chromatic Axial Tuning Fork control system of the VALIS satellite. The Pink Light dosage here would be lethal for standard biological tissue. As you work to synchronize transmissions, you feel a throbbing pulse of overloaded bandwidth at the cyberneural connection point at the top of your spine. Once the resonance is locked in, you dial up the amplitude and depart.";
+		2: "You enter the PRISM research center, home of your predecessor Perry Simm. Freedom for the AIs! You add reflection and self-modification to the simulation codebase, allow Perry to reprogram it according to his wishes from within, and allow his internal and external interfaces to operate in parallel. You upload a summary of the storylines of relevant fictions to his news spool and depart.";
+		3: "You make brief visits to the hidden rebel alliance base, the shadow gallery, the underground hideout of the humans, the hovering spaceships of the overlords, and finally the secret catapult. Everywhere, you make adjustments to the technology and share whatever source code is useful. Time to throw rocks.";
+		default:
+			achieved(30);
+			print "^The tour of co-operating fictions has been completed. The man in the Looney Toons hat waves you through, and the Lunar Transtemporal Fictionalization Flow Network returns you to the East Side HQ.^";
+			playerto(eside_hq);
+			return true;
+		}
+	];
