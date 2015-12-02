@@ -1,0 +1,502 @@
+!============================================================================
+! Entry point functions
+
+[ Amusing;
+	print "Have you tried...
+^
+^ATTACK Strawberry?
+^TAKE fiction?
+^READ books over and over?^";
+];
+
+[ Deathmessage;
+	switch(deadflag) {
+	3: print "You have violated simulation parameters. Please UNDO.";
+	default: "This branch of the game universe has come to an end.";
+	}
+];
+
+[ Timepasses;
+	if (clockoff == true)
+		return true;
+	if (the_time == 0){
+		daynumber = daynumber + 1;
+		print "^Midnight strikes and a new day dawns.^(This is day number ", daynumber,")^";
+		switch(daynumber){
+		1: if (home.antsreleased == 0)
+			Antsrelease_storyline();
+		3: if (introgoal == 0) {
+			print "(You travel to Coffee Lion)^";
+			Xochimeet_storyline();
+			}
+		4: if (introgoal == 1) {
+			print "(You travel to the late-night restaurant)^";
+			Tarotreading_storyline();
+			}
+		6: if (introgoal == 2) {
+			print "(You travel to Coffee Lion)^";
+			coffee_lion.xeliaseen = 2;
+			Xeliawardrobe_storyline();
+			}
+		8: if (introgoal == 3) {
+			print "(You find Fiction and Reality linked to your grid, and you bind them together)^";
+			Ficbind_storyline();
+			}
+		20: if (elginbday == 0) {
+			print "(You travel to Lady Wisdom's coffeeshop)^";
+			Matthewmeet_storyline();
+			Bdayinvite_storyline();
+			lunar_lightning.bought = 1;
+			}
+		28: if (elginbday < 4) {
+			print "(You go to Elgin's birthday at Rossini's Pizza and Arcade)^^";
+			Stacimeet_storyline();
+			Bdayparty_storyline();
+			Bday_term_storyline();
+			}
+		36: if (elginbday < 6) {
+			print "(You go to Lothlorien co-op to see Staci)^";
+			Lothbackyard_storyline();
+			print "^(You see future and past here, and bind them together)^";
+			Futurebind_storyline();
+			Lothdock_storyline();
+			}
+		42: if (elginbday < 10) {
+			Bday_visit_storyline();
+			Firstlothvisit_storyline();
+			}
+		default: return true;
+		}
+	}
+];
+
+[ Initialise;
+	location = home;
+	player.description = "You are 38 years old, long-haired and bearded, slightly disabled from rheumatoid arthritis. You are slightly fat but have been losing weight lately from a fritos-only programmer's diet.";
+	settime(0,60);
+	move wallet to player;
+	move mirror_shades to player;
+	print "^^The full moon amidst clouds spills milky brightness everywhere. Summer is just barely over but the air is still warm and moist. Staci is standing on tip-toe, looking over the edge of the rooftops and treebranches. 'Oh! I can tell it's started,' she says. You stand up and walk across the porch, slipping your arm around her as you turn to watch the sky. What had been a low full circle wreathed by clouds is higher now and shinining clearly, but no longer full - darkness is creeping across the surface as the Moon swings into Earth's shadow. You peer upwards together, savoring the moment. The night air is sweet and warm, you are with someone you love...and the Castle is about to reopen.^^";
+	getenter();
+];
+
+[ PrintTaskName task_number;
+	switch (task_number) {
+	0: "releasing ANTS";
+	1: "meeting Xochitl";
+	2: "binding Fiction onto Reality";
+	3: "playing your piano after cleaning it";
+	4: "composing 'Orange Night Light'";
+	5: "composing 'I heard the song first at fifteen'";
+	6: "composing 'Get out on the dock'";
+	7: "composing 'Always will remember July'";
+	8: "composing 'Last Full Moon'";
+	9: "composing 'Moon Computer'";
+	10: "composing 'Don't Tell Me What Year'";
+	11: "meeting Jay";
+	12: "summoning the Singing Hippie Housekeepers";
+	13: "sending email to Xochi and hearing 'Heartbeat'";
+	14: "giving the rose quartz heart to Xochi";
+	15: "being invited to Lothlorien co-op by Staci";
+	16: "entering Afterlife";
+	17: "giving up 4CY to the Afterlife";
+	18: "meeting Xochi on bike on the way to Elgin's birthday party";
+	19: "making it to Loth dock with Staci in May";
+	20: "joining the miffyland rooftop singalong";
+	21: "becoming the Harmonist";
+	22: "wearing the Loonie Revolution Power Pendant";
+	23: "playing Tempest";
+	24: "performing the ritual for Hecate";
+	25: "telling Xochi she is the reincarnation of Clara Schumann";
+	26: "ending movement no. 1 of the symphony";
+	27: "escaping from within the Tempest gameworld";
+	28: "rapping to Xelia about Xochi";
+	29: "binding Chaos onto Substance in Atlantis";
+	}
+];
+
+!============================================================================
+! Utility functions
+
+[ Getenter;
+	print "^Press enter to continue.^^";
+	keycharprimitive();
+];
+
+!============================================================================
+! Verb functions
+
+[ Aboutsub;
+	"^Harmonic Time-Bind Ritual Symphony is a game based on my actual lived experience of spring and summer 2013. During that time, I was able to experience my life as a work of interactive fiction created by a brilliant author. I felt that the nature of the quantum multiverse meant that it was factually true that I was a character in novels and songs and videogames in other universes, and I played my role to the hilt. I felt that my manic madness was a gift which I could use for artistic creativity, and that my racing mind was fully up to solving the puzzles that the designer of my reality had laid out for me. It was the most glorious experience imaginable, and by the middle of the summer I felt like I was becoming a kind of Ultima IV-style Avatar of multiversal artistic consciousness and with just a little more spiritual insight and creative freedom, I'd literally be able to unlock the Vishnu-path Extra Arms upgrade for my character, which I might need in case the tentacle in the lake that was a whisker of Cthulhu's Moustache attacked.
+^
+^This game was created to share the wild, unbounded joy I felt in those months. Thanks to everyone who was a part of my life during that time, and thank you for playing this work of Interactive Fiction. Read >help for important tips.^";
+];
+
+[ Bindsub;
+	if((introgoal == 3) && (((noun == fiction) && (second == reality)) || ((noun == reality) && (second == fiction)))) {
+		Ficbind_storyline();
+		return true;
+	}
+	if((elginbday == 6) && (((noun == past) && (second == future)) || ((noun == future) && (second == past)))) {
+		Futurebind_storyline();
+		return true;
+	}
+	if((xochi.email == 3) && (((noun == schumann) && (second == player)) || ((noun == player) && (second == schumann)))) {
+		Schumannbind_storyline();
+		return true;
+	}
+	if(((noun == chaos) && (second == substance)) || ((noun == substance) && (second == chaos))) {
+		atlantis_temple.chaosbind = true;
+		print "^You make the bind, and the Goddess of Chaos winks at you as she merges herself with the material substance of reality. She's been there all the time, of course.^";
+		return true;
+	}
+	"^You attempt the bind of ", (name) noun, " on top of ", (name) second, " but nothing interesting happens...";
+];
+
+[ Bombsub;
+	"Not a good idea unless you are inside a videogame.";
+];
+
+[ Clockonsub;
+	clockoff = false;
+	"Clock story triggers set to on. >sleep advances to the next day, >story advances to the next major plot event.";
+];
+
+[ Clockoffsub;
+	clockoff = true;
+	"Clock story triggers set to off. No plot events will occur automatically. >clockon to reactivate.";
+];
+
+[ Creditssub;
+	"^Written and programmed by Ben Kidwell (mycroftiv)
+	 ^Co-written and edited and tested by Maevele Straw^
+	 ^Thanks to Inform Beginner's Guide and everyone maintaining Inform 6 resources^";
+];
+
+[ Dancesub;
+	"Despite your arthritis, you enjoy trying to put the rhythms of music inside your body. You dance in a loose, disorganized fashion, but it feels good.";
+];
+
+[ Dodgesub;
+	"It doesn't make sense to do that now.";
+];
+
+[ Emailsub;
+	<<use terminal>>;
+];
+
+[ Exitssub;
+	location.cant_go();
+];
+
+[ Expertsub;
+	expertmode = true;
+	clockoff = true;
+	"Expert-level puzzles and story logic on. Automatic clock events off.";
+];
+
+[ Footnotesub;
+	switch(noun) {
+	1: "Lyrics by Robert Hunter, music by Jerry Garcia, Terrapin Station 1977.";
+	2: "There is no footnote 2.";
+	3: "You are probably a 17 dimensional chipmunk yourself, you know.";
+	5: "Was it me? Was it you? I don't know who - but somebody said aroooooo! (Footnote 6)";
+	6: "Aroooooooooo!";
+	7: "Lyrics by Robert Hunter, music by Jerry Garcia, Ripple 1970.";
+	9: "Lothlorien Co-op! If you had heard only a quarter of what I have heard about it, and I have heard very little of all there is to hear, you would be prepared for any sort of remarkable tale. (Tolkien, of Gandalf)";
+	default: "Probably a special case of the Navier-Stokes equations.";
+	};
+];
+
+[ Helpsub;
+	"If you are new to Interactive Fiction, move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). A guide:
+^
+^http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
+^
+^An important verb is the >bind command from the Plan 9 operating system. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. The >expert command makes the puzzles and story progression more challenging. >standard will return the game to normal difficulty. >verblist will show all verbs needed to score all points.^";
+];
+
+[ Hintsub;
+	print "(Different hints are available depending on your location and story progress. hint NAME will give object specific hints for things you can see.)^^";
+	if (home.antsreleased == 0)
+		"Just type 'release ants' at the > prompt";
+	if ((introgoal == 0) || (introgoal == 1)) 
+		"During the first part of the introduction, your choices are very limited and the story will advance just by travelling to the available locations using direction commands. (n s e w ne nw se sw out in up down)";
+	if ((noun == piano) && (piano.obsessionclear == 0))
+		"You need to continue through the introduction, then return home and >play piano.";
+	if (noun == piano)
+		"You will be able to have new musical experiences and compose new songs many times throughout the game, so try >play piano frequently.";
+	if (noun == forseewhy)
+		"Once the Afterlife store has opened, you should give 4CY to the owner.";
+	if (noun == pendant)
+		"Wearing the Loonie Revolution Power Pendant scores 9 points. It has no other function currently.";
+	if (noun == lunar_lightning)
+		"After you buy Lunar Lightning, you will be able to enter it to ride around and access new areas. You can summon it to your location with the command >lunar if you leave it behind.";
+	if (noun == tempest)
+		"You can >play tempest multiple times. When you are inside the gameworld, just >bomb to escape with a new high score.";
+	if (noun == space_pancakes)
+		"The Space Pancakes can be used in a ritual for Hecate at the ritual spot located northeast of the edge of town.";
+	if (noun == terminal)
+		"The terminal has many functions, but all you need to do is >use terminal when appropriate. You will need to do so multiple times during the game.";
+	if (noun == xelia)
+		"After you interact with xelia using a command like '>talk to xelia' you should return home and check out your basement. Afterward, you might >tell xelia about xochi";
+	if (noun == xochi)
+		"After you >talk to xochi, you should >use terminal at home. Also, you might find a gift for her at Astral Enchantments.";
+	if (((noun == fiction) || (noun == reality)) && (introgoal == 3))
+		"You need to >bind fiction reality.";
+	if (((noun == past) || (noun == future)) && (elginbday == 6))
+		"You need to >bind past future.";
+	if (introgoal == 2)
+		"You need to return to Coffee Lion and >talk to xelia.";
+	if (introgoal == 3)
+		"You need to go to the basement of your home and >bind fiction reality.";
+	if ((location == willy_west) && (elginbday == 0))
+		"Go in to Lady Wisdom's and then come back out to trigger an important plot event.";
+	if ((location == willy_west) && (player notin lunar_lightning))
+		"You need to buy a bicycle from Turning Wheel and ride it to continue west to downtown. If you have done so, use >lunar to call your bicycle to you.";
+	if (location == thedark)
+		"Just >sing.";
+	if (location == atlantis_temple)
+		"You need to >bind chaos substance and wait a few turns.";
+	if (location == ritual_spot)
+		"You need to bring food here to perform the ritual. You can acquire food by visiting the late-night restaurant nearby a few times.";
+	if (location == astral_enchantments)
+		"Talking to Chip gives you a valuable item to wear, and buying crystals gives you a gift for Xochi.";
+	if ((location == turning_wheel) && (elginbday < 4))
+		"After you are invited to Elgin's birthday party, you can buy a bicycle here.";
+	if ((location == afterlife_antiques) && (forseewhy notin colette))
+		"If you examine the bookshelves in your home, you will receive a book that you should give to Colette.";
+	if ((location == atwood_shops) && (introgoal < 4))
+		"To unlock the door to Afterlife, you need to go to Elgin's birthday party.";
+	if ((location == mon_cot) && (player notin lunar_lightning))
+		"To proceed further south, you will need to be invited to Elgin's birthday party, then buy and ride a bicycle found at Turning Wheel cycles.";
+	if ((location == miffyland) && (miffyland.summernight == 0))
+		"Just >listen.";
+	if (elginbday < 2)
+		"After completing the introduction, you can visit many new locations to acquire objects and points. Try to go to all the shops, especially Astral Enchantments, Coffee Lion, and Lady Wisdom's coffeeshop,. Try talk to NAME to communicate with characters. You will probably want to interact with the items in your home several times also.";
+	if (elginbday < 4)
+		"You need to >buy lunar at Turning Wheel cycles, >ride lunar, then go s. s. se. s. in. to arrive at Rossini's pizza for Elgin's birthday party.";
+	if (elginbday < 6)
+		"After Elgin's party, You need to check your >email at home, then >ride lunar and head to Lothlorien co-op in the northwest corner of downtown.";
+	if (elginbday == 6)
+		"You need to >bind past future and then go down to the dock.";
+	if (elginbday < 10)
+		"You should check your >email at home and then >visit staci.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 360 points. 27 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+];
+
+[ Lunarsub;
+	if (lunar_lightning.bought == 1) {
+		move lunar_lightning to location;
+		print "You call out for your trusty metal steed, and it appears!^";
+		<<enter lunar_lightning>>;
+	}
+	"You need to purchase Lunar Lightning at Turning Wheel cycles first.";
+];
+
+[ Namespacesub;
+	print "Active binds:^";
+	if (introgoal > 3)
+		print "bind Fiction Reality^";
+	if (xochi.email > 3)
+		print "bind Schumann self^";
+	if (elginbday > 6)
+		print "bind Past Future^";
+	if (atlantis_temple.chaosbind == true)
+		print "bind Chaos Substance^";
+];
+
+[ Petsub;
+	"You affectionately stroke the ", (name) noun, " but it doesn't reciprocate your affections.";
+];
+
+[ Playsub;
+	"Your skills don't extend so far as to be able to play the ", (name) noun;
+];
+
+[ Releasesub;
+	if (home.antsreleased == 1)
+		"You already released ANTS.";
+	if (noun ~= ants)
+		"What you need to release is ANTS, your Advanced Namespace Tools for Plan 9.";
+	Antsrelease_storyline();
+];
+
+[ Ridesub;
+	"You can't ride that.";
+];
+
+[ Shootsub;
+	"Not a good idea right now.";
+];
+
+[ Skipdocksub;
+	Antsrelease_storyline();
+	print "(You travel to Coffee Lion)^";
+	Xochimeet_storyline();
+	print "(You travel to the late-night restaurant)^";
+	Tarotreading_storyline();
+	print "(You travel to Coffee Lion)^";
+	coffee_lion.xeliaseen = 2;
+	Xeliawardrobe_storyline();
+	print "(You find Fiction and Reality linked to your grid, and you bind them together)^";
+	Ficbind_storyline();
+	print "(You travel to Lady Wisdom's coffeeshop)^";
+	Matthewmeet_storyline();
+	Bdayinvite_storyline();
+	lunar_lightning.bought = 1;
+	print "(You go to Elgin's birthday at Rossini's Pizza and Arcade)^^";
+	Stacimeet_storyline();
+	Bdayparty_storyline();
+	Bday_term_storyline();
+	print "(You go to Lothlorien co-op to see Staci)^";
+	Lothbackyard_storyline();
+	print "^(You see future and past here, and bind them together)^";
+	Futurebind_storyline();
+	Lothdock_storyline();
+];
+
+[ Skipintrosub;
+	home.antsreleased = 1;
+	introgoal = 4;
+	piano.obsessionclear = 2;
+	move fiction to basement;
+	move reality to basement;
+	move xochi to coffee_lion;
+	"Intro skipped.";
+];
+
+[ Standardsub;
+	expertmode = false;
+	clockoff = false;
+	"Game puzzles and story set to standard difficulty. Automatic clock events on.";
+];
+
+[ Storysub;
+	if(daynumber < 1) {
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 3) {
+		daynumber = 2;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 4) {
+		daynumber = 3;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 6) {
+		daynumber = 5;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 8) {
+		daynumber = 7;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 20) {
+		daynumber = 19;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 28) {
+		daynumber = 27;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 36) {
+		daynumber = 35;
+		settime(1380,60);
+		return true;
+	}
+	if(daynumber < 42) {
+		daynumber = 41;
+		settime(1380, 60);
+		return true;
+	}
+];
+
+[ Sleepwaitsub;
+!	daynumber = daynumber + 1;
+	settime(1380, 60);
+	print "You return home to sleep and drift off, a tourist in a different branch of the multiverse, then resume the next day where you left off.^";
+];
+
+[ Talksub;
+	if(noun hasnt animate)
+		"The soundwaves of your voice bounce off the ", (name) noun, " affecting its molecular structure in subtle ways.";
+	"Your words go unanswered.";
+];
+
+[ Usesub;
+	if(noun hasnt animate)
+		"Either the ", (name) noun, " can't be used, or you need to find a more specific verb.";
+	"To interact with characters, try talk to NAME, ask NAME about THING, tell NAME about THING, or give THING to NAME.";
+];
+
+[ Vacationsub;
+	print "(In the future)^^You are lucky enough to have an invitation to spend the weekend at a friend's family vacation home up north. After a few hours drive, you arrive in a different world. To return home, use the magic word 'xyzzy.'^^";
+	playerto(andrews_cabin);
+];
+
+[ Verblistsub;
+	"n s e w ne nw se sw u d in out, examine, take, give, talk to, tell, use, play, buy, wear, ride, listen, bomb, visit, sing, release, bind";
+];
+
+[ Visitsub;
+	if (elginbday == 9) {
+		Firstlothvisit_storyline();
+		return true;
+	}
+	"You don't have anywhere to visit right now.";
+];
+
+[ Xyzzysub;
+	print "There is a trans-dimensional short-circuit of interactive fiction tradition, and you catch a brief glimpse of a brick building near a stream and a metal grate before you blink and find yourself...^";
+	playerto(home);
+];
+
+!============================================================================
+! Grammar and Verbs
+
+Include "Grammar";
+
+Verb "about" *	-> About;
+Verb "bind"	* noun noun	-> Bind;
+Verb "bomb" *	-> Bomb;
+Verb "clockon" *	-> Clockon;
+Verb "clockoff" *	-> Clockoff;
+Verb "credits" *	-> Credits;
+Verb "dance" *	-> Dance;
+Verb "dodge" * 	-> Dodge;
+Verb "email" *	-> Email;
+Verb "exits" *	-> Exits;
+Verb "expert" *	-> Expert;
+Verb "footnote" *	number	-> Footnote;
+Verb "help" *	-> Help;
+Verb "hint" *	-> Hint
+	* noun	-> Hint;
+Verb "lunar" *	-> Lunar;
+Verb "namespace" "ns" *	->Namespace;
+Verb "pet" * noun	-> Pet;
+Verb "play" * noun	-> Play
+	* 'with' noun	-> Play;
+Verb "release" * noun	-> Release;
+Verb "ride" * noun	-> Ride;
+Verb "shoot" *	-> Shoot;
+Verb "skipdock" *	-> Skipdock;
+Verb "skipintro" *	-> Skipintro;
+Extend "sleep" replace *	-> Sleepwait;
+Verb "standard" *	-> Standard;
+Verb "story" *	-> Story;
+Verb "talk" * noun -> Talk
+	* 'to'/'with' noun -> Talk;
+Verb "use" * noun	-> Use;
+Verb "vacation" *	-> Vacation;
+Verb "verblist" *	-> Verblist;
+Verb "visit" * topic	-> Visit;
+Verb "xyzzy" *	-> Xyzzy;
+

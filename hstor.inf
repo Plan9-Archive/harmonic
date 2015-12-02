@@ -1,304 +1,4 @@
 !============================================================================
-! Verb functions
-
-[ Aboutsub;
-	"^Harmonic Time-Bind Ritual Symphony is a game based on my actual lived experience of spring and summer 2013. During that time, I was able to experience my life as a work of interactive fiction created by a brilliant author. I felt that the nature of the quantum multiverse meant that it was factually true that I was a character in novels and songs and videogames in other universes, and I played my role to the hilt. I felt that my manic madness was a gift which I could use for artistic creativity, and that my racing mind was fully up to solving the puzzles that the designer of my reality had laid out for me. It was the most glorious experience imaginable, and by the middle of the summer I felt like I was becoming a kind of Ultima IV-style Avatar of multiversal artistic consciousness and with just a little more spiritual insight and creative freedom, I'd literally be able to unlock the Vishnu-path Extra Arms upgrade for my character, which I might need in case the tentacle in the lake that was a whisker of Cthulhu's Moustache attacked.
-^
-^This game was created to share the wild, unbounded joy I felt in those months. Thanks to everyone who was a part of my life during that time, and thank you for playing this work of Interactive Fiction. Read >help for important tips.^";
-];
-
-[ Bindsub;
-	if((introgoal == 3) && (((noun == fiction) && (second == reality)) || ((noun == reality) && (second == fiction)))) {
-		Ficbind_storyline();
-		return true;
-	}
-	if((elginbday == 6) && (((noun == past) && (second == future)) || ((noun == future) && (second == past)))) {
-		Futurebind_storyline();
-		return true;
-	}
-	if((xochi.email == 3) && (((noun == schumann) && (second == player)) || ((noun == player) && (second == schumann)))) {
-		Schumannbind_storyline();
-		return true;
-	}
-	"^You attempt the bind of ", (name) noun, " on top of ", (name) second, " but nothing interesting happens...";
-];
-
-[ Bombsub;
-	"Not a good idea unless you are inside a videogame.";
-];
-
-[ Clockonsub;
-	clockoff = false;
-	"Clock story triggers set to on. >sleep advances to the next day, >story advances to the next major plot event.";
-];
-
-[ Clockoffsub;
-	clockoff = true;
-	"Clock story triggers set to off. No plot events will occur automatically. >clockon to reactivate.";
-];
-
-[ Creditssub;
-	"^Written and programmed by Ben Kidwell (mycroftiv)
-	 ^Co-written and edited and tested by Maevele Straw^
-	 ^Thanks to Inform Beginner's Guide and everyone maintaining Inform 6 resources^";
-];
-
-[ Dancesub;
-	"Despite your arthritis, you enjoy trying to put the rhythms of music inside your body. You dance in a loose, disorganized fashion, but it feels good.";
-];
-
-[ Dodgesub;
-	"It doesn't make sense to do that now.";
-];
-
-[ Emailsub;
-	<<use terminal>>;
-];
-
-[ Exitssub;
-	location.cant_go();
-];
-
-[ Expertsub;
-	expertmode = true;
-	clockoff = true;
-	"Expert-level puzzles and story logic on. Automatic clock events off.";
-];
-
-[ Footnotesub;
-	switch(noun) {
-	1: "Lyrics by Robert Hunter, music by Jerry Garcia, Terrapin Station 1977.";
-	2: "There is no footnote 2.";
-	3: "You are probably a 17 dimensional chipmunk yourself, you know.";
-	5: "Was it me? Was it you? I don't know who - but somebody said aroooooo! (Footnote 6)";
-	6: "Aroooooooooo!";
-	7: "Lyrics by Robert Hunter, music by Jerry Garcia, Ripple 1970.";
-	9: "Lothlorien Co-op! If you had heard only a quarter of what I have heard about it, and I have heard very little of all there is to hear, you would be prepared for any sort of remarkable tale. (Tolkien, of Gandalf)";
-	default: "Probably a special-case of the Navier-Stokes equations.";
-	};
-];
-
-[ Helpsub;
-	"If you are new to Interactive Fiction, move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). A guide:
-^
-^http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
-^
-^An important verb is the >bind command from the Plan 9 operating system. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. The >expert command makes the puzzles and story progression more challenging. >standard will return the game to normal difficulty. >verblist will show all verbs needed to score all points.^";
-];
-
-[ Hintsub;
-	print "(Different hints are available depending on your location and story progress. hint NAME will give object specific hints for things you can see.)^^";
-	if (home.antsreleased == 0)
-		"Just type 'release ants' at the > prompt";
-	if ((introgoal == 0) || (introgoal == 1)) 
-		"During the first part of the introduction, your choices are very limited and the story will advance just by travelling to the available locations using direction commands. (n s e w ne nw se sw out in up down)";
-	if ((noun == piano) && (piano.obsessionclear == 0))
-		"You need to continue through the introduction, then return home and >play piano.";
-	if (noun == forseewhy)
-		"Once the Afterlife store has opened, you should give 4CY to the owner.";
-	if (noun == pendant)
-		"Wearing the Loonie Revolution Power Pendant scores 9 points. It has no other function currently.";
-	if (noun == lunar_lightning)
-		"After you buy Lunar Lightning, you will be able to enter it to ride around and access new areas. You can summon it to your location with the command >lunar if you leave it behind.";
-	if (noun == space_pancakes)
-		"The Space Pancakes can be used in a ritual for Hecate at the ritual spot located northeast of the edge of town.";
-	if (noun == terminal)
-		"The terminal has many functions, but all you need to do is >use terminal when appropriate.";
-	if (noun == xelia)
-		"After you interact with xelia using a command like '>talk to xelia' you should return home and check out your basement.";
-	if (noun == xochi)
-		"After you >talk to xochi, you should >use terminal at home. Also, you might find a gift for her at Astral Enchantments.";
-	if (((noun == fiction) || (noun == reality)) && (introgoal == 3))
-		"You need to >bind fiction reality.";
-	if (((noun == past) || (noun == future)) && (elginbday == 6))
-		"You need to >bind past future.";
-	if (introgoal == 2)
-		"You need to return to Coffee Lion and >talk to xelia.";
-	if (introgoal == 3)
-		"You need to go to the basement of your home and >bind fiction reality.";
-	if (location == ritual_spot)
-		"You need to bring food here to perform the ritual. You can acquire food by visiting the late-night restaurant nearby a few times.";
-	if (location == astral_enchantments)
-		"Talking to Chip gives you a valuable item to wear, and buying crystals gives you a gift for Xochi.";
-	if (location == turning_wheel)
-		"After you are invited to Elgin's birthday party, you can buy a bicycle here.";
-	if (location == afterlife_antiques)
-		"If you examine the bookshelves in your home, you will receive a book that you should give to Colette.";
-	if ((location == atwood_shops) && (introgoal < 4))
-		"To unlock the door to Afterlife, you need to go to Elgin's birthday party.";
-	if ((location == mon_cot) && (player notin lunar_lightning))
-		"To proceed further south, you will need to be invited to Elgin's birthday party, then buy and ride a bicycle found at Turning Wheel cycles.";
-	"After completing the introduction, you can visit many new locations to acquire objects and points. Try to go to all the shops, especially Astral Enchantments, Lady Wisdom's coffeeshop, and back to Coffee Lion. Try talk to NAME to communicate with characters. The current maximum score is 351 points.";
-];
-
-[ Lunarsub;
-	if (lunar_lightning.bought == 1) {
-		move lunar_lightning to location;
-		print "You call out for your trusty metal steed, and it appears!^";
-		<<enter lunar_lightning>>;
-	}
-	"You need to purchase Lunar Lightning at Turning Wheel cycles first.";
-];
-
-[ Namespacesub;
-	print "Active binds:^";
-	if (introgoal > 3)
-		print "bind Fiction Reality^";
-	if (xochi.email > 3)
-		print "bind Schumann self^";
-	if (elginbday > 6)
-		print "bind Past Future^";
-];
-
-[ Petsub;
-	"You affectionately stroke the ", (name) noun, " but it doesn't reciprocate your affections.";
-];
-
-[ Playsub;
-	"Your skills don't extend so far as to be able to play the ", (name) noun;
-];
-
-[ Releasesub;
-	if (home.antsreleased == 1)
-		"You already released ANTS.";
-	if (noun ~= ants)
-		"What you need to release is ANTS, your Advanced Namespace Tools for Plan 9.";
-	Antsrelease_storyline();
-];
-
-[ Ridesub;
-	"You can't ride that.";
-];
-
-[ Shootsub;
-	"Not a good idea right now.";
-];
-
-[ Skipdocksub;
-	Antsrelease_storyline();
-	print "(You travel to Coffee Lion)^";
-	Xochimeet_storyline();
-	print "(You travel to the late-night restaurant)^";
-	Tarotreading_storyline();
-	print "(You travel to Coffee Lion)^";
-	coffee_lion.xeliaseen = 2;
-	Xeliawardrobe_storyline();
-	print "(You find Fiction and Reality linked to your grid, and you bind them together)^";
-	Ficbind_storyline();
-	print "(You travel to Lady Wisdom's coffeeshop)^";
-	Matthewmeet_storyline();
-	Bdayinvite_storyline();
-	lunar_lightning.bought = 1;
-	print "(You go to Elgin's birthday at Rossini's Pizza and Arcade)^^";
-	Stacimeet_storyline();
-	Bdayparty_storyline();
-	Bday_term_storyline();
-	print "(You go to Lothlorien co-op to see Staci)^";
-	Lothbackyard_storyline();
-	print "^(You see future and past here, and bind them together)^";
-	Futurebind_storyline();
-	Lothdock_storyline();
-];
-
-[ Skipintrosub;
-	home.antsreleased = 1;
-	introgoal = 4;
-	piano.obsessionclear = 2;
-	move fiction to basement;
-	move reality to basement;
-	move xochi to coffee_lion;
-	"Intro skipped.";
-];
-
-[ Standardsub;
-	expertmode = false;
-	clockoff = false;
-	"Game puzzles and story set to standard difficulty. Automatic clock events on.";
-];
-
-[ Storysub;
-	if(daynumber < 1) {
-		settime(1380,60);
-		return true;
-	}
-	if(daynumber < 3) {
-		daynumber = 2;
-		settime(1380,60);
-		return true;
-	}
-	if(daynumber < 4) {
-		daynumber = 3;
-		settime(1380,60);
-		return true;
-	}
-	if(daynumber < 6) {
-		daynumber = 5;
-		settime(1380,60);
-		return true;
-	}
-	if(daynumber < 8) {
-		daynumber = 7;
-		settime(1380,60);
-		return true;
-	}
-	if(daynumber < 20) {
-		daynumber = 19;
-		settime(1380,60);
-		return true;
-	}
-	if(daynumber < 28) {
-		daynumber = 27;
-		settime(1380,60);
-		return true;
-	}
-	if(daynumber < 36) {
-		daynumber = 35;
-		settime(1380,60);
-		return true;
-	}
-];
-
-[ Sleepwaitsub;
-!	daynumber = daynumber + 1;
-	settime(1380, 60);
-	print "You return home to sleep and drift off, a tourist in a different branch of the multiverse, then resume the next day where you left off.^";
-];
-
-[ Talksub;
-	if(noun hasnt animate)
-		"The soundwaves of your voice bounce off the ", (name) noun, " affecting its molecular structure in subtle ways.";
-	"Your words go unanswered.";
-];
-
-[ Usesub;
-	if(noun hasnt animate)
-		"Either the ", (name) noun, " can't be used, or you need to find a more specific verb.";
-	"To interact with characters, try talk to NAME, ask NAME about THING, tell NAME about THING, or give THING to NAME.";
-];
-
-[ Vacationsub;
-	print "(In the future)^^You are lucky enough to have an invitation to spend the weekend at a friend's family vacation home up north. After a few hours drive, you arrive in a different world. To return home, use the magic word 'xyzzy.'^^";
-	playerto(andrews_cabin);
-];
-
-[ Verblistsub;
-	"n s e w ne nw se sw u d in out, examine, take, give, talk to, tell, use, play, buy, wear, ride, listen, bomb, visit, release, bind";
-];
-
-[ Visitsub;
-	if (elginbday == 9) {
-		Firstlothvisit_storyline();
-		return true;
-	}
-	"You don't have anywhere to visit right now.";
-];
-
-[ Xyzzysub;
-	print "There is a trans-dimensional short-circuit of interactive fiction tradition, and you catch a brief glimpse of a brick building near a stream and a metal grate before you blink and find yourself...^";
-	playerto(home);
-];
-
-!============================================================================
 ! Storyline text functions
 
 [ Antsrelease_storyline;
@@ -455,6 +155,7 @@
 
 [ Lothdock_storyline;
 	elginbday = 8;
+	astral_enchantments.ceremony = 1;
 	achieved(19);
 	daynumber = 36;
 	settime(60,60);
@@ -487,6 +188,8 @@
 
 [ Firstlothvisit_storyline;
 	elginbday = 10;
+	daynumber = 42;
+	settime(60,60);
 	achieved(21);
 	print "^'So THIS is what it feels like to be a superhero,' you grin, as you hop on Lunar Lightning. You feel the power of music and fiction and fate and your free choice to embrace all of it - and as you begin to pedal faster, you perceive an unfolding in the sky above you. The VALIS satellite! The Pink Beam that hit Phil Dick was just one note in a musical color-chord. Like a giant metal and ceramic flower opening up, the VALISpectrum Prismatic Reflector is coming online.
 ^
@@ -605,10 +308,32 @@
 	print "^It is New Moon, time for the ritual for Hecate. You face away from the crossroads at the edge of the city, and start eating one of the Space Pancakes. With each bite, you say 'I eat death and become life. Hecate, I respect you.' After eating half the pancake, keeping your face turned away, you toss the other half toward the crossroads as an offering. The ritual is complete.^";
 ];
 
+[ Astral_ceremony_storyline;
+	astral_enchantments.ceremony = 2;
+	print "^Chip greets you with a smile and says 'I can tell a lot has happened, I think you are ready for a Sound Oracle Ceremony.' You agree, and Astra appears from the back of the store. She is dressed in purple and is wearing several different skull-themed prints and jewelry. 'Chip has told me about you,' she says, 'this should be very interesting.' She brings you back into the small bank vault at the rear of the store, which is filled with ceramic singing bowls. She closes the door, and darkness descends.
+^
+^A tone appears in the silence, ghostly at first, then growing. The sound seems to be moving around the dark room in a spiral. Astra begins singing in harmony with the tone, at first in unisons and octaves, then perfect fifts and major thirds. She begins to into words (or names?) in a language you don't recognize. The harmonies change, becoming strange and unearthly. Astra's voice is ululating, skipping between tritons and just-intonation perfect fourths and minor thirds. The sound becomes whirlpool, pulling you in an unexpected direction. You reach out to catch yourself, but the walls are suddenly far away and when you catch your balance, you are in...^";
+	playerto(atlantis_temple);
+	startdaemon(atlantis_temple);
+];
+
+[ Chaosbind_storyline;
+	achieved(29);
+	print "^As the man is looking away from the pillar towards his companion to gauge her reaction, the pillar suddenly changes form to that of a woman. Her marble torso is bare, but her body is angled away from the man who is grinding away at what is now the side of her hip.
+^
+^'Cretin! Cad!' the voice of the Goddess is sudden and sharp in the man's ear. He freezes, and the statue spits at him contemptuously. A spatter of gravel glances off his cheeks. 'How DARE you affront Eris thus!'
+^
+^The woman nearby is nearly doubled up laughing. Every time she tries to say something, she catches a glimpse of the flakes of marble Goddess-spit in her companion's beard and starts giggling again. Eris herself stretches and her marble bosom quivers with her chuckles. Her tone becomes sultry.
+^
+^'Perhaps we could leave this small-minded fellow behind for the rest of the day?' suggests the Goddess of Chaos, and she links arms with her new friend and they depart the temple towards the nearby fields of soft flax.^";
+	playerto(astral_enchantments,1);
+	print "^...the singing fades, and the temple dissolves into the glowing geometric patterns behind your closed eyelids. You find yourself being ushered back into the retail area of the store. You thank Astra for the very enlightening journey, and she departs. You feel privileged to have been part of a legend of Discordian Atlantis.^";
+];
+
 [ Miffyland_storyline;
 	miffyland.summernight = 1;
 	achieved(20);
-	"You pause to listen. From a rooftop above, you hear the Jerry Garcia classic 'Reuben and Cherise', well-sung by several people. You wait for a pause in the music and call up 'I love that song!' Cheerful voices invite you to come upstairs and join them on the upper porch balcony. You do so, and find yourself in a scene that reminds you of the best of your college days - a late night porch song session. The guitarists are good, everyone knows the words and has a decent ear, and you all do 'Reuben and Cherise' again, and the music and warm feeling of enthusiastic friendship is so thick the summer night air seems to shimmer and sparkle. You do a few more songs, and eventually the evening breaks up, everyone wondering if they will make it home before daylight so they just might get some sleep tonight.";
+	"You pause to listen. From a rooftop above, you hear the Jerry Garcia classic 'Reuben and Cherise', well-sung by several people. You wait for a pause in the music and call up 'I love that song!' Cheerful voices invite you to come upstairs and join them on the upper porch balcony. You do so, and find yourself in a scene that reminds you of the best of your college days - a late night porch song session. The guitarists are good, everyone knows the words and has a decent ear, and as you all sing 'Reuben and Cherise' again, the music and warm feeling of enthusiastic friendship is so thick the summer night air seems to shimmer and sparkle. You do a few more songs, and eventually the evening breaks up, everyone wondering if they will make it home before daylight so they just might get some sleep tonight.";
 ];
 
 [ Tellxeliaxochi_storyline;
@@ -777,3 +502,4 @@
 ^No matter when it is, the time is yours to choose
 ^There might be a perfect moment in the years you lose";
 ];
+
