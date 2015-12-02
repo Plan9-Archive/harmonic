@@ -432,6 +432,18 @@ Prop	future "Future" loth_backyard
 	description "Looking towards the Future, you see different stories tangled like climbing vines anchored to the ground here. The connections you are making now are seeds that will grow and yield a rich harvest. Songs around a fire, a rocking porch swing, long bike rides into the unknown, and the taste of long-forbidden fruits.",
 	has proper;
 
+Prop	chaos "Chaos" atlantis_temple
+	with
+	name 'chaos' 'discord' 'eris',
+	description "The radiantly mischevious essence of Chaos is here, the fickle goddess of the unpredictable fall of the cards.",
+	has proper;
+
+Prop	substance "Substance" atlantis_temple
+	with
+	name 'substance' 'matter' 'pillar',
+	description "The bedrock ground nature of material reality is here, the earthy substance of tangible embodiment.",
+	has proper;
+
 !============================================================================
 ! The takeable objects
 
@@ -574,3 +586,4 @@ object	space_pancakes "Space Pancakes"
 		}
 	],
 	has pluralname edible;
+

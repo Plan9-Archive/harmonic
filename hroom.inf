@@ -121,11 +121,18 @@ Room	atwood_shops "Atwood and Ohio shopping block"
 	cant_go "You can go n, e, s, w, and ne.";
 
 Room	astral_enchantments "Astral Enchantments"
-	with	
+	with
+	ceremony 0,	
 	description [;
 		print "This store buzzes with mystic energies. Complex artworks with twisting lines interweaving runic symbols adorn the walls. A glass display case of crystals, jewelry, and small sculptures is against the far wall. Bins of polished minerals are in the center, along with sage and incense. Buttons and stickers with provocative slogans, tapestries featuring Grateful Dead iconography, water pipes and rolling papers, printed guides to meditation and higher consciousness...your eyes can hardly absorb the profusion of beautiful, wonderful, enchanting artifacts of the paisley-and-patchouli tribe.^";
 		if (self hasnt visited)
 			print "^You can't believe you hadn't noticed this store before, it must be new - or perhaps your feeling that you are in a new and better universe is literally true, and you have ascended into a dimension with retail stores more attuned to your sensibilities. There is a tall man standing behind the counter. You launch into a fast-paced monologue about the stories we create amidst the branching of the quantum multiverse. He introduces himself as Chip and says 'I think you are definitely in the right place, and we can help you.' You agree completely.^";
+	],
+	each_turn [;
+		if (astral_enchantments.ceremony == 1) {
+			Astral_ceremony_storyline();
+			return true;
+		}
 	],
 	out_to atwood_shops,
 	w_to atwood_shops,
@@ -657,3 +664,35 @@ Room	tempest_gameworld "Tempest gameworld"
 		}
 		print "^There are ", (number)tempest_gameworld.enemies, " ", (string) tempest_gameworld.enemytype, " coming towards you from the demon well.^";
 	];
+
+Room	atlantis_temple "Atlantean Temple"
+	with
+	chaosdebate 0,
+	chaosbind false,
+	description [;
+		print "Your eye cannot even comprehend the strange geometries of this vast temple.^";
+		if (self hasnt visited)
+			print "^Two figures are walking across the floor, engaged in an angry debate. You realize you are non-corporeal, but you do have access to the abstraction layer here.^";
+	],
+	daemon "^The air is filled with the sound of voices singing harmonies you have never heard before.",
+	each_turn [; 
+		atlantis_temple.chaosdebate++;
+		switch(atlantis_temple.chaosdebate) {
+			1: print "^'I tell you that's nonsense! We live in an orderly universe, chaos is just the confusion of your weak mind.' His companion answers back: 'No, order is your mind trying to escape the confusion that exists within everything! You must embrace and accept chaos.'^";
+			2: print "^He glares at her. 'Fine then, if chaos is within everything and I should embrace it, I should find the Goddess of Chaos bound within this very pillar. Let her be my lover if you wish to be so quarrelsome!' And with that, the man forces a grotesque leer onto his face and presses his body up against the pillar, thrusting vigorously with his hips against the marble.^";
+			3: print "^His companion sighs and says 'You do not control when the Goddess of Chaos manifests, but I have no jealousy for her. If she chooses to be bound within substance, you and her might do as you wish!' The man continues his pantomime ravishment of the stone pillar.^";
+			default: print "^A man with an angry expression is thrusting his hips against a marble pillar. A woman stands near him, looking as if she is trying to keep a serious expression on her face and not giggle.^";
+		}
+		if ((atlantis_temple.chaosbind == true) && (atlantis_temple.chaosdebate >=4)){
+			Chaosbind_storyline();
+			return true;
+		}
+	],
+	before [;
+		sing:
+			give atlantis_temple light;
+			stopdaemon(atlantis_temple);
+			"You join your voice with the new, unfamiliar intervals, and feel a sudden crystallization. All of your senses have become attuned to new frequencies and modes of vibration.";
+	],
+	has ~light;
+
