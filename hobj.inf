@@ -441,7 +441,7 @@ Prop	chaos "Chaos" atlantis_temple
 Prop	substance "Substance" atlantis_temple
 	with
 	name 'substance' 'matter' 'pillar',
-	description "The bedrock ground nature of material reality is here, the earthy substance of tangible embodiment.",
+	description "The bedrock ground nature of material physicality is here, the earthy substance of tangible matter.",
 	has proper;
 
 !============================================================================

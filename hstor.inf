@@ -312,7 +312,7 @@
 	astral_enchantments.ceremony = 2;
 	print "^Chip greets you with a smile and says 'I can tell a lot has happened, I think you are ready for a Sound Oracle Ceremony.' You agree, and Astra appears from the back of the store. She is dressed in purple and is wearing several different skull-themed prints and jewelry. 'Chip has told me about you,' she says, 'this should be very interesting.' She brings you back into the small bank vault at the rear of the store, which is filled with ceramic singing bowls. She closes the door, and darkness descends.
 ^
-^A tone appears in the silence, ghostly at first, then growing. The sound seems to be moving around the dark room in a spiral. Astra begins singing in harmony with the tone, at first in unisons and octaves, then perfect fifts and major thirds. She begins to into words (or names?) in a language you don't recognize. The harmonies change, becoming strange and unearthly. Astra's voice is ululating, skipping between tritons and just-intonation perfect fourths and minor thirds. The sound becomes whirlpool, pulling you in an unexpected direction. You reach out to catch yourself, but the walls are suddenly far away and when you catch your balance, you are in...^";
+^A tone appears in the silence, ghostly at first, then growing. The sound seems to be moving around the dark room in a spiral. Astra begins singing in harmony with the tone, at first in unisons and octaves, then perfect fifts and major thirds. She begins to into words (or names?) in a language you don't recognize. The harmonies change, becoming strange and unearthly. Astra's voice is ululating, skipping between tritones and just-intonation perfect fourths and minor thirds. The sound becomes a whirlpool, pulling you in an unexpected direction. You reach out to catch yourself, but the walls are suddenly far away and when you find your balance, you are in...^";
 	playerto(atlantis_temple);
 	startdaemon(atlantis_temple);
 ];
@@ -362,37 +362,8 @@
 ^Xelia pauses and answers, 'I don't know what she'd think.'";
 ];
 
-[ Maysong_storyline;
-	achieved(4);
-	"I heard the song first at fifteen, an echo of a spring so evergreen
-^It bridged future and past, spanning unseen 
-^reality dream and the space between
-^A month of May the year could be any, where every day is a horn of plenty
-^Warm night air, the waves on the lake, all right there and make no mistake
-^Reeling and rocking past the shadow of doubt 
-^nothing like feeling that old in and out
-^I know what its like to be alone, no hint of action on my phone
-^I know how to groan and bitch and moan
-^But it ain't too much dope that's stealing your hope
-^In the dark groping for the end of your rope
-^With a little bit of luck you'll come unstuck
-^quack like a duck on the strange trip truck
-^I'm talking from experience, once you get traction
-^Even a middle-aged pianist can get action!
-^This month of May was like nothing before, 
-^Every time that I walked out the door
-^I fell in to a brand new story, each moment had its own kind of glory
-^It's hard to believe but my dreams did come true
-^No guarantees but it could happen to you
-^So keep your ears open for those magic songs
-^Spend the years hoping and singing along
-^The story and dreams that bloom in your mind
-^The quarry that gleams, the doom that you find
-^Flowery beams the moonlight unwinds...";
-];
-
 [ Bluelight_storyline;
-	achieved(5);
+	achieved(4);
 	"If I biked into the blue light, would my song still fill the air?
 ^If I chased after the green light, and I found you would you care?
 ^If I dissolved into clear light, would there be anybody there?
@@ -405,6 +376,35 @@
 ^I feel someone's arms around me, someone holds me tight
 ^And we rise in spiral flight up to the starry height
 ^Because we're all one rainbow star prismatic in the night";
+];
+
+[ Maysong_storyline;
+	achieved(5);
+	"I heard the song first at fifteen, an echo of a spring so evergreen
+^It bridged future and past, spanning unseen 
+^Reality dream and the space between
+^A month of May the year could be any, where every day is a horn of plenty
+^Warm night air, the waves on the lake, all right there and make no mistake
+^Reeling and rocking past the shadow of doubt 
+^Nothing like feeling that old in and out
+^I know what its like to be alone, no hint of action on my phone
+^I know how to groan and bitch and moan
+^But it ain't too much dope that's stealing your hope
+^In the dark groping for the end of your rope
+^With a little bit of luck you'll come unstuck
+^Quack like a duck on the strange trip truck
+^I'm talking from experience, once you get traction
+^Even a middle-aged pianist can get action!
+^This month of May was like nothing before, 
+^Every time that I walked out the door
+^I fell in to a brand new story, each moment had its own kind of glory
+^It's hard to believe but my dreams did come true
+^No guarantees but it could happen to you
+^So keep your ears open for those magic songs
+^Spend the years hoping and singing along
+^The story and dreams that bloom in your mind
+^The quarry that gleams, the doom that you find
+^Flowery beams the moonlight unwinds...";
 ];
 
 [ Outonthedock_storyline;

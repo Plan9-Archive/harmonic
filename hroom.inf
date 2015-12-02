@@ -683,7 +683,7 @@ Room	atlantis_temple "Atlantean Temple"
 			3: print "^His companion sighs and says 'You do not control when the Goddess of Chaos manifests, but I have no jealousy for her. If she chooses to be bound within substance, you and her might do as you wish!' The man continues his pantomime ravishment of the stone pillar.^";
 			default: print "^A man with an angry expression is thrusting his hips against a marble pillar. A woman stands near him, looking as if she is trying to keep a serious expression on her face and not giggle.^";
 		}
-		if ((atlantis_temple.chaosbind == true) && (atlantis_temple.chaosdebate >=4)){
+		if ((atlantis_temple.chaosbind == true) && (atlantis_temple.chaosdebate >=3)){
 			Chaosbind_storyline();
 			return true;
 		}
