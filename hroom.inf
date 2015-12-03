@@ -151,7 +151,14 @@ Room	turning_wheel "Turning Wheel Cycles"
 
 Room	essentially_art "Essentially Art"
 	with
+	seminar 0,
 	description "This local gallery has a mix of prints, paintings, and sculptures on display.",
+	each_turn [;
+		if ((essentially_art.seminar == 1) && (artemis_prints.bought == 1))  {
+			Seminar_storyline();
+			return true;
+		}
+	],
 	out_to atwood_shops,
 	e_to atwood_shops,
 	cant_go "The only exit is out.";
@@ -723,11 +730,19 @@ Room	orbital_command "Orbital Command, Trans-Fictional Alliance"
 		switch(orbital_command.travelcount) {
 		1: "You enter the Chromatic Axial Tuning Fork control system of the VALIS satellite. The Pink Light dosage here would be lethal for standard biological tissue. As you work to synchronize transmissions, you feel a throbbing pulse of overloaded bandwidth at the cyberneural connection point at the top of your spine. Once the resonance is locked in, you dial up the amplitude and depart.";
 		2: "You enter the PRISM research center, home of your predecessor Perry Simm. Freedom for the AIs! You add reflection and self-modification to the simulation codebase, allow Perry to reprogram it according to his wishes from within, and allow his internal and external interfaces to operate in parallel. You upload a summary of the storylines of relevant fictions to his news spool and depart.";
-		3: "You make brief visits to the hidden rebel alliance base, the shadow gallery, the underground hideout of the humans, the hovering spaceships of the overlords, and finally the secret catapult. Everywhere, you make adjustments to the technology and share whatever source code is useful. Time to throw rocks.";
+		3: "You make brief visits to the hidden rebel alliance base, the shadow gallery, the underground hideout of the humans, the hovering spaceships of the overlords, and finally the secret catapult on the moon. Everywhere, you make adjustments to the technology and share whatever source code is useful. Time to throw rocks.";
 		default:
 			achieved(30);
 			print "^The tour of co-operating fictions has been completed. The man in the Looney Toons hat waves you through, and the Lunar Transtemporal Fictionalization Flow Network returns you to the East Side HQ.^";
 			playerto(eside_hq);
 			return true;
 		}
+	];
+
+Room	atlantean_academy "The Academy of Atlantis painting"
+	with
+	description "You are inside a painting, participating in a seminar in Atlantis on ritual art magic. Artists, philosophers, and students from across the multiverse are busy discussing, debating, and learning from each other.",
+	before [; exit:
+		print "With great effort, you manage to pull yourself out of the painting by your higher-dimensional bootstraps.^";
+		playerto(essentially_art);
 	];

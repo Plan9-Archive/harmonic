@@ -189,10 +189,12 @@
 [ Firstlothvisit_storyline;
 	elginbday = 10;
 	eside_hq.fictour = 1;
+	essentially_art.seminar = 1;
+	move school_of_atlantis to essentially_art;
 	daynumber = 42;
 	settime(60,60);
 	achieved(21);
-	print "^'So THIS is what it feels like to be a superhero,' you grin, as you hop on Lunar Lightning. You feel the power of music and fiction and fate and your free choice to embrace all of it - and as you begin to pedal faster, you perceive an unfolding in the sky above you. The VALIS satellite! The Pink Beam that hit Phil Dick was just one note in a musical color-chord. Like a giant metal and ceramic flower opening up, the VALISpectrum Prismatic Reflector is coming online.
+	print "^'So THIS is what it feels like to be a superhero,' you grin, as you hop on Lunar Lightning. You feel the power of music and fiction and fate and your free choice to embrace all of it - and as you begin to pedal faster, you perceive something unfolding in the sky above you. The VALIS satellite! The Pink Beam that hit Phil Dick was just one note in a musical color-chord. Like a giant metal and ceramic flower opening up, the VALISpectrum Prismatic Reflector is coming online.
 ^
 ^The transmission is strong. You are receiving an original fictional identity, the character of exactly who you actually are - a crazed middle aged hippie on a bike, rolling through the night singing songs of Loonie Revolution, using Plan 9 namespaces to fight for the acceptance of madness, weaving chaotic joy from the ordered strands of the multiverse. You are The Harmonist.
 ^
@@ -319,11 +321,16 @@
 	playerto(orbital_command);
 ];
 
+[ Seminar_storyline;
+	essentially_art.seminar = 2;
+	print "^A woman about your age approaches you. 'I heard that you bought my Artemis print series, it's quite the coincidence you happened to walk in right now. There's a seminar going on about art and ritual magic, are you interested?' You nod eagerly. 'Excellent! Just step inside the frame here.' She points toward a familiar-looking painting, and you note with surprise she has a twin within the picture. You start to comment on this, but she is no longer beside you.^";
+];
+
 [ Astral_ceremony_storyline;
 	astral_enchantments.ceremony = 2;
 	print "^Chip greets you with a smile and says 'I can tell a lot has happened, I think you are ready for a Sound Oracle Ceremony.' You agree, and Astra appears from the back of the store. She is dressed in purple and is wearing several different skull-themed prints and jewelry. 'Chip has told me about you,' she says, 'this should be very interesting.' She brings you back into the small bank vault at the rear of the store, which is filled with ceramic singing bowls. She closes the door, and darkness descends.
 ^
-^A tone appears in the silence, ghostly at first, then growing. The sound seems to be moving around the dark room in a spiral. Astra begins singing in harmony with the tone, at first in unisons and octaves, then perfect fifts and major thirds. She begins to into words (or names?) in a language you don't recognize. The harmonies change, becoming strange and unearthly. Astra's voice is ululating, skipping between tritones and just-intonation perfect fourths and minor thirds. The sound becomes a whirlpool, pulling you in an unexpected direction. You reach out to catch yourself, but the walls are suddenly far away and when you find your balance, you are in...^";
+^A tone appears in the silence, ghostly at first, then growing. The sound seems to be moving around the dark room in a spiral. Astra begins singing in harmony with the tone, at first in unisons and octaves, then perfect fifths and major thirds. She begins to intone words (or names?) in a language you don't recognize. The harmonies change, becoming strange and unearthly. Astra's voice is ululating, skipping between tritones and just-intonation perfect fourths and minor thirds. The sound becomes a whirlpool, pulling you in an unexpected direction. You reach out to catch yourself, but the walls are suddenly far away and when you find your balance, you are in...^";
 	playerto(atlantis_temple);
 	startdaemon(atlantis_temple);
 ];

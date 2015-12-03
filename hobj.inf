@@ -236,6 +236,12 @@ Decor	arcade "arcade machines" rossinis_arcade,
 	],
 	has pluralname;
 
+Decor	figures "figures" atlantis_temple
+	with
+	name 'figures' 'people' 'man' 'woman' 'pillar' 'temple',
+	description "You can't make out any detail of anything here.",
+	before "You can't interact with anything other than the abstractions here.";
+
 !============================================================================
 ! The immobile prop objects
 
@@ -419,6 +425,18 @@ Prop	crystals "crystals and polished stones" astral_enchantments
 			}
 	],
 	has pluralname;
+
+Prop	school_of_atlantis "School of Atlantis painting"
+	with
+	name 'school' 'atlantis' 'painting' 'frame' 'picture',
+	description "The composition of this painting parallels 'The School of Athens' by Raphael, but the geometry is composed of tesseracts and Klein bottles and the figures are all dressed in outlandish costumes.",
+	before [;
+		enter: 
+			print "^With a confident suspension of disbelief, you fix your eye on one of the vanishing points of the four-dimensional perspective of the painting, and walk towards it. Your stomach gives a queasy twist, and with a feeling rather like stepping onto a top stair which is not actually there, you step into the painting.^";
+			playerto(atlantean_academy);
+			return true;
+	],
+	has enterable;
 
 Prop	past "Past" loth_backyard
 	with

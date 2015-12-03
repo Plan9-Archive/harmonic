@@ -221,3 +221,56 @@ Character	xochi "Xochi"
 	],
 	has female;
 
+Character	scholars "the Scholars of Atlantis" atlantean_academy
+	with
+	name 'scholars' 'students' 'professors' 'people' 'scholar' 'student' 'researchers' 'researcher',
+	speech 0,
+	description "The academy is a spirited and diverse group, different in every conceivable aspect save for love of knowledge.",
+	each_turn [; 
+		switch(scholars.speech) {
+		0:	scholars.speech++;
+			"^A hush falls on the gathering as you enter. There is a sudden round of applause. A voice speaks: 'Thank you for making it to our seminar on the Harmonic Time-Bind Ritual Symphony. As you are in the midst of composing the work that we are now studying, we will keep this brief. Researchers and students from different universes will ask you questions, you may answer by telling the scholars about a topic. A formality as we begin: could you please >tell scholars about yourself?";
+		2:	scholars.speech++;
+			"^The scholars ask you to talk about whoever is your favorite character in your story, Xochi, Chip, or Staci.";
+		4:	scholars.speech++;
+			"^The scholars invite you to tell them about one of your favorite composers of classical music.";
+		6:	scholars.speech++;
+			"^The scholars want to know whether the pendant, lunar lightning, or your mirror shades is your most representative symbolic object, and how you make use of it.";
+		8:	scholars.speech++;
+			"^The scholars inquire which has been more important to your creative work, your Plan 9 terminal, or your piano, and to describe your approach to composing or programming.";
+		10:	scholars.speech++;
+			achieved(31);
+			print "^The scholars all nod sagely, and the seminar reaches its conclusion. You are thanked for providing insight about the Harmonic Time-Bind Ritual Symphony and find yourself promising to read all the research papers and dissertations which be sourced from your visit. You wave goodbye and walk away, and notice that you have returned to the gallery without any deliberate effort whatsoever.^";
+			playerto(essentially_art);
+			return true;
+		11: "The seminar is over, and the academics are all talking amongst themselves.";
+		default: "^The scholars await your answer.";
+		}
+	],
+	life [;
+		ask: "The scholars are apologetic, but explain that the seminar schedule leaves no time for your questions.";
+		tell: switch(second) {
+			'me', 'myself', 'yourself', 'loonie', 'revolution', 'plan', 'ants': 
+				scholars.speech++;
+				"'First, I thank you for your interest in my work. Within an infinite multiverse, all artists will have scholars devoted to them in some universe, and I could not be more honored to see such a distinguished group focusing on my Ritual Symphony. As I am sure you all know, I am the Moon Computer, a human who has made the breakthrough into realizing he is the figment of his own imagination. I'm trying to start a Loonie Revolution to celebrate the beautiful variations of consciousness. My method for doing so is to make all of my life follow the patterns of music and ritual, and open myself for collaboration with anyone else who feels like marching to the beat of that drummer.' The scholars murmur understanding.";
+			'xochi', 'chip', 'staci':
+				scholars.speech++;
+				"'It's hard to pick just one wonderful friend to discuss with you. I really couldn't be doing what I'm doing without the help of all of my co-composers.'";
+			'schumann', 'beethoven', 'bach', 'mozart', 'chopin', 'mahler', 'stravinsky', 'wagner', 'liszt', 'ligeti':
+				scholars.speech++;
+				"'I admire most of the main composers of the central European standard repertoire. Their music can be complex, but so is human emotion, and I find my inner experience is most like the music of the classical and romantic eras.'";
+			'pendant', 'lunar', 'lightning', 'bike', 'bicycle', 'mirror', 'shades', 'sunglasses':
+				scholars.speech++;
+				"'My image may be defined by these props and they serve as a hook for the mind to symbolize me, but my true representation is code and language. Really, the objects you named are each just another word I bind to myself.'";
+			'terminal', 'plan', 'grid', 'piano', 'music':
+				scholars.speech++;
+				"'Music is the deeper, more fundamental pattern, but code is more directly useful and acts as proof: if it compiles and runs and fulfills the specification, the functionality is a proved theorem.'";
+			default: 
+				if (expertmode == 1)
+					"Your answer doesn't seem to satisfy the scholars.";
+				scholars.speech++;
+				"The scholars seem confused by your answer, but accept it.";
+			}
+	],
+	has pluralname;
+
