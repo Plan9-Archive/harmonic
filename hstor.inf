@@ -8,7 +8,7 @@
 	achieved(0);
 	print "^You announce ANTS by posting an imaginary scene from Plan 9 from Outer Space to the 9fans mailing list. It is the one-year anniversary of your father's death. He was a law professor, and he never understood your values. You search for information on related Plan 9 projects and find a recent patent on a familiar concept. Years earlier, you wrote a free software 9p persistent-pipe muxer called hubfs. The patent the Joint Consolidated Networking corporation was granted is for 9p persistent pipe-muxing.
 ^
-^You feel a sudden internal change, as if a valve has broken and a high-pressure jet of intense emotion and information is entering your mind at right angles to reality. You spent endless hours talking with your father, and you know how he thought. He never agreed with your anti-authoritarian radicalism, but seeing this abuse of the patent system would have changed his mind - you can feel it changing. Your mind has become a virtual machine, running the computer program of your father's soul in parallel with your own.^";
+^You feel an internal change, as if a valve has broken and a high-pressure jet of intense emotion and information is entering your mind at right angles to reality. You spent endless hours talking with your father, and you know how he thought. He never agreed with your anti-authoritarian radicalism, but seeing this abuse of the patent system would have changed his mind - you can feel it changing. Your mind has become a virtual machine, running the computer program of your father's soul in parallel with your own.^";
 !	getenter();
 	print "^(You are ready to exit your home, go south, and enter Coffee Lion Cafe.)^";
 ];
@@ -25,7 +25,7 @@
 ^
 ^Miraculously, she smiles warmly at you. 'That's ok, thank you. It's fine to be honest about what you feel.' You feel overwhelmed by a warm buzzing sensation, but you respond fluently. 'Thanks, that means a lot to hear someone say. I've been pretty isolated with a computer programming project lately, and it's felt hard to communicate with people. Sometimes I feel like a machine.' She replies, 'Well, there are a lot more people on your level than you realize. My name is Xochi, by the way. Also, I might be a robot myself!'
 ^
-^You both laugh, you introduce yourself, and you walk out of the cafe higher than a kite aloft in the skies of Jupiter. Not only had your sudden impulsive flirtation (quite outside your usual character) gone well, but she was smart and funny too. You return home feeling like reality has been magically transformed for the better and you have been freed of your insecurities and fears. No more inhibition of your wild and eccentric impulses. You will use the story of your patent dispute with the JCN corporation to inspire others to join together in a glorious struggle to free the human spirit from everything that limits our creativity.^";
+^You both laugh, you introduce yourself, and you walk out of the cafe higher than a kite aloft in the skies of Jupiter. Not only had your impulsive flirtation (quite outside your usual character) gone well, but she was smart and funny too. You return home feeling reality has been magically transformed for the better and you have been freed of your insecurities and fears. No more inhibition of your wild and eccentric impulses. You will use the story of your patent dispute with the JCN corporation to inspire others to join together in a glorious struggle to free the human spirit from everything that limits our creativity.^";
 !	getenter();
 	playerto(milw_street,1);
 	print "^(3 April 2013 - Outside my house)
@@ -159,7 +159,7 @@
 	achieved(19);
 	daynumber = 36;
 	settime(60,60);
-	print "^As you step onto the dock extending out across the shimmering waves of Lake Mendota, you feel time stretch like soft taffy. All of your life that has brought you here, the arc from childhood to present, is suddenly fresh and clear in your mind. A future of joy, delight, and purpose stretches limitlessly onward. The present moment expands to become large enough to include both path and future. It is like a perfect hyperspherical mirror at the center of your light-cone, reflecting the totality of your existence. You realize that you have always been, and always will be, here on the dock in this purple-pink-golden moment.
+	print "^As you step onto the dock extending out across the shimmering waves of Lake Mendota, you feel time stretch like soft taffy. All of your life that has brought you here, the arc from childhood to present, is fresh and clear in your mind. A future of joy, delight, and purpose stretches limitlessly onward. The present moment expands to become large enough to include both path and future. It is like a perfect hyperspherical mirror at the center of your light-cone, reflecting the totality of your existence. You realize that you have always been, and always will be, here on the dock in this purple-pink-golden moment.
 ^
 ^You have known Staci for over twenty years. Ten years ago, when Elgin was two, she made you his godfather. Some years, you saw her and Clark a few times a month, usually just sitting and talking amidst the chaos of raising children in a small apartment. You always liked her, but never had a chance to talk about anything very serious or personal. In past years, she often looked tired and worn-down by stress. Now, here on the dock at Loth, she seems radiantly happy.
 ^
@@ -296,7 +296,7 @@
 ^
 ^Xochi smiles and laughs, 'It's been amazing! I've been writing so much, this has been a wonderful spring.'
 ^
-^Warm major chords of strings and french horns are thrumming within you. This is perfect. This clearly marks a decisive point in the composition. You sit and write: 'End of the first movement of Harmonic Time-Bind Ritual Symphony. And now, the second movement begins!^";
+^Warm major chords of strings and french horns are thrumming within you. This is perfect. This is clearly a decisive turning point in the composition. You sit and write: 'End of the first movement of Harmonic Time-Bind Ritual Symphony. And now, the second movement begins!'^";
 ];
 
 [ Spacepancakes_storyline;
@@ -348,9 +348,9 @@
 
 [ Chaosbind_storyline;
 	achieved(29);
-	print "^As the man is looking away from the pillar towards his companion to gauge her reaction, the pillar suddenly changes form to that of a woman. Her marble torso is bare, but her body is angled away from the man who is grinding away at what is now the side of her hip.
+	print "^As the man is looking away from the pillar towards his companion to gauge her reaction, the pillar changes form to that of a woman. Her marble torso is bare, but her body is angled away from the man who is grinding away at what is now the side of her hip.
 ^
-^'Cretin! Cad!' the voice of the Goddess is sudden and sharp in the man's ear. He freezes, and the statue spits at him contemptuously. A spatter of gravel glances off his cheeks. 'How DARE you affront Eris thus!'
+^'Cretin! Cad!' the voice of the Goddess is sharp in the man's ear. He freezes, and the statue spits at him contemptuously. A spatter of gravel glances off his cheeks. 'How DARE you affront Eris thus!'
 ^
 ^The woman nearby is nearly doubled up laughing. Every time she tries to say something, she catches a glimpse of the flakes of marble Goddess-spit in her companion's beard and starts giggling again. Eris herself stretches and her marble bosom quivers with her chuckles. Her tone becomes sultry.
 ^
@@ -372,9 +372,9 @@
 ^She's a love bomb she'll blow you up 
 ^With the force of kindness as she's filling your cup
 ^You can tell her she's cute and she won't shoot you down 
-^Whe's really a beaut with a brain that's profound
+^She's really a beaut with a brain that's profound
 ^From a land that's merry to our town of burial grounds 
-^Whe won't lead you on or run you around
+^She won't lead you on or run you around
 ^But I'm still a pawn in a game so old its covered in mold 
 ^I'm a mossy stone that's grown alone
 ^But the bombshell shrapnel flying like bees 

@@ -32,12 +32,14 @@
 ! Story passes v5 z-machine limits (with infix/debugging compiled in!)
 ! Song compositions added, harmonist bike ride, 351 points total
 ! 23,000 word source code file, time to split it into segments
+!
+! 4 December 2015 fictional scenes in eside hq, astra, ess art, c lion
 
 !============================================================================
 ! Configuration constants
 
-Release 3;
-Serial "151201";
+Release 4;
+Serial "151204";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;

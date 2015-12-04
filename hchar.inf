@@ -243,7 +243,7 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 			print "^The scholars all nod sagely, and the seminar reaches its conclusion. You are thanked for providing insight about the Harmonic Time-Bind Ritual Symphony and find yourself promising to read all the research papers and dissertations which be sourced from your visit. You wave goodbye and walk away, and notice that you have returned to the gallery without any deliberate effort whatsoever.^";
 			playerto(essentially_art);
 			return true;
-		11: "The seminar is over, and the academics are all talking amongst themselves.";
+		11: "^The seminar is over, and the academics are all talking amongst themselves.";
 		default: "^The scholars await your answer.";
 		}
 	],

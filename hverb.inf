@@ -212,9 +212,7 @@
 ];
 
 [ Helpsub;
-	"If you are new to Interactive Fiction, move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). A guide:
-^
-^http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
+	"If you are new to Interactive Fiction, move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). A guide: http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
 ^
 ^An important verb is the >bind command from the Plan 9 operating system. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. The >expert command makes the puzzles and story progression more challenging. >standard will return the game to normal difficulty. >verblist will show all verbs needed to score all points.^";
 ];
