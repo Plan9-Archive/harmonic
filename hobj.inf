@@ -249,11 +249,11 @@ Decor	alchemy_supplies "alchemical supplies" gelato_alchemy_lab
 
 Decor	alchemy_apparatus "alchemical apparatus" gelato_alchemy_lab
 	with 
-	name 'alchemical' 'apparatus' 'maze' 'spheres' 'tubes' 'button' 'cylinder' 'rod',
+	name 'alchemical' 'apparatus' 'maze' 'spheres' 'tubes' 'button' 'cylinder' 'glass',
 	description "You thought the cabling of your basement grid was complex, but it is simplicity compared to the knotted spirals of tubing connecting the numerous distillation and condensation chambers of the alchemy apparatus. Glass, chromed steel, tarnished brass, rubber, plastic, wood, even cloth and fur, are all used as materials for different spheres, cylinders, and curved textured surfaces.",
 	react_before [;
 		rub: gelato_alchemy_lab.brew++;
-			"You place your hands on the glass spheres and gently rub them until you feel they are the same temperature as your skin.";
+			"You place your hands on the glass spheres and slowly rub them until you feel they are the same temperature as your skin.";
 		push: gelato_alchemy_lab.brew++;
 			"You place your finger on the button. It thrums with the vibration of the machine. You gently press it inward, and a soft sigh of escaping vapor leaves the alchemical apparatus. Steam and bubbles appear in some of the transparent connecting tubes.";
 	];

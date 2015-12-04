@@ -112,6 +112,15 @@ Class	Room
 	description "UNIMPLEMENTED ROOM DESCRIPTION",
 	has	light;
 
+Class	Scene
+	with
+	description "UNIMPLEMENTED SCENE DESCRIPTION",
+	before [;
+		drop: "Mulitverse travel protip: do NOT drop your items while visiting alternate universes.";
+	],
+	cant_go "Your presence in this branch of the multiverse is anchored to this scene, you must participate before you can leave.",
+	has light;
+
 Class	Decor
 	with
 	description "UNIMPLEMENTED DECOR DESCRIPTION",

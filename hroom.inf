@@ -651,7 +651,7 @@ Room	andrews_cabin "Andrew's Cabin"
 	with
 	description "You are on the shore of Sturgeon Bay. There is a beautiful wood and stone cabin home here. After Halloween night out on the town, you visited Birmingham's, a family owned tavern full of tradition and memory. You bought firewood there, and after a brief struggle with wind and damp, you are circled round a roaring, crackling fire. Sitting and talking with friends old and new, you feel deep joy and contentment. The warmth of the fire circle is within your heart now, warming you from within on the rest of your journey.";
 
-Room	tempest_gameworld "Tempest gameworld"
+Scene	tempest_gameworld "Tempest gameworld"
 	with
 	description "You are in an abstract realm of bright red lines. You are atop a hollow multisided shape, looking downward. Far below, geometric demons are crawling up the walls toward you. Dodge, shoot, and bomb to survive!",
 	enemies 0,
@@ -681,7 +681,7 @@ Room	tempest_gameworld "Tempest gameworld"
 		print "^There are ", (number)tempest_gameworld.enemies, " ", (string) tempest_gameworld.enemytype, " coming towards you from the demon well.^";
 	];
 
-Room	atlantis_temple "Atlantean Temple"
+Scene	atlantis_temple "Atlantean Temple"
 	with
 	chaosdebate 0,
 	chaosbind false,
@@ -712,7 +712,7 @@ Room	atlantis_temple "Atlantean Temple"
 	],
 	has ~light;
 
-Room	orbital_command "Orbital Command, Trans-Fictional Alliance"
+Scene	orbital_command "Orbital Command, Trans-Fictional Alliance"
 	with
 	travelcount 0,
 	description [;
@@ -744,7 +744,7 @@ Room	orbital_command "Orbital Command, Trans-Fictional Alliance"
 		}
 	];
 
-Room	atlantean_academy "The Academy of Atlantis painting"
+Scene	atlantean_academy "The Academy of Atlantis painting"
 	with
 	description "You are inside a painting, participating in a seminar in Atlantis on ritual art magic. Artists, philosophers, and students from across the multiverse are busy discussing, debating, and learning from each other.",
 	before [; exit:
@@ -752,7 +752,7 @@ Room	atlantean_academy "The Academy of Atlantis painting"
 		playerto(essentially_art);
 	];
 
-Room	gelato_alchemy_lab "The Alchemy Lab, under Coffee Lion"
+Scene	gelato_alchemy_lab "The Alchemy Lab, under Coffee Lion"
 	with
 	brew 0,
 	description "So this is why the espresso and gelato at Coffee Lion is so spiritually invigorating. Shelves line each wall of the room, each filled with rows and rows of different colored bottles filled with various plants and minerals. In the center of the room is the intimidatingly complex alchemical apparatus, a three (or more?) dimensional maze of glass spheres and interconnecting tubes.",

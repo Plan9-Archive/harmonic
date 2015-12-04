@@ -237,7 +237,7 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 		6:	scholars.speech++;
 			"^The scholars want to know whether the pendant, lunar lightning, or your mirror shades is your most representative symbolic object, and how you make use of it.";
 		8:	scholars.speech++;
-			"^The scholars inquire which has been more important to your creative work, your Plan 9 terminal, or your piano, and to describe your approach to composing or programming.";
+			"^The scholars inquire which has been more important to your creative work, your terminal, or your piano, and to describe your approach to composing or programming.";
 		10:	scholars.speech++;
 			achieved(31);
 			print "^The scholars all nod sagely, and the seminar reaches its conclusion. You are thanked for providing insight about the Harmonic Time-Bind Ritual Symphony and find yourself promising to read all the research papers and dissertations which be sourced from your visit. You wave goodbye and walk away, and notice that you have returned to the gallery without any deliberate effort whatsoever.^";
