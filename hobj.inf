@@ -242,6 +242,22 @@ Decor	figures "figures" atlantis_temple
 	description "You can't make out any detail of anything here.",
 	before "You can't interact with anything other than the abstractions here.";
 
+Decor	alchemy_supplies "alchemical supplies" gelato_alchemy_lab
+	with
+	name 'shelves' 'bottles' 'plants' 'minerals',
+	description "There wide variety of shapes and colors of the bottles is exceeded by the diversity and strangeness of the materials identified on the labels. Traditional herbs mingle with exotica like seemingly empty jars labeled 'Armadillo Dreams' and 'Large Even Primes'";
+
+Decor	alchemy_apparatus "alchemical apparatus" gelato_alchemy_lab
+	with 
+	name 'alchemical' 'apparatus' 'maze' 'spheres' 'tubes' 'button' 'cylinder' 'rod',
+	description "You thought the cabling of your basement grid was complex, but it is simplicity compared to the knotted spirals of tubing connecting the numerous distillation and condensation chambers of the alchemy apparatus. Glass, chromed steel, tarnished brass, rubber, plastic, wood, even cloth and fur, are all used as materials for different spheres, cylinders, and curved textured surfaces.",
+	react_before [;
+		rub: gelato_alchemy_lab.brew++;
+			"You place your hands on the glass spheres and gently rub them until you feel they are the same temperature as your skin.";
+		push: gelato_alchemy_lab.brew++;
+			"You place your finger on the button. It thrums with the vibration of the machine. You gently press it inward, and a soft sigh of escaping vapor leaves the alchemical apparatus. Steam and bubbles appear in some of the transparent connecting tubes.";
+	];
+
 !============================================================================
 ! The immobile prop objects
 
@@ -604,4 +620,18 @@ object	space_pancakes "Space Pancakes"
 		}
 	],
 	has pluralname edible;
+
+object gelato_brew "affogato brew of gelato and espresso"
+	with
+	name 'brew' 'gelato' 'espresso' 'affogato',
+	description "An indescribably sensual blend of sweet creamy gelato and dark bitter espresso, this intoxicating potion beckons you to drink it.",
+	before [;
+		drink:
+			bikeskill++;
+			remove gelato_brew;
+			"The sweet beverage caresses your tongue with flavor. The sufferings of the body are redeemed by sensations like this. In just a moment, you find yourself slurping the final delicious drops. Your body and muscles are filled with vibrating energy.
+^
+^(Your biking skill and endurance has increased)";
+	],
+	has edible;
 

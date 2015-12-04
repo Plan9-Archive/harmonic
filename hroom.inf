@@ -521,6 +521,7 @@ Room	mon_cot "Monona Drive and Cottage Grove Road"
 Room	coffee_lion "Coffee Lion Cafe"
 	with
 	xeliaseen 0,
+	alchemy 0,
 	description [;
 		print "Light streams in through the tall glass windows at the front of the cafe. A display case of homemade gelato flavors is by the door. A window for drive-through customers is in the rear corner. Numerous cat-themed decorations adorn the walls and counters.^";
 	],
@@ -533,6 +534,10 @@ Room	coffee_lion "Coffee Lion Cafe"
 			self.xeliaseen = 2;
 			print "^Xochi isn't working today, but Xelia is. You have noticed she and Xochi seem to be friends. You are interested in talking to her, too.^";
 			return false;
+		}
+		if (coffee_lion.alchemy == 1) {
+			Alchemy_storyline();
+			return true;
 		}
 	],
 	before [;
@@ -745,4 +750,22 @@ Room	atlantean_academy "The Academy of Atlantis painting"
 	before [; exit:
 		print "With great effort, you manage to pull yourself out of the painting by your higher-dimensional bootstraps.^";
 		playerto(essentially_art);
+	];
+
+Room	gelato_alchemy_lab "The Alchemy Lab, under Coffee Lion"
+	with
+	brew 0,
+	description "So this is why the espresso and gelato at Coffee Lion is so spiritually invigorating. Shelves line each wall of the room, each filled with rows and rows of different colored bottles filled with various plants and minerals. In the center of the room is the intimidatingly complex alchemical apparatus, a three (or more?) dimensional maze of glass spheres and interconnecting tubes.",
+	each_turn [;
+		switch(gelato_alchemy_lab.brew) {
+		0: 	self.brew++;
+			"^A minute after your arrival, you hear footsteps on the stairs and Xochi and Xelia join you. 'We only have a few minutes, but we thought you'd really enjoy this. We're going to show you how we make our special gelato flavors. Xochi gathers several jars from the shelves, and adds a few pinches of the ingredients in each. You can't read the labels. Xelia tightens a few connections in the apparatus.
+^
+^'The first step is bringing the reaction chambers to a warm but not hot temperature.' Xochi points to a pair of glass spheres on the upper part of the machine. 'Rub these with your hands to put the right amount of heat into them.'";
+		2:	self.brew++;
+			"^'Next, you need to push this button to start the reaction,' continues Xelia, gesturing.";
+		4:	self.brew++;
+			"^'Now, insert the cylinder so it will collect the gelato as it is synthesized,' explains Xochi.";
+		default: "Xelia and Xochi are waiting for you to operate the apparatus.";
+		}
 	];

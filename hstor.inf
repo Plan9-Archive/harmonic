@@ -188,6 +188,7 @@
 
 [ Firstlothvisit_storyline;
 	elginbday = 10;
+	coffee_lion.alchemy = 1;
 	eside_hq.fictour = 1;
 	essentially_art.seminar = 1;
 	move school_of_atlantis to essentially_art;
@@ -309,6 +310,16 @@
 	space_pancakes.ritual = 1;
 	achieved(24);
 	print "^It is New Moon, time for the ritual for Hecate. You face away from the crossroads at the edge of the city, and start eating one of the Space Pancakes. With each bite, you say 'I eat death and become life. Hecate, I respect you.' After eating half the pancake, keeping your face turned away, you toss the other half toward the crossroads as an offering. The ritual is complete.^";
+];
+
+[ Alchemy_storyline;
+	coffee_lion.alchemy = 2;
+	print "As you walk in, you are excited to see both Xochi and Xelia working today. The store is busy right now, so you order your drink and sit, hoping to find a chance to talk to them. As they are working, they maintain a quiet dialogue punctuated by bursts of shared laughter. You are trying not to listen in, but you wonder if they are talking about you. Occasionally you see one of them cast a glance in your direction.
+^
+^Xelia notices you watching them and whispers something to Xochi. Xochi turns and motions for you to come speak to them. They both lean forward toward you and you notice their faces are slightly flushed from all the laughter. 'Since you are here every day and are always so nice to us,' begins Xochi, 'we decided we should give you a special treat,' continues Xelia. They look at each other with half-hidden smiles.
+^
+^'Come down to the basement where we make the gelato,' Xochi says, unlocking a door behind the counter and ushering you through it, 'you can taste something special.'^"; 
+	playerto(gelato_alchemy_lab);
 ];
 
 [ Hqfictour_storyline;

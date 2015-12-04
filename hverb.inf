@@ -114,6 +114,7 @@
 	29: "binding Chaos onto Substance in Atlantis";
 	30: "touring related Fictions with Ernest";
 	31: "helping Atlantean scholars understand your work";
+	32: "brewing a special affogato";
 	}
 ];
 
@@ -286,7 +287,19 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 378 points. 27 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 387 points. 27 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+];
+
+[ Insertcylsub;
+	if(location ~= gelato_alchemy_lab)
+		"You don't see that here.";
+	move gelato_brew to player;
+	achieved(32);
+	print "^You firmly insert the cylinder into the output junction of the tubes connected to the reaction spheres. Creamy gelato seems to condense at the intersection point and drip slowly down the inner edges of the cylinder. After a moment, it is half filled. Xochi and Xelia each add a shot of freshly brewed espresso to create an affogato.
+^
+^You hear the sound of the customer service bell being rung upstairs. 'Perfect timing!' they say in unison, then glance at each other and laugh again. You are ushered back upstairs with a tall cylinder of frothy gelato-espresso blended brew.^";
+	playerto(coffee_lion);
+	return true;
 ];
 
 [ Lunarsub;
@@ -460,7 +473,7 @@
 
 [ Xyzzysub;
 	print "There is a trans-dimensional short-circuit of interactive fiction tradition, and you catch a brief glimpse of a brick building near a stream and a metal grate before you blink and find yourself...^";
-	playerto(home);
+	playerto(milw_street);
 ];
 
 !============================================================================
@@ -483,6 +496,7 @@ Verb "footnote" *	number	-> Footnote;
 Verb "help" *	-> Help;
 Verb "hint" *	-> Hint
 	* noun	-> Hint;
+Extend "insert" * 'cylinder'	-> Insertcyl;
 Verb "lunar" *	-> Lunar;
 Verb "namespace" "ns" *	->Namespace;
 Verb "pet" * noun	-> Pet;
