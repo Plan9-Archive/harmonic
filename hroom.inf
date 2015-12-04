@@ -22,7 +22,8 @@ Room    milw_street "Outside my house"
 	sw_to atwood_av,
 	s_to mon_cot,
 	ne_to etown,
-	cant_go "You go for a brief walk in the neighborhood, then return home. You may travel sw, s, ne, or enter your house.";
+	cant_go "You go for a brief walk in the neighborhood, then return home. You may travel sw, s, ne, or enter your house.",
+	has outside;
 
 Room	home "Inside my house"
 	with	
@@ -101,7 +102,8 @@ Room	atwood_av "Atwood Avenue"
 	ne_to milw_street,
 	se_to mon_cot,
 	w_to willy_east,
-	cant_go "You can go w, n, ne, and se.";
+	cant_go "You can go w, n, ne, and se.",
+	has outside;
 
 Room	atwood_shops "Atwood and Ohio shopping block"
 	with	
@@ -118,15 +120,18 @@ Room	atwood_shops "Atwood and Ohio shopping block"
 	n_to turning_wheel,
 	w_to essentially_art,
 	ne_to afterlife_door,
-	cant_go "You can go n, e, s, w, and ne.";
+	cant_go "You can go n, e, s, w, and ne.",
+	has outside;
 
 Room	astral_enchantments "Astral Enchantments"
 	with
 	ceremony 0,	
 	description [;
 		print "This store buzzes with mystic energies. Complex artworks with twisting lines interweaving runic symbols adorn the walls. A glass display case of crystals, jewelry, and small sculptures is against the far wall. Bins of polished minerals are in the center, along with sage and incense. Buttons and stickers with provocative slogans, tapestries featuring Grateful Dead iconography, water pipes and rolling papers, printed guides to meditation and higher consciousness...your eyes can hardly absorb the profusion of beautiful, wonderful, enchanting artifacts of the paisley-and-patchouli tribe.^";
-		if (self hasnt visited)
+		if (self hasnt visited) {
+			eventcount++;
 			print "^You can't believe you hadn't noticed this store before, it must be new - or perhaps your feeling that you are in a new and better universe is literally true, and you have ascended into a dimension with retail stores more attuned to your sensibilities. There is a tall man standing behind the counter. You launch into a fast-paced monologue about the stories we create amidst the branching of the quantum multiverse. He introduces himself as Chip and says 'I think you are definitely in the right place, and we can help you.' You agree completely.^";
+		}
 	],
 	each_turn [;
 		if (astral_enchantments.ceremony == 1) {
@@ -142,8 +147,10 @@ Room	turning_wheel "Turning Wheel Cycles"
 	with
 	description [;
 		print "Madison has many bike shops, but this is the one for you. A wide variety of bicycles and accessories fills the front of the store, and a workshop is toward the rear. Someone is working on a partly disassembled bicycle on a maintenance mount.^";
-		if (self hasnt visited)
+		if (self hasnt visited) {
+			eventcount++;
 			print "^Getting back into bicycling has been something you have been meaning to do for a few years. You tell the owner you are in search of the 'ultimate hippiecycle' and he sends you down into the basement to search for a suitable prototype amongst the forest of old bikes. Your eye is caught by a Salsa covered with colorful peppers - which turns out to be the owner's former touring bike, which he criss-crossed the country on during his 20s. 'I'll find something special for you as soon as I can,' he promises.^";
+		}
 	],
 	out_to atwood_shops,
 	s_to atwood_shops,
@@ -191,7 +198,8 @@ Room	willy_east "Willy Street, east end"
 	in_to willy_coop,
 	e_to atwood_av,
 	w_to willy_west,
-	cant_go "You can go e, w, or in.";
+	cant_go "You can go e, w, or in.",
+	has outside;
 
 Room	willy_coop "Willy St. Grocery Co-op"
 	with
@@ -227,13 +235,6 @@ Room	willy_west "Willy Street, west end"
 	description [;
 		print "The west end of Williamson street is where the east side of Madison ends and the downtown area begins. A tangle of memories from different decades of your life is woven into the landscape of the city here. Lady Wisdom's coffeeshop is on the south side of the street, radiating bohemian charm acquired from decades of service to local culture. John Nolen drive curves around the lake to the west.^";
 	],
-	after [; go:
-		if (elginbday == 1) {
-			if ((expertmode == true) && (turning_wheel hasnt visited))
-				return false;
-			Bdayinvite_storyline();
-		}
-	],
 	daemon [;
 		if (location == turning_wheel) {
 			remove xochi;
@@ -251,7 +252,8 @@ Room	willy_west "Willy Street, west end"
 	in_to lady_wisdom,
 	e_to willy_east,
 	w_to john_nolen,
-	cant_go "You can go e, nw, w, or in.";
+	cant_go "You can go e, nw, w, or in.",
+	has outside;
 
 Room	lady_wisdom "Lady Wisdom's Coffeeshop"
 	with	
@@ -285,7 +287,8 @@ Room	john_nolen "John Nolen Drive"
 	n_to cap_square,
 	w_to miffyland,
 	e_to willy_west,
-	cant_go "You can go n, nw, w, or e.";
+	cant_go "You can go n, nw, w, or e.",
+	has outside;
 
 Room	cap_square "Capitol Square"
 	with	
@@ -297,7 +300,8 @@ Room	cap_square "Capitol Square"
 	s_to john_nolen,
 	w_to state_street,
 	n_to james_madison,
-	cant_go "You can go n, w, s, or se.";
+	cant_go "You can go n, w, s, or se.",
+	has outside;
 
 Room	state_street "State Street"
 	with
@@ -334,7 +338,8 @@ Room	state_street "State Street"
 	s_to miffyland,
 	e_to cap_square,
 	n_to mendota_lakeside,
-	cant_go "You can go s, n or e.";
+	cant_go "You can go s, n or e.",
+	has outside;
 
 Room	miffyland "Miffyland, the student ghetto"
 	with
@@ -362,28 +367,32 @@ Room	miffyland "Miffyland, the student ghetto"
 			"You need to be in strong biking condition in addition to riding your bicycle to ride in that direction.";
 		return sw_trail;
 	],
-	cant_go "You can go n or e. You need to be a strong cyclist to ride sw.";
+	cant_go "You can go n or e. You need to be a strong cyclist to ride sw.",
+	has outside;
 
 Room	sw_trail "Southwest greenspace, on the bike trail"
 	with
 	description "You are in a large expanse of forest and prairie that rings the southern side of Madison. The bike trail wends its way alongside ponds, railroad tracks, and parks. The air is several degrees cooler than it is downtown. The trail curves alongside cattails toward the southeast.",
 	ne_to miffyland,
 	se_to countryside,
-	cant_go "You can ride southeast into the countryside, or return to the city to the northeast.";
+	cant_go "You can ride southeast into the countryside, or return to the city to the northeast.",
+	has outside;
 
 Room	countryside "Countryside, on the bike trail"
 	with
 	description "You have reached the rolling hills and farmland of the southern Wisconsin countryside. The narrow highway nearby passes cornfields, small streams, and traverses a one-lane bridge. Without buildings to hold it up, the sky comes right down to the ground here, and you are biking through it, hardly conscious of your legs moving, just long quiet minutes of the landscape rolling by alongside you. Forks of the path return to the city northwest and northeast.",
 	nw_to sw_trail,
 	ne_to se_trail,
-	cant_go "This is as far away from the city as you feel like biking. You can head back to the nw or ne.";
+	cant_go "This is as far away from the city as you feel like biking. You can head back to the nw or ne.",
+	has outside;
 
 Room	se_trail	"Southeast bike trail, by the marshes"
 	with
 	description "A series of marshes follow the chain of lakes southeast of the city, Monona, Waubesa, and Kegonsa. The bike path meanders alongside them, and a wide variety of birds call out to each other, commenting on you as you pass. The open countryside lies to the southwest.",
 	nw_to mon_mid,
 	sw_to countryside,
-	cant_go "You can head back into the city to the northwest, or ride southwest to the countryside.";
+	cant_go "You can head back into the city to the northwest, or ride southwest to the countryside.",
+	has outside;
 
 Room	james_madison "James Madison Park"
 	with
@@ -394,7 +403,8 @@ Room	james_madison "James Madison Park"
 	],
 	s_to cap_square,
 	w_to mendota_lakeside,
-	cant_go "You can go s or w.";
+	cant_go "You can go s or w.",
+	has outside;
 
 Room	mendota_lakeside "Lake Mendota shoreline residences"
 	with
@@ -413,7 +423,8 @@ Room	mendota_lakeside "Lake Mendota shoreline residences"
 	nw_to loth_backyard,
 	w_to loth_greatroom,
 	in_to loth_greatroom,
-	cant_go "You can go s, e, nw, or in.";
+	cant_go "You can go s, e, nw, or in.",
+	has outside;
 
 Room	loth_backyard "Lothlorien co-op, the back yard"
 	with
@@ -516,7 +527,8 @@ Room	mon_cot "Monona Drive and Cottage Grove Road"
 	n_to milw_street,
 	nw_to atwood_av,
 	s_to mon_mid,
-	cant_go "Exits are n, nw, s, and in.";
+	cant_go "Exits are n, nw, s, and in.",
+	has outside;
 
 Room	coffee_lion "Coffee Lion Cafe"
 	with
@@ -566,7 +578,8 @@ Room	mon_mid "Monona Drive, by a weathered strip-mall"
 			"You need to be in strong biking condition in addition to riding your bicycle to ride in that direction.";
 		return se_trail;
 	],
-	cant_go "You can go n or in.";
+	cant_go "You can go n or in.",
+	has outside;
 
 Room	rossinis_pizza "Rossini's Pizza and Vintage Arcade"
 	with
@@ -607,7 +620,8 @@ Room	etown "Northeast edge of town"
 			"You need to ride a bicycle to continue in that direction. If you own one, call it with the command >lunar.";
 		return ritual_spot;
 	],
-	cant_go "You can go ne, sw, or in.";
+	cant_go "You can go ne, sw, or in.",
+	has outside;
 
 Room	ritual_spot "Ritual spot"
 	with
@@ -750,7 +764,8 @@ Scene	atlantean_academy "The Academy of Atlantis painting"
 	before [; exit:
 		print "With great effort, you manage to pull yourself out of the painting by your higher-dimensional bootstraps.^";
 		playerto(essentially_art);
-	];
+	],
+	cant_go "You can't travel outside the scene shown in the painting, but you can >exit.";
 
 Scene	gelato_alchemy_lab "The Alchemy Lab, under Coffee Lion"
 	with

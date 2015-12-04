@@ -68,6 +68,7 @@
 ];
 
 [ Matthewmeet_storyline;
+	eventcount++;
 	elginbday = 1;
 	print "^As you enter Lady Wisdom's, you spot Matthew, a fellow Plan 9 enthusiast. He is excited to see you, and tells you that he recently acquired several Plan 9 compatible rack servers, which he is willing to sell you to expand your grid. Everything is falling into place! Soon, the reality transforming power of higher dimensional namespace operations will bring the magic you are experiencing into everyone's life, and society will never be the same. You make arrangements to have the new hardware delivered to your house in a few days.^";
 ];
@@ -79,7 +80,7 @@
 	daynumber = 20;
 	settime(60,60);
 	startdaemon(willy_west);
-	print "^As you are coming out of Lady Wisdom's coffeeshop, you hear your name called behind you. You turn, and your old friend Clark greets you from behind the wheel of a large utility truck. 'Long time no see! Hey, its Elgin's birthday next week, he's having his party at Rossini's Pizza. It's on the west side of Monona drive as you head south, hope we see you there!'
+	print "^As you are stepping outside, you hear your name called behind you. You turn, and your old friend Clark greets you from behind the wheel of a large utility truck. 'Long time no see! Hey, its Elgin's birthday next week, he's having his party at Rossini's Pizza. It's on the west side of Monona drive as you head south, hope we see you there!'
 ^
 ^Elgin is your godson, and you haven't seen him for years. You have guilty memories of many ignored phone calls from Clark and Staci during 2010 and 2011 as you were sinking into depression and solitude. Maybe they split up or something? You can't remember. Everything feels different now, and you are excited to bring old friends back into your life.
 ^
@@ -206,12 +207,14 @@
 ];
 
 [ Jaymeet_storyline;
+	eventcount++;
 	self.metjay = 1;
 	achieved(11);
 	print "^You step into the restaurant and get a table. During the graveyard shift, the waitstaff are often friendly and interesting people who are bored enough to be curious about whatever conversation you make. Filled with a sense of purpose, you tell your story to your server, Jay. He seems fascinated, and says he supports the cause of fighting unfairness in society and empathizes with your grievance with JCN. He tells you some of his own life story, how he had been raised in a restrictive, cult-like religion from which he had recently broken free. You have made a new friend and ally.^";
 ];
 
 [ Housekeepersmeet_storyline;
+	eventcount++;
 	willy_coop.singing = 1;
 	print "^Now that your life has been transformed, you are inspired to work on improving its quality in every way. Why not combine rediscovering the joy of music-making with getting your house clean and beautiful? There is a community message board here, and you quickly write up a Help Wanted request:
 ^
@@ -268,6 +271,7 @@
 ];
 
 [ Xochi_schumann_storyline;
+	eventcount++;
 	xochi.email = 5;
 	achieved(25);
 	"You are full of excitement as you walk up to the counter. 'Xochi, I have something amazing to tell you! Do you have a minute?' She nods yes, and you begin trying to explain:
@@ -288,6 +292,7 @@
 ];
 
 [ Movement_two_storyline;
+	eventcount++;
 	xochi.email = 7;
 	achieved(26);
 	print "^Xochi looks unusually happy today. 'Hi Xochi, what's up?' you begin. She smiles, and takes a deep breath. 'Well, during the past week I started seeing someone, and...things are going really well and I think it's going to be something serious.' She is almost glowing with excitement. You feel an incredible joy as Schumann within you cheers. 'The song is rewritten!' Schumann says, 'let the music be made afresh!'

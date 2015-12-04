@@ -17,6 +17,14 @@
 ];
 
 [ Timepasses;
+	if((eventcount >= 3) && (location has outside)) {
+		if (elginbday == 1) {
+			if ((expertmode == true) && (turning_wheel has visited))
+				Bdayinvite_storyline();
+			if (expertmode == false)
+				Bdayinvite_storyline();
+		}
+	}
 	if (clockoff == true)
 		return true;
 	if (the_time == 0){

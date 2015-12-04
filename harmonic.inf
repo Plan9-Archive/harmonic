@@ -100,11 +100,13 @@ Include "VerbLib";
 
 Global clockoff = false;
 Global expertmode = false;
+Global eventcount = 0;
 Global daynumber = 0;
 Global bankaccount = 30000;
 Global elginbday = 0;
 Global introgoal = 0;
 Global bikeskill = 0;
+Attribute outside;
 
 !============================================================================
 ! Object classes

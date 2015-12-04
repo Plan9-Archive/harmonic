@@ -201,6 +201,7 @@ Character	xochi "Xochi"
 		kiss: "You are crazy, but not THAT crazy.";
 		default: 
 			if (self.email == 0) {
+				eventcount++;
 				self.email = 1;
 				"You start trying to explain how fiction is entering reality because you can navigate the infinite possibilities of the quantum multiverse by using your free will to bind the narrative symbols you choose to shape your existence. She seems interested, and while you are talking, she writes a note on a piece of paper. She interrupts you a minute into your monologue to say 'It seems like you have a lot you want to say, I'm working right now but you can email me if you'd like.' You are surprised and happy. You can use your terminal to email her when you get back home.";
 			}
