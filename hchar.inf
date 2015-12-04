@@ -274,3 +274,15 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 	],
 	has pluralname;
 
+Character	xelia_and_xochi "Xelia and Xochi"
+	with
+	name 'xelia' 'xochi' 'baristas',
+	description "Xochi and Xelia seem to energize each other. Just being in the same room as the two of them at the same time makes everything seem enchanted.",
+	life [;
+		if (gelato_alchemy_lab.brew == 9)
+			"Your two favorite baristas are busy working, and after getting so much special attention in the basement, you don't want to press your luck by interrupting.";
+		"You need to stay focused on working the alchemy apparatus.";
+	],
+	before [;
+		talk: <<wakeother xelia_and_xochi>>;
+	];

@@ -759,6 +759,7 @@ Room	gelato_alchemy_lab "The Alchemy Lab, under Coffee Lion"
 	each_turn [;
 		switch(gelato_alchemy_lab.brew) {
 		0: 	self.brew++;
+			move xelia_and_xochi to gelato_alchemy_lab;
 			"^A minute after your arrival, you hear footsteps on the stairs and Xochi and Xelia join you. 'We only have a few minutes, but we thought you'd really enjoy this. We're going to show you how we make our special gelato flavors. Xochi gathers several jars from the shelves, and adds a few pinches of the ingredients in each. You can't read the labels. Xelia tightens a few connections in the apparatus.
 ^
 ^'The first step is bringing the reaction chambers to a warm but not hot temperature.' Xochi points to a pair of glass spheres on the upper part of the machine. 'Rub these with your hands to put the right amount of heat into them.'";
@@ -766,6 +767,6 @@ Room	gelato_alchemy_lab "The Alchemy Lab, under Coffee Lion"
 			"^'Next, you need to push this button to start the reaction,' continues Xelia, gesturing.";
 		4:	self.brew++;
 			"^'Now, insert the cylinder so it will collect the gelato as it is synthesized,' explains Xochi.";
-		default: "Xelia and Xochi are waiting for you to operate the apparatus.";
+		default: "^Xelia and Xochi are waiting for you to perform the gelato-alchemy.";
 		}
 	];

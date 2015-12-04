@@ -263,6 +263,8 @@
 		"You need to >bind chaos substance and wait a few turns.";
 	if (location == atlantean_academy)
 		"The scholars will suggest topics, you just need to >tell scholars about TOPIC.";
+	if (location == gelato_alchemy_lab)
+		">rub spheres then >push button then >insert cylinder";
 	if (location == ritual_spot)
 		"You need to bring food here to perform the ritual. You can acquire food by visiting the late-night restaurant nearby a few times.";
 	if (location == astral_enchantments)
@@ -294,6 +296,9 @@
 	if(location ~= gelato_alchemy_lab)
 		"You don't see that here.";
 	move gelato_brew to player;
+	remove xochi;
+	move xelia_and_xochi to coffee_lion;
+	gelato_alchemy_lab.brew = 9;
 	achieved(32);
 	print "^You firmly insert the cylinder into the output junction of the tubes connected to the reaction spheres. Creamy gelato seems to condense at the intersection point and drip slowly down the inner edges of the cylinder. After a moment, it is half filled. Xochi and Xelia each add a shot of freshly brewed espresso to create an affogato.
 ^
