@@ -793,4 +793,25 @@ Scene	gelato_alchemy_lab "The Alchemy Lab, under Coffee Lion"
 Scene	lost_in_grid "Lost In the Grid"
 	with
 	battle 0,
-	description "You are in an unfamiliar dataspace. A dark and twisted dialect of the 9p protocol is spoken here. Green glowing insectoid creatures carrying message packets scuttle between jagged mount points. These are not your beautiful ANTS...these are Terminal Information Takeover Extensions - TERMITES.";
+	description "You are in an unfamiliar dataspace. A dark and twisted dialect of the 9p protocol is spoken here. Green glowing insectoid creatures carrying message packets scuttle between jagged mount points. These are not your beautiful ANTS...these are Terminal Information Takeover Extensions - TERMITES.",
+	before [;
+		listen: "The TERMITES are emitting so many enraged blips beeps and boops at different frequencies, it approaches white noise.";
+		go:
+			if (player notin lunar_lightning)
+				"Without a vehicle, you make no significant progress.";
+			achieved(33);
+			print "In this realm, your bicycle leaves a glowing trail behind it. It seems to repel the TERMITES, so you make a series of right angle turns, trapping them behind you, and accelerate toward an orange glow on the horizon. Unhindered by physical constraints, you accelerate continuously, and the orange glow soon resolves itself into the familiar fileservers of your grid. A spiral ramp encircles them, and you travel faster still as its radius tightens toward the apex. At the top, your speed exceeds the limit of the virtualization and you burst through the layers of simulation back into your basement in a shower of pink sparks.^";
+			playerto(basement, 1);
+			return true;
+	],
+	each_turn [; 
+		lost_in_grid.battle++;
+		switch(lost_in_grid.battle) {
+		3: "^It doesn't take long for the digital insects to notice you. An angry buzzing like the sound of a roomful of old 300 baud modems fills the air.";
+		4: "^The TERMITES are starting to surround you in a circle. Each is about the size of your fist. There are only a few dozen watching you now, but they seem to be summoning reinforcements.";
+		5: "^There is now a ring of hundreds of green bugs advancing inward toward you, drill proboscii extended menacingly.";
+		6: "^A TERMITE suddenly leaps at you. You instinctively bat it away and feel a slight stinging cut on your wrist. This is getting rather stressful.";
+		7: print "^'No such thing as stuck on a puzzle,' a calm voice intones, 'We don't let the player make mistakes, we just have happy little deus ex machinas.' A giant digital image editing tool sweeps across the landscape, recoloring everything. You can now see a path leading up to a ramshackle cabin, which you enter, only to find yourself back in your basement. A faint chorus of voices can be heard shouting 'SAVED!'^";
+			playerto(basement, 1);
+		}
+	];

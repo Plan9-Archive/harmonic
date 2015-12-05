@@ -121,8 +121,9 @@
 	28: "rapping to Xelia about Xochi";
 	29: "binding Chaos onto Substance in Atlantis";
 	30: "touring related Fictions with Ernest";
-	31: "helping Atlantean scholars understand your work";
+	31: "helping Atlantean students with a test on your work";
 	32: "brewing a special affogato";
+	33: "escaping from the TERMITES on lunar lightning";
 	}
 ];
 
@@ -140,7 +141,7 @@
 [ Aboutsub;
 	"^Harmonic Time-Bind Ritual Symphony is a game based on my actual lived experience of spring and summer 2013. During that time, I was able to experience my life as a work of interactive fiction created by a brilliant author. I felt that the nature of the quantum multiverse meant that it was factually true that I was a character in novels and songs and videogames in other universes, and I played my role to the hilt. I felt that my manic madness was a gift which I could use for artistic creativity, and that my racing mind was fully up to solving the puzzles that the designer of my reality had laid out for me. It was the most glorious experience imaginable, and by the middle of the summer I felt like I was becoming a kind of Ultima IV-style Avatar of multiversal artistic consciousness and with just a little more spiritual insight and creative freedom, I'd literally be able to unlock the Vishnu-path Extra Arms upgrade for my character, which I might need in case the tentacle in the lake that was a whisker of Cthulhu's Moustache attacked.
 ^
-^This game was created to share the wild, unbounded joy I felt in those months. Thanks to everyone who was a part of my life during that time, and thank you for playing this work of Interactive Fiction. Read >help for important tips.^";
+^This game was created to share the wild, unbounded joy I felt in those months. Thanks to everyone who was a part of my life during that time, and thank you for playing this work of Interactive Fiction. Read >help for important tips. >design prints a spoiler-free essay on the design of the game.^";
 ];
 
 [ Bindsub;
@@ -190,6 +191,22 @@
 
 [ Dancesub;
 	"Despite your arthritis, you enjoy trying to put the rhythms of music inside your body. You dance in a loose, disorganized fashion, but it feels good.";
+];
+
+[ Designsub;
+	"This is a story-focused game where most of the action takes place in cutscenes. This approach is sometimes criticized for lack of interactivity and denying player agency. This essay tries to explain the choices made in the overall game design, role of puzzles, and the time and story system.
+^
+^IF is an incredibly flexible medium. No single standard of evaluation is adequate because a wide range of preferences exist among players. Emphasis on puzzles vs. emphasis on narrative is the most significant. Another is between 'the game is a story about ME' and 'the game is a story where I take on the role of a different personality'. Other topics with diverse opinion include preferred game length, the importance of player agency and diverging story branches and multiple endings, menu-based vs traditional character conversation, and what level of world-modeling is expected.
+^
+^Puzzle-focused games with a lot of player agency to cause diverging story branches are wonderful, but this game is not one of them. The artistic intention of this game is to make the player feel what it is like to be on a manic upswing where everything in life actually works out just the way you dream. The reason it is IF rather than a novel is twofold: first, I believe IF is a uniquely compelling medium for transmitting what it felt like to experience something, and second, I actually did perceive myself as a character in a traditional IF game. I bought the items I collected from the stores in the game becuase I actually believed I would need them to solve future puzzles. I could practically see the prompt at which my actions were being typed.
+^
+^As for puzzles - I love logic puzzles and strategy games and cleverness of all kinds, but when I'm emotionally involved in a story, I want to keep experiencing it and not get stuck. The subjective experience of being stuck is the opposite of everything I felt during the time period depicted in the game. Everything flowed, and the key I needed for each lock always seemed to be close at hand.
+^
+^I often did some pretty random-ass shit with the idea that I was actually solving some kind of puzzle by doing so. There are several examples of this in the game. The problem with making the actual game require these actions is that they were usually absurd and ridiculous and not actually connected to anything in reality. In standard mode, there are relatively few prerequisites for events to trigger, and you can see most of the game just by bouncing around the map like a pingpong ball and doing whatever is obvious. Expert mode creates a more standard weave of 'cant do this until you do that' but the dependencies may not always be 'fair' in traditional adventuring terms.
+^
+^As for branching contradictory storylines and multiple endings - wouldn't it be nice to have a pony? This is a problem that does bother me, because the idea of free choice within an infinitely branching multiverse is so important to the game's motivations. When I was mentally designing this game for the past couple years, I figured that alternate universes, wide story branching, unrestricted time travel, and lots of other features should be part of it. I think most IF authors are probably nodding and sighing in agreement now.
+^
+^I've tried to balance the straight line of the core narrative with a huge amount of optional side content and events which can be experienced in a non-linear and freeform way. Hopefully the freedom to see what you want in the game, in what order, is enough player agency to make players feel they are participating in and guiding the story, and there is enough content to make the meta-puzzle of collecting every point a challenge for those who are looking for one. Thanks, and I hope you are enjoying the game.";
 ];
 
 [ Dodgesub;
@@ -299,7 +316,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 387 points. 27 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 396 points. 36 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;
@@ -504,6 +521,7 @@ Verb "clockoff" *	-> Clockoff;
 Verb "content" *	-> Content;
 Verb "credits" *	-> Credits;
 Verb "dance" *	-> Dance;
+Verb "design" *	-> Design;
 Verb "dodge" * 	-> Dodge;
 Verb "email" *	-> Email;
 Verb "exits" *	-> Exits;

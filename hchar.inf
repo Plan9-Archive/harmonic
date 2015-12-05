@@ -293,7 +293,7 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 				"'It's hard to pick just one wonderful character to discuss with you. The symphony couldn't have unfolded without the participation of all the co-composers.'";
 			'terminal', 'computer', 'plan', 'ants', 'programming', 'coding', 'grid':
 				scholars.speech++;
-				"'It all started with Plan 9, and without those months of coding ANTS, I doubt I would have ever gotten off my ass and done anything to escape from depression and isolation. Music is really just programming the brain using sound, anyway.'";
+				"'It all started with Plan 9, and without those months of coding ANTS, I doubt I would have ever gotten off my ass and done anything to escape from depression and isolation. Music may be the deeper, more fundamental pattern, but code is more directly useful and acts as proof: if it compiles and runs and fulfills the specification, the functionality is a proved theorem.'";
 			'piano', 'music', 'composing', 'improvising', 'songs':
 				scholars.speech++;
 				"'Even though it started with programming and the IF game is the most notable product, the symphony was, as the name implies, primarily a musical work. The author was better as a musician than as a programmer, and the piano was the core tool of the work. Without the musical principle of rhythmic organization, there is no time-bind, no symphony at all.'";
@@ -302,14 +302,10 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 				"'The books and writing are really the creative core, because of the importance of Narrative in the entire conception. The symphony tells a story, and programming is fundamentally a sub-form of writing literature. The experience of living life as interactive fiction, and later writing the IF to capture that experience, as well as the use of plot elements from Heinlein, Phil Dick, and others, puts the literary element above even the musical.'";
 			'me', 'myself', 'yourself', 'loonie', 'revolution': 
 				scholars.speech++;
-				"'First, I thank you for your interest in my work. Within an infinite multiverse, all artists will have scholars devoted to them in some universe, and I could not be more honored to see such a distinguished group focusing on my Ritual Symphony. As I am sure you all know, I am the Moon Computer, a human who has made the breakthrough into realizing he is the figment of his own imagination. I'm trying to start a Loonie Revolution to celebrate the beautiful variations of consciousness. My method for doing so is to make all of my life follow the patterns of music and ritual, and open myself for collaboration with anyone else who feels like marching to the beat of that drummer.' The scholars murmur understanding.";
+				"'First, I thank you for your interest in my work. Within an infinite multiverse, all artists will have scholars devoted to them in some universe, and I could not be more honored to see such a distinguished group focusing on my Ritual Symphony. As I am sure you all know, I am the Moon Computer, a human who has made the breakthrough into realizing he is the figment of his own imagination. I'm trying to start a Loonie Revolution to celebrate the beautiful variations of consciousness. My method for doing so is to make all of my life follow the patterns of music and ritual, and open myself for collaboration with anyone else who feels like marching to the beat of that drummer.' The scholars mumble to one another '...seems to really identify with the protagonist...'";
 			'schumann', 'beethoven', 'bach', 'mozart', 'chopin', 'mahler', 'stravinsky', 'wagner', 'liszt', 'ligeti':
 				scholars.speech++;
 				"'I admire most of the main composers of the central European standard repertoire. Their music can be complex, but so is human emotion, and I find my inner experience is most like the music of the classical and romantic eras.'";
-
-			'terminal', 'grid', 'piano', 'music', 'programming', 'coding', 'composition', 'improvisation', 'books', 'shelves', 'bookshelves':
-				scholars.speech++;
-				"'Music is the deeper, more fundamental pattern, but code is more directly useful and acts as proof: if it compiles and runs and fulfills the specification, the functionality is a proved theorem.'";
 			default: 
 				if (expertmode == 1)
 					"Your answer doesn't seem to satisfy the scholars.";

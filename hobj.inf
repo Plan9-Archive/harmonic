@@ -267,6 +267,15 @@ Decor	alchemy_apparatus "alchemical apparatus" gelato_alchemy_lab
 			"You place your finger on the button. It thrums with the vibration of the machine. You gently press it inward, and a soft sigh of escaping vapor leaves the alchemical apparatus. Steam and bubbles appear in some of the transparent connecting tubes.";
 	];
 
+Decor	termites "termites" lost_in_grid
+	with
+	name 'termites' 'insects' 'bugs' 'enemies' 'fork',
+	description "The termites are ugly and noisome. They look like screen-caps from a 90s full-motion video game and they move like they have turned the 9p protocol into some kind of xml-ized monstrosity with a php-web frontend, a c++ backend, and an enterprise java middleware layer.",
+	before [;
+		attack: "There are far too many of them.";
+	],
+	has pluralname;
+
 !============================================================================
 ! The immobile prop objects
 
