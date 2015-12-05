@@ -178,6 +178,10 @@
 	"Clock story triggers set to off. No plot events will occur automatically. >clockon to reactivate.";
 ];
 
+[ Contentsub;
+	"^This game contains scenes of drug use, sexual behavior, classical music, parody of religion, embrace of the counterculture, revolutionary propaganda, true love, use of nonstandard computer software, middle-aged men flirting with young baristas, and bicycling without a helmet. During the game, your character may do these things regardless of your inputs, and enjoy them very much. If you object to these behaviors, or don't enjoy games with a lot of cutscenes where the character makes choices outside your control, you may wish to play something else. I consider this game suitable for ages 13+ but please evaluate the content yourself rather than relying on my judgment. I may be a Loonie.";
+];
+
 [ Creditssub;
 	"^Written and programmed by Ben Kidwell (mycroftiv)
 	 ^Co-written and edited and tested by Maevele Straw^
@@ -260,7 +264,7 @@
 	if (introgoal == 3)
 		"You need to go to the basement of your home and >bind fiction reality.";
 	if ((location == willy_west) && (elginbday == 0))
-		"Go in to Lady Wisdom's and then come back out to trigger an important plot event.";
+		"Visiting Lady Wisdom's to the south is probably a good idea.";
 	if ((location == willy_west) && (player notin lunar_lightning))
 		"You need to buy a bicycle from Turning Wheel and ride it to continue west to downtown. If you have done so, use >lunar to call your bicycle to you.";
 	if (location == thedark)
@@ -497,6 +501,7 @@ Verb "bind"	* noun noun	-> Bind;
 Verb "bomb" *	-> Bomb;
 Verb "clockon" *	-> Clockon;
 Verb "clockoff" *	-> Clockoff;
+Verb "content" *	-> Content;
 Verb "credits" *	-> Credits;
 Verb "dance" *	-> Dance;
 Verb "dodge" * 	-> Dodge;

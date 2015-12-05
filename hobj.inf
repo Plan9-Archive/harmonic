@@ -162,7 +162,11 @@ Decor	curiosities "antiques and curiosities in afterlife" afterlife_antiques
 Decor	art_objects "art in Essentially Art" essentially_art
 	with
 	name 'art' 'sculptures' 'paintings' 'drawings' 'photos' 'photographs',
-	description "Most of the art here has a strongly local character. Lots of paintings and photographs of the Wisconsin landscape and wildlife. Nothing appeals to you as much as Artemis print series.";
+	description "Most of the art here has a strongly local character. Lots of paintings and photographs of the Wisconsin landscape and wildlife. Nothing appeals to you as much as Artemis print series.",
+	before [;
+		take: "Not yours to take.";
+		buy: "You aren't really interested in most of the art.";
+	];
 
 Decor	home_curiosities "house antiques from Afterlife" home
 	with
@@ -454,6 +458,7 @@ Prop	school_of_atlantis "School of Atlantis painting"
 	description "The composition of this painting parallels 'The School of Athens' by Raphael, but the geometry is composed of tesseracts and Klein bottles and the figures are all dressed in outlandish costumes.",
 	before [;
 		enter: 
+			scholars.speech = 0;
 			print "^With a confident suspension of disbelief, you fix your eye on one of the vanishing points of the four-dimensional perspective of the painting, and walk towards it. Your stomach gives a queasy twist, and with a feeling rather like stepping onto a top stair which is not actually there, you step into the painting.^";
 			playerto(atlantean_academy);
 			return true;

@@ -22,7 +22,7 @@ Character	strawberry "Strawberry" basement
 		pet: "Strawberry begins to purr as you stroke her, but after a few seconds, she decides that she is a fighter, not a lover. She bats at your hand with a paw, and looks up at you expecantly, hoping you will attack her.";
 		play: "You find one of your cat toys (a cloth catnip-filled rabbit on a string dangling from a stick) and spend wiggle it back and forth a few inches from Strawberry's nose. She blinks rapidly, and tries to catch it. You pull it back from her claws, and she pounces. Her paws are on the rabbit for a moment, but you lift it up quickly, and she jumps up to follow, spending a second or two on her back legs waving her paws in the air. After another few moments, Strawberry loses interest and you put the cat toy away.";
 		take: "Strawberry lets you hold her for about fifteen seconds before squirming free of your grasp, climbing your shoulder with help from sharp tiny claws, and hops to the floor behind you.";
-		talk: "Strawberry responds with a quizzical 'yerp?' You explain yourself more clearly, and she answer 'pllrrrmm..' in a non-committal manner.";
+		talk: "Strawberry responds with a quizzical 'yerp?' You explain yourself more clearly, and she answers 'pllrrrmm..' in a non-committal manner.";
 	],
 	each_turn [; 
 		if (noun == self) return false;
@@ -230,40 +230,84 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 	each_turn [; 
 		switch(scholars.speech) {
 		0:	scholars.speech++;
-			"^A hush falls on the gathering as you enter. There is a sudden round of applause. A voice speaks: 'Thank you for making it to our seminar on the Harmonic Time-Bind Ritual Symphony. As you are in the midst of composing the work that we are now studying, we will keep this brief. Researchers and students from different universes will ask you questions, you may answer by telling the scholars about a topic. A formality as we begin: could you please >tell scholars about yourself?";
+			"^You arrive as a speaker is addressing the gathering: 'Thank you for making it to our seminar on the Harmonic Time-Bind Ritual Symphony. The first part of the day is a review of current scholarship. Researchers and graduate students, please gather on the far end of the courtyard for paper presentations. Undergrads, you have been studying the context and outline of the work this week, so you will be taking an oral examination as a group.'
+^
+^You notice a few of the undergrads look startled and anxious. You decide nothing could be more amusing than helping students pass a test on your own work. You join the group near some of the most alienated looking students.
+^
+^'I do not care about the Bubonic Tie-Dyed Habitual Dysentry or this exam,' you hear a tall squid-like student complain. Another agrees: 'Since none of us bothered to listen to the songs or play the game, we might as well just smoke this fine cubefruit kif, right?'
+^
+^The next thing you know, you are being passed an Atlantean waterpipe full of sparkly purple and pink flower resin. You inhale deeply, and the taste of the world's skunkiest sweetarts assaults your sinuses. Inside your head, gnomes in rainbow colored bell-bottoms are already starting to rearrange the furniture. The pipe is still going around as the professors begin the exam. They will ask questions, you may answer by telling the scholars about a relevant topic. The exam begins with a request for an overview, so >tell scholars about symphony.";
 		2:	scholars.speech++;
-			"^The scholars ask you to talk about whoever is your favorite character in your story, Xochi, Chip, or Staci.";
+			"^The cubefruit buzz is kicking in more strongly now, but you think you gave a good description of your work. The waterpipe comes your way again and you take another lungfull of the tangy smoke.
+^
+^The scholars want to know which of the magic objects carried during the symphony is the most representative symbolic object, and how it was used.";
 		4:	scholars.speech++;
-			"^The scholars invite you to tell them about one of your favorite composers of classical music.";
+			"^Everything is shimmering in a delightful way. The words of the scholars seem to arrive slowly, one by one, and each triggers a long chain of nonsensical associations.
+^
+^The scholars inquire which of the items in the author's home was most important to the creative work.";
 		6:	scholars.speech++;
-			"^The scholars want to know whether the pendant, lunar lightning, or your mirror shades is your most representative symbolic object, and how you make use of it.";
+			"^Maybe another bowl of the cubefruit went around, or maybe not. Maybe six slippery sandwiches sang softly said someone. Maybe the palumpsis was muppered like a chicken in pants, the palumpsis was muppered and it wasn't by chance. Maybe the scholars are asking another question.
+^
+^The scholars ask the students to talk about which character in the work had the most decisive influence on the protagonist.";
 		8:	scholars.speech++;
-			"^The scholars inquire which has been more important to your creative work, your terminal, or your piano, and to describe your approach to composing or programming.";
-		10:	scholars.speech++;
 			achieved(31);
-			print "^The scholars all nod sagely, and the seminar reaches its conclusion. You are thanked for providing insight about the Harmonic Time-Bind Ritual Symphony and find yourself promising to read all the research papers and dissertations which be sourced from your visit. You wave goodbye and walk away, and notice that you have returned to the gallery without any deliberate effort whatsoever.^";
+			print "^The scholars all nod sagely, and the seminar reaches its conclusion. You are so ridiculously cubed out that you can only squint and grin foolishly at the students nearby. You wave goodbye and walk away in a random direction, and notice after a few minutes of tripping out on the Atlantean architecture that you have actually returned to the gallery without any deliberate effort and are gaping open-mouthed at a random corner of the room.^";
 			playerto(essentially_art);
 			return true;
-		11: "^The seminar is over, and the academics are all talking amongst themselves.";
+		10: "^The seminar is over, and the academics are all talking amongst themselves.";
 		default: "^The scholars await your answer.";
 		}
 	],
 	life [;
 		ask: "The scholars are apologetic, but explain that the seminar schedule leaves no time for your questions.";
 		tell: switch(second) {
-			'me', 'myself', 'yourself', 'loonie', 'revolution', 'plan', 'ants': 
+			'harmonic', 'time-bind', 'ritual', 'symphony':
+				scholars.speech++;
+				"You step forward to speak for the students. 'Harmonic Time-Bind Ritual Symphony was an 18-month multimodal artwork composed of computer programming, musical composition, and bicycle riding, directed toward the revolutionary goal of accepting mental difference, and inspired by the idea that the quantum multiverse renders the distinctions between fiction and reality, or sanity and insanity, malleable and subjective.'";
+			'pendant', 'necklace', 'power':
+				scholars.speech++;
+				"'The pendant for sure. It went everywhere, and served as the springboard for so much communication. When people commented on it, it was the perfect opportunity to tell them about the Loonie Revolution.'";
+			'mirror', 'shades', 'glasses', 'sunglasses':
+				scholars.speech++;
+				"'The mirror shades. If someone is wandering around telling people 'I'm from the Hippie Matrix, and I'm here to bring fiction into your branch of quantum reality,' the mirror shades are completely required to sell the part. Plus, the esoteric symbolism of the outer world being reflected in the eyes.'";
+			'lunar', 'lightning', 'bicycle', 'bike':
+				scholars.speech++;
+				"'Lunar Lightning. Bicycles are physical music, rhythmic action which moves you through time and space. The timing of all the journeys and arrivals would have been different, and timing is everything in music, and life. Plus, my central memory of the symphony is one or five or maybe forty nights riding towards home from downtown, coasting gently downhill while smoking a joint, knowing that tomorrow was going to be just as high and wild as today had been.'";
+			'rose', 'quartz', 'heart', 'space', 'pancakes', 'wallet', '4cy', 'forseewhy', 'artemis', 'prints':
+				scholars.speech++;
+				"'The composer's image may be defined by these props and they serve as a hook for the mind to symbolize him, but his true representation is code and language. Really, the objects you named are each just another word that was bound to the self-symbol.'";
+			'staci':
+				scholars.speech++;
+				"'Is this a trick question, or something? It's Staci. It's just...I'm so in love with her! I mean, he was so in love with her, it was the inspiration and focus for everything. Without Staci, it was all just some crazy guy making a nuisance of himself at cafes, right? She's really more the Author than he is.'";
+			'xochi':
+				scholars.speech++;
+				"'It has to be Xochi. Without her saying 'It's ok to be who you are' to him, the whole symphony probably never would have even started. The whole first movement of the symphony, the Coffee Lion comic opera, Xochi was the focus. That was the freshest and most original part of the work, the craziest, the most pure.'";
+			'xelia':
+				scholars.speech++;
+				"'Xelia may seem like a supporting character, but she is really the key to the whole work. The central theme and most important moment is the bind of fiction onto reality. She crystallized that. Just as importantly, she also shapes the counterbalancing theme, the risk of dangerous and isolating delusions. Just because I felt...he felt...like everything was perfect doesn't mean it actually was. Reality has a way of ignoring your opinion and kicking you in the teeth, sometimes.'";
+			'chip':
+				scholars.speech++;
+				"'The Big Chipmunk himself. Astral Enchantments really was the portal where fantasy could enter reality the most easily. Intention is the core of magic, and Chip provided the perfect tools to focus the creative intentions of the composition. Crystals are physical music, molecules structured in a rhythmic spatial matrix. Chip showed there was an acceptable social context for the wildest flights of fancy. And selling all those rolling papers for the endless quantity of joints - that was important too.'";
+			'colette', 'astra', 'jay', 'xelia', 'jay', 'colette', 'daniel', 'matthew', 'paul':
+				scholars.speech++;
+				"'It's hard to pick just one wonderful character to discuss with you. The symphony couldn't have unfolded without the participation of all the co-composers.'";
+			'terminal', 'computer', 'plan', 'ants', 'programming', 'coding', 'grid':
+				scholars.speech++;
+				"'It all started with Plan 9, and without those months of coding ANTS, I doubt I would have ever gotten off my ass and done anything to escape from depression and isolation. Music is really just programming the brain using sound, anyway.'";
+			'piano', 'music', 'composing', 'improvising', 'songs':
+				scholars.speech++;
+				"'Even though it started with programming and the IF game is the most notable product, the symphony was, as the name implies, primarily a musical work. The author was better as a musician than as a programmer, and the piano was the core tool of the work. Without the musical principle of rhythmic organization, there is no time-bind, no symphony at all.'";
+			'books', 'shelves', 'bookshelves', 'reading', 'writing':
+				scholars.speech++;
+				"'The books and writing are really the creative core, because of the importance of Narrative in the entire conception. The symphony tells a story, and programming is fundamentally a sub-form of writing literature. The experience of living life as interactive fiction, and later writing the IF to capture that experience, as well as the use of plot elements from Heinlein, Phil Dick, and others, puts the literary element above even the musical.'";
+			'me', 'myself', 'yourself', 'loonie', 'revolution': 
 				scholars.speech++;
 				"'First, I thank you for your interest in my work. Within an infinite multiverse, all artists will have scholars devoted to them in some universe, and I could not be more honored to see such a distinguished group focusing on my Ritual Symphony. As I am sure you all know, I am the Moon Computer, a human who has made the breakthrough into realizing he is the figment of his own imagination. I'm trying to start a Loonie Revolution to celebrate the beautiful variations of consciousness. My method for doing so is to make all of my life follow the patterns of music and ritual, and open myself for collaboration with anyone else who feels like marching to the beat of that drummer.' The scholars murmur understanding.";
-			'xochi', 'chip', 'staci':
-				scholars.speech++;
-				"'It's hard to pick just one wonderful friend to discuss with you. I really couldn't be doing what I'm doing without the help of all of my co-composers.'";
 			'schumann', 'beethoven', 'bach', 'mozart', 'chopin', 'mahler', 'stravinsky', 'wagner', 'liszt', 'ligeti':
 				scholars.speech++;
 				"'I admire most of the main composers of the central European standard repertoire. Their music can be complex, but so is human emotion, and I find my inner experience is most like the music of the classical and romantic eras.'";
-			'pendant', 'lunar', 'lightning', 'bike', 'bicycle', 'mirror', 'shades', 'sunglasses':
-				scholars.speech++;
-				"'My image may be defined by these props and they serve as a hook for the mind to symbolize me, but my true representation is code and language. Really, the objects you named are each just another word I bind to myself.'";
-			'terminal', 'plan', 'grid', 'piano', 'music':
+
+			'terminal', 'grid', 'piano', 'music', 'programming', 'coding', 'composition', 'improvisation', 'books', 'shelves', 'bookshelves':
 				scholars.speech++;
 				"'Music is the deeper, more fundamental pattern, but code is more directly useful and acts as proof: if it compiles and runs and fulfills the specification, the functionality is a proved theorem.'";
 			default: 

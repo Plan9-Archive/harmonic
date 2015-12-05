@@ -193,6 +193,7 @@
 	eside_hq.fictour = 1;
 	essentially_art.seminar = 1;
 	move school_of_atlantis to essentially_art;
+	lost_in_grid.battle = 1;
 	daynumber = 42;
 	settime(60,60);
 	achieved(21);
@@ -339,7 +340,7 @@
 
 [ Seminar_storyline;
 	essentially_art.seminar = 2;
-	print "^A woman about your age approaches you. 'I heard that you bought my Artemis print series, it's quite the coincidence you happened to walk in right now. There's a seminar going on about art and ritual magic, are you interested?' You nod eagerly. 'Excellent! Just step inside the frame here.' She points toward a familiar-looking painting, and you note with surprise she has a twin within the picture. You start to comment on this, but she is no longer beside you.^";
+	print "^The store clerk approaches you. 'Thanks for buying my Artemis print series, it's quite the coincidence you happened to walk in right now. There's a seminar going on about art and ritual magic, are you interested?' You nod eagerly. 'Excellent! Just step inside the frame here.' She points toward a familiar-looking painting, and you note with surprise she has a twin within the picture. You start to comment on this, but she is no longer beside you.^";
 ];
 
 [ Astral_ceremony_storyline;
@@ -368,6 +369,14 @@
 	miffyland.summernight = 1;
 	achieved(20);
 	"You pause to listen. From a rooftop above, you hear the Jerry Garcia classic 'Reuben and Cherise', well-sung by several people. You wait for a pause in the music and call up 'I love that song!' Cheerful voices invite you to come upstairs and join them on the upper porch balcony. You do so, and find yourself in a scene that reminds you of the best of your college days - a late night porch song session. The guitarists are good, everyone knows the words and has a decent ear, and as you all sing 'Reuben and Cherise' again, the music and warm feeling of enthusiastic friendship is so thick the summer night air seems to shimmer and sparkle. You do a few more songs, and eventually the evening breaks up, everyone wondering if they will make it home before daylight so they just might get some sleep tonight.";
+];
+
+[ Gridbattle_storyline;
+	lost_in_grid.battle = 2;
+	print "Matthew dropped off the new grid hardware for you yesterday, now seems like a good to get it set up. You set up power and networking for the new servers, and start to bring them online to join your grid. Before you can type the needed commands, you see a glowing green pulse of data enter the basement from the external network interface. A message appears on the screen: 'Our empire never ended.' You recognize the font, but too late.
+^
+^The digitization laser hits you from behind and you feel yourself being Forked...^";
+	playerto(lost_in_grid);
 ];
 
 [ Tellxeliaxochi_storyline;

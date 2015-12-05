@@ -56,10 +56,10 @@ Room	home "Inside my house"
 	],
 	initial [;
 		if (self hasnt visited)
-			print "^(30 months earlier)
-^(1 April 2013)
+			print "^(1 April 2013 - 30 months earlier)
+^(read >help first and >content for the warning label. get a >hint anytime)
 ^
-^After working obsessively since the New Year, you are finally ready to officially announce and release your software. You feel tense yet eager anticipation for the reaction from other Plan 9 users. Type >help for information. When you are ready to unleash the Advanced Namespace Tools on the world, >release ANTS.^";
+^After working obsessively since the New Year, you are finally ready to officially announce and release your software. You feel tense yet eager anticipation for the reaction from other Plan 9 users. When you are ready to unleash the Advanced Namespace Tools on the world, >release ANTS.^";
 	],
 	after [; go:
 		if (piano.obsessionclear == 1) {
@@ -90,6 +90,10 @@ Room	basement "My house, in the basement"
 	after [; go:
 		if (introgoal == 3)
 			print "^As soon as you enter the room, you sense something deeply unusual, but intriguing. The code running on your grid of Plan 9 machines, the complicated interwoven mesh of namespaces, seems to have hooked into the low-level machine code of the universe. New file descriptors have been mounted allowing access to fundamental abstractions. If you dare, you could bind two normally distinct perceptual constructs into a single union.^";
+		if (lost_in_grid.battle == 1) {
+			Gridbattle_storyline();
+			return true;
+		}
 	],
 	u_to home,
 	cant_go "The only exit is up.";
@@ -785,3 +789,8 @@ Scene	gelato_alchemy_lab "The Alchemy Lab, under Coffee Lion"
 		default: "^Xelia and Xochi are waiting for you to perform the gelato-alchemy.";
 		}
 	];
+
+Scene	lost_in_grid "Lost In the Grid"
+	with
+	battle 0,
+	description "You are in an unfamiliar dataspace. A dark and twisted dialect of the 9p protocol is spoken here. Green glowing insectoid creatures carrying message packets scuttle between jagged mount points. These are not your beautiful ANTS...these are Terminal Information Takeover Extensions - TERMITES.";
