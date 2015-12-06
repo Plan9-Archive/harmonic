@@ -373,7 +373,7 @@
 
 [ Gridbattle_storyline;
 	lost_in_grid.battle = 2;
-	print "Matthew dropped off the new grid hardware for you yesterday, now seems like a good to get it set up. You set up power and networking for the new servers, and start to bring them online to join your grid. Before you can type the needed commands, you see a glowing green pulse of data enter the basement from the external network interface. A message appears on the screen: 'Our empire never ended.' You recognize the font, but too late.
+	print "Matthew dropped off the new grid hardware for you yesterday, now seems like a good time to get it set up. You set up power and networking for the new servers, and start to bring them online to join your grid. Before you can type the needed commands, you see a glowing green pulse of data enter the basement from the external network interface. A message appears on the screen: 'Our empire never ended.' You recognize the font, but too late.
 ^
 ^The digitization laser hits you from behind and you feel yourself being Forked...^";
 	playerto(lost_in_grid);
@@ -523,7 +523,10 @@
 ^How much can a man take of this psychosis caused by paper doses
 ^Rigorous mortis I'm racing with the tortoise my fallacy supports us
 ^Through's Zeno's dialectic, it's electrically eclectic
-^Zombie or not to be, set my people free to won or lost";
+^Zombie or not to be, set my people free to won or lost
+^I'm in love with the Tardis, and nothing can part us
+^She'll show you where the start is and
+^You can find a fiction bind designed to let your mind unwind";
 ];
 
 [ Donttellme_storyline;

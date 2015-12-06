@@ -57,7 +57,7 @@ Room	home "Inside my house"
 	initial [;
 		if (self hasnt visited)
 			print "^(1 April 2013 - 30 months earlier)
-^(read >help first and >content for the warning label. get a >hint anytime)
+^(Read >help first and >content for the warning label. Get a >hint anytime.)
 ^
 ^After working obsessively since the New Year, you are finally ready to officially announce and release your software. You feel tense yet eager anticipation for the reaction from other Plan 9 users. When you are ready to unleash the Advanced Namespace Tools on the world, >release ANTS.^";
 	],
@@ -800,7 +800,7 @@ Scene	lost_in_grid "Lost In the Grid"
 			if (player notin lunar_lightning)
 				"Without a vehicle, you make no significant progress.";
 			achieved(33);
-			print "In this realm, your bicycle leaves a glowing trail behind it. It seems to repel the TERMITES, so you make a series of right angle turns, trapping them behind you, and accelerate toward an orange glow on the horizon. Unhindered by physical constraints, you accelerate continuously, and the orange glow soon resolves itself into the familiar fileservers of your grid. A spiral ramp encircles them, and you travel faster still as its radius tightens toward the apex. At the top, your speed exceeds the limit of the virtualization and you burst through the layers of simulation back into your basement in a shower of pink sparks.^";
+			print "In this realm, your bicycle leaves a glowing trail behind it. It seems to repel the TERMITES, so you make a series of right angle turns, trapping them behind you, and accelerate toward an orange glow on the horizon. Unhindered by physical constraints, you accelerate continuously, and the orange glow soon resolves itself into the familiar fileservers of your grid. You ride up the spiral ramp that encircles them, and you travel faster still as its radius tightens toward the apex. At the top, your speed exceeds the limit of the virtualization and you burst through the layers of simulation back into your basement in a shower of pink sparks.^";
 			playerto(basement, 1);
 			return true;
 	],
@@ -815,3 +815,4 @@ Scene	lost_in_grid "Lost In the Grid"
 			playerto(basement, 1);
 		}
 	];
+

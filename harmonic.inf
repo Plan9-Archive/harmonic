@@ -8,7 +8,7 @@
 ! Currently all rights reserved, I'll put a more open license on it when it's done
 ! Thanks to Inform Beginner's Guide Captain Fate for the template
 !
-!=============================================================================
+!============================================================================
 ! Development notes
 !
 ! Edited at the sturgeon bay cabin on 1st of November, 2015. 
@@ -39,7 +39,7 @@
 ! Configuration constants
 
 Release 4;
-Serial "151204";
+Serial "151205";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;
