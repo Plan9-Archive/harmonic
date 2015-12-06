@@ -641,7 +641,7 @@ object	space_pancakes "Space Pancakes"
 	],
 	has pluralname edible;
 
-object gelato_brew "affogato brew of gelato and espresso"
+object	gelato_brew "affogato brew of gelato and espresso"
 	with
 	name 'brew' 'gelato' 'espresso' 'affogato',
 	description "An indescribably sensual blend of sweet creamy gelato and dark bitter espresso, this intoxicating potion beckons you to drink it.",
@@ -655,3 +655,28 @@ object gelato_brew "affogato brew of gelato and espresso"
 	],
 	has edible;
 
+object	remote_lens "Remote Lens"
+	with
+	name 'remote' 'lens',
+	viewloc ritual_spot,
+	description "This magnifying glass has a tripodal base made of animal tusks.",
+	before [;
+		drop: remote_lens.viewloc = location;
+		take: remote_lens.viewloc = thedark;
+	];
+
+object	viewer_lens "Viewer Lens"
+	with
+	name 'viewer' 'lens',
+	description [;
+		print "Through the viewer lens you see...", (name) remote_lens.viewloc,"^^";
+		remote_lens.viewloc.description();
+		locale(remote_lens.viewloc);
+	];
+
+object	time_vault "Time Vault"
+	with
+	name 'time' 'vault',
+	before [;
+		"The Time Vault looks like the Platonic Ideal of a safe. It is grey and featureless save for the dial, which has been replaced by a clock set to 9:00. It resists all attempts to open, move, or investigate it.";
+	];

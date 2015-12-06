@@ -176,11 +176,21 @@ Room	essentially_art "Essentially Art"
 
 Room	afterlife_antiques "Afterlife"
 	with
+	gifts 0,
 	description [;
 		print "This is a small and cluttered antique and curiosity shop. Many items have a strange familiarity to them, yet you feel like you are in an entirely different dimension.^";
 		if (self hasnt visited) {
 			achieved(16);
 			print "^You knew a place like this would have to come into existence. Clearly, artifacts from this store can be used as information seeds for virtual reality reincarnation of their previous owners or individuals to whom they are symbolically connected. Perhaps items that need to leave ordinary reality could do so here as well.^";
+		}
+	],
+	each_turn [;
+		if (afterlife_antiques.gifts == 1) {
+			afterlife_antiques.gifts = 2;
+			move viewer_lens to player;
+			move remote_lens to ritual_spot;
+			print "^Colette greets you with 'Just the person I was waiting for! It's the funniest thing, someone gave me a gift to give to you, they said you might need it.' Colette holds up a large lens mounted on a tripodal base carved from antlers. 'Try to look through it, its quite unusual.' Colette maintains a poker face as she hands you the lens. You peer through the curved glass.^";
+			<examine viewer_lens>;
 		}
 	],
 	out_to atwood_shops,
@@ -304,7 +314,7 @@ Room	cap_square "Capitol Square"
 	s_to john_nolen,
 	w_to state_street,
 	n_to james_madison,
-	cant_go "You can go n, w, s, or se.",
+	cant_go "You can go n, w, or s.",
 	has outside;
 
 Room	state_street "State Street"
