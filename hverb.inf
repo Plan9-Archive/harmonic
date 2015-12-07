@@ -120,10 +120,11 @@
 	27: "escaping from within the Tempest gameworld";
 	28: "rapping to Xelia about Xochi";
 	29: "binding Chaos onto Substance in Atlantis";
-	30: "touring related Fictions with Ernest";
+	30: "touring related Fictions from the Orbital nexus";
 	31: "helping Atlantean students with a test on your work";
 	32: "brewing a special affogato";
 	33: "escaping from the TERMITES on lunar lightning";
+	34: "letting go of the Cosmic Wheel spoke";
 	}
 ];
 
@@ -229,12 +230,14 @@
 
 [ Footnotesub;
 	switch(noun) {
-	1: "Lyrics by Robert Hunter, music by Jerry Garcia, Terrapin Station 1977.";
+	1: "Lyrics from Terrapin Station by Robert Hunter, music by Jerry Garcia.";
 	2: "There is no footnote 2.";
 	3: "You are probably a 17 dimensional chipmunk yourself, you know.";
+	4: "Last sentence paraphrased from Fear and Loathing in Las Vegas, 1971 Hunter S. Thompson";
 	5: "Was it me? Was it you? I don't know who - but somebody said aroooooo! (Footnote 6)";
 	6: "Aroooooooooo!";
-	7: "Lyrics by Robert Hunter, music by Jerry Garcia, Ripple 1970.";
+	7: "Lyrics from Ripple by Robert Hunter, music by Jerry Garcia.";
+	8: "Paraphrased from Tolkien.";
 	9: "Lothlorien Co-op! If you had heard only a quarter of what I have heard about it, and I have heard very little of all there is to hear, you would be prepared for any sort of remarkable tale. (Tolkien, of Gandalf)";
 	default: "Probably a special case of the Navier-Stokes equations.";
 	};
@@ -316,7 +319,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 396 points. 36 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 405 points. 45 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;
@@ -324,6 +327,7 @@
 		"You don't see that here.";
 	move gelato_brew to player;
 	remove xochi;
+	remove xelia;
 	move xelia_and_xochi to coffee_lion;
 	gelato_alchemy_lab.brew = 9;
 	achieved(32);

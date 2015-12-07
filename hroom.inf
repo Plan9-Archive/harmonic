@@ -296,7 +296,7 @@ Room	john_nolen "John Nolen Drive"
 	description [;
 		print "Adjacent to lake Monona, John Nolen Drive is a wide multi-lane road which passes underneath the curved contours of the Monona Terrace convention center. The view from across the lake looking toward downtown is Madison's skyline-postcard view. A heavily used bike path teems with cyclists and joggers. The Capitol square is north, Williamson St. to the east, and the Miffyland residential neighborwood is west.^";
 		if (self hasnt visited)
-			print "^Arriving downtown on a bike has always been one of your favorite things. There was always the possibility of an unexpected encounter with a friend, always the chance someone interesting would call out to you and you would be drawn into an escapade. It can be a dangerous thing riding out from your front door onto the path - you might be swept up into adventure and find yourself anywhere. Right now, the breeze feels it promises complete freedom to attain dreams you had long since abandoned.^";
+			print "^Arriving downtown on a bike has always been one of your favorite things. There was always the possibility of an unexpected encounter with a friend, always the chance someone interesting would call out to you and you would be drawn into an escapade. It can be a dangerous thing riding out from your front door onto the path - you might be swept up into adventure and find yourself anywhere. (Footnote 8). Right now, the breeze feels it promises complete freedom to attain dreams you had long since abandoned.^";
 	],
 	n_to cap_square,
 	w_to miffyland,
@@ -327,17 +327,20 @@ Room	state_street "State Street"
 ^
 ^A sudden feeling you are being observed pulls you out of this reverie, and you look up to see a passing bus with an ad for an eyewear store featuring a translucent green pair of glasses.^";
 	],
+	before [;
+		listen: "A few notes of music from the street musicians, dozens of conversations, and the occasional noise of a passing vehicle.";
+	],
 	each_turn [;
 		state_street.peds++;
 		switch(state_street.peds) {
 		1: return false;
-		2: "^Somewhere near, a street musician plays jazz standards on saxophone.";
+		2: "^You try not to stare as a strikingly attractive stranger walks by.";
 		3: "^A pair of college girls stagger nearby, arguing about which one is drunker.";
 		4: "^You hear guitar and kazoo played by Art Paul.";
 		5: "^You cross the street to avoid Scanner Dan.";
 		6: "^A pedal-powered mobile bar slowly pedals by, a cacophany of songs and shouts.";
 		7: "^You notice UFO Jim and wave. He waves back as he walks around the corner.";
-		8: "^You try not to stare as a strikingly attractive stranger walks by.";
+		8: "^Somewhere near, a street musician plays jazz standards on saxophone.";
 		9: "^A pair of police officers walk by and you hope you don't smell too skunky.";
 		10: "^A panhandler asks you for change, and you give him a dollar.";
 		11: "^A large group of young men wearing red and white shout sports related slogans from a bar patio.";
@@ -826,3 +829,26 @@ Scene	lost_in_grid "Lost In the Grid"
 		}
 	];
 
+Scene	cosmic_wheel "The Cosmic Wheel"
+	with
+	spin 0,
+	description "The vastness of the firmament, the harmony of the spheres, the mystery and majesty of creation, the span of spacetime from the fiery beginning of the universe to its cold empty end - it is all spread out before you. You are clinging to the spoke of an infinitely vast wheel, being lifted upward by its rotation. Beneath you is the churning sea of potentiality, colored waves shifting and merging into each other. You are rising into the cosmic dome, liberated from dimensional scale, able to perceive the infinitesimal strands of ubiquitous quantum entanglement just as clearly as the countless hyperclusters of galaxies, wider than a billion skies.",
+	before [;
+		wait: "The wheel turns steadily.";
+	],
+	each_turn [;
+		cosmic_wheel.spin++;
+		switch(cosmic_wheel.spin) {
+		1: return true;
+		2: "^You pass by a nursery of young stars, a nebula giving birth to bright blue babies.";
+		3: "^A vast black hole devours a galaxy in the billion-year blink of an eye.";
+		4: "^A bubble universe, spacetime complete flat, passes by like an air bubble in the cosmic dough.";
+		5: "^Your hands are becoming fatigued from holding the spoke. A cluster of comets develops sentience, hyper-intelligence, and creates wormholes to launch panspermia seeds throughout spacetime.";
+		6: "^You cannot hold on indefinitely. At the apex of the wheel's rotation, you touch the cold void of a universe made empty by continuous entropic expansion,and shiver.";
+		10: print "^You have no choice but to release your grip...^";
+			Dropspoke_storyline();
+			return true;
+		default: "^You have passed the apex of the wheel's rotation, and you are now being carried downward toward the chaotic sea.";
+		}
+	],
+	cant_go "You are already everywhere at once, physically speaking.";

@@ -1,6 +1,7 @@
 !% -v8
 !% -SDX
 !% $MAX_VERBS=160
+!% $MAX_LABELS=1050
 
 ! HARMONIC TIME-BIND RITUAL SYMPHONY
 !============================================================================
@@ -120,7 +121,9 @@ Class	Scene
 	with
 	description "UNIMPLEMENTED SCENE DESCRIPTION",
 	before [;
-		drop: "Mulitverse travel protip: do NOT drop your items while visiting alternate universes.";
+		drop: 
+			if (noun == wheel_spoke) rfalse;
+			"Mulitverse travel protip: do NOT drop your items while visiting alternate universes.";
 	],
 	cant_go "Your presence in this branch of the multiverse is anchored to this scene, you must participate before you can leave.",
 	has light;

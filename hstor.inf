@@ -196,6 +196,7 @@
 	lost_in_grid.battle = 1;
 	afterlife_antiques.gifts = 1;
 	move time_vault to lady_wisdom;
+	move orrery to turning_wheel;
 	daynumber = 42;
 	settime(60,60);
 	achieved(21);
@@ -352,6 +353,30 @@
 ^A tone appears in the silence, ghostly at first, then growing. The sound seems to be moving around the dark room in a spiral. Astra begins singing in harmony with the tone, at first in unisons and octaves, then perfect fifths and major thirds. She begins to intone words (or names?) in a language you don't recognize. The harmonies change, becoming strange and unearthly. Astra's voice is ululating, skipping between tritones and just-intonation perfect fourths and minor thirds. The sound becomes a whirlpool, pulling you in an unexpected direction. You reach out to catch yourself, but the walls are suddenly far away and when you find your balance, you are in...^";
 	playerto(atlantis_temple);
 	startdaemon(atlantis_temple);
+];
+
+[ Dropspoke_storyline;
+	move fortune to turning_wheel;
+	print "With a feeling of calm acceptance and surrender of the ego, you release your grip on the spoke. At first, you feel like you are falling toward the sea, but this is an illusion of weightlessness. In fact, you are rising, moving away from the wheel. The further your distance, the greater perspective you have - you see the wheel turning the planets in their orbits, turning the cycle of life and death, turning the formation of order from chaos and its return to entropy, turning random chance into meaningful stories.
+^
+^Further and further you drift, until your entire universe is too minute to perceive within the vast design. You might still be drifting and trying to grasp the pattern of the inconceivable whole, but your contemplative trance is interrupted by the sound of a bird singing, right on your shoulder - a Large Cardinal. You experience the song as infinite chains of logical deduction which happen instantly within you,
+^
+^'Charming universe, but you know it barely even counts as infinite,' the cardinal proves. 'Your existence is a countably infinite subset of a very small uncountable infinity of possibilities. Can't you dream a bit bigger?'
+^
+^'What's the limit?' you ask, 'Is there any?'
+^
+^'The boundary is Paradox. There is no Set of All Sets, but with enough cleverness, you can use any set you can name.'
+^
+^'So, the axiom of choice is true?' you inquire. The cardinal whistles with distress.
+^
+^'That's an Unprintable Symbol. At this level, you decide the axioms, you build the resulting universes. You can't count your own degrees of freedom or prove your own consistency.'
+^
+^The theorems being sung by the bird have propelled you to the very edge of the Paradox Boundary. 'But if that statement is accurate,' you assert, 'doesn't that mean I should regard it as unproved, because it shows I have no reason to believe in the consistency of the system which proved it?' You have drifted across the boundary. You can see the full circumference of the infinite wheel...
+^
+^[TRANSFINITE OVERFLOW ERROR : X < Woodin Cardinal : Infinity != NotANumber]
+^
+^(You find yourself back in Turning Wheel Cycles with a splitting headache)^";
+	playerto(turning_wheel, 1);
 ];
 
 [ Chaosbind_storyline;

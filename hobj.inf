@@ -276,6 +276,11 @@ Decor	termites "termites" lost_in_grid
 	],
 	has pluralname;
 
+Decor	wheel "wheel" cosmic_wheel
+	with
+	name 'wheel' 'firmament' 'harmony' 'spheres' 'creation' 'spacetime' 'universe' 'cosmos',
+	description "The infinite immensity of the turning wheel of the axis of reality is beyond your capacity to understand or affect.";
+
 !============================================================================
 ! The immobile prop objects
 
@@ -307,7 +312,7 @@ Prop	terminal "terminal" home
 	with	
 	name 'terminal' 'computer' 'plan' 'plan9' 'grid' '9grid' 'system',
 	acted 0,
-	description [; print "Your terminal glows with a Mondrian-like arrangement of pastel windows, each rio bound into a different namespace. Multiple rc shells are running, acme is open, and several irc channels are available within hubfs. You can just type >email to check for messages.^";
+	description [; print "Your terminal glows with a Mondrian-like arrangement of pastel windows, each rio bound into a different namespace. Multiple rc shells are running, acme is open, and several irc channels are available within hubfs. You can check for messages with >use terminal.^";
 		if (introgoal == 3) print "^You check the namespace of your main shell, and you see some unexpected devices. ^^mount #x/fiction /loc/basement ^mount #x/reality /loc/basement. ^^You should probably check out the servers in the downstairs to see what is happening.^";
 	],
 	before [;
@@ -432,7 +437,7 @@ Prop 	fiction "Fiction"
 Prop 	reality "Reality"
 	with	
 	name 'reality' 'actuality' 'tangibility' 'materiality' 'physicality',
-	description "Reality, the tangible material actuality of physics, is dense here. The stable objective information weave of particles and fields provides the substrate of your cognition and perception.",
+	description "Reality, the objective shared state of the external world, is dense here. The stable information weave of predictable continuous phenomena provides the substrate of your cognition and perception.",
 	has proper;
 
 Prop	fire "fire within the firepit" andrews_cabin
@@ -474,6 +479,21 @@ Prop	school_of_atlantis "School of Atlantis painting"
 	],
 	has enterable;
 
+Prop	orrery "Metaphysical Orrery"
+	with
+	name 'metaphysical' 'orrery',
+	description "This astonishing device looks like what would happen if fifteen bicycles were being ridden across the surface of a neutron star and then suffered a catastrophic impact with a ferris wheel. Every variety of rotary and cyclical motion is manifest within the fractal nest of gears, chains, and wheels.",
+	before [;
+		turn: 
+			print "You turn the orrery. Despite the quantity of moving parts and interconnections, there is no sound but a quiet even hum. You shift gear ratios and small information vortexes appear, centered on each rotating element. You spin faster, and the vortexes deepen and expand. Turbulence patterns are appearing in the space between them. You entrain with the motion of the machine and upshift again, the vortexes merge and emit musical tones, each corresponding to a gear ratio, and a towering wave of overtones crashes over you. You are knocked off the machine, and spend a moment floundering in the chromatic sea. Your flailing arms make contact with something solid, and you instinctively grasp onto it. It is moving, and you find yourself being lifted out of the water. You grip harder as it rises, rises, and rises higher. From your increasingly vertiginous vantage point, you realize you are clinging to a spoke of...^";
+			playerto(cosmic_wheel);
+			move wheel_spoke to player;
+			return true;
+		pull: <<turn self>>;
+		push: <<turn self>>;
+		use: <<turn self>>;
+	];		
+
 Prop	past "Past" loth_backyard
 	with
 	name 'past' 'history',
@@ -489,13 +509,19 @@ Prop	future "Future" loth_backyard
 Prop	chaos "Chaos" atlantis_temple
 	with
 	name 'chaos' 'discord' 'eris',
-	description "The radiantly mischevious essence of Chaos is here, the fickle goddess of the unpredictable fall of the cards.",
+	description "The radiantly mischevious essence of Chaos is here, the fickle goddess of the unpredictable rise of entropy.",
 	has proper;
 
 Prop	substance "Substance" atlantis_temple
 	with
 	name 'substance' 'matter' 'pillar',
 	description "The bedrock ground nature of material physicality is here, the earthy substance of tangible matter.",
+	has proper;
+
+Prop	fortune "Fortune"
+	with
+	name 'fortune',
+	description "Luck, the fortunate outcome of random events is here, the prettiest of the many faces of the Goddess of the fall of the cards.",
 	has proper;
 
 !============================================================================
@@ -679,4 +705,15 @@ object	time_vault "Time Vault"
 	name 'time' 'vault',
 	before [;
 		"The Time Vault looks like the Platonic Ideal of a safe. It is grey and featureless save for the dial, which has been replaced by a clock set to 9:00. It resists all attempts to open, move, or investigate it.";
+	];
+
+object	wheel_spoke "Spoke of the Cosmic Wheel"
+	with
+	name 'wheel' 'spoke' 'cosmic',
+	description "You are tightly gripping a spoke of the Cosmic Wheel. It is made of an unknown yet seemingly rigid and indestructible material. There is no flex or vibration in it whatsoever. It vanishes in the distance in both directions. Your knuckles are white from the force of your grip.",
+	before [;
+		drop:
+			achieved(34);
+			Dropspoke_storyline();
+			return true;
 	];
