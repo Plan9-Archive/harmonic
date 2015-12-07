@@ -591,6 +591,11 @@ object 	lunar_lightning "Lunar Lightning"
 	name 'bike' 'bicycle' 'lunar' 'lightning' 'cycle',
 	bought 0,
 	description "The ultimate Deadhead bicycle, Lunar Lightning is painted with a red to blue fade and has a Steal-Your-Face sticker on the front fork. Lightning bolt stickers follow the line of each tube of the frame. Black moustache-style handlebars and a generator-hub powered front headlight show that this is a bike for relaxed recreational city riding, not racing.",
+	react_after [;
+		drop:
+			if (noun in lunar_lightning)
+				move noun to location;
+		],
 	before [; 
 		go: 
 			if((self in etown) && ((noun == n_obj) || (noun == in_obj))) {

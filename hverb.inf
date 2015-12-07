@@ -246,6 +246,7 @@
 	7: "Lyrics from Ripple by Robert Hunter, music by Jerry Garcia.";
 	8: "Paraphrased from Tolkien.";
 	9: "Lothlorien Co-op! If you had heard only a quarter of what I have heard about it, and I have heard very little of all there is to hear, you would be prepared for any sort of remarkable tale. (Tolkien, of Gandalf)";
+	10: "Heinrich Heine, set by Schumann in the first song of Dictherliebe.";
 	default: "Probably a special case of the Navier-Stokes equations.";
 	};
 ];
@@ -515,7 +516,7 @@
 ];
 
 [ Verblistsub;
-	"n s e w ne nw se sw u d in out, examine, take, give, talk to, tell, use, play, buy, wear, ride, listen, bomb, visit, sing, lunar, release, bind";
+	"n s e w ne nw se sw u d in out, examine, take, drop, give, talk to, tell, use, play, buy, wear, ride, listen, bomb, visit, sing, lunar, release, bind";
 ];
 
 [ Visitsub;

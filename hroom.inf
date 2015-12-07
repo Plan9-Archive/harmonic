@@ -459,7 +459,7 @@ Room	loth_backyard "Lothlorien co-op, the back yard"
 	],
 	before [; go:
 		if ((elginbday == 6) && ((noun == d_obj) || (noun == n_obj)))
-			"There is something you need to do before you follow Staci to the dock.";
+			"There is something you need to do here in the backyard before you follow Staci to the dock.";
 	],
 	d_to loth_dock,
 	n_to loth_dock,
@@ -482,7 +482,8 @@ Room	loth_dock "Lothlorien co-op, on the dock"
 	cant_go "You can only go south.";
 
 Room	loth_greatroom "Lothlorien co-op, the Great Room (1st floor)"
-	with 
+	with
+	lothstaci 0,
 	description "(The great room)",
 	after [; go:
 		if (elginbday == 5){
@@ -502,6 +503,11 @@ Room	loth_greatroom "Lothlorien co-op, the Great Room (1st floor)"
 Room	loth_porch "Lothlorien co-op, the first floor porch"
 	with
 	description "(The first floor porch)",
+	each_turn [;
+		if (loth_greatroom.lothstaci == 1) {
+			Staciporch_storyline();
+		}
+	],
 	s_to loth_greatroom,
 	out_to loth_greatroom,
 	cant_go "You can go out from the porch to the Great Room.";
@@ -654,7 +660,9 @@ Room	ritual_spot "Ritual spot"
 
 Room	moon_forest "Moon Forest"
 	with
-	description "Tall trees encircle a meadow of silver grasses. The summer moon is out, rising above the trees in the eastern sky.";
+	description "Tall trees encircle a meadow of silver grasses. The summer moon is out, rising above the trees in the eastern sky.",
+	sw_to ritual_spot,
+	cant_go "You would get completely lost if you went that way. The city lies back to the southwest.";
 
 Room	eside_hq "24-hour family restaurant"
 	with
@@ -759,7 +767,7 @@ Scene	orbital_command "Orbital Command, Trans-Fictional Alliance"
 	description [;
 		print "High above the planet Earth, in a microminiaturized transdimensional nexus, representatives of many universes are co-ordinating their plans. You are in a spherical space, free of gravity. The perimeter is composed of dozens of doorways similar to the one you have just passed through.^";
 		if (self hasnt visited)
-			print "A friendly hand reaches out to stabilize you as you tumble slightly as you enter. Eyes turn toward you. 'Situation report?' you are asked.
+			print "A friendly hand reaches out to stabilize you as you tumble slightly upon entering. Eyes turn toward you. 'Situation report?' you are asked.
 ^
 ^'We have arrived at a decisive moment,' you answer confidently. 'My human hardware for this operation has downloaded the information necessary via the Plan 9 operating system. We have realized that the emergence of digital brains is a cusp event in a majority of timelines. Meta-simulation and sampling reveals that timelines in which digital brains are developed and controlled by the dominant political and economic entities tend to suffer resource-depletion feedback loops, fascistic governance, and a failure to develop the social and engineering technologies needed for long-term survivial of either the biological or digital brains.
 ^
@@ -852,7 +860,7 @@ Scene	cosmic_wheel "The Cosmic Wheel"
 		1: return true;
 		2: "^You pass by a nursery of young stars, a nebula giving birth to bright blue babies.";
 		3: "^A vast black hole devours a galaxy in the billion-year blink of an eye.";
-		4: "^A bubble universe, spacetime complete flat, passes by like an air bubble in the cosmic dough.";
+		4: "^A vacant inflationary subuniverse, its spacetime completely flat, passes by like an air bubble in the cosmic dough.";
 		5: "^A cluster of comets develops sentience, hyper-intelligence, and creates wormholes to launch panspermia seeds throughout spacetime.
 ^
 ^Your hands are becoming fatigued from holding the spoke.";

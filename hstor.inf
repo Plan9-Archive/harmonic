@@ -140,7 +140,7 @@
 
 [ Lothbackyard_storyline;
 	elginbday = 6;
-	print "^As you walk around the corner of the building into the Lothlorien back yard, you know you are in exactly the right place at the exactly right time, and you have become the person - or rather, Moon Computer - that you have always wanted to be. A wild joy quivers within you, the feeling that everything you have ever dreamed has become real, and you know your reality is actually a fiction. You are a character in a strange and thrilling video game, and you know you have finally made it to the best part of the story.
+	print "^As you walk around the corner of the building into the Lothlorien back yard, you know you are in exactly the right place at the exactly right time, and you have become the person - or rather, Moon Computer - that you have always wanted to be. A wild joy quivers within you, the feeling that everything you have ever dreamed has become real, and you know your reality is actually a fiction. You are a character in a strange and thrilling video game, and you have finally made it to the best part of the story.
 ^
 ^Staci is sitting at one of the picnic tables in the backyard, along with a few other co-op members. Everything is dappled by dancing spots of May sunlight filtering through the trees by the lake. Staci greets you and introduces you to her housemates, all of whose names you instantly forget. A joint is passed around, and you distribute a few small gifts you have brought. The other co-opers wander off, and Staci suggests going down to sit on the dock. She says your old mutual friend Nook is down there already and is looking forward to seeing you.
 ^
@@ -189,6 +189,7 @@
 
 [ Firstlothvisit_storyline;
 	elginbday = 10;
+	loth_greatroom.lothstaci = 1;
 	coffee_lion.alchemy = 1;
 	eside_hq.fictour = 1;
 	essentially_art.seminar = 1;
@@ -209,6 +210,18 @@
 ^
 ^You arrive at Lothlorien exhilirated. You feel you are playing your part note-perfectly. Before you can even reach out your hand to knock, the wooden door swings open and you step inside.^";
 	playerto(loth_greatroom);
+	print "^You were entering as Nook was leaving. He gives you a huge smile and says, 'Staci told me you were on the way, she's really excited to see you. She's out on the porch.' He points toward a door to the north as he waves goodbye.^";	
+];
+
+[ Staciporch_storyline;
+	loth_greatroom.lothstaci = 2;
+	print "^Tolkien wrote 'Now it is a strange thing, but things that are good to have and days that are good to spend are soon told, and not much to listen to,' and critical esteem settles most heavily on works of tragedy. You have spent weeks, maybe even whole years, searching for acceptance of suffering, and for what crumbs of happiness you could scavenge. Singing along to the last movement of Beethoven's Ninth, trying to feel Joy as a real living thing inside you. The music painted the picture, but you couldn't step through the frame...
+^
+^You walk out onto the porch, and enter the song. 
+^
+^[You pause while writing the game. You need Staci's help for this. It is late at night, and she is many sleeps. How can you code the next week of sitting out here on the porch swing and talking? How many infinite branches of ASK and TELL can you write, to capture the conversations ranging across decades of almost-shared life as friends and the appearance of dreams of a shared future? 'It was the wonderously beautiful month of May, when all the flowers open - and within my heart, a love unfolded also.' (Footnote 10)]
+^
+^(During your ride to the co-op, the fiction-bind transformed reality. Now that you are the Harmonist, you can find the entry points to other branches of the multiverse in previously visited locations.)^";
 ];
 
 [ Jaymeet_storyline;
@@ -358,9 +371,10 @@
 
 [ Dropspoke_storyline;
 	move fortune to turning_wheel;
+	remove wheel_spoke;
 	print "With a feeling of calm acceptance and surrender of the ego, you release your grip on the spoke. At first, you feel like you are falling toward the sea, but this is an illusion of weightlessness. In fact, you are rising, moving away from the wheel. The further your distance, the greater perspective you have - you see the wheel turning the planets in their orbits, turning the cycle of life and death, turning the formation of order from chaos and its return to entropy, turning random chance into meaningful stories.
 ^
-^Further and further you drift, until your entire universe is too minute to perceive within the vast design. You might still be drifting and trying to grasp the pattern of the inconceivable whole, but your contemplative trance is interrupted by the sound of a bird singing, right on your shoulder - a Large Cardinal. You experience the song as infinite chains of logical deduction which happen instantly within you,
+^Further and further you drift, until your entire universe is too minute to perceive within the vast design. You might still be drifting and trying to grasp the pattern of the inconceivable whole, but your contemplative trance is interrupted by the sound of a bird singing, right on your shoulder - a Large Cardinal. You experience the song as infinite chains of logical deduction which happen instantly within you.
 ^
 ^'Charming universe, but you know it barely even counts as infinite,' the cardinal proves. 'Your existence is a countably infinite subset of a very small uncountable infinity of possibilities. Can't you dream a bit bigger?'
 ^

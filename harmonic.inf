@@ -39,8 +39,8 @@
 !============================================================================
 ! Configuration constants
 
-Release 4;
-Serial "151205";
+Release 5;
+Serial "151207";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;
