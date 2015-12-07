@@ -125,6 +125,7 @@
 	32: "brewing a special affogato";
 	33: "escaping from the TERMITES on lunar lightning";
 	34: "letting go of the Cosmic Wheel spoke";
+	35: "binding Fortune onto Story";
 	}
 ];
 
@@ -161,6 +162,12 @@
 	if(((noun == chaos) && (second == substance)) || ((noun == substance) && (second == chaos))) {
 		atlantis_temple.chaosbind = true;
 		print "^You make the bind, and the Goddess of Chaos winks at you as she merges herself with the material substance of reality. She's been there all the time, of course.^";
+		return true;
+	}
+	if(((noun == storybind) && (second == fortune)) || ((noun == fortune) && (second == storybind))) {
+		fortune.dodge_fate = true;
+		achieved(35);
+		print "^The lens allows you to make the bind, and although there is no overt effect, you feel much less worried about potential plot twists. Things have been so magical this summer, and the feeling that everything is too good to be true, too perfect to last, has sometimes given you a vague unease. That feeling is gone now.^";
 		return true;
 	}
 	"^You attempt the bind of ", (name) noun, " on top of ", (name) second, " but nothing interesting happens...";
@@ -279,6 +286,12 @@
 		"You need to >bind fiction reality.";
 	if (((noun == past) || (noun == future)) && (elginbday == 6))
 		"You need to >bind past future.";
+	if ((noun == viewer_lens) || (noun == remote_lens))
+		"If you leave the remote lens somewhere, abstractions in that location can be bound remotely.";
+	if (noun == animal_tarot)
+		"If you use the animal tarot in Moon Forest, it will give you access to the Story abstraction. You need to be a strong cyclist to reach it, which requires a visit to the Alchemy Lab underneath Coffee Lion.";
+	if ((noun == storybind) || (noun == fortune))
+		"The paired abstraction is in a different location. You will need to use the magic lenses from the afterlife to allow the abstractions to be bound together. Visits to Afterlife, Coffee Lion, Turning Wheel, and Moon Forest will be required.";
 	if (introgoal == 2)
 		"You need to return to Coffee Lion and >talk to xelia.";
 	if (introgoal == 3)
@@ -289,6 +302,10 @@
 		"You need to buy a bicycle from Turning Wheel and ride it to continue west to downtown. If you have done so, use >lunar to call your bicycle to you.";
 	if (location == thedark)
 		"Just >sing.";
+	if (location == cosmic_wheel)
+		"Just >drop spoke.";
+	if (location == lost_in_grid)
+		"Summon >lunar and then move in any direction";
 	if (location == atlantis_temple)
 		"You need to >bind chaos substance and wait a few turns.";
 	if (location == atlantean_academy)
@@ -319,7 +336,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 405 points. 45 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 414 points. 45 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;
@@ -357,6 +374,8 @@
 		print "bind Past Future^";
 	if (atlantis_temple.chaosbind == true)
 		print "bind Chaos Substance^";
+	if (fortune.dodge_fate == true)
+		print "bind Fortune Story^";
 ];
 
 [ Petsub;

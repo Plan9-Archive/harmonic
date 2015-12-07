@@ -644,7 +644,17 @@ Room	ritual_spot "Ritual spot"
 	with
 	description "Past the edge of the city, a short path leads away from the road to a small clearing in a ring of boulders. It feels like a perfect place for performing a ceremony or ritual.",
 	sw_to etown,
-	cant_go "The way back into the city is se.";
+	ne_to [;
+		if ((player notin lunar_lightning) || (bikeskill < 1))
+			"You need to be in strong biking condition in addition to riding your bicycle to ride in that direction.";
+		return moon_forest;
+	],
+	cant_go "The way back into the city is se. The road continues into the distance to the ne.",
+	has outside;
+
+Room	moon_forest "Moon Forest"
+	with
+	description "Tall trees encircle a meadow of silver grasses. The summer moon is out, rising above the trees in the eastern sky.";
 
 Room	eside_hq "24-hour family restaurant"
 	with
@@ -843,8 +853,12 @@ Scene	cosmic_wheel "The Cosmic Wheel"
 		2: "^You pass by a nursery of young stars, a nebula giving birth to bright blue babies.";
 		3: "^A vast black hole devours a galaxy in the billion-year blink of an eye.";
 		4: "^A bubble universe, spacetime complete flat, passes by like an air bubble in the cosmic dough.";
-		5: "^Your hands are becoming fatigued from holding the spoke. A cluster of comets develops sentience, hyper-intelligence, and creates wormholes to launch panspermia seeds throughout spacetime.";
-		6: "^You cannot hold on indefinitely. At the apex of the wheel's rotation, you touch the cold void of a universe made empty by continuous entropic expansion,and shiver.";
+		5: "^A cluster of comets develops sentience, hyper-intelligence, and creates wormholes to launch panspermia seeds throughout spacetime.
+^
+^Your hands are becoming fatigued from holding the spoke.";
+		6: "^At the apex of the wheel's rotation, you touch the cold void of a universe made empty by continuous entropic expansion,and shiver.
+^
+^You cannot hold on indefinitely.";
 		10: print "^You have no choice but to release your grip...^";
 			Dropspoke_storyline();
 			return true;

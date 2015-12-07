@@ -521,7 +521,31 @@ Prop	substance "Substance" atlantis_temple
 Prop	fortune "Fortune"
 	with
 	name 'fortune',
+	dodge_fate false,
 	description "Luck, the fortunate outcome of random events is here, the prettiest of the many faces of the Goddess of the fall of the cards.",
+	each_turn [;
+		if (testscope(storybind) && (location == turning_wheel))
+			print "^The remote lens makes Story visible here.^";
+	],
+	add_to_scope [;
+		if((storybind in moon_forest) && (remote_lens in moon_forest) && (viewer_lens in player))
+			placeinscope(storybind);
+	],
+	has proper;
+
+Prop	storybind "Story"
+	with
+	name 'story',
+	description "Story, the narrative that ties our experience together is here, the thread of meaning upon which we hang the succession of events in our lives.",
+	each_turn [;
+		if(testscope(fortune) && (location == moon_forest))
+			print "^The remote lens makes Fortune visible here.^";
+	],
+	add_to_scope [;
+		if((fortune in turning_wheel) && (remote_lens in turning_wheel) && (viewer_lens in player)) {
+			placeinscope(fortune);
+		}
+	],
 	has proper;
 
 !============================================================================
@@ -717,3 +741,28 @@ object	wheel_spoke "Spoke of the Cosmic Wheel"
 			Dropspoke_storyline();
 			return true;
 	];
+
+object	animal_tarot "Animal Tarot deck"
+	with
+	name 'animal' 'tarot' 'deck' 'cards',
+	bought 0,
+	description "This deck is illustrated in black and white. The box shows a gathering of animals in a forest clearing under the full moon.",
+	before [;
+		take: if (self.bought == 0) "You need to buy it first.";
+		buy:
+			if (self.bought == 1) "You already bought it.";
+			bankaccount = bankaccount - 20;
+			self.bought = 1;
+			"You buy the Animal Tarot. You make a mental note to show it to Staci.";
+		use: 
+			if (location ~= moon_forest)
+				"You feel like you need to be in a special place before making use of these cards.";
+			move storybind to moon_forest;
+			achieved(34);
+			"You glance upward at the moon. 'As the moon is halfway to its apex, she said' you mumble to yourself, and Staci steps into the clearing, looking much like the Empress.
+^
+^'Just one card,' she says. The deck is shuffled, and you draw The World. The tale ends, yet begins anew. The snake that eats its own tail, wrapped around Sophia, the Goddess of Wisdom. 'Perfect,' Staci says. 'I'm sure you can figure out what to do from here. I'll see you later.'
+^
+^Story has appeared amidst the tall grasses.";
+	];
+

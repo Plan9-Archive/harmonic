@@ -195,6 +195,7 @@
 	move school_of_atlantis to essentially_art;
 	lost_in_grid.battle = 1;
 	afterlife_antiques.gifts = 1;
+	move animal_tarot to afterlife_antiques;
 	move time_vault to lady_wisdom;
 	move orrery to turning_wheel;
 	daynumber = 42;
@@ -376,7 +377,7 @@
 ^[TRANSFINITE OVERFLOW ERROR : X < Woodin Cardinal : Infinity != NotANumber]
 ^
 ^(You find yourself back in Turning Wheel Cycles with a splitting headache)^";
-	playerto(turning_wheel, 1);
+	playerto(turning_wheel);
 ];
 
 [ Chaosbind_storyline;
