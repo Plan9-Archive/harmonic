@@ -222,12 +222,14 @@
 ^
 ^[You pause while writing the game. You need Staci's help for this. It is late at night, and she is many sleeps. How can you code the next week of sitting out here on the porch swing and talking? How many infinite branches of ASK and TELL can you write, to capture the conversations ranging across decades of almost-shared life as friends and the appearance of dreams of a shared future? 'It was the wonderously beautiful month of May, when all the flowers open - and within my heart, a love unfolded also.' (Footnote 10)]
 ^
-^(During your ride to the co-op, the fiction-bind transformed reality. Now that you are the Harmonist, you can find the entry points to other branches of the multiverse in previously visited locations.)^";
+^(During your ride to the co-op, the fiction-bind transformed reality. Now that you are the Harmonist, you can find the entry points to other branches of the multiverse in previously visited locations.)^
+^
+^(1 June 2013 - The multiverse authors convention is open NE of the Capitol)^";
 ];
 
 [ Madconstart_storyline;
 	madcon.timetrav = 2;
-	print "^You arrive at the start of MADCon, a busy chaos of arrivals from all pi to the 999th corners of the multiverse. Staci spots you and asks for a favor. 'I've got to be on a panel for time-sequence rewriting, can you take Lily to lunch now?' You agree. Lily is excited. 'Let's go to Pasta and Other! I want noodles. Come on!'
+	print "^You arrive at the start of Madcon, a busy chaos of arrivals from all pi to the 999th corners of the multiverse. Staci spots you and asks for a favor. 'I've got to be on a panel for time-sequence rewriting, can you take Lily to lunch now?' You agree. Lily is excited. 'Let's go to Pasta and Other! I want noodles. Come on!'
 ^
 ^Lily is leading the way. She exits the building, heading towards State Street. You need to follow.^";
 ];
@@ -261,17 +263,17 @@
 	achieved(36);
 	"^The convention is in full swing as you arrive. After a few introductions, a tall owl of multiple genders transfixes you with glowing orange eyes. 'For safety reasons, everyone agrees that author-level, continuity-breaking information should be wiped from your time-embedded consciousness. The experiences will be stored in your crown, of course, so nothing is lost long-term. Are you ready?' You nod agreement.
 ^
-^It is two days later. You are exhausted but happy. The convention has been AMAZING, especially the part where...where...well, it was definitely amazing. You know that much at least.";
+^It is two days later. You are exhausted but happy. The convention has been AMAZING, especially the part where...where...well, it was definitely amazing. You know that much at least. It seems like time to go relax at Lothlorien.";
 ];
 
 [ Wizardparty_storyline;
 	mendota_lakeside.wizard = 2;
 	move wizard_head to loth_backyard;
-	"^As you are nearing Loth, you hear a voice calling out: 'The moment is at hand - or rather, at head!' and a cheer goes up. Is it that day already? The Wizard had been promising a notable symbolic event. He had promised to enact his spiritual death and rebirth by beheading himself. 'Bring the axe!' the voice commands.
+	"^As you are nearing Loth, you hear a voice calling out: 'The moment is at hand - or rather, at head!' and a cheer goes up. Is it that day already? The Wizard had been promising a notable symbolic event. He had promised to enact his spiritual death and rebirth by beheading himself. 'Bring the sword!' the voice commands.
 ^
-^Sounds like fun! You enter the backyard, which is full of people arrayed in a circle. The Wizard is at the center. The axe is handed to him, and with a single mighty stroke, he cuts his own head off. The crowd cheers wildly and toasts are made.
+^Sounds like fun! You enter the backyard, which is full of people arrayed in a circle. The Wizard is at the center. Staci carries the sword to him, and with a single mighty stroke, he cuts his own head off. The crowd cheers wildly and toasts are made.
 ^
-^The Wizard holds his own head aloft triumphantly. 'Bring the pole!' he demands. He stands on a chair, mounts the head atop a long pole, and anchors the pole. The head will preside over the backyard for the rest of the summer. The following party goes late into the night, and you realize that it is about to be June 19th, a key anniversary in the 20 year harmonic time bind.
+^The Wizard holds his own head aloft triumphantly. 'Bring the ladder!' he demands. He stands on it, and mounts the head atop a long pole. The head will preside over the backyard for the rest of the summer. The following party goes late into the night, and you realize that it is about to be June 19th, a key anniversary in the 20 year harmonic time bind.
 ^
 ^(You can now find a path west from State Street)";
 ];
@@ -290,11 +292,14 @@
 
 [ Nottingham_storyline;
 	mendota_lakeside.wizard = 4;
+	bikeskill++;
 	"You arrive at Nottingham with Staci and Lily. They have agreed to open the performance with an acapella duet of 'My Eyes' from Dr. Horrible. As always, kids steal the show. Staci and you perform next, and it is a lot of fun, although you wonder why Staci didn't seem to follow any of your eye contact cues. (Maybe you should take the mirror shades off next time?) You close with a cover of 'In My Mind' (Footnote 12) and Staci nails the audience to the wall with the conviction of her delivery.
 ^
 ^Paul of the singing hippie housekeepers shows up, and his values do not mesh easily with the laid-back atmosphere at the co-ops. You wander away from the party with him, engaged in conversation about boundaries and healthy behavior and how Madison is still stuck in the Old Testament, and by the time the conversation ends and he departs, the concert is over.
 ^
-^So much has been happening. A ride around the lakes, south into the countryside, would probably do you good.";
+^So much has been happening. A ride around the lakes, south into the countryside, would probably do you good.
+^
+^(Your biking strength and stamina has increased)";
 ];
 
 [ Countryside_storyline;
@@ -303,7 +308,7 @@
 ^
 ^Now, out in the countryside, the summer night air and the moon and the mushrooms coalesce into a smooth melody. 'Last full moon of summer 2013...' you sing, over and over as you ride.
 ^
-^You feel like you are on the peak of a very high mountain. Nothing at all like this summer had ever happened to you before. In his famous story of the infinite library of Babel, composed of infinite meaningless random books, Borges talks of how some librarians went mad searching for their 'Vindication' - the hypothetical book which would validate their existence, show how perfect and necessary all their actions were.
+^You feel like you are on the peak of a very high mountain. Nothing at all like this summer has ever happened to you before. In his famous story of the infinite library of Babel, composed of infinite meaningless random books, Borges talks of how some librarians went mad searching for their 'Vindication' - the hypothetical book which would validate their existence, show how perfect and necessary all their actions had been.
 ^
 ^By some unbelievable stroke of fortune, you found your Vindication this spring and summer. Your life became everything you had ever hoped it could be, you did exactly what you wanted to do, when you wanted to do it, and most importantly, you were treated with love and affection by other people, and found the intense closeness and deeper communication you always knew was possible.
 ^
@@ -318,7 +323,7 @@
 ^
 ^The summer of 2013 has been going on for about two years, it seems. Couldn't be any shorter, not with everything that's happened. You remember the singing bowl guy running with his arms outstretched on the roof of a parking garage, you remember jumping up and down at a concert of cyberhippiejamtronic music, you remember countless bike rides, other performances, other parties, giving afro-pop tickets to the street people, the visit from the Lakota Grandmothers, every day pizza at Rossinis, coffee from the Lion, Space Pancakes at night (that smiley face the aliens put on the car is still there!). And all those months and months worth of memories seem small compared to remembering time with Staci, such intense communication, talking and listening and learning the language of the waves, smoking another joint and passing the bag of mushrooms back and forth, eating maybe just one more little stem, then deciding to make some music and tearing off into a note-perfect first-time ever attempted rendition of some crazy bitch's song in d minor about a nervous breakdown.
 ^
-^You are vibrating like a tuning fork, resonating rainbow waves of higher dimensional sound from your extra arms. You get on your bike and ride home, and on the way you are invited into a house full of people and there is a piano and someone else plays and you are jamming 4-handed, some kind of psychedelic ragtime, and then you are back home. You wonder if any human in history has ever had as much fun as you have been having for the past few months.^
+^You are vibrating like a tuning fork, resonating rainbow waves of higher dimensional sound from your extra arms. You get on your bike and ride home, and on the way you are invited into a house full of people and there is a piano and someone else plays and you are jamming 4-handed, some kind of psychedelic ragtime, and then you are back home. You wonder if any human in history has ever had as much fun as you have been having for the past few months.
 ^
 ^(The Wheel costume for the Tarot Party is now in your possession. Wear it to trigger the party event.)^";
 	playerto(milw_street,1);
@@ -358,6 +363,8 @@
 ^You type the final sentence of the main storyline of the game into acme. It seems like too much of a bummer. The fire that closed Lothlorien for two years was bad, but in the end, you won, dammit! The castle is reopening, and nothing can take what happened during summer 2013 away from you.
 ^
 ^Your fingers go to the Loonie Revolution Power Pendant around your neck. Maybe only the calm face of the moon knows what was reality and what was imagination. By the end of the summer, you had completed a transition from being actively delusional to being an actor playing the part of a madman because it suited an artistic purpose. There is no single objective truth; we do invent our universe as we go, using language to create a shared namespace of symbol-binds. Sanity means 'health', and you never felt healthier, physically or mentally, than you did during those incredible months. Belief systems are strange things. Being a religion of one does make you crazy, but if the content of the religion is fun and empowering and helps you create connections with other people, is 'objective' truth the right criteria with which to measure its value?
+^
+^It wasn't really a religion of one, though. By opening herself to you, by listening and learning to speak your language, Staci anchored you to the social world, sharing her home, friendships, and family with you. Not just Staci, but all your friends helped give you a space to play with delusion, to alchemically transform it to free creative play and artistic inspiration. 
 ^
 ^You sigh. Too much pontification at the end, let the reader figure it out, don't gloss yourself for them. Months of work remain to bring this virtual recreation of the Harmonic Time-Bind Ritual Symphony to completion, but the outline is in place.^";
 	getenter();

@@ -620,7 +620,7 @@ Room	loth_porch "Lothlorien co-op, the first floor porch"
 
 Room	loth_kitchen "Lothlorien co-op, in the kitchen"
 	with
-	description "(The kitchen)",
+	description "(The kitchen)^Written on the wall here is an inscription: 'Magic words: XYZZY and PLUGH'",
 	n_to loth_backyard,
 	out_to loth_backyard,
 	u_to loth_greatroom,

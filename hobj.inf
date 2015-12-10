@@ -623,6 +623,14 @@ object 	lunar_lightning "Lunar Lightning"
 				print "You can't ride your bike into the shop.^";
 				return false;
 			}
+			if((self in state_street) && ((noun == nw_obj) || (noun == sw_obj))) {
+				print "You can't ride your bike into the stores on State Street.^";
+				return false;
+			}
+			if((self in cap_square) && (noun == ne_obj)) {
+				print "You decide making a dramatic entrance on your bike isn't necesssary.^";
+				return false;
+			}
 			if((self in mon_mid) && ((noun == w_obj) || (noun == in_obj))) {
 				print "You can't ride your bike into Rossini's.^";
 				return false;

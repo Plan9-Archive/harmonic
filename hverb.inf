@@ -6,7 +6,10 @@
 ^
 ^ATTACK Strawberry?
 ^TAKE fiction?
-^READ books over and over?^";
+^READ books over and over?^
+^REVIEW someone's opinion on the game?^
+^BUY all the ARTIFACTS in Astral Enchantments and ANTIQUES in Afterlife, and then LOOK inside your home?^
+^TELL Xelia about Xochi?^";
 ];
 
 [ Deathmessage;
@@ -394,6 +397,11 @@
 	"Your skills don't extend so far as to be able to play the ", (name) noun;
 ];
 
+[ Plughsub;
+	print "You speak the magic word, and you catch a glimpse of an ancient realm of college mainframe computers and 5 1/4 floppies...^";
+	playerto(loth_kitchen);
+];
+
 [ Releasesub;
 	if (home.antsreleased == 1)
 		"You already released ANTS.";
@@ -577,6 +585,7 @@ Verb "namespace" "ns" *	->Namespace;
 Verb "pet" * noun	-> Pet;
 Verb "play" * noun	-> Play
 	* 'with' noun	-> Play;
+Verb "plugh" *	-> Plugh;
 Verb "release" * noun	-> Release;
 Verb "review" *	-> Review;
 Verb "ride" * noun	-> Ride;

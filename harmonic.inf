@@ -38,12 +38,15 @@
 !
 ! 9 December small fic scenes finished, planning on filling in story outline
 ! madcon > june 19/wizard pt > nottingham perf > last full moon > tarot/fire 
+!
+! 10 December wrote scene outlines all the way to the end of main story
+! intense emotion trying to channel the feeling of that summer into words
 
 !============================================================================
 ! Configuration constants
 
-Release 5;
-Serial "151207";
+Release 6;
+Serial "151210";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;
