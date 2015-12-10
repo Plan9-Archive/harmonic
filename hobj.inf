@@ -492,7 +492,12 @@ Prop	orrery "Metaphysical Orrery"
 		pull: <<turn self>>;
 		push: <<turn self>>;
 		use: <<turn self>>;
-	];		
+	];
+
+Prop	wizard_head "cut-off head mounted on a pole"
+	with
+	name 'cut-off' 'head' 'pole',
+	description "The head is made of paper-mache and painted to resemble the Wizard.";
 
 Prop	past "Past" loth_backyard
 	with
@@ -770,4 +775,10 @@ object	animal_tarot "Animal Tarot deck"
 ^
 ^Story has appeared amidst the tall grasses.";
 	];
+
+object	crown "wire and bead Crown"
+	with
+	name 'wire' 'bead' 'crown',
+	description "This decorative crown was hand-made at Madcon. It has a variety of colorful beads wrapped by wire and criss-crossed by assorted sparklies.",
+	has clothing;
 

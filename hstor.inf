@@ -247,6 +247,78 @@
 	print "^As you greet the dog, you hear a voice call out 'Lotus!' from a little further down the shore. To make a long story very short, the voice belongs to a five member traveling punk band called Police Lingo. They need a place to crash, and something makes you offer your house. They have to play a show at the Owl Sanctuary (the what??) and you agree to meet them back on Milwaukee street later. Staci heads back to Madcon. You should probably head home to get your house ready for guests.^";
 ];
 
+[ Buddhahome_storyline;
+	madcon.timetrav = 8;
+	"^It is a convergence of world-lines. Five young punk musicians, Staci Nook and yourself, and three co-opers who had been tagging along. Many realities diverge here. What are your boundaries? What are you open to? You feel yourself splitting into many selves at this branch point. In some, everyone is completely uninhibited and you all create a transcendent flower of higher-dimensional interpersonal molecular structure, the aliens show up and demand pancakes, and you all agree to move to the lesser Magellanic cloud and open the first non-Earth greasy spoon diner. In others, inhibition and insecurity fracture the social ground beneath you, rifts open, and your life ricochets off in a different direction, a vector of disappointment and regret.
+^
+^You decide to pilot a middle course in your current storyline, embracing a limited subset of the possible configurations. After a night of little sleep but much love, Police Lingo leaves you with many balloon animals, and Staci and the co-opers return to Madcon. You spend a few minutes cleaning up, and are now ready to head downtown and dive into the convention scene.";
+];
+
+[ Madconend_storyline;
+	madcon.timetrav = 0;
+	mendota_lakeside.wizard = 1;
+	move crown to player;
+	"^The convention is in full swing as you arrive. After a few introductions, a tall owl of multiple genders transfixes you with glowing orange eyes. 'For safety reasons, everyone agrees that author-level, continuity-breaking information should be wiped from your time-embedded consciousness. The experiences will be stored in your crown, of course, so nothing is lost long-term. Are you ready?' You nod agreement.
+^
+^It is two days later. You are exhausted but happy. The convention has been AMAZING, especially the part where...where...well, it was definitely amazing. You know that much at least.";
+];
+
+[ Wizardparty_storyline;
+	mendota_lakeside.wizard = 2;
+	move wizard_head to loth_backyard;
+	"^As you are nearing Loth, you hear a voice calling out: 'The moment is at hand - or rather, at head!' and a cheer goes up. Is it that day already? The Wizard had been promising a notable symbolic event. He had promised to enact his spiritual death and rebirth by beheading himself. 'Bring the axe!' the voice commands.
+^
+^Sounds like fun! You enter the backyard, which is full of people arrayed in a circle. The Wizard is at the center. The axe is handed to him, and with a single mighty stroke, he cuts his own head off. The crowd cheers wildly and toasts are made.
+^
+^The Wizard holds his own head aloft triumphantly. 'Bring the pole!' he demands. He stands on a chair, mounts the head atop a long pole, and anchors the pole. The head will preside over the backyard for the rest of the summer. The following party goes late into the night, and you realize that it is about to be June 19th, a key anniversary in the 20 year harmonic time bind.
+^
+^(You can now find a path west from State Street)";
+];
+
+[ Pathsmoke_storyline;
+	mendota_lakeside.wizard = 3;
+	"^You have agreed to rendezvous with your friends here, to perform an appropriate ritual to connect the past and present for the 20-year time bind. Your friends arrive over the next few minutes, and you motion toward the woods on the hillside by the path. 'We used to come here all the time.'
+^
+^You pick your way through the vegetation. In the old days, as teenagers hanging out down on State Street, nobody had apartments, houses, or even cars. Someone would manage to score a dimebag of jamaican brickweed from somewhere, and the crew would wander back to these woods to smoke. You form a circle, and pass the pipe around. Everyone shares anecdotes of their young days, stupid fun times with friends, crazy tales from last decade, last year, or last week. A story about music reminds a friend of something:
+^
+^'There's going to be a benefit music performance at Nottingham co-op, I think you and Staci should totally perform there. I know it will be cool, I'll let people know and you guys can go on first.' You and Staci agree to appear. Your friends wander off to find food, and you are left to contemplate the lake and the span of time.
+^
+^(You can reach Nottingham going NE from the Mendota Lakeside area)";
+];
+
+[ Nottingham_storyline;
+	mendota_lakeside.wizard = 4;
+	"You arrive at Nottingham with Staci and Lily. They have agreed to open the performance with an acapella duet of 'My Eyes' from Dr. Horrible. As always, kids steal the show. Staci and you perform next, and it is a lot of fun, although you wonder why Staci didn't seem to follow any of your eye contact cues. (Maybe take the mirror shades off next time?)
+^
+^Paul of the singing hippie housekeepers shows up, and his values do not mesh easily with the laid-back atmosphere at the co-ops. You wander away from the party with him, engaged in conversation about boundaries and healthy behavior and how Madison is still stuck in the Old Testament, and by the time the conversation ends and he departs, the concert is over.
+^
+^So much has been happening. A ride around the lakes, south into the countryside, would probably do you good.";
+];
+
+[ Countryside_storyline;
+	mendota_lakeside.wizard = 5;
+	"^It is late August, and this sweet, ripe summer is nearing its end. You ate mushrooms earlier, and biking through Monona in the humid dusk, you saw the moon rising pink and full and shimmering around the edges, low over the rooftops of the suburban houses. Every time you looked up at it, you heard a chiming interval - a g-sharp in the midst of an E major chord, rising up to an e above a c-sharp minor.
+^
+^Now, out in the countryside, the summer night air and the moon and the mushrooms coalesce into a smooth melody. 'Last full moon of summer 2013...' you sing, over and over as you ride.
+^
+^You feel like you are on the peak of a very high mountain. Nothing at all like this summer had ever happened to you before. In his famous story of the infinite library of Babel, composed of infinite meaningless random books, Borges talks of how some librarians went mad searching for their 'Vindication' - the hypothetical book which would validate their existence, show how perfect and necessary all their actions were.
+^
+^By some unbelievable stroke of fortune, you found your Vindication this spring and summer. Your life became everything you had ever hoped it could be, you did exactly what you wanted to do, when you wanted to do it, and most importantly, you were treated with love and affection by other people, and found the intense closeness and deeper communication you always knew was possible.
+^
+^You resolve to do your best to share the feeling you have right now. The deep glow of love and biking and writing music and having a beautiful castle full of friends and how delicious it is to breathe the night air. Soon, you will be at Loth and you can sing your new song for your friends.";
+];
+
+[ Lothfullmoon_storyline;
+	mendota_lakeside.wizard = 6;
+	print "^You arrive at the co-op and serenade your friends up on the porch. At the moment you sing the final line of the song, 'oh it feels so good to have my around you' you embrace Nook. The flow of the gathering is uninterrupted, but slightly energized. Who is here exactly? Staci and Nook, of course, but who else? It's like a shifting gallery of happy, friendly people. You feel so incredibly good you try to squeeze your head inside Staci's arm. Mushrooms are fun.
+^
+^The summer of 2013 has been going on for about two years, it seems. Couldn't be any shorter, not with everything that's happened. You remember the singing bowl guy running with his arms outstretched on the roof of a parking garage, you remember jumping up and down at a concert of cyberhippiejamtronic music, you remember countless bike rides, other performances, other parties, giving afro-pop tickets to the street people, the visit from the Lakota Grandmothers, every day pizza at Rossinis, coffee from the Lion, Space Pancakes at night (that smiley face the aliens put on the car is still there!). And all those months and months worth of memories seem small compared to remembering time with Staci, such intense communication, talking and listening and learning the language of the waves, smoking another joint and passing the bag of mushrooms back and forth, eating maybe just one more little stem, then deciding to make some music and tearing off into a note-perfect first-time ever attempted rendition of some crazy bitch's song in d minor about a nervous breakdown.
+^
+^You are vibrating like a tuning fork, resonating rainbow waves of higher dimensional sound from your extra arms. You get on your bike and ride home, and on the way you are invited into a house full of people and there is a piano and someone else plays and you are jamming 4-handed, some kind of psychedelic ragtime, and then you are back home. You wonder if any human in history has ever had as much fun as you have been having for the past few months.^";
+	playerto(milw_street,1);
+	print "^(21 August 2013 - Outside your home)^";
+];
+
 [ Jaymeet_storyline;
 	eventcount++;
 	self.metjay = 1;

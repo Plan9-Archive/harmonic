@@ -61,6 +61,12 @@ Room	home "Inside my house"
 ^
 ^After working obsessively since the New Year, you are finally ready to officially announce and release your software. You feel tense yet eager anticipation for the reaction from other Plan 9 users. When you are ready to unleash the Advanced Namespace Tools on the world, >release ANTS.^";
 	],
+	each_turn [;
+		if (madcon.timetrav == 7) {
+			buddhahome_storyline();
+			return true;
+		}
+	],
 	after [; go:
 		if (piano.obsessionclear == 1) {
 			print "^You spend a few minutes moving and rearranging books and papers, and soon enough, your piano is cleared of obstructions. You are eager with anticipation to play it and feel your fingers moving across the keys.^";
@@ -336,6 +342,10 @@ Room	madcon "Multiverse Authors Design Conference"
 			madconstart_storyline();
 			return true;
 		}
+		if (madcon.timetrav == 8) {
+			madconend_storyline();
+			return true;
+		}
 	],
 	sw_to cap_square,
 	out_to cap_square,
@@ -380,6 +390,11 @@ Room	state_street "State Street"
 		default: "REALITY BREAKDOWN - PED TEXT BUGGED";
 		}
 	],
+	w_to [; 
+		if (mendota_lakeside.wizard < 2)
+			"The campus lies west, and you spent plenty of time there earlier in your life. You feel no urge to go there now.";
+		return lakeshore_path;
+	],
 	s_to miffyland,
 	e_to cap_square,
 	n_to mendota_lakeside,
@@ -413,6 +428,18 @@ Room	infinite_loop "Infinite Loop"
 	ne_to state_street,
 	out_to state_street,
 	cant_go "You can go back out to State Street.";
+
+Room	lakeshore_path "Dirt path along the lakeshore"
+	with
+	description "This shady path along the lake is a treasure of the campus area. The lake and trees make the city recede from awareness.",
+	each_turn [;
+		if (mendota_lakeside.wizard == 2) {
+			Pathsmoke_storyline();
+			return true;
+		}
+	],
+	e_to state_street,
+	cant_go "You don't feel like spending time on the university campus right now. You can get back to state street to the east.";
 
 Room	miffyland "Miffyland, the student ghetto"
 	with
@@ -454,6 +481,12 @@ Room	sw_trail "Southwest greenspace, on the bike trail"
 Room	countryside "Countryside, on the bike trail"
 	with
 	description "You have reached the rolling hills and farmland of the southern Wisconsin countryside. The narrow highway nearby passes cornfields, small streams, and traverses a one-lane bridge. Without buildings to hold it up, the sky comes right down to the ground here, and you are biking through it, hardly conscious of your legs moving, just long quiet minutes of the landscape rolling by alongside you. Forks of the path return to the city northwest and northeast.",
+	each_turn [;
+		if (mendota_lakeside.wizard == 4) {
+			Countryside_storyline();
+			return true;
+		}
+	],
 	nw_to sw_trail,
 	ne_to se_trail,
 	cant_go "This is as far away from the city as you feel like biking. You can head back to the nw or ne.",
@@ -481,7 +514,18 @@ Room	james_madison "James Madison Park"
 
 Room	mendota_lakeside "Lake Mendota shoreline residences"
 	with
+	wizard 0,
 	description "Downtown Madison is an isthmus between two lakes, and the south shore of Lake Mendota is lined by tall stone buildings. Some are new construction, expensive apartments, but many buildings from a century ago remain. Some are occupied by fraternities, but nestled among them are several large housing co-operatives founded during the height of Madison's counterculture in the 1970s. One of them, Lothlorien co-op, is to your west, and its backyard is northwest, sloping downwards toward the lakeshore.",
+	each_turn [;
+		if (mendota_lakeside.wizard == 1) {
+			Wizardparty_storyline();
+			return true;
+		}
+		if (mendota_lakeside.wizard == 5) {
+			Lothfullmoon_storyline();
+			return true;
+		}
+	],
 	before [; go:
 		if((elginbday < 5) && ((noun == nw_obj) || (noun == w_obj) || (noun == in_obj)))
 			"You need an invitation from a friend to visit Lothlorien.";
@@ -490,6 +534,12 @@ Room	mendota_lakeside "Lake Mendota shoreline residences"
 			playerto(loth_backyard);
 			return true;
 		}
+	],
+	ne_to [;
+		if (mendota_lakeside.wizard ~= 3)
+			"You don't have a reason to go to Nottingham right now.";
+		nottingham_storyline();
+		return true;
 	],
 	s_to state_street,
 	e_to james_madison,
@@ -573,7 +623,7 @@ Room	loth_kitchen "Lothlorien co-op, in the kitchen"
 	description "(The kitchen)",
 	n_to loth_backyard,
 	out_to loth_backyard,
-	up_to loth_greatroom,
+	u_to loth_greatroom,
 	cant_go "You can go out to the backyard or up to the Great Room.";
 
 Room	loth_upstairs "Lothlorien co-op, upstairs"
