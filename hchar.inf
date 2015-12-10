@@ -328,3 +328,26 @@ Character	xelia_and_xochi "Xelia and Xochi"
 		talk: <<wakeother xelia_and_xochi>>;
 	];
 
+Character	lotus "dog"
+	with
+	name 'lotus' 'dog',
+	description "The dog is a chocolate Labrador, strong, smart, and friendly. He has a sky-blue bandana tied around his neck.",
+	life [;
+		lotusdock_storyline();
+		return true;
+	],
+	before [;
+		pet: <<wakeother self>>;
+		talk: <<wakeother self>>;
+	],
+	has ~proper male;
+
+Character	staci "Staci"
+	with
+	name 'staci' 'tardis',
+	description "Staci is smart, funny, beautiful, and too many other positive adjectives to list.",
+	life "Every way you interact with Staci feels easy, natural, and delightful.",
+	before [;
+		talk: <<wakeother staci>>;
+	],
+	has female;

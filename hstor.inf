@@ -6,11 +6,11 @@
 	daynumber = 1;
 	settime(60, 60);
 	achieved(0);
-	print "^You announce ANTS by posting an imaginary scene from Plan 9 from Outer Space to the 9fans mailing list. It is the one-year anniversary of your father's death. He was a law professor, and he never understood your values. You search for information on related Plan 9 projects and find a recent patent on a familiar concept. Years earlier, you wrote a free software 9p persistent-pipe muxer called hubfs. The patent the Joint Consolidated Networking corporation was granted is for 9p persistent pipe-muxing.
+	print "^You announce ANTS by posting an imaginary scene from Plan 9 from Outer Space to the 9fans mailing list. It is the one-year anniversary of your father's death. He was a law professor, and he never understood your values. You search for information on related Plan 9 projects and find a recent patent on a familiar concept. Years earlier, you wrote a free software 9p persistent-pipe muxer. The patent the Joint Consolidated Networking corporation was granted is for 9p persistent pipe-muxing.
 ^
-^You feel an internal change, as if a valve has broken and a high-pressure jet of intense emotion and information is entering your mind at right angles to reality. You spent endless hours talking with your father, and you know how he thought. He never agreed with your anti-authoritarian radicalism, but seeing this abuse of the patent system would have changed his mind - you can feel it changing. Your mind has become a virtual machine, running the computer program of your father's soul in parallel with your own.^";
+^You feel an internal change, as if a valve has broken and a high-pressure jet of intense emotion and information is entering your mind at right angles to reality. You spent endless hours talking with your father, and you know how he thought. He never agreed with your anti-authoritarian radicalism, but seeing this patent would have changed that - you can feel it. Your mind has become a virtual machine, running the computer program of your father's soul in parallel with your own.^";
 !	getenter();
-	print "^(You are ready to exit your home, go south, and enter Coffee Lion Cafe.)^";
+	print "^(You want to exit your home, go south, and enter Coffee Lion Cafe.)^";
 ];
 
 [ Xochimeet_storyline;
@@ -84,7 +84,7 @@
 ^
 ^Elgin is your godson, and you haven't seen him for years. You have guilty memories of many ignored phone calls from Clark and Staci during 2010 and 2011 as you were sinking into depression and solitude. Maybe they split up or something? You can't remember. Everything feels different now, and you are excited to bring old friends back into your life.
 ^
-^(A locked door has opened)
+^(The door to Afterlife has opened)
 ^(20 April 2013)
 ^You will need to ride a bicycle to get all the way to Rossini's. You should check Turning Wheel cycles.^";
 ];
@@ -189,6 +189,7 @@
 
 [ Firstlothvisit_storyline;
 	elginbday = 10;
+	madcon.timetrav = 1;
 	loth_greatroom.lothstaci = 1;
 	coffee_lion.alchemy = 1;
 	eside_hq.fictour = 1;
@@ -222,6 +223,28 @@
 ^[You pause while writing the game. You need Staci's help for this. It is late at night, and she is many sleeps. How can you code the next week of sitting out here on the porch swing and talking? How many infinite branches of ASK and TELL can you write, to capture the conversations ranging across decades of almost-shared life as friends and the appearance of dreams of a shared future? 'It was the wonderously beautiful month of May, when all the flowers open - and within my heart, a love unfolded also.' (Footnote 10)]
 ^
 ^(During your ride to the co-op, the fiction-bind transformed reality. Now that you are the Harmonist, you can find the entry points to other branches of the multiverse in previously visited locations.)^";
+];
+
+[ Madconstart_storyline;
+	madcon.timetrav = 2;
+	print "^You arrive at the start of MADCon, a busy chaos of arrivals from all pi to the 999th corners of the multiverse. Staci spots you and asks for a favor. 'I've got to be on a panel for time-sequence rewriting, can you take Lily to lunch now?' You agree. Lily is excited. 'Let's go to Pasta and Other! I want noodles. Come on!'
+^
+^Lily is leading the way. She exits the building, heading towards State Street. You need to follow.^";
+];
+
+[ Loop_storyline;
+	madcon.timetrav = 6;
+	move lotus to loth_dock;
+	move staci to loth_dock;
+	print "^Lily is fascinated by deity artworks and tools for rituals and prayer. Tara tells her she can pick out an item as a gift, and Lily chooses a necklace of pale sky-blue beads. Tara strokes it lightly as she hands it to Lily 'Very beautiful. This is the color of one aspect of Buddha. I've been feeling this color in the past few days. Perhaps one of the Buddhas is traveling near.'
+^
+^You thank Tara, and notice it's time to meet Staci after the panel. She wants to take a break back at the castle dock. Lily leaves with Staci, and after a few more minutes appreciating the items in Infinite Loop, you decide to join them on the dock for a dose of sunlight on the waves.^";
+];
+
+[ Lotusdock_storyline;
+	madcon.timetrav = 7;
+	remove lotus;
+	print "^As you greet the dog, you hear a voice call out 'Lotus!' from a little further down the shore. To make a long story very short, the voice belongs to a five member traveling punk band called Police Lingo. They need a place to crash, and something makes you offer your house. They have to play a show at the Owl Sanctuary (the what??) and you agree to meet them back on Milwaukee street later. Staci heads back to Madcon. You should probably head home to get your house ready for guests.^";
 ];
 
 [ Jaymeet_storyline;

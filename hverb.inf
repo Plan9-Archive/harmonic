@@ -79,6 +79,7 @@
 ];
 
 [ Initialise;
+	lookmode = 1;
 	location = home;
 	player.description = "You are 38 years old, long-haired and bearded, slightly disabled from rheumatoid arthritis. You are slightly fat but have been losing weight lately from a fritos-only programmer's diet.";
 	settime(0,60);
@@ -395,6 +396,16 @@
 	Antsrelease_storyline();
 ];
 
+[ Reviewsub;
+	"In the history of independent IF, we have often played games that made us wonder just what, exactly, the author had been smoking. In this game, we find out, and the answer is 'Atlantean cubefruit kif'. The protagonist smokes it while helping a group of students answer oral questions about such subjects as how his bicycle helped him compose the music which accompanies the game.
+^
+^It's the kind of game where you think the Space Pancakes are going to be given to aliens, but instead you eat half of them and toss the rest into the street as an offering to the Goddess Hecate. It's the kind of game that is so intent on throwing massive walls of half-baked philosophy on the screen that it auto-solves puzzles for you if you wait a few turns. It's the kind of game that decides to parody/borrow from Tolkien, Tron, Schumann, Heinlein, Raphael, Hunter Thompson, Phil Dick, and I assume there is an easter egg where the stay-puft marshmallow man shows up and trashes the city.
+^
+^What redeems the game from its weaknesses is how strongly it tries to communicate positive emotion and excitement. Forging a bond of empathy with an erratic narrator is a challenge, but in its best moments, the game brings us along with its enthusiasms. Who hasn't imagined our favorite stories becoming real? Would it be worth becoming delusional to perceive life as that magical and meaningful?
+^
+^The game is clearly grounded in intensely lived experience. It is a flawed work, neither quite as funny nor quite as deep as it hopes to be, but when it succeeds at carrying you along with it, it is quite a ride.";
+];
+
 [ Ridesub;
 	"You can't ride that.";
 ];
@@ -550,7 +561,7 @@ Verb "dodge" * 	-> Dodge;
 Verb "email" *	-> Email;
 Verb "exits" *	-> Exits;
 Verb "expert" *	-> Expert;
-Verb "footnote" *	number	-> Footnote;
+Verb "footnote" * number	-> Footnote;
 Verb "help" *	-> Help;
 Verb "hint" *	-> Hint
 	* noun	-> Hint;
@@ -561,8 +572,9 @@ Verb "pet" * noun	-> Pet;
 Verb "play" * noun	-> Play
 	* 'with' noun	-> Play;
 Verb "release" * noun	-> Release;
+Verb "review" *	-> Review;
 Verb "ride" * noun	-> Ride;
-Verb "shoot" *	-> Shoot;
+Verb "shoot" *		-> Shoot;
 Verb "skipdock" *	-> Skipdock;
 Verb "skipintro" *	-> Skipintro;
 Extend "sleep" replace *	-> Sleepwait;

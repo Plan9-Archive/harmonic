@@ -307,21 +307,45 @@ Room	john_nolen "John Nolen Drive"
 Room	cap_square "Capitol Square"
 	with	
 	description [;
-		print "On a hill in the center of downtown, the Capitol building is a smaller imitation of the federal Capitol building in Washington D.C. The street grid converges to a perfect square around it, and it acts as the 0,0 origin of the street numbering system. Notable streets and landmarks lie south, west, and north.^";
+		print "On a hill in the center of downtown, the Capitol building is a smaller imitation of the federal Capitol building in Washington D.C. The street grid converges to a perfect square around it, and it acts as the 0,0 origin of the street numbering system. Notable streets and landmarks lie south, west, north, and northeast.^";
 		if (self hasnt visited)
 			print "^Various rumors and legends are passed around the local countercultural community - it is claimed to be built on top of an ancient sacred spring. You remember being a teenager and carrying out the ritual of ingesting psychedelics and using your rights as a citizen to enter the building and lay flat in the center of the marble floor, staring upwards into the dome and watching the mural melt and transform.^";
+	],
+	each_turn [;
+		if (madcon.timetrav == 2) {
+			madcon.timetrav = 3;
+			"^You catch up to Lily. 'Time for a Chaos Bomb!' she announces. She makes a throwing gesture. You feel ripples of strangeness wash over you. 'State Street is this way!' Lily calls out as she heads west. 'I know, and slow down!' you don't bother to answer.";
+		}
 	],
 	s_to john_nolen,
 	w_to state_street,
 	n_to james_madison,
-	cant_go "You can go n, w, or s.",
+	ne_to [;
+		if (madcon.timetrav == 0) "The Multiverse Authors Design Conference is not open yet.";
+		return madcon;
+	],
+	cant_go "You can go n, w, s or check the event center to the ne.",
 	has outside;
+
+Room	madcon "Multiverse Authors Design Conference"
+	with
+	timetrav 0,
+	description "Time-travelers, authors, simulators, and adventurers from across the multiverse have gathered here to share stories.",
+	each_turn [;
+		if (madcon.timetrav == 1) {
+			madconstart_storyline();
+			return true;
+		}
+	],
+	sw_to cap_square,
+	out_to cap_square,
+	cant_go "You can go back out to the Capitol Square.";
 
 Room	state_street "State Street"
 	with
 	peds 0,
 	description [; 
-		print "The downtown and campus are focused on this pedestrian-only open air shopping mall. Dozens of shops and throngs of pedestrians create a big-city feel for a few blocks. The proximity of the large state university campus means the crowd is quite young, and weekend nights are often a mix of the charming antics of local eccentrics with less charming rowdy sophomoric intoxication. The Miffyland neighborhood is south, the Capitol is east, and the lakeshore residential neighborhood is north.^";
+		print "The downtown and campus are focused on this pedestrian-only open air shopping mall. Dozens of shops and throngs of pedestrians create a big-city feel for a few blocks. The proximity of the large state university campus means the crowd is quite young, and weekend nights are often a mix of the charming antics of local eccentrics with less charming rowdy sophomoric intoxication. The Miffyland neighborhood is south, the Capitol is east, and the lakeshore residential neighborhood is north. Notable shops are northwest and southwest.^";
 		if (self hasnt visited)
 			print "^You often feel like you could slip backward in time here. Your teenage years were spent wandering up and down this street, part of an amorphous group of downtown punks, goths, and hippies who were all happy to share joints and beers with each other. The video arcade 'Challenges', 'Cellar Subs' in a graffiti-covered basement, the fire escape behind the Civic Center - if you closed your eyes for a moment and opened them, they might all be back, just as you remembered.
 ^
@@ -331,18 +355,22 @@ Room	state_street "State Street"
 		listen: "A few notes of music from the street musicians, dozens of conversations, and the occasional noise of a passing vehicle.";
 	],
 	each_turn [;
+		if (madcon.timetrav == 3) {
+			madcon.timetrav = 4;
+			"^'We're here!' Lily announces, pointing at Pasta and Other to the northwest. She disappears inside.";
+		}
 		state_street.peds++;
 		switch(state_street.peds) {
 		1: return false;
 		2: "^You try not to stare as a strikingly attractive stranger walks by.";
 		3: "^A pair of college girls stagger nearby, arguing about which one is drunker.";
 		4: "^You hear guitar and kazoo played by Art Paul.";
-		5: "^You cross the street to avoid Scanner Dan.";
+		5: "^A panhandler asks you for change, and you give him a dollar.";
 		6: "^A pedal-powered mobile bar slowly pedals by, a cacophany of songs and shouts.";
 		7: "^You notice UFO Jim and wave. He waves back as he walks around the corner.";
 		8: "^Somewhere near, a street musician plays jazz standards on saxophone.";
 		9: "^A pair of police officers walk by and you hope you don't smell too skunky.";
-		10: "^A panhandler asks you for change, and you give him a dollar.";
+		10: "^You cross the street to avoid Scanner Dan.";
 		11: "^A large group of young men wearing red and white shout sports related slogans from a bar patio.";
 		12: "^You cough as a cloud of exhaust from a passing bus envelops you.";
 		13: "^Three ferrets on leashes scamper by, held by a tall woman with abundant piercings.";
@@ -355,8 +383,36 @@ Room	state_street "State Street"
 	s_to miffyland,
 	e_to cap_square,
 	n_to mendota_lakeside,
-	cant_go "You can go s, n or e.",
+	nw_to pasta_other,
+	sw_to infinite_loop,
+	cant_go "You can go s, n, or e. Stores are nw and sw.",
 	has outside;
+
+Room	pasta_other "Pasta and Other"
+	with
+	description "This restaurant focuses much more on the pasta than the other.",
+	each_turn [;
+		if (madcon.timetrav == 4) {
+			madcon.timetrav = 5;
+			"^Lily orders a bowl of mac and cheese, and strikes up a conversation with a friendly woman at a nearby table. She says her name is Tara, and she is working at the Infinite Loop store on the southwest side of State Street. She invites you to visit after the meal, and Lily is excited to do so. You finish eating, and Lily announces 'To the Infinite Loop!' and heads outside.";
+		}
+	],
+	se_to state_street,
+	out_to state_street,
+	cant_go "You can go back out to State Street.";
+
+Room	infinite_loop "Infinite Loop"
+	with
+	description "This store sells devotional objects from the Tibetan Buddhist tradition.",
+	each_turn [;
+		if (madcon.timetrav == 5) {
+			loop_storyline();
+			return true;
+		}
+	],
+	ne_to state_street,
+	out_to state_street,
+	cant_go "You can go back out to State Street.";
 
 Room	miffyland "Miffyland, the student ghetto"
 	with
@@ -607,7 +663,7 @@ Room	mon_mid "Monona Drive, by a weathered strip-mall"
 Room	rossinis_pizza "Rossini's Pizza and Vintage Arcade"
 	with
 	description [;
-		print "Memorabilia from classic 50s, 60s, 70s, and 80s movies and tv shows covers the walls of this neighborhood pizzeria. The smell of spicy-sweet tomato sauce and brown-crisp pizza crust fills the air. A lava lamp sits on one of the tables. From the back room, you hear the alluring sound of the 8-bit sound effects of your youth.^";
+		print "Memorabilia from classic 50s, 60s, 70s, and 80s movies and tv shows covers the walls of this neighborhood pizzeria. The smell of spicy-sweet tomato sauce and brown-crisp pizza crust fills the air. A lava lamp sits on one of the tables. From the back room, you hear the alluring sound of the 8-bit arcade machines of your youth.^";
 	],
 	after [; go:
 		if (elginbday < 4)
@@ -767,7 +823,7 @@ Scene	orbital_command "Orbital Command, Trans-Fictional Alliance"
 	description [;
 		print "High above the planet Earth, in a microminiaturized transdimensional nexus, representatives of many universes are co-ordinating their plans. You are in a spherical space, free of gravity. The perimeter is composed of dozens of doorways similar to the one you have just passed through.^";
 		if (self hasnt visited)
-			print "A friendly hand reaches out to stabilize you as you tumble slightly upon entering. Eyes turn toward you. 'Situation report?' you are asked.
+			print "^A friendly hand reaches out to stabilize you as you tumble slightly upon entering. Eyes turn toward you. 'Situation report?' you are asked.
 ^
 ^'We have arrived at a decisive moment,' you answer confidently. 'My human hardware for this operation has downloaded the information necessary via the Plan 9 operating system. We have realized that the emergence of digital brains is a cusp event in a majority of timelines. Meta-simulation and sampling reveals that timelines in which digital brains are developed and controlled by the dominant political and economic entities tend to suffer resource-depletion feedback loops, fascistic governance, and a failure to develop the social and engineering technologies needed for long-term survivial of either the biological or digital brains.
 ^
@@ -873,4 +929,4 @@ Scene	cosmic_wheel "The Cosmic Wheel"
 		default: "^You have passed the apex of the wheel's rotation, and you are now being carried downward toward the chaotic sea.";
 		}
 	],
-	cant_go "You are already everywhere at once, physically speaking.";
+	cant_go "You can't go anywhere when you are gripping the spoke so tightly. If you are brave, you could try letting go by dropping it.";
