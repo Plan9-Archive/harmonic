@@ -258,6 +258,7 @@
 	madcon.timetrav = 0;
 	mendota_lakeside.wizard = 1;
 	move crown to player;
+	achieved(36);
 	"^The convention is in full swing as you arrive. After a few introductions, a tall owl of multiple genders transfixes you with glowing orange eyes. 'For safety reasons, everyone agrees that author-level, continuity-breaking information should be wiped from your time-embedded consciousness. The experiences will be stored in your crown, of course, so nothing is lost long-term. Are you ready?' You nod agreement.
 ^
 ^It is two days later. You are exhausted but happy. The convention has been AMAZING, especially the part where...where...well, it was definitely amazing. You know that much at least.";
@@ -277,6 +278,7 @@
 
 [ Pathsmoke_storyline;
 	mendota_lakeside.wizard = 3;
+	achieved(37);
 	"^You have agreed to rendezvous with your friends here, to perform an appropriate ritual to connect the past and present for the 20-year time bind. Your friends arrive over the next few minutes, and you motion toward the woods on the hillside by the path. 'We used to come here all the time.'
 ^
 ^You pick your way through the vegetation. In the old days, as teenagers hanging out down on State Street, nobody had apartments, houses, or even cars. Someone would manage to score a dimebag of jamaican brickweed from somewhere, and the crew would wander back to these woods to smoke. You form a circle, and pass the pipe around. Everyone shares anecdotes of their young days, stupid fun times with friends, crazy tales from last decade, last year, or last week. A story about music reminds a friend of something:
@@ -288,7 +290,7 @@
 
 [ Nottingham_storyline;
 	mendota_lakeside.wizard = 4;
-	"You arrive at Nottingham with Staci and Lily. They have agreed to open the performance with an acapella duet of 'My Eyes' from Dr. Horrible. As always, kids steal the show. Staci and you perform next, and it is a lot of fun, although you wonder why Staci didn't seem to follow any of your eye contact cues. (Maybe take the mirror shades off next time?)
+	"You arrive at Nottingham with Staci and Lily. They have agreed to open the performance with an acapella duet of 'My Eyes' from Dr. Horrible. As always, kids steal the show. Staci and you perform next, and it is a lot of fun, although you wonder why Staci didn't seem to follow any of your eye contact cues. (Maybe you should take the mirror shades off next time?) You close with a cover of 'In My Mind' (Footnote 12) and Staci nails the audience to the wall with the conviction of her delivery.
 ^
 ^Paul of the singing hippie housekeepers shows up, and his values do not mesh easily with the laid-back atmosphere at the co-ops. You wander away from the party with him, engaged in conversation about boundaries and healthy behavior and how Madison is still stuck in the Old Testament, and by the time the conversation ends and he departs, the concert is over.
 ^
@@ -310,13 +312,59 @@
 
 [ Lothfullmoon_storyline;
 	mendota_lakeside.wizard = 6;
+	move wheel_costume to player;
+	achieved(38);
 	print "^You arrive at the co-op and serenade your friends up on the porch. At the moment you sing the final line of the song, 'oh it feels so good to have my around you' you embrace Nook. The flow of the gathering is uninterrupted, but slightly energized. Who is here exactly? Staci and Nook, of course, but who else? It's like a shifting gallery of happy, friendly people. You feel so incredibly good you try to squeeze your head inside Staci's arm. Mushrooms are fun.
 ^
 ^The summer of 2013 has been going on for about two years, it seems. Couldn't be any shorter, not with everything that's happened. You remember the singing bowl guy running with his arms outstretched on the roof of a parking garage, you remember jumping up and down at a concert of cyberhippiejamtronic music, you remember countless bike rides, other performances, other parties, giving afro-pop tickets to the street people, the visit from the Lakota Grandmothers, every day pizza at Rossinis, coffee from the Lion, Space Pancakes at night (that smiley face the aliens put on the car is still there!). And all those months and months worth of memories seem small compared to remembering time with Staci, such intense communication, talking and listening and learning the language of the waves, smoking another joint and passing the bag of mushrooms back and forth, eating maybe just one more little stem, then deciding to make some music and tearing off into a note-perfect first-time ever attempted rendition of some crazy bitch's song in d minor about a nervous breakdown.
 ^
-^You are vibrating like a tuning fork, resonating rainbow waves of higher dimensional sound from your extra arms. You get on your bike and ride home, and on the way you are invited into a house full of people and there is a piano and someone else plays and you are jamming 4-handed, some kind of psychedelic ragtime, and then you are back home. You wonder if any human in history has ever had as much fun as you have been having for the past few months.^";
+^You are vibrating like a tuning fork, resonating rainbow waves of higher dimensional sound from your extra arms. You get on your bike and ride home, and on the way you are invited into a house full of people and there is a piano and someone else plays and you are jamming 4-handed, some kind of psychedelic ragtime, and then you are back home. You wonder if any human in history has ever had as much fun as you have been having for the past few months.^
+^
+^(The Wheel costume for the Tarot Party is now in your possession. Wear it to trigger the party event.)^";
 	playerto(milw_street,1);
 	print "^(21 August 2013 - Outside your home)^";
+];
+
+[ Tarotparty_storyline;
+	mendota_lakeside.wizard = 7;
+	"^(Lothlorien Co-op)
+^
+^You have completed your preparations for this, one of the first overt acts of the Loonie Revolution. Staci has compiled a collection of art and writing, each on a 1/4 size page, and you have photocopied them to create a number of unique books, each with a different subset of the possible pages. Every guest at the party receives one.
+^
+^Staci vanishes, and the Empress appears. More cards arrive. Magicians, Lovers, the Sun and the Moon. You are the Wheel, and you feel everything Turning. Once the party is in full swing, you call out to no one in particular 'End of movement two of the Harmonic Time-Bind Ritual Symphony!' You aren't sure what comes next, but you wouldn't change a note of the past six months, the first two movements of the symphony. Everything was in perfect time, in tune, with singing tone.
+^
+^You hear the Empress saying to someone, 'You are a wonderful character, I'm so glad I wrote you,' and your perceptions are Shuffled...
+^
+^(You aren't quite certain how the party ended, or how you got back here. You know you are supposed to meet Staci with the kids at the late night restaurant.)";
+];
+
+[ Soapbomb_storyline;
+	mendota_lakeside.wizard = 8;
+	achieved(39);
+	print "^(September 11 2013)
+^
+^What is cause and what is effect? You are in charge of the kids for a few minutes, and Lily gets help from an older child to find the bathroom in the restaurant. Some foolish play ends with Lily getting a paper towel full of soap to the eyes. She's crying, and it seems like you should have been paying more attention. Grown-ups who don't pay attention to their kids misbehaving in public aren't Loonie Revolutionaries, just a nuisance.
+^
+^The mood is sour on the ride back to the Castle to drop the other kids off. For the first time in months, life feels...average.
+^
+^You arrive back home, and after the stress at the restaurant, you are looking forward to a relaxing night with Staci. Her cellphone rings. Nook is calling. Staci looks shocked. 'What? Oh, shit. Okay, be careful, stay in touch.'
+^
+^She looks at you with a face filled with anxiety. 'The Castle is on fire.'
+^
+^The best summer ever is over.^^";
+	getenter();
+	print "^^(12 December 2015 - 27 Months later)
+^
+^You type the final sentence of the main storyline of the game into acme. It seems like too much of a bummer. The fire that closed Lothlorien for two years was bad, but in the end, you won, dammit! The castle is reopening, and nothing can take what happened during summer 2013 away from you.
+^
+^Your fingers go to the Loonie Revolution Power Pendant around your neck. Maybe only the calm face of the moon knows what was reality and what was imagination. By the end of the summer, you had completed a transition from being actively delusional to being an actor playing the part of a madman because it suited an artistic purpose. There is no single objective truth; we do invent our universe as we go, using language to create a shared namespace of symbol-binds. Sanity means 'health', and you never felt healthier, physically or mentally, than you did during those incredible months. Belief systems are strange things. Being a religion of one does make you crazy, but if the content of the religion is fun and empowering and helps you create connections with other people, is 'objective' truth the right criteria with which to measure its value?
+^
+^You sigh. Too much pontification at the end, let the reader figure it out, don't gloss yourself for them. Months of work remain to bring this virtual recreation of the Harmonic Time-Bind Ritual Symphony to completion, but the outline is in place.^";
+	getenter();
+	playerto(milw_street, 1);
+	print "^The crown becomes warm and makes a quiet bell-like sound.
+^
+^(>wear crown and >use crown to interface with it)^";
 ];
 
 [ Jaymeet_storyline;

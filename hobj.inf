@@ -780,5 +780,31 @@ object	crown "wire and bead Crown"
 	with
 	name 'wire' 'bead' 'crown',
 	description "This decorative crown was hand-made at Madcon. It has a variety of colorful beads wrapped by wire and criss-crossed by assorted sparklies.",
+	before [;
+		use:
+			if (crown hasnt worn)
+				"You need to be wearing the crown to use it.";
+			if (mendota_lakeside.wizard < 8)
+				"You are not able to access the crown information yet.";
+			switch(mendota_lakeside.wizard) {
+				8: "^(A scene from Madcon replays itself in your mind)
+^
+^A beautiful asymmetric life-form, with eggplants growing on stalks on her left side and an extra pair of fungus-legs on her right, pulls you aside as you pass in the hallway. 'Listen,' she whispers, 'the Green Screeners are planning an attack on your central HQ. I don't think you can prevent it on the first loop of the subfiction, but once you complete the main framing story, we will open the Time Vault for you. If you want to create an alternate history then...good luck.'";
+				default: "There is no new information available from the crown right now.";
+			}
+	],
+	has clothing;
+
+object wheel_costume "wheel costume"
+	with
+	name 'wheel' 'costume',
+	description "The costume is a metal bicycle wheel on rope which can be hung from your neck, with a Crowley tarot deck interwoven between the spokes. It is an odd but effective way of costuming as the Wheel. (Footnote 11)",
+	before [;
+		wear:
+			if (mendota_lakeside.wizard == 6) {
+				Tarotparty_storyline();
+				return true;
+			}
+	],
 	has clothing;
 

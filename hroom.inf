@@ -789,6 +789,10 @@ Room	eside_hq "24-hour family restaurant"
 		}
 	],
 	each_turn [;
+		if (mendota_lakeside.wizard == 7) {
+			Soapbomb_storyline();
+			return true;
+		}
 		if (self.metjay == 2) {
 			if ((expertmode == true) && (shelves.readcounter < 4))
 				return false;
