@@ -102,7 +102,7 @@
 ];
 
 [ Stacimeet_storyline;
-	print "As you park your bike outside Rossini's, you see Staci arriving. You know she has read the same sci-fi novel that inspired you, so after not seeing her for several years, you greet her as follows:
+	print "As you park your bike outside Rossini's, you see Staci arriving. You know she has read the same sci-fi novels that inspired you, so after not seeing her for several years, you greet her as follows:
 ^
 ^'Staci! World-as-myth is true, fiction is entering reality, and the Loonie Revolution is starting. Do you want a position of high power and responsibility?'
 ^
@@ -211,7 +211,11 @@
 ^
 ^You arrive at Lothlorien exhilirated. You feel you are playing your part note-perfectly. Before you can even reach out your hand to knock, the wooden door swings open and you step inside.^";
 	playerto(loth_greatroom);
-	print "^You were entering as Nook was leaving. He gives you a huge smile and says, 'Staci told me you were on the way, she's really excited to see you. She's out on the porch.' He points toward a door to the north as he waves goodbye.^";	
+	print "^You were entering as Nook was leaving. He gives you a huge smile and says, 'Staci told me you were on the way, she's really excited to see you. She's out on the porch.' He points toward a door to the north as he waves goodbye.
+^
+^(During your ride to the co-op, the fiction-bind transformed reality. Now that you are the Harmonist, you can find the entry points to other branches of the multiverse in previously visited locations.)
+^
+^(27 May 2013 - The multiverse authors convention is open NE of the Capitol)^";	
 ];
 
 [ Staciporch_storyline;
@@ -222,9 +226,23 @@
 ^
 ^[You pause while writing the game. You need Staci's help for this. It is late at night, and she is many sleeps. How can you code the next week of sitting out here on the porch swing and talking? How many infinite branches of ASK and TELL can you write, to capture the conversations ranging across decades of almost-shared life as friends and the appearance of dreams of a shared future? 'It was the wonderously beautiful month of May, when all the flowers open - and within my heart, a love unfolded also.' (Footnote 10)]
 ^
-^(During your ride to the co-op, the fiction-bind transformed reality. Now that you are the Harmonist, you can find the entry points to other branches of the multiverse in previously visited locations.)^
+^Three AM. The spring air has grown cool. 'I think I'm ready to go up to my room where its warm,' Staci says. 'You're welcome to join me, just give me a minute to make some space in my room. My door is the one with the purple flower.' She smiles and goes inside.^";
+];
+
+[ Staciroom_storyline;
+	loth_greatroom.lothstaci = 3;
+	achieved(42);
+	print "^As you wander through the intricately art-encrusted walls of the co-op, you smile and think of the chipmunks in a higher dimension, playing the videogame of your life, and the author writing the story, and the deity within the flower of the soul, and the probabilistic distributions of quantum field theory, and it is all the same thing.
 ^
-^(1 June 2013 - The multiverse authors convention is open NE of the Capitol)^";
+^Okay, yeah, you are actually thinking about whether Staci wants you to touch her as much as you do. You spot the door with the purple flower, and enter. Staci is sitting on the edge of her bed, and you sit next to her.
+^
+^You aren't shy, and neither is she. You open your minds to each other. Yes, you are both interested in each other. No, you don't want traditional relationship definitions. Staci has been trying to make poly work since the end of her marriage, and you have been assuming that your relationships will be like the Lunar Colonists - complex multi-person marriages or open multipartner relationships. That's just how we do it on the moon.
+^
+^You and Staci move the conversation from words to touch. There is still language, but it is the language of the waves, and it can't be adequately transcribed here.
+^
+^(You wake a few hours before she was planning on getting up, and leave her sleeping in her room. She has given you an open invitation to >visit staci whenever you want.)^";
+	if (commentary == true)
+		print "^[You pause again as you type. If you could write it to be half as hot as it was, you would. Not just that night, but how ever since then, life has been a continous erotic fantasy, usually either just-fucked or just-about-to-fuck, and often both. If you wrote the game in detail, pulling Staci into bed would happen as often as the piano playing and bike rides. Maybe this is all you need to say. For the rest of the game, the delightful cycle of desire and fulfillment oscillates endlessly and intensely.]^";
 ];
 
 [ Madconstart_storyline;

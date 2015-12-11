@@ -302,7 +302,7 @@ Room	john_nolen "John Nolen Drive"
 	description [;
 		print "Adjacent to lake Monona, John Nolen Drive is a wide multi-lane road which passes underneath the curved contours of the Monona Terrace convention center. The view from across the lake looking toward downtown is Madison's skyline-postcard view. A heavily used bike path teems with cyclists and joggers. The Capitol square is north, Williamson St. to the east, and the Miffyland residential neighborwood is west.^";
 		if (self hasnt visited)
-			print "^Arriving downtown on a bike has always been one of your favorite things. There was always the possibility of an unexpected encounter with a friend, always the chance someone interesting would call out to you and you would be drawn into an escapade. It can be a dangerous thing riding out from your front door onto the path - you might be swept up into adventure and find yourself anywhere. (Footnote 8). Right now, the breeze feels it promises complete freedom to attain dreams you had long since abandoned.^";
+			print "^Arriving downtown on a bike has always been one of your favorite things. There was always the possibility of an unexpected encounter with a friend, always the chance someone interesting would call out to you and you would be drawn into an escapade. It can be a dangerous thing riding out from your front door onto the path - you might be swept up into adventure and find yourself anywhere. (Footnote 8). Right now, the spring breeze promises complete freedom to attain dreams you had long since abandoned.^";
 	],
 	n_to cap_square,
 	w_to miffyland,
@@ -629,6 +629,12 @@ Room	loth_kitchen "Lothlorien co-op, in the kitchen"
 Room	loth_upstairs "Lothlorien co-op, upstairs"
 	with
 	description "(upstairs)",
+	each_turn [;
+		if (loth_greatroom.lothstaci == 2) {
+			Staciroom_storyline();
+			return true;
+		}
+	],
 	d_to loth_greatroom,
 	cant_go "You can go down to the Great Room.";
 

@@ -134,6 +134,7 @@
 	37: "smoking in the woods on 19 June";
 	38: "biking around the lake on the Last Full Moon";
 	39: "completing the main historical storyline";
+	42: "joining Staci in her room at the co-op";
 	}
 ];
 
@@ -193,6 +194,16 @@
 [ Clockoffsub;
 	clockoff = true;
 	"Clock story triggers set to off. No plot events will occur automatically. >clockon to reactivate.";
+];
+
+[ Commentarysub;
+	if (commentary == false) {
+		print "Turning commentary on, enter >commentary again to deactivate.^";
+		commentary = true;
+		return true;
+	}
+	print "Turning commentary off.^";
+		commentary = false;
 ];
 
 [ Contentsub;
@@ -347,7 +358,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 441 points. 45 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 510 points. 45 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;
@@ -567,6 +578,7 @@ Verb "bind"	* noun noun	-> Bind;
 Verb "bomb" *	-> Bomb;
 Verb "clockon" *	-> Clockon;
 Verb "clockoff" *	-> Clockoff;
+Verb "commentary" *	-> Commentary;
 Verb "content" *	-> Content;
 Verb "credits" *	-> Credits;
 Verb "dance" *	-> Dance;
