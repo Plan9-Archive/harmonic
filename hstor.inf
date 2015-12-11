@@ -184,7 +184,7 @@
 [ Bday_visit_storyline;
 	elginbday = 9;
 	terminal.acted = 1;
-	print "^You are happy to see Staci has emailed you again. She says she had a great time seeing you and hopes to coordinate work on the Loonie Revolution soon.^(Use the command >visit staci to receive an invitation to see her.)^";
+	print "^You are happy to see Staci has emailed you again. She says she had a great time seeing you and hopes to coordinate work on the Loonie Revolution soon.^(To see her, use the command >visit staci.)^";
 ];
 
 [ Firstlothvisit_storyline;
@@ -238,7 +238,7 @@
 ^
 ^You aren't shy, and neither is she. You open your minds to each other. Yes, you are both interested in each other. No, you don't want traditional relationship definitions. Staci has been trying to make poly work since the end of her marriage, and you have been assuming that your relationships will be like the Lunar Colonists - complex multi-person marriages or open multipartner relationships. That's just how we do it on the moon.
 ^
-^You and Staci move the conversation from words to touch. There is still language, but it is the language of the waves, and it can't be adequately transcribed here.
+^'Here are my rules,' Staci says, 'Everything with me is casual, I'm always sleeping with someone else, and who else I'm sleeping with is nobody's business but mine.' 'That sounds reasonable,' you answer. You and Staci move the conversation from words to touch. There is still language, but it is the language of the waves, and it can't be adequately transcribed here.
 ^
 ^(You wake a few hours before she was planning on getting up, and leave her sleeping in her room. She has given you an open invitation to >visit staci whenever you want.)^";
 	if (commentary == true)
@@ -259,6 +259,8 @@
 	print "^Lily is fascinated by deity artworks and tools for rituals and prayer. Tara tells her she can pick out an item as a gift, and Lily chooses a necklace of pale sky-blue beads. Tara strokes it lightly as she hands it to Lily 'Very beautiful. This is the color of one aspect of Buddha. I've been feeling this color in the past few days. Perhaps one of the Buddhas is traveling near.'
 ^
 ^You thank Tara, and notice it's time to meet Staci after the panel. She wants to take a break back at the castle dock. Lily leaves with Staci, and after a few more minutes appreciating the items in Infinite Loop, you decide to join them on the dock for a dose of sunlight on the waves.^";
+	if (commentary == true)
+		print "^[Lily's comment after being shown this section of the game. 'Two thumbs up! Me wanting mac and cheese, me throwing chaos bombs - you totally captured what I was like at six!' - one of your proudest moments as an IF author.]^";
 ];
 
 [ Lotusdock_storyline;
@@ -370,11 +372,11 @@
 ^
 ^The mood is sour on the ride back to the Castle to drop the other kids off. For the first time in months, life feels...average.
 ^
-^You arrive back home, and after the stress at the restaurant, you are looking forward to a relaxing night with Staci. Her cellphone rings. Nook is calling. Staci looks shocked. 'What? Oh, shit. Okay, be careful, stay in touch.'
+^You arrive back home, and after the stress at the restaurant, you are looking forward to a relaxing night with Staci. Her cellphone rings. Nook is calling. Staci looks shocked. 'What? Oh, shit. No fucking way. Fuck. Okay, be careful, stay in touch.'
 ^
 ^She looks at you with a face filled with anxiety. 'The Castle is on fire.'
 ^
-^The best summer ever is over.^^";
+^The summer is over.^^";
 	getenter();
 	print "^^(12 December 2015 - 27 Months later)
 ^

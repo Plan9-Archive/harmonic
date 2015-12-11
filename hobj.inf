@@ -281,6 +281,11 @@ Decor	wheel "wheel" cosmic_wheel
 	name 'firmament' 'harmony' 'spheres' 'creation' 'spacetime' 'universe' 'cosmos',
 	description "The infinite immensity of the turning wheel of the axis of reality is beyond your capacity to understand or affect.";
 
+Decor	aerator "aerator" cascade_aerator
+	with
+	name 'sugar' 'river' 'basin' 'cascade' 'aerator' 'trail' 'military' 'ridge' 'water' 'waterfalls' 'hillface' 'piled' 'rock' 'path',
+	description "Your mind is filled with night air, stars, and the bubbling sound of slowing water.";
+
 !============================================================================
 ! The immobile prop objects
 
@@ -595,6 +600,7 @@ object 	lunar_lightning "Lunar Lightning"
 	with
 	name 'bike' 'bicycle' 'lunar' 'lightning' 'cycle',
 	bought 0,
+	explore 0,
 	description "The ultimate Deadhead bicycle, Lunar Lightning is painted with a red to blue fade and has a Steal-Your-Face sticker on the front fork. Lightning bolt stickers follow the line of each tube of the frame. Black moustache-style handlebars and a generator-hub powered front headlight show that this is a bike for relaxed recreational city riding, not racing.",
 	react_after [;
 		drop:
@@ -649,7 +655,7 @@ object 	lunar_lightning "Lunar Lightning"
 				"You already bought Lunar Lightning.";
 			self.bought = 1; 
 			bankaccount = bankaccount - 1000;
-			"The bicycle you have chosen has a funny story behind it. Weeks earlier, a mysterious stranger had commissioned this custom bicycle, but just this morning he had called to say he would be unable to purchase it. It almost seems as if things had been set up as a conspiracy to provide you with the perfect hippiecycle. If you leave it behind, you can summon it to your current location with the command >lunar. Just >ride lunar and then navigate as normal to access new locations. Your first order of business is making it to Elgin's party at Rossini's pizza, further south of Coffee Lion on Monona drive.
+			"The bicycle you have chosen has a funny story behind it. Weeks earlier, a mysterious stranger had commissioned this custom bicycle, but just this morning he had called to say he would be unable to purchase it. It almost seems as if things had been set up as a conspiracy to provide you with the perfect hippiecycle. If you leave it behind, you can summon it to your current location with the command >lunar. Just >ride lunar and then navigate as normal to access new locations. You can also go for rides with >explore. Your first order of business is making it to Elgin's party at Rossini's pizza, further south of Coffee Lion on Monona drive.
 ^
 ^You spend $1000 to buy Lunar Lightning, you have $", bankaccount, " remaining.";
 		enter: 

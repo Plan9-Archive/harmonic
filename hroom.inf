@@ -990,3 +990,16 @@ Scene	cosmic_wheel "The Cosmic Wheel"
 		}
 	],
 	cant_go "You can't go anywhere when you are gripping the spoke so tightly. If you are brave, you could try letting go by dropping it.";
+
+Scene	cascade_aerator "Sugar River Basin Cascade Aerator"
+	with
+	description "You have traveled southwest on the military ridge trail. The sound of rushing water brought you to a halt. Somewhere in the darkness next to you, a series of small artificial waterfalls tumble across a hillface of piled rock.",
+	before [;
+		listen:
+			"The water-waves make the sound-waves dance against your ears. The most ancient and perfect symphony, unchanging in its infinite variety.";
+		go:
+			achieved(44);
+			print "The feeling of forward motion and exploration compel you to get back on your bike and continue riding. You head back in toward the city, and find a park on a tall hill on the southwestern edge of the city. You remember visiting here with an ex-girlfriend who lived nearby. After a few minutes watching the glow of the city lights, you hop back on your bike to escape the mosquitos, and ride back home.^";
+			playerto(milw_street);
+			return true;
+	];
