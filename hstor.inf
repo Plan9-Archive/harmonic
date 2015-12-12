@@ -192,6 +192,7 @@
 	madcon.timetrav = 1;
 	loth_greatroom.lothstaci = 1;
 	coffee_lion.alchemy = 1;
+	willy_coop.oldtest = 1;
 	eside_hq.fictour = 1;
 	essentially_art.seminar = 1;
 	move school_of_atlantis to essentially_art;
@@ -498,6 +499,13 @@
 	print "^As you order your standard meal of pancakes, eggs, and potatoes, you remember an anecdote about a midwestern farmer in the 1970s who claims that space aliens gave him pancakes. It was used as evidence for the mysterious nature of reality. It had seemed absurd and implausible to you in the past, but now it makes perfect sense. A profound possibility occurs to you - maybe the pancakes the aliens gave to the farmer were Earth pancakes taken from somewhere else? In fact, maybe the aliens took pancakes from the future backwards in time - it could be that if you take the pancakes with you, aliens will show up and steal your them to give to the farmer. You request a to-go container and prepare yourself for the possibility of an extraterrestrial encounter of the pancake kind.^";
 ];
 
+[ Oldtest_storyline;
+	willy_coop.oldtest = 2;
+	print "^Paul is here, playing his acoustic guitar outside the grocery store. He finishes a song with the refrain 'Turn up your emotional radio' and greets you. 'I wrote that song thirty years ago, and people still aren't listening. Almost every song you hear celebrates codependent love. And you wonder why everyone on the east side of Madison is so screwed up? I mean, two plus two is four, right? Look around you. Everybody is so desperate to feel better about themselves they run around trying to save people and just become enablers. The addicts usually just hurt themselves, but the average enabler ruins four lives or more. You better watch out, I've seen this before: someone wakes up just a little bit, and then thinks they can save everyone else. It's all just patterns, the same ones over and over.'
+^
+^He packs up his guitar and waves goodbye. You start to think of him as the Zenbluesman, changing the frame you are putting around your perceptions.^";
+];
+
 [ Hecateritual_storyline;
 	remove space_pancakes;
 	space_pancakes.ritual = 1;
@@ -523,6 +531,20 @@
 ^
 ^He is gone when you have finished your meal. You don't know what he meant by charging room, but you walk back towards the restroom. You see three doors, Women, Men, and Bots. The Bots door has an icon of a power cord connected to a Dalek. This must be the charging room. You step through and find yourself...^";
 	playerto(orbital_command);
+];
+
+[ Alef_storyline;
+	eside_hq.fictour = 3;
+	print "^As soon as you cross the threshold, a voluptuous redhead greets you. 'Jay isn't working tonight, but he told me about you.' You assume she is a time-traveler, and is in touch with the orbital nexus. As she seats you, you catch a glimpse of a tattoo peeking out of her uniform below her right clavicle. 'What's your tattoo?' you ask. She smiles and laughs 'Oh! Something silly, my friend has the other half' and pulls aside her uniform to show a colorful monster chasing something. 'Wow, awesome!' you say, and you don't try too hard to conceal the fact that you are just as happy about the glimpse of her body as you are about the tattoo. You introduce yourself. Her name is Alef.
+^
+^It seems natural to ask if she has any other interesting ink, and when you ask if she does, she says yes. You ask if you can see it, and she laughs and says 'not HERE' and you keep your eyes steady on hers and say 'Okay, let me know when you can take a break for a few minutes.' She pauses, thinks for a second, then says 'sure' with a tiny smile.
+^
+^The employees have a picnic table behind some bushes to use for smoke breaks. Alef sits on the table and says 'I have a LOT of ink, actually.' She sits on top of the picnic table, and lifts her dress enough to expose her legs up to the knee. You see her right leg is covered with a spiral of integers, counting upward as they ascend. Her left leg is also inked, but instead of numbers, a complicated flow of curlicues and nautilus spirals emerges from simple lines at the ankle, growing more baroque toward the thigh.
+^
+^The contrast of the detailed tattoo work and her skin is exquisite. 'I'm ready to see more,' you say. 'Oh?' she says, 'I don't think you are really ready.' Her hands are on the buttons of her dress, and then she stands. The dress stays on the picnic table. The ink on her torso is a glowing, shimmering electric silver, covered with thousands of equations continuously solving and rewriting themselves. Your heart is racing as your eyes try to understand the mathematical significance of the symbols. You glance back to the comforting simplicity of the integers on her right thigh, becoming dizzyingly large as they rise. Her eyes follow your gaze, and she sits back down on the picnic table, facing you, puts her hands on her knees, and reveals herself fully.
+^
+^She was right, you weren't ready. Staring right at the origin point of Truth melts you like soft butter dripping off a hot knife. You are liquid seeping into the earth, but the glowing silver light changes the brown soil to silver dust and rock, you sink deeper, and find yourself in a vast hollow space...^";
+	playerto(inside_moon);
 ];
 
 [ Seminar_storyline;

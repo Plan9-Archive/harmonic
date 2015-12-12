@@ -139,6 +139,7 @@
 	42: "joining Staci in her room at the co-op";
 	43: "performing with Staci against corporate personhood";
 	44: "biking to the cascade aerator";
+	45: "following Glenda out of the street maze";
 	}
 ];
 
@@ -276,7 +277,7 @@
 		lunar_lightning.explore++;
 		"You feel your body has grown stronger. You can pedal continuously without getting tired now, and no longer dread the hills which ring the city. You bike across the isthmus toward the west side, your childhood neighborhoods. You bike by your old high school and the athletic field nearby, home to countless games of tag and frisbee. You ride down the hill and across University Avenue, towards Picnic Point. You head back towards downtown, passing by the campus buildings you spent so many hours in as a music student.";
 	4:	lunar_lightning.explore++;
-		"You head north, passing by a field enveloped in soft blue light. It looks so quiet and empty and mysterious you imagine you would just vanish into a completely universe if you biked into it. You continue north, out to empty streets which have been placed for a residential neighborhood but nothing is yet built. You can almost see into the future, see the suburban homes and strip malls which will be built here. Your ride ends with you hoping that the strange and unpredictable areas of Madison never become bland and homogenous.";
+		"You head north, passing by a field enveloped in soft blue light. It looks so quiet and empty and mysterious you imagine you would just vanish into another universe if you biked into it. You continue north, out to empty streets which have been placed for a residential neighborhood but nothing is yet built. You can almost see into the future, see the suburban homes and strip malls which will be built here. Your ride ends with you hoping that the strange and unpredictable areas of Madison never become bland and homogenous.";
 	5:	lunar_lightning.explore++;
 		achieved(41);
 		"You head due east down Milwaukee street, pushing up the long steady hill which eventually takes it across the interstate to the east. You end up in a sprawling set of new subdivisions, smooth fresh asphalt humming under the tires. As you ride, you notice numerous rabbits darting this way and that in the lawns of the houses. You start using the motion of the rabbits to guide your turns. They take you down numerous shortcuts, sidewalks cutting through the middle of blocks. You feel like pac-man, eating a trail of dots and ringing up a new high score.";
@@ -284,6 +285,11 @@
 			"You need to develop even more stamina and endurance to explore new areas on bike.";
 		lunar_lightning.explore++;
 		playerto(cascade_aerator);
+	7:	lunar_lightning.explore++;
+		playerto(fish_camp);
+	8:	lunar_lightning.explore++;
+		print "You eat a generous portion of magic mushrooms, and when you feel the body-buzz start to creep through your limbs, you put a few fruit candies in your pocket for energy and walk towards your bike. It is after three in the morning. As your eyes are tracing the familiar outlines of Orion in the sky, there is a sudden flaring light, and a bright streak splits the sky, fading nearly as quickly as it appeared. Musical fragments are starting to bounce around your head as you pedal into the darkness.^";
+		playerto(bunnyworld);
 	default: "Another perfect night on your bike, riding wherever the fuck that you like...you return home hours later, tired but happy.";
 	}
 ];

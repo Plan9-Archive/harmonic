@@ -284,7 +284,12 @@ Decor	wheel "wheel" cosmic_wheel
 Decor	aerator "aerator" cascade_aerator
 	with
 	name 'sugar' 'river' 'basin' 'cascade' 'aerator' 'trail' 'military' 'ridge' 'water' 'waterfalls' 'hillface' 'piled' 'rock' 'path',
-	description "Your mind is filled with night air, stars, and the bubbling sound of slowing water.";
+	description "Your mind is filled with night air, stars, and the bubbling sound of water tumbling over rocks.";
+
+Decor	glenda "glenda" bunnyworld
+	with
+	name 'rabbit' 'bunny' 'hare' 'glenda' 'rabbits' 'bunnies',
+	description "The rabbit looks quite unusual. It's head and body are a single jellybean shaped mass. In fact, it is clearly Glenda, the Plan 9 bunny.";
 
 !============================================================================
 ! The immobile prop objects
@@ -809,7 +814,7 @@ object	crown "wire and bead Crown"
 	],
 	has clothing;
 
-object wheel_costume "wheel costume"
+object	wheel_costume "wheel costume"
 	with
 	name 'wheel' 'costume',
 	description "The costume is a metal bicycle wheel on rope which can be hung from your neck, with a Crowley tarot deck interwoven between the spokes. It is an odd but effective way of costuming as the Wheel. (Footnote 11)",
@@ -821,4 +826,9 @@ object wheel_costume "wheel costume"
 			}
 	],
 	has clothing;
+
+object	purple_flower "purple flower" fish_camp
+	with
+	name 'purple' 'flower',
+	description "This small purple flower is not rooted in the ground. It is delicate but the purple hue is deep and somehow soothing.";
 

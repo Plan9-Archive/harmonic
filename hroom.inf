@@ -224,12 +224,16 @@ Room	willy_east "Willy Street, east end"
 Room	willy_coop "Willy St. Grocery Co-op"
 	with
 	singing 0,
+	oldtest 0,
 	description [;
 		print "The Willy street co-op has been selling organic foods and Dr. Bronner's magic soaps to the local crunchies for decades.^";
 	],
 	each_turn [;
 		if (self.singing == 0) {
 			Housekeepersmeet_storyline();
+		}
+		if (self.oldtest == 1) {
+			Oldtest_storyline();
 		}
 	],
 	before [;
@@ -793,6 +797,10 @@ Room	eside_hq "24-hour family restaurant"
 		if(self.metjay == 0) {
 			Jaymeet_storyline();
 		}
+		if(self.fictour == 2) {
+			Alef_storyline();
+			return true;
+		}
 	],
 	each_turn [;
 		if (mendota_lakeside.wizard == 7) {
@@ -1000,6 +1008,63 @@ Scene	cascade_aerator "Sugar River Basin Cascade Aerator"
 		go:
 			achieved(44);
 			print "The feeling of forward motion and exploration compel you to get back on your bike and continue riding. You head back in toward the city, and find a park on a tall hill on the southwestern edge of the city. You remember visiting here with an ex-girlfriend who lived nearby. After a few minutes watching the glow of the city lights, you hop back on your bike to escape the mosquitos, and ride back home.^";
-			playerto(milw_street);
+			playerto(milw_street, 1);
 			return true;
 	];
+
+Scene	fish_camp "Fish Camp"
+	with
+	description "You have traveled south to the shore of Lake Kegonsa. Seventy-five years ago, workers used this as a base for removing carp from the lake, but now it is a family picnic and camping area.",
+	before [; go:
+		print "After a minute to rest your legs, you ride back home. On the way, you pass the parking lot where a random encounter started your friendship with Staci and Clark. You had been on your bike that day fifteen years ago, too. Always strange to think about the tiny seeds of coincidence that become our story-trees.^";
+		playerto(milw_street, 1);
+		return true;
+	];
+
+Scene	bunnyworld "A maze of suburban streets"
+	with
+	followglenda 0,
+	description "You are in a maze of twisty residential subdivision streets, either all alike or all different, you are shrooming too hard to tell.",
+	each_turn [;
+		switch(bunnyworld.followglenda) {
+		0: "^A strange looking rabbit runs off to the north.";
+		1: "^An odd looking bunny scampers off to the east.";
+		2: "^A peculiar hare hops off to the west.";
+		default: "BUNNY IS BUGGY";
+		}
+	],
+	before [; go:
+		switch(bunnyworld.followglenda) {
+		0:	if (noun == n_obj) {
+				bunnyworld.followglenda++;
+				"You follow the rabbit down a narrow sidewalk between the houses.";
+			}
+			"You find a cul-de-sac in that direction.";
+		1: if (noun == e_obj) {
+				bunnyworld.followglenda++;
+				"You let the bunny lead you, and it shows you a dirt path underneath a set of railroad tracks.";
+			}
+			"What you had thought was a road is only the driveway of a large house.";
+		2: if (noun == w_obj) {
+				bunnyworld.followglenda++;
+				achieved(45);
+				print "The hare's tail disappears round a corner, and you follow. It leads you down an alley which connects to the parking lot of a small business, and you suddenly find yourself just a few blocks from your home. The musical fragments that have been ricocheting around your head have fallen into place while chasing the white rabbits.^";
+				playerto(milw_street, 1);
+				return true;
+			}
+			"You are so disoriented you find yourself back where you started before you even start to leave it.";
+		}
+	];
+
+Scene	inside_moon "Inside the Moon"
+	with
+	beam 0,
+	description "The moon is hollow. The inside is even more reflective and brightly lit than the outside. Each color of the moon, from ruddy orange to blue, has a separate beam crossing the vast internal abyss. The path of the light is not straight, however. A constantly shifting ripple of distortions and magnifications disturbs the pattern of light rays.",
+	each_turn [;
+		inside_moon.beam++;
+		switch(inside_moon.beam) {
+		1: "^Alef's voice is still in your ear. 'Yeah, things are always even more interesting than you think.'";
+		default: "^The vividly colored moonbeams oscillate in hypnotic rhythms.";
+		}
+	];
+
