@@ -1060,10 +1060,73 @@ Scene	inside_moon "Inside the Moon"
 	with
 	beam 0,
 	description "The moon is hollow. The inside is even more reflective and brightly lit than the outside. Each color of the moon, from ruddy orange to blue, has a separate beam crossing the vast internal abyss. The path of the light is not straight, however. A constantly shifting ripple of distortions and magnifications disturbs the pattern of light rays.",
+	before [;
+		bind: switch(noun) {
+			red: switch(second) {
+				yellow: print "The haunting a minor chord rings out as the beams glow. You have bound the wisdom of history.^";
+					Harmonybind_storyline();
+					return true;
+				green: print "The comforting f major chord rings out as the beams glow. You have bound the flow of natural processes.^";
+					Harmonybind_storyline();
+					return true;
+				default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
+					playerto(etown);
+					return true;
+				}
+			orange: switch(second) {
+				green: print "A dramatic d minor chord rings out as the beams glow. A Beethoven-ish synthesis of Fate and Will surges through you.^";
+					Harmonybind_storyline();
+					return true;
+				default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
+					playerto(etown);
+					return true;
+				}
+			yellow: switch(second) {
+				red: print "The haunting a minor chord rings out as the beams glow. You have bound the wisdom of history.^";
+					Harmonybind_storyline();
+					return true;
+				default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
+					playerto(etown);
+					return true;
+				}
+			green: switch(second) {
+				red: print "The comforting f major chord rings out as the beams glow. You have bound the flow of natural processes.^";
+					Harmonybind_storyline();
+					return true;
+				orange: print "A dramatic d minor chord rings out as the beams glow. A Beethoven-ish synthesis of Fate and Will surges through you.^";
+					Harmonybind_storyline();
+					return true;
+				default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
+					playerto(etown);
+					return true;
+				}
+			default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
+				playerto(etown);
+				return true;
+			}
+	],
 	each_turn [;
 		inside_moon.beam++;
 		switch(inside_moon.beam) {
 		1: "^Alef's voice is still in your ear. 'Yeah, things are always even more interesting than you think.'";
+		2: "^The blue, purple, and orange beams of light become brighter than the rest, and a soothing g major harmony fills the interior of the moon.
+^
+^'When this galaxy was young, a war between stars brought both species to extinction. After aeons of conflict, the last few survivors from each star system happened to meet near the nebula that was to form your sun.'";
+		3: "^The orange beam fades and the yellow beam intensifies. The harmony shifts to e minor.
+^
+^'At last, the nihilistic futility of their conflict was clear to each. Analyzing the causes led them to conclude that a different type of lifeform, one with maximal sociocultural diversity, had a better chance of peaceful coexistence with other civilizations than their own predecessors monocultural hive planets.";
+		4: "^The purple beam fades, and the red beam glows brighter. The harmony becomes a strong c major.
+^
+^'They sacrificed the remnants of both their civilizations to create a self-organizing gravitational network of small black holes. Their consciousness and free will was embodied by the information contained in the constantly rippling waves of spacetime. Together, they shaped the formation of your star system, and the nature of the life that developed on Earth.'";
+		5: "^All the colors fade, and a single beam of indigo becomes more luminous.
+^
+^'Those black holes are what you see distorting the path of the rays. From here inside the moon, precise gravitational manipulation has maximized the biological and cultural diversity of your planet. Now, you have reached the point where must take control of your own story, find your own harmonies. To blend with the indigo, bind two colors of your choice.'";
+		6: "^Alef is waiting for you to bind two colors into a harmony.";
+		7: "^Alef tells you to >bind two colors of your choice.";
+		8: "^Alef says, 'If you are waiting for a suggestion, I like d minor, personally.'";
+		9: print "^Alef says, 'Don't tell anyone I did this for you!' She binds orange and green together and they merge with the indigo to create a dramatic d minor harmony. A Beethoven-ish synthesis of Fate and Will surges through you. You turn toward Alef but she and the rest of the scene is gone, and you find yourself alone behind the restaurant. You walk awkwardly back around to the front.^";
+			playerto(etown);
+			return true;
 		default: "^The vividly colored moonbeams oscillate in hypnotic rhythms.";
 		}
 	];

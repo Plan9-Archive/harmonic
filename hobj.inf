@@ -291,6 +291,46 @@ Decor	glenda "glenda" bunnyworld
 	name 'rabbit' 'bunny' 'hare' 'glenda' 'rabbits' 'bunnies',
 	description "The rabbit looks quite unusual. It's head and body are a single jellybean shaped mass. In fact, it is clearly Glenda, the Plan 9 bunny.";
 
+Decor	red "red beam" inside_moon
+	with
+	name 'red',
+	description "The blood red beam is the lowest note of the color-scale of the current key.";
+
+Decor	orange "orange beam" inside_moon
+	with
+	name 'orange',
+	description "The vivid orange beam is the second note of the current color-scale.";
+
+Decor	yellow "yellow beam" inside_moon
+	with
+	name 'yellow',
+	description "The pale lemon yellow beam is the third note of the color-scale.";
+
+Decor green "green beam" inside_moon
+	with
+	name 'green',
+	description "The neon green beam is the fourth note of the color-scale.";
+
+Decor blue "blue beam" inside_moon
+	with
+	name 'blue',
+	description "The sky blue beam is the fifth note of the color-scale.";
+
+Decor indigo "indigo beam" inside_moon
+	with
+	name 'indigo',
+	description "The deep indigo beam is the sixth note of the color-scale.";
+
+Decor violet "violet beam" inside_moon
+	with
+	name 'violet',
+	description "The royal purple violet beam is the seventh note of the color-scale.";
+
+Decor colorbeams "beams of color" inside_moon
+	with
+	name 'beams' 'beam' 'colors' 'color' 'light' 'ray' 'rays' 'moon' 'interior' 'ripples' 'waves' 'black' 'holes' 'magnifications',
+	description "You can't see what creates the beams of light criss-crossing the vast interior space. They are gorgeous, rich-hued and soft-edged. The changing distortions and magnifications that continuously alter their mesh remind you of a slow-motion film of a reflection in rippling water. You can examine the colors individually.";
+
 !============================================================================
 ! The immobile prop objects
 
