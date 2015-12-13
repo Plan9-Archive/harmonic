@@ -1,7 +1,7 @@
 !% -v8
 !% -SDX
 !% $MAX_VERBS=160
-!% $MAX_LABELS=1050
+!% $MAX_LABELS=1100
 
 ! HARMONIC TIME-BIND RITUAL SYMPHONY
 !============================================================================
@@ -41,12 +41,16 @@
 !
 ! 10 December wrote scene outlines all the way to the end of main story
 ! intense emotion trying to channel the feeling of that summer into words
+!
+! 12 December another day or two of delay moving back into castle? sigh.
+! Adding extras like visits, bike exploration, working on bonus story
+! Close to done with full 'shape' of the game, then months of polishing
 
 !============================================================================
 ! Configuration constants
 
-Release 6;
-Serial "151210";
+Release 7;
+Serial "151212";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;
@@ -59,7 +63,7 @@ Array task_scores ->
 	9 99 9 9 9 9 9 9 9 
 	9 9 9 9 9 9 9 9 9 
 	9 9 9 9 9 9 69 9 9 
-	9 9 9 9 9 9 9 9 9;
+	9 39 9 9 9 9 9 9 9;
 
 Constant Headline
 "^9:15 PM 27 Sept. 2015

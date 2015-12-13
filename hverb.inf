@@ -141,6 +141,7 @@
 	44: "biking to the cascade aerator";
 	45: "following Glenda out of the street maze";
 	46: "harmonizing the beams inside the moon";
+	47: "breaking the green screen";
 	}
 ];
 
@@ -334,7 +335,7 @@
 	if (noun == pendant)
 		"Wearing the Loonie Revolution Power Pendant scores 9 points. It has no other function currently.";
 	if (noun == lunar_lightning)
-		"After you buy Lunar Lightning, you will be able to enter it to ride around and access new areas. You can summon it to your location with the command >lunar if you leave it behind.";
+		"After you buy Lunar Lightning, you will be able to enter it to ride around and access new areas. You can summon it to your location with the command >lunar if you leave it behind. You can also use the >explore command to experience unique travels. Your bike skill can be increased by drinking an affogato when you find it, and progressing in the story.";
 	if (noun == tempest)
 		"You can >play tempest multiple times. When you are inside the gameworld, just >bomb to escape with a new high score.";
 	if (noun == space_pancakes)
@@ -367,6 +368,12 @@
 		"Just >sing.";
 	if (location == cosmic_wheel)
 		"Just >drop spoke.";
+	if (location == abandoned_apartment)
+		"Just >break screen.";
+	if (location == inside_moon)
+		"Just >bind orange green.";
+	if (location == bunnyworld)
+		"Just follow the white rabbits, n, e, then w.";
 	if (location == lost_in_grid)
 		"Summon >lunar and then move in any direction";
 	if (location == atlantis_temple)
@@ -399,7 +406,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 546 points. 45 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 594 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;
@@ -593,7 +600,7 @@
 ];
 
 [ Verblistsub;
-	"n s e w ne nw se sw u d in out, examine, take, drop, give, talk to, tell, use, play, buy, wear, ride, listen, bomb, visit, sing, lunar, explore, release, bind";
+	"n s e w ne nw se sw u d in out, examine, take, drop, give, talk to, tell, use, play, buy, wear, ride, listen, break, bomb, visit, sing, lunar, explore, release, bind";
 ];
 
 [ Visitsub;
@@ -616,6 +623,11 @@
 		}
 	}
 	"You don't have anywhere to visit right now.";
+];
+
+[ Winsub;
+	deadflag = 2;
+	"Sure, you win! Success is for you to define. If you want to keep playing, just >undo.";
 ];
 
 [ Xyzzysub;
@@ -669,5 +681,6 @@ Verb "use" * noun	-> Use;
 Verb "vacation" *	-> Vacation;
 Verb "verblist" *	-> Verblist;
 Verb "visit" * topic	-> Visit;
+Verb "win" *	-> Win;
 Verb "xyzzy" *	-> Xyzzy;
 

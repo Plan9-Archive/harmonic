@@ -366,6 +366,7 @@
 
 [ Soapbomb_storyline;
 	mendota_lakeside.wizard = 8;
+	move green_porch to miffyland;
 	achieved(39);
 	print "^(September 11 2013)
 ^
@@ -535,13 +536,13 @@
 
 [ Alef_storyline;
 	eside_hq.fictour = 3;
-	print "^As soon as you cross the threshold, a voluptuous redhead greets you. 'Jay isn't working tonight, but he told me about you.' You assume she is a time-traveler, and is in touch with the orbital nexus. As she seats you, you catch a glimpse of a tattoo peeking out of her uniform below her right clavicle. 'What's your tattoo?' you ask. She smiles and laughs 'Oh! Something silly, my friend has the other half' and pulls aside her uniform to show a colorful monster chasing something. 'Wow, awesome!' you say, and you don't try too hard to conceal the fact that you are just as happy about the glimpse of her body as you are about the tattoo. You introduce yourself. Her name is Alef.
+	print "^As soon as you cross the threshold, a voluptuous redhead greets you. 'Jay isn't working tonight, but he told me about you.' You assume she is a time-traveler, and in communication with the orbital nexus. As she seats you, you catch a glimpse of a tattoo peeking out of her uniform below her right clavicle. 'What's your tattoo?' you ask. She smiles and laughs 'Oh! Something silly, my friend has the other half' and pulls aside her uniform to show a colorful monster chasing something. 'Wow, awesome!' you say, and you don't try too hard to conceal the fact that you are just as happy about the glimpse of her body as you are about the tattoo. You introduce yourself. Her name is Alef.
 ^
 ^It seems natural to ask if she has any other interesting ink, and when you ask if she does, she says yes. You ask if you can see it, and she laughs and says 'not HERE' and you keep your eyes steady on hers and say 'Okay, let me know when you can take a break for a few minutes.' She pauses, thinks for a second, then says 'sure' with a tiny smile.
 ^
 ^A few minutes later, you are by a picnic table behind some bushes the employees use for smoke breaks. Alef sits on the table and says 'I have a LOT of ink, actually.' She sits on top of the picnic table, and lifts her dress enough to expose her legs up to the knee. You see her right leg is covered with a helix of integers, counting upward as they ascend. Her left leg is also inked, but instead of numbers, a complicated flow of curlicues and nautilus spirals emerges from simple lines at the ankle, growing more baroque toward the knee.
 ^
-^The contrast of the detailed tattoo work and her skin is exquisite. 'I'm ready to see more,' you say. 'Oh?' she says, 'I don't think you are really ready.' Her hands are on the buttons of her dress, and then she stands. The dress stays on the picnic table. The ink on her torso is a glowing, shimmering electric silver, covered with thousands of equations continuously solving and rewriting themselves. Your heart is racing as your eyes try to understand the mathematical significance of the symbols. You glance back to the comforting simplicity of the integers on her right thigh, becoming dizzyingly large as they rise. Her eyes follow your gaze, and she sits back down on the picnic table, facing you, puts her hands on her knees, and reveals herself fully.
+^The contrast of the detailed tattoo work and her skin is exquisite. 'I'm ready to see more,' you say. 'Oh?' she says, 'I don't think you are really ready.' Her hands are on the buttons of her dress, and then she stands. The dress stays on the picnic table. Her torso is covered in art, glowing, shimmering electric silver, thousands of equations continuously solving and rewriting themselves. Your heart is racing as your eyes try to understand the mathematical significance of the symbols. You glance back to the comforting simplicity of the integers on her right thigh, becoming dizzyingly large as they rise. Her eyes follow your gaze, and she sits back down on the picnic table, facing you, puts her hands on her knees, and reveals herself fully.
 ^
 ^She was right, you weren't ready. Staring right at the origin point melts you like soft butter dripping off a hot knife. You are liquid seeping into the earth, but the glowing silver light changes the brown soil to silver dust and rock, you sink deeper, and find yourself in a vast hollow space...^";
 	playerto(inside_moon);
@@ -549,7 +550,7 @@
 
 [ Harmonybind_storyline;
 	achieved(46);
-	print "^The harmony envelops you completely, and the gravitational distortions begin pulsing an irresistible rhythm. You are conducting the music, playing piano, singing along, dancing, spinning in orbits around a singularity, every action reflected in amplified reactionm, and finally carried down a shining silver river, pulled into a whirling vortex, your voice crying out as the infinite pull dissolves you...
+	print "^The harmony envelops you completely, and the gravitational distortions begin pulsing an irresistible rhythm. You are conducting the music, playing piano, singing along, dancing, spinning in orbits around a singularity, every action reflected in amplified reaction, and finally carried down a shining silver river, drawn into a whirling vortex, your voice crying out as the infinite pull dissolves you...
 ^
 ^'Shhh!' Alef's voice in your ear. Her legs are tightly wrapped around your hips. 'You trying to get us busted?' You blink and try to re-enter reality, dizzy and sweaty. She separates herself from you, shrugs herself back into her dress, and whispers 'Sorry to run, but I gotta work. Don't follow me back in.'
 ^
@@ -621,6 +622,14 @@
 ^
 ^The digitization laser hits you from behind and you feel yourself being Forked...^";
 	playerto(lost_in_grid);
+];
+
+[ Breakscreen_storyline;
+	remove green_porch;
+	stopdaemon(queen);
+	achieved(47);
+	print "The screen shatters easily. Can it really be this easy? You hear an angry shout from the Queen, 'Trivial vandalism! Do you think this makes any difference?' but you don't stick around to argue, you escape from the apartment, slamming the door loudly enough to wake yourself up. You are back in the student neighborhood and the green porch is nowhere to be seen.^";
+	playerto(miffyland, 1);
 ];
 
 [ Tellxeliaxochi_storyline;

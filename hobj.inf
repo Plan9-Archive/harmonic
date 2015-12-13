@@ -549,6 +549,28 @@ Prop	wizard_head "cut-off head mounted on a pole"
 	name 'cut-off' 'head' 'pole',
 	description "The head is made of paper-mache and painted to resemble the Wizard.";
 
+Prop	green_porch "porch lit by eerie green light"
+	with
+	name 'porch' 'eerie' 'green' 'light',
+	before [;
+		print "Something draws you up onto the porch. Collapsed furniture and empty beer cases. You put your hand on the doorknob and the door opens at your touch. You recognize the slow-motion feeling of a dream. Okay, dreaming is always cool. You walk inside...^";
+		playerto(abandoned_apartment);
+		return true;
+	];
+
+Prop	green_screen "green screen for scene editing" abandoned_apartment
+	with
+	name 'green' 'screen' 'scene' 'editing',
+	description "The green scene editing reality filter screen looks very thin and delicate. It's glow alters the world around it, creating low-fidelity replacement scenery or characters.",
+	before [;
+		attack: 
+			Breakscreen_storyline();
+			return true;
+		thrownat:
+			Breakscreen_storyline();
+			return true;
+	];
+
 Prop	past "Past" loth_backyard
 	with
 	name 'past' 'history',

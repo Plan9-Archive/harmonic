@@ -1109,13 +1109,13 @@ Scene	inside_moon "Inside the Moon"
 		inside_moon.beam++;
 		switch(inside_moon.beam) {
 		1: "^Alef's voice is still in your ear. 'Yeah, things are always even more interesting than you think.'";
-		2: "^The blue, purple, and orange beams of light become brighter than the rest, and a soothing g major harmony fills the interior of the moon.
+		2: "^The blue, purple, and orange beams of light become brighter than the rest, and a soothing G major harmony fills the interior of the moon.
 ^
 ^'When this galaxy was young, a war between stars brought both species to extinction. After aeons of conflict, the last few survivors from each star system happened to meet near the nebula that was to form your sun.'";
-		3: "^The orange beam fades and the yellow beam intensifies. The harmony shifts to e minor.
+		3: "^The orange beam fades and the yellow beam intensifies. The harmony shifts to E minor.
 ^
-^'At last, the nihilistic futility of their conflict was clear to each. Analyzing the causes led them to conclude that a different type of lifeform, one with maximal sociocultural diversity, had a better chance of peaceful coexistence with other civilizations than their own predecessors monocultural hive planets.";
-		4: "^The purple beam fades, and the red beam glows brighter. The harmony becomes a strong c major.
+^'At last, the nihilistic futility of their conflict was clear to each. Analyzing the causes led them to conclude that a different type of lifeform, one with maximal sociocultural diversity, had a better chance of peaceful coexistence with other civilizations than their own predecessors monocultural hive planets.'";
+		4: "^The purple beam fades, and the red beam glows brighter. The harmony becomes a strong C major.
 ^
 ^'They sacrificed the remnants of both their civilizations to create a self-organizing gravitational network of small black holes. Their consciousness and free will was embodied by the information contained in the constantly rippling waves of spacetime. Together, they shaped the formation of your star system, and the nature of the life that developed on Earth.'";
 		5: "^All the colors fade, and a single beam of indigo becomes more luminous.
@@ -1131,3 +1131,11 @@ Scene	inside_moon "Inside the Moon"
 		}
 	];
 
+Scene	abandoned_apartment "Abandoned apartment"
+	with
+	description "This apartment has obviously been abandoned for months, maybe years. Even when people were living here it was probably decrepit. Every angle is askew, the floor feels strangely soft underfoot, and an unpleasant odor lingers.",
+	d_to [;
+		deadflag = 2;
+		"Well, why not? Maybe being a henchmachine of an evil Queen will be a blast. Sure, you could have found a way to escape, but you chose this path instead. 'Just a game' you think, as you are binding misfortunes upon the Queen's enemies for the millionth time.";
+	],
+	cant_go "The green screen has edited reality, you are stuck in the overlay of a supervillain's lair. The only exit the screen allows is down, to be integrated into the Queen's servers.'";

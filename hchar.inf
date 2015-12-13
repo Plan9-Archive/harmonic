@@ -351,3 +351,24 @@ Character	staci "Staci"
 		talk: <<wakeother staci>>;
 	],
 	has female;
+
+Character	queen "Queen of the Green Screen" abandoned_apartment
+	with
+	name 'queen',
+	speech 0,
+	description "Her hair is green, her eyeglasses are green, her skintight bodysuit is green, the 40 billion volt search-and-replace gun she is holding is green.",
+	life "You have no chance to talk or act with the search-and-replace gun pointed at you.",
+	each_turn [;
+		self.speech++;
+		switch(self.speech) {
+		1: "^'I've been looking forward to this scene,' the Queen begins, smiling coldly at you.";
+		2: "^'In this scene, you learn that my organization is in charge of this story, and you decide that you will allow us to your computing power and binding engine according to our scenarios,' the queen states, and the green screen effect begins to alter the scenery. The abandoned college apartment is being replaced by a neon-lit underground lair.";
+		3: "^The green screen effect has almost completely replaced the scene. It is being projected from a very thin and delicate looking sheet of translucent material. The Queen is still speaking, 'I'm glad to see you understand this will increase your power in the story. There's no need for us to let all those minor characters just run around doing what they please. This is a story about me! Long-term, you'll have far more screen time making the edits I need than all that chaotic nonsense you've been perpetrating.'";
+		4: print "^'All right, we are ready now! My computer hardware is downstairs, follow me and I'll make you a slave process of my master control program. Don't worry, you'll still have read/write permissions on all your devices. When we need you to make an edit, that is,' the Queen walks down an impossible staircase to reach her server room, and motions for you to follow.^";
+			remove self;
+			startdaemon(self);
+		}
+	],
+	daemon "^The Queen is waiting for you downstairs, expecting you to become a slave process to her servers.",
+	has female;
+
