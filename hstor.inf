@@ -392,9 +392,30 @@
 ^You sigh. Too much pontification at the end, let the reader figure it out, don't gloss yourself for them. Months of work remain to bring this virtual recreation of the Harmonic Time-Bind Ritual Symphony to completion, but the outline is in place.^";
 	getenter();
 	playerto(milw_street, 1);
-	print "^The crown becomes warm and makes a quiet bell-like sound.
+	print "(4 September 2013 - A week before the fire)
+^
+^The crown becomes warm and makes a quiet bell-like sound.
 ^
 ^(>wear crown and >use crown to interface with it)^";
+];
+
+[ Stopfire_storyline;
+	mendota_lakeside.wizard = 99;
+	achieved(48);
+	print "^You place the catapult on the ground to stabilize it, and turn the tensioning mechanism. Click. You double-check your aim. According to your instructions, the bind convergence should be starting in a moment, over the lake.
+^
+^There it is - a patch of mist rising from the water. There is a bubbling grumble from the lake, and a slimy whisker of Cthulhu's moustache briefly surfaces. It twitches and throws a Molotov cocktain in a high arc toward Loth's section of shoreline. A second later, it vanishes back under the surface.
+
+'My turn,' you say as you release the catapult's tensioning mechanism. With an almost comically stereotypical 'SPROING!' the water balloon is launched. That's it. You feel a tiny internal twinge as you branch into the altered universe. You breathe deeply, and try to relax. You did it.^";
+	getenter();
+	playerto(milw_street, 1);
+	move lunar_lightning to milw_street;
+	move player to lunar_lightning;
+	print "^(If you wish to declare victory and end the game, just >win.)
+^
+^Now that you've saved the castle, the summer will never end. Somewhere in the 17th dimension, a chipmunk is always playing your game, laughing at your foolish adventures and wondering how much was really true. 'More than you think,' you smile to yourself as you hop on your bike. It feels like it's going to be another amazing day. Staci said she's looking forward to seeing you.
+^
+^(Post-game secrets and extras are now available. The Story Control Machine at Infinite Loop is available.)^";
 ];
 
 [ Jaymeet_storyline;

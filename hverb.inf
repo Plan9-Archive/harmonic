@@ -142,6 +142,7 @@
 	45: "following Glenda out of the street maze";
 	46: "harmonizing the beams inside the moon";
 	47: "breaking the green screen";
+	48: "putting out the Loth fire";
 	}
 ];
 
@@ -350,6 +351,8 @@
 		"You need to >bind fiction reality.";
 	if (((noun == past) || (noun == future)) && (elginbday == 6))
 		"You need to >bind past future.";
+	if ((noun == balloon) || (noun == catapult))
+		"You need to >put balloon in catapult, go to James Madison park, and >use catapult";
 	if ((noun == viewer_lens) || (noun == remote_lens))
 		"If you leave the remote lens somewhere, abstractions in that location can be bound remotely.";
 	if (noun == animal_tarot)
@@ -406,7 +409,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 594 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 693 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;

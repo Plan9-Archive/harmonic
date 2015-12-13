@@ -472,7 +472,6 @@ Prop	time_vault "Time Vault"
 				if (fortune.dodge_fate == true)
 					if (eside_hq.fictour == 4)
 						if (green_screen.broken == 1) {
-							move treasure to self;
 							give self open;
 							stopdaemon(self);
 							"^The Time Vault in Lady Wisdom's has opened.";
@@ -903,7 +902,7 @@ object	crown "wire and bead Crown"
 ^
 ^At the big dance party, you are watching an individual in a slinky dress dance. They are waving a glowstick, and you realize they are spelling out letters in a message to you. 
 ^
-^M A K E T H E T R I P L E B I N D T O S A V E T H E C A S T L E^";
+^U S E T H E C A T A P U L T A T J A M E S M A D I S O N^";
 				default: "There is no new information available from the crown right now.";
 			}
 	],
@@ -938,7 +937,25 @@ object	purple_flower "purple flower" fish_camp
 	name 'purple' 'flower',
 	description "This small purple flower is not rooted in the ground. It is delicate but the purple hue is deep and somehow soothing.";
 
-object	treasure "treasure"
+object	balloon "balloon" time_vault
 	with
-	name 'treasure',
-	description "A valuable treasure.";
+	name 'water' 'balloon',
+	description "A large purple balloon, filled with water.";
+
+object	catapult "catapult" time_vault
+	with
+	name 'catapult',
+	description "A miniature wooden catapult, small enough to carry.",
+	before [;
+		use:
+			if ((balloon in self) && (location == james_madison)) {
+				Stopfire_storyline();
+				return true;
+			}
+			"You need to put the water balloon in the catapult and use it in the right location";
+		turn: <<use self>>;
+		pull: <<use self>>;
+		release: <<use self>>;
+	],
+	has container open;
+
