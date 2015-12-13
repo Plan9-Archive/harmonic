@@ -367,6 +367,7 @@
 [ Soapbomb_storyline;
 	mendota_lakeside.wizard = 8;
 	move green_porch to miffyland;
+	startdaemon(time_vault);
 	achieved(39);
 	print "^(September 11 2013)
 ^
@@ -549,6 +550,7 @@
 ];
 
 [ Harmonybind_storyline;
+	eside_hq.fictour = 4;
 	achieved(46);
 	print "^The harmony envelops you completely, and the gravitational distortions begin pulsing an irresistible rhythm. You are conducting the music, playing piano, singing along, dancing, spinning in orbits around a singularity, every action reflected in amplified reaction, and finally carried down a shining silver river, drawn into a whirling vortex, your voice crying out as the infinite pull dissolves you...
 ^
@@ -625,6 +627,7 @@
 ];
 
 [ Breakscreen_storyline;
+	green_screen.broken = 1;
 	remove green_porch;
 	stopdaemon(queen);
 	achieved(47);

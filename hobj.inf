@@ -457,6 +457,29 @@ Prop	tempest "Tempest arcade cabinet" rossinis_arcade
 		}
 	];
 
+Prop	time_vault "Time Vault"
+	with
+	name 'time' 'vault',
+	before [;
+		letgo: return false;
+		take: return false;
+		remove: return false;
+		default: "The Time Vault looks like the Platonic Ideal of a safe. It is grey and featureless save for the dial, which has been replaced by a clock set to 9:00. It resists all attempts to open, move, or investigate it.";
+	],
+	daemon [;
+		if (xochi.email > 3)
+			if (atlantis_temple.chaosbind == true)
+				if (fortune.dodge_fate == true)
+					if (eside_hq.fictour == 4)
+						if (green_screen.broken == 1) {
+							move treasure to self;
+							give self open;
+							stopdaemon(self);
+							"^The Time Vault in Lady Wisdom's has opened.";
+						}
+	],
+	has container;
+
 Prop 	fiction "Fiction"
 	with	
 	name 'fiction' 'stories' 'imagination' 'dreams' 'narrative',
@@ -561,6 +584,7 @@ Prop	green_porch "porch lit by eerie green light"
 Prop	green_screen "green screen for scene editing" abandoned_apartment
 	with
 	name 'green' 'screen' 'scene' 'editing',
+	broken 0,
 	description "The green scene editing reality filter screen looks very thin and delicate. It's glow alters the world around it, creating low-fidelity replacement scenery or characters.",
 	before [;
 		attack: 
@@ -815,13 +839,6 @@ object	viewer_lens "Viewer Lens"
 		locale(remote_lens.viewloc);
 	];
 
-object	time_vault "Time Vault"
-	with
-	name 'time' 'vault',
-	before [;
-		"The Time Vault looks like the Platonic Ideal of a safe. It is grey and featureless save for the dial, which has been replaced by a clock set to 9:00. It resists all attempts to open, move, or investigate it.";
-	];
-
 object	wheel_spoke "Spoke of the Cosmic Wheel"
 	with
 	name 'wheel' 'spoke' 'cosmic',
@@ -868,11 +885,38 @@ object	crown "wire and bead Crown"
 			if (mendota_lakeside.wizard < 8)
 				"You are not able to access the crown information yet.";
 			switch(mendota_lakeside.wizard) {
-				8: "^(A scene from Madcon replays itself in your mind)
+				8:	mendota_lakeside.wizard++;
+					startdaemon(crown);
+					"^(A scene from Madcon replays itself in your mind)
 ^
 ^A beautiful asymmetric life-form, with eggplants growing on stalks on her left side and an extra pair of fungus-legs on her right, pulls you aside as you pass in the hallway. 'Listen,' she whispers, 'the Green Screeners are planning an attack on your central HQ. I don't think you can prevent it on the first loop of the subfiction, but once you complete the main framing story, we will open the Time Vault for you. If you want to create an alternate history then...good luck.'";
+				10:	mendota_lakeside.wizard++;
+					"^(A scene from Madcon replays itself in your mind)
+^
+^You seat yourself for a panel. Someone left a folded up paper on the chair, which you glance at idly before giving it your full attention. 'Attention Moon Computer!' the note begins, 'we thought you might appreciate a list of tasks to complete to open the time vault
+^
+^Five binds in your namespace
+^Creating a harmony inside the moon
+^Confronting the Queen who leads the Green Screeners'^";
+				12:	mendota_lakeside.wizard++;
+					"^(A scene from Madcon replays itself in your mind)
+^
+^At the big dance party, you are watching an individual in a slinky dress dance. They are waving a glowstick, and you realize they are spelling out letters in a message to you. 
+^
+^M A K E T H E T R I P L E B I N D T O S A V E T H E C A S T L E^";
 				default: "There is no new information available from the crown right now.";
 			}
+	],
+	daemon [;
+		if ((location == atwood_av) && (mendota_lakeside.wizard == 9)) {
+			mendota_lakeside.wizard++;
+			"^The crown becomes warm and makes a quiet bell-like sound.";
+		}
+		if ((location == willy_west) && (mendota_lakeside.wizard == 11)) {
+			mendota_lakeside.wizard++;
+			stopdaemon(crown);
+			"^The crown becomes warm and makes a quiet bell-like sound.";
+		}
 	],
 	has clothing;
 
@@ -894,3 +938,7 @@ object	purple_flower "purple flower" fish_camp
 	name 'purple' 'flower',
 	description "This small purple flower is not rooted in the ground. It is delicate but the purple hue is deep and somehow soothing.";
 
+object	treasure "treasure"
+	with
+	name 'treasure',
+	description "A valuable treasure.";
