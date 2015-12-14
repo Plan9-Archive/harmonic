@@ -6,10 +6,10 @@
 ^
 ^ATTACK Strawberry?
 ^TAKE fiction?
-^READ books over and over?^
-^REVIEW someone's opinion on the game?^
-^BUY all the ARTIFACTS in Astral Enchantments and ANTIQUES in Afterlife, and then LOOK inside your home?^
-^TELL Xelia about Xochi?^";
+^READ books over and over?
+^REVIEW someone's opinion on the game?
+^BUY all the ARTIFACTS in Astral Enchantments and ANTIQUES in Afterlife, and then LOOK inside your home?
+^TELL Xelia about Xochi?";
 ];
 
 [ Deathmessage;
@@ -20,8 +20,8 @@
 ];
 
 [ Timepasses;
-	if((eventcount >= 3) && (location has outside)) {
-		if (elginbday == 1) {
+	if (elginbday == 1) {
+		if((eventcount >= 3) && (location has outside)) {
 			if ((expertmode == true) && (turning_wheel has visited))
 				Bdayinvite_storyline();
 			if (expertmode == false)
@@ -409,7 +409,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 693 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 711 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;
@@ -429,6 +429,8 @@
 ];
 
 [ Lunarsub;
+	if (location hasnt outside)
+		"You need to be outside for that.";
 	if (lunar_lightning.bought == 1) {
 		move lunar_lightning to location;
 		print "You call out for your trusty metal steed, and it appears!^";
@@ -676,6 +678,7 @@ Verb "shoot" *		-> Shoot;
 Verb "skipdock" *	-> Skipdock;
 Verb "skipintro" *	-> Skipintro;
 Extend "sleep" replace *	-> Sleepwait;
+Verb "spin" = 'turn';
 Verb "standard" *	-> Standard;
 Verb "story" *	-> Story;
 Verb "talk" * noun -> Talk

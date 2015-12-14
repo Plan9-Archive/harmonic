@@ -9,6 +9,8 @@
 	print "^You announce ANTS by posting an imaginary scene from Plan 9 from Outer Space to the 9fans mailing list. It is the one-year anniversary of your father's death. He was a law professor, and he never understood your values. You search for information on related Plan 9 projects and find a recent patent on a familiar concept. Years earlier, you wrote a free software 9p persistent-pipe muxer. The patent the Joint Consolidated Networking corporation was granted is for 9p persistent pipe-muxing.
 ^
 ^You feel an internal change, as if a valve has broken and a high-pressure jet of intense emotion and information is entering your mind at right angles to reality. You spent endless hours talking with your father, and you know how he thought. He never agreed with your anti-authoritarian radicalism, but seeing this patent would have changed that - you can feel it. Your mind has become a virtual machine, running the computer program of your father's soul in parallel with your own.^";
+	if (commentary == true)
+		print "^[Dealing with the backstory of how and why my mind went orbital is hard in the game context. Left out of these brief paragraphs is several weeks of not-very-well-considered postings on 9fans in which I said a lot of things I would regret, except they are so hilarious I can't feel too bad about it. Also, the actual ANTS release was a few weeks earlier, but for various reasons April Fools Day seems like the right place to start the game.]^";
 !	getenter();
 	print "^(You want to exit your home, go south, and enter Coffee Lion Cafe.)^";
 ];
@@ -26,6 +28,8 @@
 ^Miraculously, she smiles warmly at you. 'That's ok, thank you. It's fine to be honest about what you feel.' You feel overwhelmed by a warm buzzing sensation, but you respond fluently. 'Thanks, that means a lot to hear someone say. I've been pretty isolated with a computer programming project lately, and it's felt hard to communicate with people. Sometimes I feel like a machine.' She replies, 'Well, there are a lot more people on your level than you realize. My name is Xochi, by the way. Also, I might be a robot myself!'
 ^
 ^You both laugh, you introduce yourself, and you walk out of the cafe higher than a kite aloft in the skies of Jupiter. Not only had your impulsive flirtation (quite outside your usual character) gone well, but she was smart and funny too. You return home feeling reality has been magically transformed for the better and you have been freed of your insecurities and fears. No more inhibition of your wild and eccentric impulses. You will use the story of your patent dispute with the JCN corporation to inspire others to join together in a glorious struggle to free the human spirit from everything that limits our creativity.^";
+	if (commentary == true)
+		print "^[This is one of the scenes with almost zero extra fictionalization. The quotations are as close as I can remember. Real-life Xochi nodded and said 'pretty much' when I asked if this was how she remembers it.]^";
 !	getenter();
 	playerto(milw_street,1);
 	print "^(3 April 2013 - Outside my house)
@@ -39,6 +43,8 @@
 	daynumber = 4;
 	settime(60,60);
 	print "^As you enter the late night restaurant, you notice an old friend here. You join him at his table, and he offers to give you a Tarot reading. You accept, and the cards arrange themselves in a dramatic tableaux featuring The Tower and The Devil. Your friend looks at you seriously and says 'Fear obsession. Fear obsession very strongly.' You realize that in pursuit of your Plan 9 programming goals, you have neglected other things you care about, like people - and music. You head back towards your home and resolve to clean off your piano and play it as soon as you go inside.^";
+	if (commentary == true)
+		print "^[This scene has been shifted in both time and place. It actually occurred at Lady Wisdom's, before the meeting with a friend to acquire Plan 9 server hardware. It was moved here in the game because activating the musical themes early is important, and keeping the travel in the intro very close to home makes the on-rails segment feel less constricting.]^";
 !	getenter();
 	playerto(milw_street,1);
 	print "^(The introduction is 50% complete. You will have freedom to explore soon.)^(4 April 2013 - Outside my house)^";
@@ -50,7 +56,9 @@
 	move reality to basement;
 	daynumber = 6;
 	settime(60,60);
-	"^You've noticed that Xelia often dresses as fictional characters, and as you place your order, you comment on her current Alice in Wonderland outfit. She smiles slightly. 'Just something I enjoy doing to amuse myself.' As you drink your coffee, you contemplate the meaning of her wardrobe. She is altering her relationship to the world by taking symbols from fiction and applying them to herself. It reminds you of namespace operations in Plan 9, but with symbols and stories binding to real-life people as the targets. In fact, the mingling of imagination and reality seems to explain a lot of what you are experiencing. Since you took on the name of a fictional character for your computer work years ago, you seem to be traversing the narrative arc of that book in your own life. Your mind is spinning. You need to get home and check on your grid.";
+	print "^You've noticed that Xelia often dresses as fictional characters, and as you place your order, you comment on her current Alice in Wonderland outfit. She smiles slightly. 'Just something I enjoy doing to amuse myself.' As you drink your coffee, you contemplate the meaning of her wardrobe. She is altering her relationship to the world by taking symbols from fiction and applying them to herself. It reminds you of namespace operations in Plan 9, but with symbols and stories binding to real-life people as the targets. In fact, the mingling of imagination and reality seems to explain a lot of what you are experiencing. Since you took on the name of a fictional character for your computer work years ago, you seem to be traversing the narrative arc of that book in your own life. Your mind is spinning. You need to get home and check on your grid.^";
+	if (commentary == true)
+		print "^[This passage is hard to set up correctly. It would be nice if Plan 9 concepts were introduced earlier, and the player could be led to make the connection between Plan 9 namespace binds and binding symbols from fiction themselves, but bogging the early story down with trying to teach much about Plan 9 seems like a bad idea.]^";
 ];
 
 [ Ficbind_storyline;
@@ -61,16 +69,20 @@
 	daynumber = 8;
 	settime(60,60);
 	startdaemon(fiction);
-	"^You make the necessary adjustments to your basement grid to interface with the metalevel abstractions that structure your experiences. The bind command executes instantly, and for a moment you feel a foolish doubt - but in that same moment, you feel a warmth spreading within you, like liquid electricity being absorbed by the roots of your neural tree, and your visual perceptions take on a slight rainbow tint at the edges of objects, with an extra hint of pink.
+	print "^You make the necessary adjustments to your basement grid to interface with the metalevel abstractions that structure your experiences. The bind command executes instantly, and for a moment you feel a foolish doubt - but in that same moment, you feel a warmth spreading within you, like liquid electricity being absorbed by the roots of your neural tree, and your visual perceptions take on a slight rainbow tint at the edges of objects, with an extra hint of pink.
 ^
 ^(You have completed the introduction. You may now explore freely.)
-^(8 April 2013)";
+^(8 April 2013)^";
+	if (commentary == true)
+		print "^[So yeah, things get a bit metaphorical here, but I think it captures the experience. In reality, it felt more like a realization than an action - I came to the conclusion that fiction entering reality was just a natural consequence of binding fictional symbols into your life narrative. I did perceive it as some kind of quasi-magical quantum information transfer between the hardware and code of my Plan 9 systems and my brain and life. From a strictly clinical view, 'making the bind of fiction into reality' is just a fancy way of saying I started having delusional thought patterns. I'll have a lot more to say about this later in the commentary.]^";
 ];
 
 [ Matthewmeet_storyline;
 	eventcount++;
 	elginbday = 1;
 	print "^As you enter Lady Wisdom's, you spot Matthew, a fellow Plan 9 enthusiast. He is excited to see you, and tells you that he recently acquired several Plan 9 compatible rack servers, which he is willing to sell you to expand your grid. Everything is falling into place! Soon, the reality transforming power of higher dimensional namespace operations will bring the magic you are experiencing into everyone's life, and society will never be the same. You make arrangements to have the new hardware delivered to your house in a few days.^";
+	if (commentary == true)
+		print "^[This seems like a good place to talk about delusions. Some of the most common delusions are called 'delusions of reference' and common forms include thinking that news and media is somehow about you in a coded way, and may be related to delusions of being an important religious leader or historical figure. I was aware of these categories of delusional thinking, and could tell that my thoughts were following these patterns. The 'fiction binding paradigm' is a technique for understanding these perceptions and feelings and giving them a positive rather than negative role in the construction and experience of self. Delusions have negative outcomes when they destroy your ability to relate to other people, by putting you in a private world. By giving even wild, speculative thought processes a 'frame' that works for social communication, you open your mind to the health-sustaining feedback of others. Everyone gets to be the protagonist of their own life-movie, and listening to the stories of others, understanding what role you play within their narrative, is one of the most important parts of constructing your own narrative identity.]^";
 ];
 
 [ Bdayinvite_storyline;
@@ -109,6 +121,17 @@
 ^'Power and responsibility? Fuck no!' she answers.
 ^
 ^'That's the perfect answer! You're in!' you say, and shake her hand. She stands back from the door to finish her cigarette, and you enter.^";
+	if (commentary == true)
+		print "^[In real life, there was a crucial episode before this I wish I knew how to capture in the game. After I had biked past Coffee Lion, I saw Xochi biking ahead of me. It was a temptation to try to catch up with her, see what she was doing and where she was going. I was a block behind, but I decided to not try to force anything. It would have been a little too boundary-invasive, a little bit too much risk of having my eccentricity slide into being a potentially creepy weirdo. Before I arrived at Rossini's, I stopped and wrote this in my notebook:
+^
+^Learned for once in my life to take my time
+^Take a breath and find the right rhyme
+^You turned right and I went straight
+^After the pressure plate opened the gate
+^Give a rest to my old arthritic knees
+^Take some time to smell the may breeze
+^
+^I've always felt that decision was crucial. In the universes where I biked fast to catch up to Xochi, I think my timing would have been off for the arrival at Rossini's, and everything might have been different.]^";
 ];
 
 [ Bdayparty_storyline;
@@ -415,7 +438,7 @@
 ^
 ^Now that you've saved the castle, the summer will never end. Somewhere in the 17th dimension, a chipmunk is always playing your game, laughing at your foolish adventures and wondering how much was really true. 'More than you think,' you smile to yourself as you hop on your bike. It feels like it's going to be another amazing day. Staci said she's looking forward to seeing you.
 ^
-^(Post-game secrets and extras are now available. The Story Control Machine at Infinite Loop is available.)^";
+^(Post-game secrets and extras are now available. The Story Control Machine at Infinite Loop is fully functional.)^";
 ];
 
 [ Jaymeet_storyline;
@@ -423,6 +446,8 @@
 	self.metjay = 1;
 	achieved(11);
 	print "^You step into the restaurant and get a table. During the graveyard shift, the waitstaff are often friendly and interesting people who are bored enough to be curious about whatever conversation you make. Filled with a sense of purpose, you tell your story to your server, Jay. He seems fascinated, and says he supports the cause of fighting unfairness in society and empathizes with your grievance with JCN. He tells you some of his own life story, how he had been raised in a restrictive, cult-like religion from which he had recently broken free. You have made a new friend and ally.^";
+	if (commentary == true)
+		print "^[I interacted with a lot of different waitstaff out at the east side HQ, but it didn't seem realistic to model all those characters and scenes. There is also a lot more connected with Jay than has made it into the game so far. Maybe I will still find room for at least the time-traveling closet. The actual name and concept 'Harmonic Time-Bind Ritual Symphony' was worked out at the restaurant with Jay as my server, so maybe that specific scene should appear in the game somehow, but keeping the introductory material moving is a challenge already.]^";
 ];
 
 [ Housekeepersmeet_storyline;
@@ -477,7 +502,7 @@
 
 [ Schumannbind_storyline;
 	xochi.email = 4;
-	print "You focus your mind on Schumann's music, its mix of eccentricity, passion, and experimentation. You feel his great love for his wife Clara, and also the spidery cracks of the madness that claimed the last years of his life. You can see your life from his perspective and you realize that you can learn from his experiences. His life is mirrored in yours, but you can change the story, make it play out better. In death, Schumann grew to understand how stifling 19th century society was for many women, and how Clara had been forced to make her own creative life subsidiary to his. And his last few years in an asylum...those bad old songs should be sent down the Rhine river in a coffin!^";
+	print "^You focus your mind on Schumann's music, its mix of eccentricity, passion, and experimentation. You feel his great love for his wife Clara, and also the spidery cracks of the madness that claimed the last years of his life. You can see your life from his perspective and you realize that you can learn from his experiences. His life is mirrored in yours, but you can change the story, make it play out better. In death, Schumann grew to understand how stifling 19th century society was for many women, and how Clara had been forced to make her own creative life subsidiary to his. And his last few years in an asylum...those bad old songs should be sent down the Rhine river in a coffin!^";
 	if (expertmode == false)
 		print "^You are eager to >talk to Xochi about what you have just experienced.^";
 ];
@@ -486,11 +511,14 @@
 	eventcount++;
 	xochi.email = 5;
 	achieved(25);
-	"You are full of excitement as you walk up to the counter. 'Xochi, I have something amazing to tell you! Do you have a minute?' She nods yes, and you begin trying to explain:
+	print "You are full of excitement as you walk up to the counter. 'Xochi, I have something amazing to tell you! Do you have a minute?' She nods yes, and you begin trying to explain:
 ^
 ^'I heard your song,' you begin, and she looks startled. 'It's incredible! You should write music and perform it to spread the word about the Loonie Revolution. I know plenty of people we can hire for recording and promotion. I promise this isn't about me htting on you - in fact, it's the opposite of that. The reason is - and this is a little hard to believe, I know - the reason is that I am actually the reincarnation of Robert Schumann, and you are the reincarnation of Clara Schumann, and Robert wants to change the the stories of the past. He learned that you should have been a great independent musician, and that's what I want to do, just help your career and propagandize for the Loonie Revolution and revitalize this universe to make our songs new!'
 ^
-^Xochi looks slightly stunned, but manages an answer. 'I'm really glad you liked the song, but I need to get back to work now, I'll email you after work.'";
+^Xochi looks slightly stunned, but manages an answer. 'I'm really glad you liked the song, but I need to get back to work now, I'll email you after work.'^";
+	if (commentary == true)
+		print "^[This scene is actually a combination of two different conversations. The conversation about her music and sponsoring her career was first, then a week or so after I explained about reincarnating Schumann by running his musical computer-code inside myself.]^";
+		
 ];
 
 [ Schumann_term_storyline;
@@ -514,6 +542,16 @@
 ^Xochi smiles and laughs, 'It's been amazing! I've been writing so much, this has been a wonderful spring.'
 ^
 ^Warm major chords of strings and french horns are thrumming within you. This is perfect. This is clearly a decisive turning point in the composition. You sit and write: 'End of the first movement of Harmonic Time-Bind Ritual Symphony. And now, the second movement begins!'^";
+	if (commentary == true)
+		print "^[Here is the song I wrote as the finale for the first act of the Coffee Lion comic opera:
+^
+^Now that my heart is clean
+^I think spring's gonna be green
+^And all the dreams we've seen
+^Are sprouting from the thin cracks between
+^Fantasy reality poetry and lechery
+^A bird a bee up in a tree oh can't you see that you and me
+^Are ever after living happily, but what will be will be]^";
 ];
 
 [ Spacepancakes_storyline;
@@ -534,6 +572,8 @@
 	space_pancakes.ritual = 1;
 	achieved(24);
 	print "^It is New Moon, time for the ritual for Hecate. You face away from the crossroads at the edge of the city, and start eating one of the Space Pancakes. With each bite, you say 'I eat death and become life. Hecate, I respect you.' After eating half the pancake, keeping your face turned away, you toss the other half toward the crossroads as an offering. The ritual is complete.^";
+	if (commentary == true)
+		print "^[This came from the Lost Goddesses of Early Greece book, which I found in a used book store on full moon, right when I was focused on the Artemis Prints. I gave the first copy of it I bought, the first edition with the amazing illustrations, to the artist, and started performing the Hecate ritual for the next new moon. I continued to perform the ritual until mid-summer, when Staci and I had a striking experience where we gave a ride from the restaurant parking lot to an intense woman with a strange patchwork jacket. Giving her the ride substituted for the ritual, in some way, and I have only offered space pancakes at the crossroads a few times since.]^";
 ];
 
 [ Alchemy_storyline;

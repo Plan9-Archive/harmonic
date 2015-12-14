@@ -594,6 +594,41 @@ Prop	green_screen "green screen for scene editing" abandoned_apartment
 			return true;
 	];
 
+Prop	story_machine "Story Control Machine" infinite_loop
+	with
+	article "the",
+	name 'story' 'control' 'machine' 'wheel' 'lever' 'button',
+	description "This machine looks like a devotional altar with many turning prayer wheels. A sign reads: 'Spin wheel to change baristas at Coffee Lion. Push button to reset fictional subuniverses.'",
+	before [;
+		turn: switch(random(3)) {
+			1:	remove xelia;
+				remove xelia_and_xochi;
+				move xochi to coffee_lion;
+				"Xochi is now working alone at the Coffee Lion.";
+			2:	remove xochi;
+				remove xelia_and_xochi;
+				move xelia to coffee_lion;
+				"Xelia is now working alone at the Coffee Lion.";
+			3:	remove xochi;
+				remove xelia;
+				move xelia_and_xochi to coffee_lion;
+				"Xochi and Xelia are now working together at the Coffee Lion.";
+			}
+		push:
+			if (mendota_lakeside.wizard < 99)
+				"A piece of tape covers the button. A note beneath it reads 'locked until story completion.'";
+			elginbday = 10;
+			madcon.timetrav = 1;
+			loth_greatroom.lothstaci = 1;
+			coffee_lion.alchemy = 1;
+			willy_coop.oldtest = 1;
+			eside_hq.fictour = 1;
+			essentially_art.seminar = 1;
+			lost_in_grid.battle = 1;
+			afterlife_antiques.gifts = 1;
+			"Subuniverse triggers to the moment you became the Harmonist.";
+	];
+
 Prop	past "Past" loth_backyard
 	with
 	name 'past' 'history',
@@ -937,7 +972,7 @@ object	purple_flower "purple flower" fish_camp
 	name 'purple' 'flower',
 	description "This small purple flower is not rooted in the ground. It is delicate but the purple hue is deep and somehow soothing.";
 
-object	balloon "balloon" time_vault
+object	balloon "water balloon" time_vault
 	with
 	name 'water' 'balloon',
 	description "A large purple balloon, filled with water.";

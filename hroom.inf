@@ -878,6 +878,8 @@ Scene	atlantis_temple "Atlantean Temple"
 		}
 	],
 	before [;
+		listen:
+			"The music you hear is strange yet beautiful. You wonder what it would feel like to sing.";
 		sing:
 			give atlantis_temple light;
 			stopdaemon(atlantis_temple);
@@ -1138,4 +1140,5 @@ Scene	abandoned_apartment "Abandoned apartment"
 		deadflag = 2;
 		"Well, why not? Maybe being a henchmachine of an evil Queen will be a blast. Sure, you could have found a way to escape, but you chose this path instead. 'Just a game' you think, as you are binding misfortunes upon the Queen's enemies for the millionth time.";
 	],
-	cant_go "The green screen has edited reality, you are stuck in the overlay of a supervillain's lair. The only exit the screen allows is down, to be integrated into the Queen's servers.'";
+	cant_go "The green screen has edited reality, you are stuck in the overlay of a supervillain's lair. The only exit the screen allows is down, to be integrated into the Queen's servers.";
+
