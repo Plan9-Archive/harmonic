@@ -31,7 +31,7 @@ Room	home "Inside my house"
 	antsreleased 0,
 	housekeepers 0,
 	description [;
-		print "This is a modest one-story house, cluttered by a decade of being lived-in. Bookshelves line the walls. Your Plan 9 terminal is here, connected to the grid servers downstairs.";
+		print "This is a modest one story house, cluttered by a decade of being lived in. Bookshelves line the walls. Your Plan 9 terminal is here, connected to the grid servers downstairs.";
 		if (home.housekeepers >= 3)
 			print " There is a sign on the wall which says 'Best Spring Ever!'";
 		switch(artifacts.buycount) {
@@ -269,7 +269,9 @@ Room	willy_west "Willy Street, west end"
 	],
 	before [; go:
 		if ((noun == s_obj) || (noun == in_obj) || (noun == e_obj)) return false;
-		if (player in lunar_lightning) return false;
+		if ((player in lunar_lightning) && (elginbday >=4)) return false;
+		if (player in lunar_lightning)
+			"You need to go to your godson's birthday party before you explore downtown. It's at Rossini's Pizza. You can get there from here by going e, e, se, s, in.";
 		"You need to ride a bicycle to continue further towards downtown. If you own one, call it with the command >lunar.";
 	],
 	s_to lady_wisdom,
@@ -361,7 +363,7 @@ Room	state_street "State Street"
 	description [; 
 		print "The downtown and campus are focused on this pedestrian-only open air shopping mall. Dozens of shops and throngs of pedestrians create a big-city feel for a few blocks. The proximity of the large state university campus means the crowd is quite young, and weekend nights are often a mix of the charming antics of local eccentrics with less charming rowdy sophomoric intoxication. The Miffyland neighborhood is south, the Capitol is east, and the lakeshore residential neighborhood is north. Notable shops are northwest and southwest.^";
 		if (self hasnt visited)
-			print "^You often feel like you could slip backward in time here. Your teenage years were spent wandering up and down this street, part of an amorphous group of downtown punks, goths, and hippies who were all happy to share joints and beers with each other. The video arcade 'Challenges', 'Cellar Subs' in a graffiti-covered basement, the fire escape behind the Civic Center - if you closed your eyes for a moment and opened them, they might all be back, just as you remembered.
+			print "^You feel like you could slip backward in time here. Your teenage years were spent wandering up and down this street, part of an amorphous group of downtown punks, goths, and hippies who were all happy to share joints and beers with each other. The video arcade 'Challenges', 'Cellar Subs' in a graffiti-covered basement, the fire escape behind the Civic Center - if you closed your eyes for a moment and opened them, they might all be back, just as you remembered.
 ^
 ^A sudden feeling you are being observed pulls you out of this reverie, and you look up to see a passing bus with an ad for an eyewear store featuring a translucent green pair of glasses.^";
 	],
@@ -536,7 +538,7 @@ Room	mendota_lakeside "Lake Mendota shoreline residences"
 	],
 	before [; go:
 		if((elginbday < 5) && ((noun == nw_obj) || (noun == w_obj) || (noun == in_obj)))
-			"You need an invitation from a friend to visit Lothlorien.";
+			"You need an invitation from a friend to visit Lothlorien. Go home and >use terminal.";
 		if((elginbday == 5) && ((noun == w_obj) || (noun == in_obj))) {
 			print "^Staci's email said to look for her in the backyard, so you decide to look there rather than going inside the house.^";
 			playerto(loth_backyard);
@@ -986,7 +988,8 @@ Scene	lost_in_grid "Lost In the Grid"
 		7: print "^'No such thing as stuck on a puzzle,' a calm voice intones, 'We don't let the player make mistakes, we just have happy little deus ex machinas.' A giant digital image editing tool sweeps across the landscape, recoloring everything. You can now see a path leading up to a ramshackle cabin, which you enter, only to find yourself back in your basement. A faint chorus of voices can be heard shouting 'SAVED!'^";
 			playerto(basement, 1);
 		}
-	];
+	],
+	has outside;
 
 Scene	cosmic_wheel "The Cosmic Wheel"
 	with

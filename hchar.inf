@@ -6,6 +6,7 @@ Character	strawberry "Strawberry" basement
 	name 'strawberry' 'cat' 'kitty' 'kitten',
 	action_count 0,
 	description "Your cat is small, orange with white chest and paws, female, and feisty.",
+	initial "Your cat Strawberry is here.",
 	life [;
 		attack: "Strawberry is a battle-hardened combat kitty and springs into action. She grabs your hand with both paws, and nips lightly at your knuckles with her teeth. You pull your hand back, and she leaps up to chase it, sinking her claws into your knee. You fight back with a quick belly-tickle and she rolls onto her back, ready to deploy the full power of her back legs. You are beaten yet again. You have never defeated her.";
 		kiss: "You sneak up on Strawberry and then gather her up with a gentle swoop. She utters a slightly surprised blert, and you bring her close to your head. 'Such a good kitty!' you say as you lightly brush her forehead with your lips. She glances at you for a moment with mild outrage and wiggles from your grasp. Such a silly human! She arches her back and rubs against your shins for a moment.";
@@ -53,6 +54,7 @@ Character	chip "Chip" astral_enchantments
 	with
 	name 'chip',
 	description "Chip is very tall - the topmost point of his dark mohawk a full seven feet off the ground. He radiates a peaceful, calming energy. He watches the world around himself with relaxed curiosity.",
+	initial "Chip, the store owner, is working here.",
 	life [;
 		if (pendant in self) {
 			move pendant to player;
@@ -90,6 +92,7 @@ Character	xelia "Xelia"
 	with
 	name 'xelia',		
 	description "Xelia is a slender young woman with black hair and glasses. She is dressed as Alice as drawn by Tenniel.",
+	initial "Xelia is working here.",
 	life [;
 		if (introgoal == 2) {
 			Xeliawardrobe_storyline();
@@ -127,6 +130,7 @@ Character	xelia "Xelia"
 Character	jay "Jay" eside_hq
 	with
 	name 'jay',
+	initial "Jay is waiting tables here.",
 	description "Jay is a thin young man with short black hair, dressed in the standard uniform of late-night restaurant servers: slacks, button-up black shirt with a gold nametag, and a black apron.",
 	life [;
 		"Jay is a good listener, and seems to really understand your story. You outline some of your grandiose schemes and plans to use Plan 9 technology to change society, and he agrees to tell some of his friends about the Loonie Revolution.";
@@ -139,6 +143,7 @@ Character	jay "Jay" eside_hq
 Character	colette "Colette" afterlife_antiques
 	with
 	name 'colette',
+	initial "Colette is standing behind the counter.",
 	description "Colette is young but is dressed in the style of the early 20th century. She is unfazed and amused by your eccentricity.",
 	life [;
 		ask: 
@@ -179,6 +184,7 @@ Character	xochi "Xochi"
 	with
 	name 'xochi',
 	email 0,
+	initial "Xochi is working here today.",
 	description "Xochi looks to you like an ancient Mayan Wisdom Goddess. Her long black hair has a few silver-white strands in it, despite her young age. Her physical beauty is appealing, the intelligence and kindness in her eyes and voice even more so.",
 	life [;
 		ask:
@@ -234,6 +240,7 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 	with
 	name 'scholars' 'students' 'professors' 'people' 'scholar' 'student' 'researchers' 'researcher',
 	speech 0,
+	initial "The Scholars of Atlantis stand in small groups, discussing.",
 	description "The academy is a spirited and diverse group, different in every conceivable aspect save for love of knowledge.",
 	each_turn [; 
 		switch(scholars.speech) {
@@ -326,6 +333,7 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 Character	xelia_and_xochi "Xelia and Xochi"
 	with
 	name 'xelia' 'xochi' 'baristas',
+	initial "Xochi and Xelia are both here.",
 	description "Xochi and Xelia seem to energize each other. Just being in the same room as the two of them at the same time makes everything seem enchanted.",
 	life [;
 		if (gelato_alchemy_lab.brew == 9)
@@ -339,6 +347,7 @@ Character	xelia_and_xochi "Xelia and Xochi"
 Character	lotus "dog"
 	with
 	name 'lotus' 'dog',
+	initial "A dog is wandering around on the dock.",
 	description "The dog is a chocolate Labrador, strong, smart, and friendly. He has a sky-blue bandana tied around his neck.",
 	life [;
 		lotusdock_storyline();
@@ -353,6 +362,7 @@ Character	lotus "dog"
 Character	staci "Staci"
 	with
 	name 'staci' 'tardis',
+	initial "Staci is here.",
 	description "Staci is smart, funny, beautiful, and too many other positive adjectives to list.",
 	life "Every way you interact with Staci feels easy, natural, and delightful.",
 	before [;
@@ -363,6 +373,7 @@ Character	staci "Staci"
 Character	queen "Queen of the Green Screen" abandoned_apartment
 	with
 	name 'queen',
+	initial "The Green Queen is watching you haughtily.",
 	speech 0,
 	description "Her hair is green, her eyeglasses are green, her skintight bodysuit is green, the 40 billion volt search-and-replace gun she is holding is green.",
 	life "You have no chance to talk or act with the search-and-replace gun pointed at you.",

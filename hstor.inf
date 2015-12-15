@@ -363,7 +363,7 @@
 	mendota_lakeside.wizard = 6;
 	move wheel_costume to player;
 	achieved(38);
-	print "^You arrive at the co-op and serenade your friends up on the porch. At the moment you sing the final line of the song, 'oh it feels so good to have my around you' you embrace Nook. The flow of the gathering is uninterrupted, but slightly energized. Who is here exactly? Staci and Nook, of course, but who else? It's like a shifting gallery of happy, friendly people. You feel so incredibly good you try to squeeze your head inside Staci's arm. Mushrooms are fun.
+	print "^You arrive at the co-op and serenade your friends up on the porch. At the moment you sing the final line of the song, 'oh it feels so good to have my arms around you' you embrace Nook. The flow of the gathering is uninterrupted, but slightly energized. Who is here exactly? Staci and Nook, of course, but who else? It's like a shifting gallery of happy, friendly people. You feel so incredibly good you try to squeeze your head inside Staci's arm. Mushrooms are fun.
 ^
 ^The summer of 2013 has been going on for about two years, it seems. Couldn't be any shorter, not with everything that's happened. You remember the singing bowl guy running with his arms outstretched on the roof of a parking garage, you remember jumping up and down at a concert of cyberhippiejamtronic music, you remember countless bike rides, other performances, other parties, giving afro-pop tickets to the street people, the visit from the Lakota Grandmothers, every day pizza at Rossinis, coffee from the Lion, Space Pancakes at night (that smiley face the aliens put on the car is still there!). And all those months and months worth of memories seem small compared to remembering time with Staci, such intense communication, talking and listening and learning the language of the waves, smoking another joint and passing the bag of mushrooms back and forth, eating maybe just one more little stem, then deciding to make some music and tearing off into a note-perfect first-time ever attempted rendition of some crazy bitch's song in d minor about a nervous breakdown.
 ^
@@ -485,7 +485,7 @@
 	xochi.email = 2;
 	terminal.acted = 1;
 	achieved(13);
-	print "^You sit down at your computer and write an email to Xochi, offering to explain any or all of 17 different topics of interest, ranging from the connections between western and Hindu cosmology to how to use Plan 9 namespaces as a tool to control your own consciousness. As you press send, you notice that her email contact is linked to a video-sharing site, and she recently uploaded a song called 'Heartbeat'. The song is driven by percussion and keyboards, with spoken words above: 'From morphogenesis to breathing my first breath,' is the opening line, and you instantly realize your connection with her feels like it could be much deeper than you could have guessed. The sung refrain is 'The time is now, the place is here. Embrace love, and let go of fear.' You are stunned by how much the song represents everything you are experiencing in life. 'I will raise my vibration, when you are in alignment, the stars conspire for the occasion. You are an alchemist, the world is yours to manifest.'
+	print "^You sit down at your computer and write an email to Xochi, offering to explain any or all of 17 different topics of interest, ranging from the connections between western and Hindu cosmology to how to use Plan 9 namespaces as a tool to control your own consciousness. As you press send, you notice that her email contact is linked to a video-sharing site, and she recently uploaded a song called 'Heartbeat'. The song is driven by percussion and keyboards, with spoken words above: 'From morphogenesis to breathing my first breath,' is the opening line, and you realize your connection with her might go much deeper than you had imagined. The sung refrain is 'The time is now, the place is here. Embrace love, and let go of fear.' The song represents everything you are experiencing in life. 'I will raise my vibration, when you are in alignment, the stars conspire for the occasion. You are an alchemist, the world is yours to manifest.'
 ^
 ^You feel musically inspired. You want to play your piano.^";
 ];
@@ -493,7 +493,7 @@
 [ Schumann_piano_storyline;
 	piano.playcount = piano.playcount + 1;
 	xochi.email = 3;
-	"The music on the rack is Schumann's 'Dichterliebe', an achingly beautiful early-romantic song cycle. You play the opening song, 'In the beautiful month of May', and sigh. Ever since you discovered these songs early in your teenage years, you have ached to experience what is described in the song, the heart singing like a bird, love unfolding like a flower. You have known love, but nothing that felt as tender and fresh and promising as this music.
+	"The music on the rack is Schumann's 'Dichterliebe', an achingly beautiful early-romantic song cycle. You play the opening song, 'In the beautiful month of May', and sigh. Ever since you discovered these songs early in your teenage years, you have hoped to experience what is described in Heine's lyrics and Schumann's music, the heart singing like a bird, love unfolding like a flower. You have known love, but nothing that felt as tender and fresh and promising as this music.
 ^
 ^You have always felt a deep personal connection with Robert Schumann. One your most profound early experiences as a musician was playing a Schumann Romanze in F# and feeling the emotion within the music as if it was your own. At that moment, you learned that music could encode an individual's personality and feelings in a way that let them be directly re-experienced by other minds.
 ^
@@ -618,6 +618,8 @@
 ^'Shhh!' Alef's voice in your ear. Her legs are tightly wrapped around your hips. 'You trying to get us busted?' You blink and try to re-enter reality, dizzy and sweaty. She separates herself from you, shrugs herself back into her dress, and whispers 'Sorry to run, but I gotta work. Don't follow me back in.'
 ^
 ^In a daze, you wander back to the front of the restaurant.^";
+	if (commentary == true)
+		print "^[The real-life events that are the basis for this fable are pretty funny. By mid to late April, I had been bouncing around town in a manic state for several weeks, feeling intensely attracted to some of the new friends I was making, but nothing romantic or sexual was falling into place. I was starting to feel like my sex drive was a problematic distraction from my work on the Loonie Revolution - maybe if I took an oath of renunciation of sexual pleasure, it would help me stay focused and make it clear to other people I wasn't pursuing selfish ends. My plan to become a celibate monk lasted about twenty-four hours, ending the moment Alef showed me her monster tattoo.]^";
 	playerto(etown, 1);
 ];
 
@@ -676,7 +678,9 @@
 [ Miffyland_storyline;
 	miffyland.summernight = 1;
 	achieved(20);
-	"You pause to listen. From a rooftop above, you hear the Jerry Garcia classic 'Reuben and Cherise', well-sung by several people. You wait for a pause in the music and call up 'I love that song!' Cheerful voices invite you to come upstairs and join them on the upper porch balcony. You do so, and find yourself in a scene that reminds you of the best of your college days - a late night porch song session. The guitarists are good, everyone knows the words and has a decent ear, and as you all sing 'Reuben and Cherise' again, the music and warm feeling of enthusiastic friendship is so thick the summer night air seems to shimmer and sparkle. You do a few more songs, and eventually the evening breaks up, everyone wondering if they will make it home before daylight so they just might get some sleep tonight.";
+	print "You pause to listen. From a rooftop above, you hear the Jerry Garcia classic 'Reuben and Cherise', well-sung by several people. You wait for a pause in the music and call up 'I love that song!' Cheerful voices invite you to come upstairs and join them on the upper porch balcony. You do so, and find yourself in a scene that reminds you of the best of your college days - a late night porch song session. The guitarists are good, everyone knows the words and has a decent ear, and as you all sing 'Reuben and Cherise' again, the music and warm feeling of enthusiastic friendship is so thick the summer night air seems to shimmer and sparkle. You do a few more songs, and eventually the evening breaks up, everyone wondering if they will make it home before daylight so they just might get some sleep tonight.^";
+	if (commentary == true)
+		print "^[Meeting friendly strangers and sharing something meaningful is an amazing thing. I'm always open and hopeful for things like this to happen, but it seems like they rarely do. Sometimes people say 'wouldn't it be funny if life was like a musical, where people just started dancing and singing as a group to express themselves?' During 2013, life often was that musical and theatrical. In the context of this game, I worry that some of the absolutely-real moments will seem less striking compared to the scenes of radical fictionalization. Believe me - a late summer night rooftop sing-a-long where everyone loves the music and sings in harmony is as magical as anything described in this game.]^";
 ];
 
 [ Gridbattle_storyline;
