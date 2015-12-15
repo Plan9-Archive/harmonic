@@ -254,7 +254,8 @@ Decor	figures "figures" atlantis_temple
 Decor	alchemy_supplies "alchemical supplies" gelato_alchemy_lab
 	with
 	name 'shelves' 'bottles' 'plants' 'minerals',
-	description "There wide variety of shapes and colors of the bottles is exceeded by the diversity and strangeness of the materials identified on the labels. Traditional herbs mingle with exotica like seemingly empty jars labeled 'Armadillo Dreams' and 'Large Even Primes'";
+	description "There wide variety of shapes and colors of the bottles is exceeded by the diversity and strangeness of the materials identified on the labels. Traditional herbs mingle with exotica like seemingly empty jars labeled 'Armadillo Dreams' and 'Large Even Primes'",
+	has pluralname;
 
 Decor	alchemy_apparatus "alchemical apparatus" gelato_alchemy_lab
 	with 
@@ -276,9 +277,27 @@ Decor	termites "termites" lost_in_grid
 	],
 	has pluralname;
 
+Decor	devotional_objects "devotional objects" infinite_loop
+	with
+	name 'devotional' 'objects' 'statues' 'beads' 'tools',
+	description "Statues, prayer beads, prayer wheels, mandalas, and other tools for giving devotion to Buddhist deities.",
+	before [;
+		take: "They aren't yours to take.";
+		buy: "You buy a few small items to be given away as gifts.";
+	],
+	has pluralname;
+
+Decor	pasta "pasta" pasta_other
+	with
+	name 'pasta' 'noodles' 'macaroni' 'spaghetti' 'food' 'lunch' 'dinner',
+	description "A wide variety of pasta dishes is available here.",
+	before [;
+		buy: "You order a starchy lunch and enjoy it.";
+	];
+
 Decor	wheel "wheel" cosmic_wheel
 	with
-	name 'firmament' 'harmony' 'spheres' 'creation' 'spacetime' 'universe' 'cosmos',
+	name 'firmament' 'harmony' 'spheres' 'creation' 'spacetime' 'universe' 'cosmos' 'galaxy' 'quantum',
 	description "The infinite immensity of the turning wheel of the axis of reality is beyond your capacity to understand or affect.";
 
 Decor	aerator "aerator" cascade_aerator
@@ -329,7 +348,8 @@ Decor violet "violet beam" inside_moon
 Decor colorbeams "beams of color" inside_moon
 	with
 	name 'beams' 'beam' 'colors' 'color' 'light' 'ray' 'rays' 'moon' 'interior' 'ripples' 'waves' 'black' 'holes' 'magnifications',
-	description "You can't see what creates the beams of light criss-crossing the vast interior space. They are gorgeous, rich-hued and soft-edged. The changing distortions and magnifications that continuously alter their mesh remind you of a slow-motion film of a reflection in rippling water. You can examine the colors individually.";
+	description "You can't see what creates the beams of light criss-crossing the vast interior space. They are gorgeous, rich-hued and soft-edged. The changing distortions and magnifications that continuously alter their mesh remind you of a slow-motion film of a reflection in rippling water. You can examine the colors individually.",
+	has pluralname;
 
 !============================================================================
 ! The immobile prop objects

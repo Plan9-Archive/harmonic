@@ -143,6 +143,7 @@
 	46: "harmonizing the beams inside the moon";
 	47: "breaking the green screen";
 	48: "putting out the Loth fire";
+	49: "telling Xelia about your summer";
 	}
 ];
 
@@ -409,7 +410,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 711 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 720 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;
@@ -593,6 +594,18 @@
 	"Your words go unanswered.";
 ];
 
+[ Titlesub;
+	"Alternate titles:
+^
+^Cosmic Delight Rigger volume IX: A new Valisian Testament^
+^Joy & Transcendence in Madison: An exuberant journey to the spleen of the Atlantean dream^
+^The Big Bluebowski^
+^Phase 9^
+^The Fool's Progress from this World to that which was Imagined^
+^The Moon is a Slutty Submissive Mistress^
+^Zurek Penrose Garcia: a transient silver weave";
+];
+
 [ Usesub;
 	if(noun hasnt animate)
 		"Either the ", (name) noun, " can't be used, or you need to find a more specific verb.";
@@ -683,6 +696,7 @@ Verb "standard" *	-> Standard;
 Verb "story" *	-> Story;
 Verb "talk" * noun -> Talk
 	* 'to'/'with' noun -> Talk;
+Verb "titles" *	-> Title;
 Verb "use" * noun	-> Use;
 Verb "vacation" *	-> Vacation;
 Verb "verblist" *	-> Verblist;

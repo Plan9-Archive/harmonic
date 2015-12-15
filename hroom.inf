@@ -403,7 +403,11 @@ Room	state_street "State Street"
 	e_to cap_square,
 	n_to mendota_lakeside,
 	nw_to pasta_other,
-	sw_to infinite_loop,
+	sw_to [;
+		if (elginbday < 10)
+			"The door to the store is locked. A sign reads 'back soon.'";
+		return infinite_loop;
+	],
 	cant_go "You can go s, n, or e. Stores are nw and sw.",
 	has outside;
 
@@ -692,6 +696,17 @@ Room	coffee_lion "Coffee Lion Cafe"
 		}
 	],
 	before [;
+		go:
+			if (gelato_alchemy_lab.brew == 9) {
+				gelato_alchemy_lab.brew = 10;
+				remove xelia_and_xochi;
+				move xelia to coffee_lion;
+			}
+			if (gelato_alchemy_lab.brew == 11) {
+				gelato_alchemy_lab.brew = 12;
+				remove xelia;
+				move xochi to coffee_lion;
+			}
 		buy:
 			if (noun == coffee) {
 				bankaccount = bankaccount -5;

@@ -109,7 +109,15 @@ Character	xelia "Xelia"
 			'me', 'myself', 'loonie', 'revolution', 'mycroftiv', 'ants', 'plan': "'I really enjoy hearing everything you have to say, but I don't think I can help out with any of the loonie projects you are starting.'";
 			default: "Xelia says she doesn't have much to say about that. You could ask or tell her about herself, myself, or Xochi.";
 		}
-		default: "You deliver a long rant about quantum free will, fiction and reality, and Plan 9 namespaces. Xelia listens with a slightly concerned look on her face. You could try asking or telling her about herself, myself, or Xochi.";
+		default:
+			if (gelato_alchemy_lab.brew == 10) {
+				gelato_alchemy_lab.brew = 11;
+				achieved(49);
+				"You take advantage of a quiet moment in the cafe to talk to Xelia. 'You know this whole summer has been the high point of my life by far,' you begin, 'I went through a lot of years wondering whether what we got out of life was worth the price of the ticket, if that makes sense. But finally, this summer, it all finally came together for me, my life became exactly the story I've always wanted it to be. You and Xochi here at the cafe have been a big part of the magic. Now, I feel like - whatever happens in life from here on out, it's all been worth it. This summer has given me more happiness than I could have ever imagined.'
+^
+^'I'm really glad its been so good for you, its been fun hearing about your adventures,' Xelia smiles at you. You wander back to your seat, and your words echo in your mind. '...whatever happens...it's all been worth it.' 'But please stay wonderful, life!' you add as a mental postscript. In future days, keeping hold of that feeling will serve as both a comfort, and a challenge.";
+			}
+			"You deliver a long rant about quantum free will, fiction and reality, and Plan 9 namespaces. Xelia listens with a slightly concerned look on her face. You could try asking or telling her about herself, myself, or Xochi.";
 	],
 	before [; talk:
 		<<wakeother xelia>>;
