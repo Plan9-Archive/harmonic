@@ -252,6 +252,23 @@
 	"It doesn't make sense to do that now.";
 ];
 
+[ Eastereggsub;
+	deadflag = 1;
+	"The ground shakes.
+^
+^THUMP
+^THUMP
+^THUMP THUMP THUMP
+^
+^An immense furry toe lands next to you. In shock and horror, you stare upward, to see Glenda the Plan 9 bunny grown to monstrous proportions. Sirens are wailing and smoke is rising from the buildings she hopped upon.
+^
+^Perhaps she can be tamed! Perhaps she is here because you can bridge between the namespaces in which she originated, and the world of humans?
+^
+^THUMP THUMP THUMP THUMPTHUMPTHUMPTHUMP
+^
+^But no, in this branch, there is no such resolution. With resignation, you turn to see that 99-foot-tall Glenda was merely a harbinger of a dark spring indeed: for arriving right behind her are her sisters, her brothers, her cousins, her aunts and uncles, and her multitudinous sons and daughters, all 99 feet tall, all very very hungry.";
+];
+
 [ Emailsub;
 	<<use terminal>>;
 ];
@@ -717,6 +734,7 @@ Verb "credits" *	-> Credits;
 Verb "dance" *	-> Dance;
 Verb "design" *	-> Design;
 Verb "dodge" * 	-> Dodge;
+Verb "easter" * 'egg'	-> Easteregg;
 Verb "email" *	-> Email;
 Verb "exits" *	-> Exits;
 Verb "expert" *	-> Expert;
@@ -727,7 +745,7 @@ Verb "hint" *	-> Hint
 	* noun	-> Hint;
 Extend "insert" * 'cylinder'	-> Insertcyl;
 Verb "lunar" *	-> Lunar;
-Verb "namespace" "ns" *	->Namespace;
+Verb "namespace" "ns" *	-> Namespace;
 Verb "pet" * noun	-> Pet;
 Verb "play" * noun	-> Play
 	* 'with' noun	-> Play;

@@ -576,7 +576,7 @@ Room	mendota_lakeside "Lake Mendota shoreline residences"
 
 Room	loth_backyard "Lothlorien co-op, the back yard"
 	with
-	description "(Loth back yard)",
+	description "The Lothlorien backyard has trees, picnic tables, a garden, and a rocky staircase down to the firepit and dock. A door leads in to the kitchen.",
 	each_turn [;
 		if (elginbday == 5) {
 			if ((expertmode == true) && (xochi.email < 7)) {
@@ -601,7 +601,7 @@ Room	loth_backyard "Lothlorien co-op, the back yard"
 
 Room	loth_dock "Lothlorien co-op, on the dock"
 	with
-	description "(Loth dock)",
+	description "The dock is short, wooden, and rather rickety. An old gnarled tree reaches far out over the water nearby.",
 	each_turn [;
 		if (elginbday == 7) {
 			Lothdock_storyline();
@@ -615,7 +615,7 @@ Room	loth_dock "Lothlorien co-op, on the dock"
 Room	loth_greatroom "Lothlorien co-op, the Great Room (1st floor)"
 	with
 	lothstaci 0,
-	description "(The great room)",
+	description "A huge living room, with two pianos, several couches, bookshelves, assorted art, and a fireplace.",
 	after [; go:
 		if (elginbday == 5){
 			playerto(loth_backyard);
@@ -633,7 +633,7 @@ Room	loth_greatroom "Lothlorien co-op, the Great Room (1st floor)"
 
 Room	loth_porch "Lothlorien co-op, the first floor porch"
 	with
-	description "(The first floor porch)",
+	description "This concrete porch with iron railing overlooks the lake. Half of it is taken up by a large wooden swing, big enough to seat four.",
 	each_turn [;
 		if (loth_greatroom.lothstaci == 1) {
 			Staciporch_storyline();
@@ -645,7 +645,9 @@ Room	loth_porch "Lothlorien co-op, the first floor porch"
 
 Room	loth_kitchen "Lothlorien co-op, in the kitchen"
 	with
-	description "(The kitchen)^Written on the wall here is an inscription: 'Magic words: XYZZY and PLUGH'",
+	description "The kitchen is full of the clutter of heavy use by a housefull of hungry people.
+^
+^Written on the wall here is an inscription: 'Magic words: XYZZY and PLUGH'",
 	n_to loth_backyard,
 	out_to loth_backyard,
 	u_to loth_greatroom,
@@ -653,7 +655,7 @@ Room	loth_kitchen "Lothlorien co-op, in the kitchen"
 
 Room	loth_upstairs "Lothlorien co-op, upstairs"
 	with
-	description "(upstairs)",
+	description "Hallways branch in all directions. The walls are painted with a wild diversity of amateur artworks and thought-provoking slogans.",
 	each_turn [;
 		if (loth_greatroom.lothstaci == 2) {
 			Staciroom_storyline();

@@ -52,6 +52,7 @@
 ! Start adding real character/scenes at Loth, show Staci as a Loonie
 ! Add post game bonus content, expand endgame puzzle, develop Queen
 ! About 1k away from maxing v5 z machine w/no debugging.
+! Added easter egg, compile for v5 has 0 bytes free.
 
 !============================================================================
 ! Configuration constants
