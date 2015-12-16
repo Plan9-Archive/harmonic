@@ -145,6 +145,7 @@ Class	Room
 
 Class	Scene
 	with
+	wintext 0,
 	description "UNIMPLEMENTED SCENE DESCRIPTION",
 	before [;
 		drop: 

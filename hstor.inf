@@ -614,7 +614,7 @@
 [ Harmonybind_storyline;
 	eside_hq.fictour = 4;
 	achieved(46);
-	print "The harmony envelops you completely, and the gravitational distortions begin pulsing an irresistible rhythm. You are conducting the music, playing piano, singing along, dancing, spinning in orbits around a singularity, every action reflected in amplified reaction, and finally carried down a shining silver river, drawn into a whirling vortex, your voice crying out as the infinite pull dissolves you...
+	print "^The harmony envelops you completely, and the gravitational distortions begin pulsing an irresistible rhythm. You are conducting the music, playing piano, singing along, dancing, spinning in orbits around a singularity, every action reflected in amplified reaction, and finally carried down a shining silver river, drawn into a whirling vortex, your voice crying out as the infinite pull dissolves you...
 ^
 ^'Shhh!' Alef's voice in your ear. Her legs are tightly wrapped around your hips. 'You trying to get us busted?' You blink and try to re-enter reality, dizzy and sweaty. She separates herself from you, shrugs herself back into her dress, and whispers 'Sorry to run, but I gotta work. Don't follow me back in.'
 ^

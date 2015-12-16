@@ -810,6 +810,10 @@ object 	lunar_lightning "Lunar Lightning"
 				print "You park your bike by the co-op.^";
 				return false;
 			}
+			if((self in lakeshore_path) && (noun == u_obj)) {
+				print "You can't ride up the dirt hill.^";
+				return false;
+			}
 			"You pedal effortlessly.";
 		buy:
 			if (self.bought == 1)
@@ -977,7 +981,7 @@ object	crown "wire and bead Crown"
 				14: mendota_lakeside.wizard++;
 					"^(A scene from Madcon replays itself in your mind)
 ^
-^At a small party in a hotel room, someone is whispering to you from behind. 'Don't turn around. The Queen of the Green Screen is the leader of a powerful group of Editors. They have been active in your universe for a long time. They control reality using cheap illusions to make it seem less magical and interesting than it really is, because then they get to be the stars and put everyone else into minor roles in the background. You will need to disrupt her illusions.";
+^At a small party in a hotel room, someone is whispering to you from behind. 'Don't turn around. The Queen of the Green Screen is the leader of a powerful group of Editors. They have been active in your universe for a long time. They control reality using cheap illusions to make it seem less magical and interesting than it really is, because then they get to be the stars and put everyone else into minor roles in the background. You will need to disrupt her illusions. She is using an empty apartment in Miffyland as her base of operations.'";
 				default: "There is no new information available from the crown right now.";
 			}
 	],
@@ -1054,7 +1058,7 @@ object	victory
 			atwood_shops: "^A time-travelers trading bazaar is passing through, exchanging magical objects from around the multiverse with the shops here.";
 			mon_cot: "^Coffee Lion has expanded into a miniature palace, complete with a dark lake of foamy espresso in front of it.";
 			mon_mid: "^Giant trees spread their branches across Monona, making the street into a tunnel through the forest.";
-			milw_street: "^Your street is unchanged, save for a small sign denoting the farmland to the north be preserved in perpetuity.";
+			milw_street: "^Your street is unchanged, save for a small sign proclaiming the farmland to the north will be preserved in perpetuity.";
 			mendota_lakeside: "^The lakeshore co-ops have finally completed a path connecting them. Rumor has it underground connecting tunnels have also been dug.";
 			james_madison: "^The sunlight reflects from the wings of seagulls flying into the wind over the shore.";
 			coffee_lion: "^You have a flashback of memory to another song you wrote during the spring, inspired by hearing a friend cover one of your favorite Dead songs here.
@@ -1073,7 +1077,7 @@ object	victory
 ^But things are seldom what they seem
 ^I'm hoping sympathy's true vibration
 ^Is the living beat I feel
-^If you come with me too sensation
+^If you come with me to sensation
 ^We can harvest a crop of cream";
 			etown: "^You remember some rhymes you wrote for some of your other favorite waitstaff at the restaurant:
 ^

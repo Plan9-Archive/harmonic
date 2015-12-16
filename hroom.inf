@@ -461,7 +461,7 @@ Room	story_circle "Story Circle"
 	description "Up the embankment by the forest, you find a ring of stones, and an inscription. 'Storytellers Circle - may our tales be many times retold, and grow better in the telling.'",
 	after [; go:
 		achieved(51);
-		print "You clamber up the soft dirt of the hillside, and reach a small wooded plateau.";
+		print "You clamber up the soft dirt of the hillside, and reach a small wooded plateau.^";
 	],
 	d_to lakeshore_path,
 	cant_go "You can go back down to the lakeshore path.";

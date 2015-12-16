@@ -440,9 +440,9 @@
 		"You should check your >email at home and then >visit staci.";
 	if (madcon.timetrav == 1)
 		"You should go NE from the Capitol Square.";
-	if (madcon.timetrav < 7)
+	if ((madcon.timetrav < 7) && (madcon.timetrav > 1))
 		"You need to follow Lily to the stores NW and SW of State Street, then go to the Loth dock and >pet dog.";
-	if (madcon.timetrav < 8)
+	if (madcon.timetrav == 7)
 		"Go inside your home to host Police Lingo.";
 	if (mendota_lakeside.wizard < 1)
 		"Go back to Madcon NE of the Capitol Square.";
