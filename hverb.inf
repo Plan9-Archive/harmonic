@@ -289,11 +289,17 @@
 			"You need to develop even more stamina and endurance to explore new areas on bike.";
 		lunar_lightning.explore++;
 		playerto(cascade_aerator);
+		move lunar_lightning to cascade_aerator;
+		move player to lunar_lightning;
 	7:	lunar_lightning.explore++;
 		playerto(fish_camp);
+		move lunar_lightning to fish_camp;
+		move player to lunar_lightning;
 	8:	lunar_lightning.explore++;
 		print "You eat a generous portion of magic mushrooms, and when you feel the body-buzz start to creep through your limbs, you put a few fruit candies in your pocket for energy and walk towards your bike. It is after three in the morning. As your eyes are tracing the familiar outlines of Orion in the sky, there is a sudden flaring light, and a bright streak splits the sky, fading nearly as quickly as it appeared. Musical fragments are starting to bounce around your head as you pedal into the darkness.^";
 		playerto(bunnyworld);
+		move lunar_lightning to bunnyworld;
+		move player to lunar_lightning;
 	default: "Another perfect night on your bike, riding wherever the fuck that you like...you return home hours later, tired but happy.";
 	}
 ];
@@ -395,11 +401,13 @@
 	if ((location == afterlife_antiques) && (forseewhy notin colette))
 		"If you examine the bookshelves in your home, you will receive a book that you should give to Colette.";
 	if ((location == atwood_shops) && (introgoal < 4))
-		"To unlock the door to Afterlife, you need to go to Elgin's birthday party.";
+		"To unlock the door to Afterlife, you need to be invited to Elgin's birthday party. After you visit a few of the shops, go to Lady Wisdom's from Willy west and when you leave, you will encounter an old friend.";
 	if ((location == mon_cot) && (player notin lunar_lightning))
 		"To proceed further south, you will need to be invited to Elgin's birthday party, then buy and ride a bicycle found at Turning Wheel cycles.";
 	if ((location == miffyland) && (miffyland.summernight == 0))
 		"Just >listen.";
+	if (xochi.email == 3)
+		"Inside your home, >bind schumann self.";
 	if (elginbday < 2)
 		"After completing the introduction, you can visit many new locations to acquire objects and points. Try to go to all the shops, especially Astral Enchantments, Coffee Lion, and Lady Wisdom's coffeeshop,. Try talk to NAME to communicate with characters. You will probably want to interact with the items in your home several times also.";
 	if (elginbday < 4)
@@ -410,7 +418,31 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 720 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	if (madcon.timetrav < 2)
+		"You should go NE from the Capitol Square.";
+	if (madcon.timetrav < 7)
+		"You need to follow Lily to the stores NW and SW of State Street, then go to the Loth dock and >pet dog.";
+	if (madcon.timetrav < 8)
+		"Go inside your home to host Police Lingo.";
+	if (mendota_lakeside.wizard < 1)
+		"Go back to Madcon NE of the Capitol Square.";
+	if (mendota_lakeside.wizard  < 2)
+		"Go to Mendota Lakeside by Loth.";
+	if (mendota_lakeside.wizard < 3)
+		"Go west from State Street.";
+	if (mendota_lakeside.wizard < 4)
+		"Go NE from Mendota Lakeside.";
+	if (mendota_lakeside.wizard < 5)
+		"Ride Lunar to the countryside. From Miffyland, go sw then se.";
+	if (mendota_lakeside.wizard < 6)
+		"Return to the Mendota lakeside neighborhood by Loth.";
+	if (mendota_lakeside.wizard < 7)
+		"To start the Tarot party, >wear wheel.";
+	if (mendota_lakeside.wizard < 8)
+		"Go to the Late Night restaurant ne of your home.";
+	if (mendota_lakeside.wizard < 99)
+		"To save the co-op, you need to complete scenes in Turning Wheel, Astral Enchantments, two in the Late Night restaurant, buy and take the tarot deck from the Afterlife, go to Moon Forest and >use tarot, >drop remote, go to Turning Wheel and >bind fortune story. Go to miffyland and >examine porch to confront the Queen. Complete her scene and go to Lady Wisdom's to get the items you need. Go to James Madison park, put the balloon in the catapult, and >release catapult.";	
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. Don't forget to get on your bike and >explore. Its often a good time to >visit staci. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 720 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;

@@ -9,7 +9,7 @@ Room    milw_street "Outside my house"
 		go: 
 			if((introgoal == 0) || (introgoal == 2))
 				if((noun ~= s_obj) && (noun ~= e_obj) && (noun ~= in_obj))
-					"You feel compelled to go south to Coffee Lion Cafe for coffee instead.";
+					"You feel compelled to go south to Coffee Lion Cafe for conversation instead.";
 			if(introgoal == 1)
 				if(noun ~= ne_obj) 
 					"You feel compelled to go northeast to the 24-hour restaurant instead.";
@@ -410,7 +410,7 @@ Room	state_street "State Street"
 			"The door to the store is locked. A sign reads 'back soon.'";
 		return infinite_loop;
 	],
-	cant_go "You can go s, n, or e. Stores are nw and sw.",
+	cant_go "You can go s, n, or e. Stores are nw and sw. The campus is w.",
 	has outside;
 
 Room	pasta_other "Pasta and Other"
@@ -660,7 +660,7 @@ Room	mon_cot "Monona Drive and Cottage Grove Road"
 		if ((introgoal == 3) && (noun ~= n_obj))
 			"You feel the need to return home and check your grid in the basement.";
 		if ((introgoal < 4) && ((noun ~= e_obj) && (noun ~= in_obj) && (noun ~= n_obj)))
-			"You feel a strong need for coffee from the Coffee Lion.";
+			"You feel a strong need for conversation at the Coffee Lion.";
 		if (noun ~= s_obj) return false;
 		if ((expertmode == true) && (forseewhy notin colette))
 			"You don't feel ready to go to Elgin's party yet. Something from your past is burdening you. You need to give away something from your past, symbolically turn the page - or better yet, put the whole book of your past into the next world.";
@@ -742,6 +742,10 @@ Room	rossinis_pizza "Rossini's Pizza and Vintage Arcade"
 	description [;
 		print "Memorabilia from classic 50s, 60s, 70s, and 80s movies and tv shows covers the walls of this neighborhood pizzeria. The smell of spicy-sweet tomato sauce and brown-crisp pizza crust fills the air. A lava lamp sits on one of the tables. From the back room, you hear the alluring sound of the 8-bit arcade machines of your youth.^";
 	],
+	before [;
+		listen: "A mixture of conversations, kids playing games, and vintage arcade sound effects.";
+		smell: "Smells like pizza and garlic bread.";
+	],
 	after [; go:
 		if (elginbday < 4)
 			Stacimeet_storyline();
@@ -761,13 +765,17 @@ Room	rossinis_pizza "Rossini's Pizza and Vintage Arcade"
 Room	rossinis_arcade "Rossini's Pizza, in the Vintage Arcade room"
 	with
 	description "A time-warped paradise. Vintage arcade cabinets surround you. The CRT displays glow with color-bleed, the sound effects are a symphonic rhapsody of buzzing lasers, and each machine is a digital poem tattooed on your heart during the 1980s. Back then, you never had enough quarters...but now, you finally do.",
+	before [;
+		listen: "Waka waka waka waka...FOOM...kuspow kuspow kuspow...deet doo deet deedodee da...weeooot, weeooot, weeooot!";
+		smell: "Smells like pizza and dimly-lit vintage arcade.";
+	],
 	out_to rossinis_pizza,
 	s_to rossinis_pizza,
 	cant_go "The only exit is out.";
 
 Room	etown "Northeast edge of town"
 	with
-	description "This is the northeast edge of town, by the shopping mall and the interstate. It is mostly lacking in the distinctive charms of the rest of the city. The usual reason for being out here is to visit the 24-hour restaurant to the north, whose sign faces the highway, glowing like a green beacon.",
+	description "This is the northeast edge of town, by the shopping mall and the interstate. It is mostly lacking in the distinctive charms of the rest of the city. The usual reason for being out here is to visit the 24-hour restaurant to the north, whose sign faces the highway, glowing like a green beacon. The road continues out of the city to the northeast.",
 	in_to eside_hq,
 	n_to eside_hq,
 	sw_to milw_street,
@@ -781,7 +789,7 @@ Room	etown "Northeast edge of town"
 
 Room	ritual_spot "Ritual spot"
 	with
-	description "Past the edge of the city, a short path leads away from the road to a small clearing in a ring of boulders. It feels like a perfect place for performing a ceremony or ritual.",
+	description "Past the edge of the city, a short path leads away from the road to a small clearing in a ring of boulders. It feels like a perfect place for performing a ceremony or ritual. The road continues northeast.",
 	sw_to etown,
 	ne_to [;
 		if ((player notin lunar_lightning) || (bikeskill < 1))
@@ -939,9 +947,11 @@ Scene	orbital_command "Orbital Command, Trans-Fictional Alliance"
 Scene	atlantean_academy "The Academy of Atlantis painting"
 	with
 	description "You are inside a painting, participating in a seminar in Atlantis on ritual art magic. Artists, philosophers, and students from across the multiverse are busy discussing, debating, and learning from each other.",
-	before [; exit:
-		print "With great effort, you manage to pull yourself out of the painting by your higher-dimensional bootstraps.^";
-		playerto(essentially_art);
+	before [;
+		listen: "You hear the murmuring voices of the Scholars in conversation.";
+		exit:
+			print "With great effort, you manage to pull yourself out of the painting by your higher-dimensional bootstraps.^";
+			playerto(essentially_art);
 	],
 	cant_go "You can't travel outside the scene shown in the painting, but you can >exit.";
 
@@ -1029,6 +1039,8 @@ Scene	cascade_aerator "Sugar River Basin Cascade Aerator"
 			achieved(44);
 			print "The feeling of forward motion and exploration compel you to get back on your bike and continue riding. You head back in toward the city, and find a park on a tall hill on the southwestern edge of the city. You remember visiting here with an ex-girlfriend who lived nearby. After a few minutes watching the glow of the city lights, you hop back on your bike to escape the mosquitos, and ride back home.^";
 			playerto(milw_street, 1);
+			move lunar_lightning to milw_street;
+			move player to lunar_lightning;
 			return true;
 	];
 
@@ -1038,6 +1050,8 @@ Scene	fish_camp "Fish Camp"
 	before [; go:
 		print "After a minute to rest your legs, you ride back home. On the way, you pass the parking lot where a random encounter started your friendship with Staci and Clark. You had been on your bike that day fifteen years ago, too. Always strange to think about the tiny seeds of coincidence that become our story-trees.^";
 		playerto(milw_street, 1);
+		move lunar_lightning to milw_street;
+		move player to lunar_lightning;
 		return true;
 	];
 
@@ -1070,6 +1084,8 @@ Scene	bunnyworld "A maze of suburban streets"
 				achieved(45);
 				print "The hare's tail disappears round a corner, and you follow. It leads you down an alley which connects to the parking lot of a small business, and you suddenly find yourself just a few blocks from your home. The musical fragments that have been ricocheting around your head have fallen into place while chasing the white rabbits.^";
 				playerto(milw_street, 1);
+				move lunar_lightning to milw_street;
+				move player to lunar_lightning;
 				return true;
 			}
 			"You are so disoriented you find yourself back where you started before you even start to leave it.";
@@ -1081,12 +1097,13 @@ Scene	inside_moon "Inside the Moon"
 	beam 0,
 	description "The moon is hollow. The inside is even more reflective and brightly lit than the outside. Each color of the moon, from ruddy orange to blue, has a separate beam crossing the vast internal abyss. The path of the light is not straight, however. A constantly shifting ripple of distortions and magnifications disturbs the pattern of light rays.",
 	before [;
+		listen: "You hear the color-harmonies of the beams, and Alef speaking to you.";
 		bind: switch(noun) {
 			red: switch(second) {
-				yellow: print "The haunting a minor chord rings out as the beams glow. You have bound the wisdom of history.^";
+				yellow: print "The haunting A minor chord rings out as the beams glow. You have bound the wisdom of history.^";
 					Harmonybind_storyline();
 					return true;
-				green: print "The comforting f major chord rings out as the beams glow. You have bound the flow of natural processes.^";
+				green: print "The comforting F major chord rings out as the beams glow. You have bound the flow of natural processes.^";
 					Harmonybind_storyline();
 					return true;
 				default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
@@ -1094,7 +1111,7 @@ Scene	inside_moon "Inside the Moon"
 					return true;
 				}
 			orange: switch(second) {
-				green: print "A dramatic d minor chord rings out as the beams glow. A Beethoven-ish synthesis of Fate and Will surges through you.^";
+				green: print "A dramatic D minor chord rings out as the beams glow. A Beethoven-ish synthesis of Fate and Will surges through you.^";
 					Harmonybind_storyline();
 					return true;
 				default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
@@ -1102,7 +1119,7 @@ Scene	inside_moon "Inside the Moon"
 					return true;
 				}
 			yellow: switch(second) {
-				red: print "The haunting a minor chord rings out as the beams glow. You have bound the wisdom of history.^";
+				red: print "The haunting A minor chord rings out as the beams glow. You have bound the wisdom of history.^";
 					Harmonybind_storyline();
 					return true;
 				default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
@@ -1110,10 +1127,10 @@ Scene	inside_moon "Inside the Moon"
 					return true;
 				}
 			green: switch(second) {
-				red: print "The comforting f major chord rings out as the beams glow. You have bound the flow of natural processes.^";
+				red: print "The comforting F major chord rings out as the beams glow. You have bound the flow of natural processes.^";
 					Harmonybind_storyline();
 					return true;
-				orange: print "A dramatic d minor chord rings out as the beams glow. A Beethoven-ish synthesis of Fate and Will surges through you.^";
+				orange: print "A dramatic D minor chord rings out as the beams glow. A Beethoven-ish synthesis of Fate and Will surges through you.^";
 					Harmonybind_storyline();
 					return true;
 				default: print "The combination of colors doesn't synthesize into a triad. Alef shrugs, the lights disappear, and when your vision returns, you are alone behind the restaurant. You walk awkwadly back to the front.^";
@@ -1157,6 +1174,9 @@ Scene	abandoned_apartment "Abandoned apartment"
 	d_to [;
 		deadflag = 2;
 		"Well, why not? Maybe being a henchmachine of an evil Queen will be a blast. Sure, you could have found a way to escape, but you chose this path instead. 'Just a game' you think, as you are binding misfortunes upon the Queen's enemies for the millionth time.";
+	],
+	before [;
+		listen: "You hear the calm yet menacing voice of the Green Queen.";
 	],
 	cant_go "The green screen has edited reality, you are stuck in the overlay of a supervillain's lair. The only exit the screen allows is down, to be integrated into the Queen's servers.";
 

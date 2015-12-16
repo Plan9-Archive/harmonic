@@ -32,6 +32,11 @@ Decor	ants "ANTS"
 	description "The Advanced Namespace Tools software is designed to build on Plan 9's strengths, using per-process namespace manipulation to allow multiple independent computing environments to coexist and share data easily. The central concept is breaking hierarchical dependencies and allowing free-form interconnections.",
 	found_in home basement;
 
+Decor	mess "mess" home
+	with
+	name 'papers' 'paper' 'clutter' 'junk' 'mess',
+	description "Old newspapers and magazines, scraps of paper, and junk mail clutter up your home.";
+
 Decor	coffee "coffee"
 	with	
 	name 'coffee' 'java' 'joe' 'espresso' 'cappucino' 'latte',
@@ -179,7 +184,7 @@ Decor	home_curiosities "house antiques from Afterlife" home
 
 Decor	wheel_decor "items inside Turning Wheel" turning_wheel
 	with
-	name 'bicycles' 'accessories' 'workshop' 'maintenance' 'mount' 'disassembled',
+	name 'bicycles' 'bikes' 'cycles' 'accessories' 'workshop' 'maintenance' 'mount' 'disassembled',
 	description "Bikes are heavily used for transportation in this neighborhood, and the store is full of the bikes of customers, waiting for maintenance. The variety is staggering, and most of them show signs of years of heavy use and abuse.",
 	has pluralname;
 
@@ -187,7 +192,7 @@ Decor	lake_mendota "Lake Mendota"
 	with
 	name 'lake' 'mendota' 'water',
 	description "Madison's largest lake is an old friend. Its waves speak an ancient and complex language. It explores the shoreline in constant undulating caresses.",
-	found_in mendota_lakeside james_madison loth_backyard loth_dock,
+	found_in mendota_lakeside james_madison loth_backyard loth_dock lakeshore_path,
 	has proper;
 
 Decor	lake_monona "Lake Monona" john_nolen
@@ -195,6 +200,12 @@ Decor	lake_monona "Lake Monona" john_nolen
 	name 'lake' 'monona' 'water',
 	description "Madison's smaller lake and its bay reflect the skyline of the south side of the isthmus. You have spent many a summer night biking along the path by the shore.",
 	has proper;
+
+Decor	memorabilia "memorabilia" rossinis_pizza
+	with
+	name 'memorabilia' 'posters' 'albums' 'elvis' 'marilyn' 'novelties' 'novelty' 'alarm' 'clocks' 'peter' 'frampton' 'electric' 'guitar',
+	description "Posters for old movies and music cover the walls. Elvis Presley, Marilyn Monroe, TV stars of the 70s. Mid 20th century novelty items like Babe Ruth alarm clocks and an electric guitar signed by Peter Frampton sit up on shelves.",
+	has pluralname;
 
 Decor	lava_lamp "Lava Lamp" rossinis_pizza
 	with
@@ -312,42 +323,42 @@ Decor	glenda "glenda" bunnyworld
 
 Decor	red "red beam" inside_moon
 	with
-	name 'red',
+	name 'red' 'beam',
 	description "The blood red beam is the lowest note of the color-scale of the current key.";
 
 Decor	orange "orange beam" inside_moon
 	with
-	name 'orange',
+	name 'orange' 'beam',
 	description "The vivid orange beam is the second note of the current color-scale.";
 
 Decor	yellow "yellow beam" inside_moon
 	with
-	name 'yellow',
+	name 'yellow' 'beam',
 	description "The pale lemon yellow beam is the third note of the color-scale.";
 
 Decor green "green beam" inside_moon
 	with
-	name 'green',
+	name 'green' 'beam',
 	description "The neon green beam is the fourth note of the color-scale.";
 
 Decor blue "blue beam" inside_moon
 	with
-	name 'blue',
+	name 'blue' 'beam',
 	description "The sky blue beam is the fifth note of the color-scale.";
 
 Decor indigo "indigo beam" inside_moon
 	with
-	name 'indigo',
+	name 'indigo' 'beam',
 	description "The deep indigo beam is the sixth note of the color-scale.";
 
 Decor violet "violet beam" inside_moon
 	with
-	name 'violet',
+	name 'violet' 'beam',
 	description "The royal purple violet beam is the seventh note of the color-scale.";
 
 Decor colorbeams "beams of color" inside_moon
 	with
-	name 'beams' 'beam' 'colors' 'color' 'light' 'ray' 'rays' 'moon' 'interior' 'ripples' 'waves' 'black' 'holes' 'magnifications',
+	name 'beams' 'colors' 'color' 'light' 'ray' 'rays' 'moon' 'interior' 'ripples' 'waves' 'black' 'holes' 'magnifications',
 	description "You can't see what creates the beams of light criss-crossing the vast interior space. They are gorgeous, rich-hued and soft-edged. The changing distortions and magnifications that continuously alter their mesh remind you of a slow-motion film of a reflection in rippling water. You can examine the colors individually.",
 	has pluralname;
 
@@ -421,7 +432,9 @@ Prop	piano "piano" home
 		0:	piano.playcount = piano.playcount + 1;
 			piano.obsessionclear = 3;
 			achieved(3);
-			"You sit at the keyboard, and your fingers find a leitmotiv-like descending sequence of a Db-major chord and a series of descending overlapping thids that trace out an Ab-major ninth. Played as a repeating pattern spanning the whole keyboard, this becomes a central refrain of your improvisations for the next several months, the core melodic seed of the Harmonic Time-Bind Ritual Symphony.";
+			"You sit at the keyboard, and your fingers find a leitmotiv-like descending sequence of a Db-major chord and a series of descending overlapping thids that trace out an Ab-major ninth. Played as a repeating pattern spanning the whole keyboard, this becomes a central refrain of your improvisations for the next several months, the core melodic seed of the Harmonic Time-Bind Ritual Symphony.
+^
+^(As the game progresses, you will compose many songs about your experiences. Return home to >play piano frequently.)";
 		1:	if (xochi.email == 2) {
 				Schumann_piano_storyline();
 				return true;
@@ -442,9 +455,12 @@ Prop	piano "piano" home
 		5:	piano.playcount = 6;
 			Alwayswillremember_storyline();
 			return true;
-		6:	piano.playcount = 7;
+		6:	if(mendota_lakeside.wizard >= 5) {
+			piano.playcount = 7;
 			Lastfullmoon_storyline();
 			return true;
+			}
+			"You fool around with a few chords trying to find a progression that sounds like a summer moonrise.";
 		7:	piano.playcount = 8;
 			Mooncomputer_storyline();
 			return true;
@@ -714,7 +730,7 @@ object forseewhy "Forsee Why You And I Are To Be One (4CY UNI R2B 1)"
 
 object rose_heart "rose quartz heart"
 	with
-	name 'quartz' 'heart' 'rose',
+	name 'quartz' 'heart' 'rose' 'crystal' 'stone',
 	description "The heart is made from shaped and polished translucent pink rose quartz. It fits nicely in the center of your palm and feels pleasantly smooth.";
 
 object	wallet "wallet"
