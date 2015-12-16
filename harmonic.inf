@@ -47,12 +47,16 @@
 ! Close to done with full 'shape' of the game, then months of polishing
 !
 ! 13 December add catapult/balloon, let the chipmunks have endless summer
+!
+! 15 December todo list: story/time triggers, expert mode, commentary
+! Start adding real character/scenes at Loth, show Staci as a Loonie
+! Add post game bonus content, expand endgame puzzle, develop Queen
 
 !============================================================================
 ! Configuration constants
 
-Release 8;
-Serial "151213";
+Release 9;
+Serial "151215";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;

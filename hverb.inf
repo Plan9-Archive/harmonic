@@ -418,7 +418,7 @@
 		"You need to >bind past future and then go down to the dock.";
 	if (elginbday < 10)
 		"You should check your >email at home and then >visit staci.";
-	if (madcon.timetrav < 2)
+	if (madcon.timetrav == 1)
 		"You should go NE from the Capitol Square.";
 	if (madcon.timetrav < 7)
 		"You need to follow Lily to the stores NW and SW of State Street, then go to the Loth dock and >pet dog.";
@@ -427,21 +427,21 @@
 	if (mendota_lakeside.wizard < 1)
 		"Go back to Madcon NE of the Capitol Square.";
 	if (mendota_lakeside.wizard  < 2)
-		"Go to Mendota Lakeside by Loth.";
+		"Go to Lake Mendota shoreline residences by Loth.";
 	if (mendota_lakeside.wizard < 3)
 		"Go west from State Street.";
 	if (mendota_lakeside.wizard < 4)
-		"Go NE from Mendota Lakeside.";
+		"Go NE from Lake Mendota shoreline residences.";
 	if (mendota_lakeside.wizard < 5)
 		"Ride Lunar to the countryside. From Miffyland, go sw then se.";
 	if (mendota_lakeside.wizard < 6)
-		"Return to the Mendota lakeside neighborhood by Loth.";
+		"Return to the Lake Mendota shoreline residences by Loth.";
 	if (mendota_lakeside.wizard < 7)
 		"To start the Tarot party, >wear wheel.";
 	if (mendota_lakeside.wizard < 8)
 		"Go to the Late Night restaurant ne of your home.";
 	if (mendota_lakeside.wizard < 99)
-		"To save the co-op, you need to complete scenes in Turning Wheel, Astral Enchantments, two in the Late Night restaurant, buy and take the tarot deck from the Afterlife, go to Moon Forest and >use tarot, >drop remote, go to Turning Wheel and >bind fortune story. Go to miffyland and >examine porch to confront the Queen. Complete her scene and go to Lady Wisdom's to get the items you need. Go to James Madison park, put the balloon in the catapult, and >release catapult.";	
+		"To save the co-op, you need to follow the Xochi storyline through at least >bind schumann self (use the story control machine in Infinite Loop to control which barista is working), complete fictional scenes in Turning Wheel, Astral Enchantments, two in the Late Night restaurant, buy and take the tarot deck from the Afterlife, go to Moon Forest and >use tarot, >drop remote, go to Turning Wheel and >bind fortune story. Go to miffyland and >examine porch to confront the Queen. Complete her scene and go to Lady Wisdom's to get the items you need. Go to James Madison park, put the balloon in the catapult, and >release catapult.";	
 	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. Don't forget to get on your bike and >explore. Its often a good time to >visit staci. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 720 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
@@ -561,6 +561,12 @@
 	"Intro skipped.";
 ];
 
+[ Sleepwaitsub;
+!	daynumber = daynumber + 1;
+	settime(1380, 60);
+	print "You return home to sleep and drift off, a tourist in a different branch of the multiverse, then resume the next day where you left off.^";
+];
+
 [ Standardsub;
 	expertmode = false;
 	clockoff = false;
@@ -612,12 +618,7 @@
 		settime(1380, 60);
 		return true;
 	}
-];
-
-[ Sleepwaitsub;
-!	daynumber = daynumber + 1;
-	settime(1380, 60);
-	print "You return home to sleep and drift off, a tourist in a different branch of the multiverse, then resume the next day where you left off.^";
+	"You aren't allowed to skip any further ahead in the storyline.";
 ];
 
 [ Talksub;
