@@ -56,8 +56,8 @@ Room	home "Inside my house"
 	],
 	initial [;
 		if (self hasnt visited)
-			print "^(1 April 2013 - 30 months earlier)
-^(Read >help first and >content for the warning label. Get a >hint anytime.)
+			print "(Read >help first and >content for the warning label. Get a >hint anytime.)
+^(1 April 2013 - 30 months earlier)
 ^
 ^After working obsessively since the New Year, you are finally ready to officially announce and release your software. You feel tense yet eager anticipation for the reaction from other Plan 9 users. When you are ready to unleash the Advanced Namespace Tools on the world, >release ANTS.^";
 	],
@@ -69,7 +69,7 @@ Room	home "Inside my house"
 	],
 	after [; go:
 		if (piano.obsessionclear == 1) {
-			print "^You spend a few minutes moving and rearranging books and papers, and soon enough, your piano is cleared of obstructions. You are eager with anticipation to play it and feel your fingers moving across the keys.^";
+			print "You spend a few minutes moving and rearranging books and papers, and soon enough, your piano is cleared of obstructions. You are eager with anticipation to play it and feel your fingers moving across the keys.^";
 			piano.obsessionclear = 2;
 		}
 		if (willy_coop.singing == 2) {
@@ -448,8 +448,23 @@ Room	lakeshore_path "Dirt path along the lakeshore"
 			return true;
 		}
 	],
+	u_to [;
+		if(mendota_lakeside.wizard < 99)
+			"You can't go that way. Yet.";
+		return story_circle;
+	],
 	e_to state_street,
 	cant_go "You don't feel like spending time on the university campus right now. You can get back to state street to the east.";
+
+Room	story_circle "Story Circle"
+	with
+	description "Up the embankment by the forest, you find a ring of stones, and an inscription. 'Storytellers Circle - may our tales be many times retold, and grow better in the telling.'",
+	after [; go:
+		achieved(51);
+		print "You clamber up the soft dirt of the hillside, and reach a small wooded plateau.";
+	],
+	d_to lakeshore_path,
+	cant_go "You can go back down to the lakeshore path.";
 
 Room	miffyland "Miffyland, the student ghetto"
 	with
@@ -689,7 +704,7 @@ Room	coffee_lion "Coffee Lion Cafe"
 		}
 		if (self.xeliaseen == 1) {
 			self.xeliaseen = 2;
-			print "^Xochi isn't working today, but Xelia is. You have noticed she and Xochi seem to be friends. You are interested in talking to her, too.^";
+			print "Xochi isn't working today, but Xelia is. You have noticed she and Xochi seem to be friends. You are interested in talking to her, too.^";
 			return false;
 		}
 		if (coffee_lion.alchemy == 1) {

@@ -6,7 +6,7 @@
 	daynumber = 1;
 	settime(60, 60);
 	achieved(0);
-	print "^You announce ANTS by posting an imaginary scene from Plan 9 from Outer Space to the 9fans mailing list. It is the one-year anniversary of your father's death. He was a law professor, and he never understood your values. You search for information on related Plan 9 projects and find a recent patent on a familiar concept. Years earlier, you wrote a free software 9p persistent-pipe muxer. The patent the Joint Consolidated Networking corporation was granted is for 9p persistent pipe-muxing.
+	print "You announce ANTS by posting an imaginary scene from Plan 9 from Outer Space to the 9fans mailing list. It is the one-year anniversary of your father's death. He was a law professor, and he never understood your values. You search for information on related Plan 9 projects and find a recent patent on a familiar concept. Years earlier, you wrote a free software 9p persistent-pipe muxer. The patent the Joint Consolidated Networking corporation was granted is for 9p persistent pipe-muxing.
 ^
 ^You feel an internal change, as if a valve has broken and a high-pressure jet of intense emotion and information is entering your mind at right angles to reality. You spent endless hours talking with your father, and you know how he thought. He never agreed with your anti-authoritarian radicalism, but seeing this patent would have changed that - you can feel it. Your mind has become a virtual machine, running the computer program of your father's soul in parallel with your own.^";
 	if (commentary == true)
@@ -21,7 +21,7 @@
 	achieved(1);
 	daynumber = 3;
 	settime(60, 60);
-	print "^Your local cafe has been your comfort for the past several years. Days and sometimes whole weeks used to go by where the only people you saw were the employees here. You always felt accepted, despite your disheveled appearance and stumbling arthritic gait. It has been several months since you have visited, because you feel embarassed of a mild foolish crush on one of the young baristas.
+	print "Your local cafe has been your comfort for the past several years. Days and sometimes whole weeks used to go by where the only people you saw were the employees here. You always felt accepted, despite your disheveled appearance and stumbling arthritic gait. It has been several months since you have visited, because you feel embarassed of a mild foolish crush on one of the young baristas.
 ^
 ^She is working today, of course. You feel an unfamiliar fearless energy within yourself. As you order your coffee, you hear yourself say 'It's nice to see you, I haven't been in lately because I feel self-conscious about thinking you're cute.'
 ^
@@ -42,7 +42,7 @@
 	move xelia to coffee_lion;
 	daynumber = 4;
 	settime(60,60);
-	print "^As you enter the late night restaurant, you notice an old friend here. You join him at his table, and he offers to give you a Tarot reading. You accept, and the cards arrange themselves in a dramatic tableaux featuring The Tower and The Devil. Your friend looks at you seriously and says 'Fear obsession. Fear obsession very strongly.' You realize that in pursuit of your Plan 9 programming goals, you have neglected other things you care about, like people - and music. You head back towards your home and resolve to clean off your piano and play it as soon as you go inside.^";
+	print "As you enter the late night restaurant, you notice an old friend here. You join him at his table, and he offers to give you a Tarot reading. You accept, and the cards arrange themselves in a dramatic tableaux featuring The Tower and The Devil. Your friend looks at you seriously and says 'Fear obsession. Fear obsession very strongly.' You realize that in pursuit of your Plan 9 programming goals, you have neglected other things you care about, like people - and music. You head back towards your home and resolve to clean off your piano and play it as soon as you go inside.^";
 	if (commentary == true)
 		print "^[This scene has been shifted in both time and place. It actually occurred at Lady Wisdom's, before the meeting with a friend to acquire Plan 9 server hardware. It was moved here in the game because activating the musical themes early is important, and keeping the travel in the intro very close to home makes the on-rails segment feel less constricting.]^";
 !	getenter();
@@ -56,7 +56,7 @@
 	move reality to basement;
 	daynumber = 6;
 	settime(60,60);
-	print "^You've noticed that Xelia often dresses as fictional characters, and as you place your order, you comment on her current Alice in Wonderland outfit. She smiles slightly. 'Just something I enjoy doing to amuse myself.' As you drink your coffee, you contemplate the meaning of her wardrobe. She is altering her relationship to the world by taking symbols from fiction and applying them to herself. It reminds you of namespace operations in Plan 9, but with symbols and stories binding to real-life people as the targets. In fact, the mingling of imagination and reality seems to explain a lot of what you are experiencing. Since you took on the name of a fictional character for your computer work years ago, you seem to be traversing the narrative arc of that book in your own life. Your mind is spinning. You need to get home and check on your grid.^";
+	print "You've noticed that Xelia often dresses as fictional characters, and as you place your order, you comment on her current Alice in Wonderland outfit. She smiles slightly. 'Just something I enjoy doing to amuse myself.' As you drink your coffee, you contemplate the meaning of her wardrobe. She is altering her relationship to the world by taking symbols from fiction and applying them to herself. It reminds you of namespace operations in Plan 9, but with symbols and stories binding to real-life people as the targets. In fact, the mingling of imagination and reality seems to explain a lot of what you are experiencing. Since you took on the name of a fictional character for your computer work years ago, you seem to be traversing the narrative arc of that book in your own life. Your mind is spinning. You need to get home and check on your grid.^";
 	if (commentary == true)
 		print "^[This passage is hard to set up correctly. It would be nice if Plan 9 concepts were introduced earlier, and the player could be led to make the connection between Plan 9 namespace binds and binding symbols from fiction themselves, but bogging the early story down with trying to teach much about Plan 9 seems like a bad idea.]^";
 ];
@@ -69,7 +69,7 @@
 	daynumber = 8;
 	settime(60,60);
 	startdaemon(fiction);
-	print "^You make the necessary adjustments to your basement grid to interface with the metalevel abstractions that structure your experiences. The bind command executes instantly, and for a moment you feel a foolish doubt - but in that same moment, you feel a warmth spreading within you, like liquid electricity being absorbed by the roots of your neural tree, and your visual perceptions take on a slight rainbow tint at the edges of objects, with an extra hint of pink.
+	print "You make the necessary adjustments to your basement grid to interface with the metalevel abstractions that structure your experiences. The bind command executes instantly, and for a moment you feel a foolish doubt - but in that same moment, you feel a warmth spreading within you, like liquid electricity being absorbed by the roots of your neural tree, and your visual perceptions take on a slight rainbow tint at the edges of objects, with an extra hint of pink.
 ^
 ^(You have completed the introduction. You may now explore freely.)
 ^(8 April 2013)^";
@@ -172,7 +172,7 @@
 
 [ Futurebind_storyline;
 	elginbday = 7;
-	print "^You have leveled up enough as a computer-mind to be able to bind abstractions directly. With a simple higher-dimensional fold, the concepts are unioned together. The fold is measured at 20 years; 1993 is bound to 2013. You were 18 then, travelling around to see the Grateful Dead, entering adulthood full of enthusiasm and unencumbered by the weariness of disappointments that were yet to come. As the 20 year harmonic time-bind clicks into place, every perception from every sense becomes a perfectly placed note in the symphony.
+	print "You have leveled up enough as a computer-mind to be able to bind abstractions directly. With a simple higher-dimensional fold, the concepts are unioned together. The fold is measured at 20 years; 1993 is bound to 2013. You were 18 then, travelling around to see the Grateful Dead, entering adulthood full of enthusiasm and unencumbered by the weariness of disappointments that were yet to come. As the 20 year harmonic time-bind clicks into place, every perception from every sense becomes a perfectly placed note in the symphony.
 ^
 ^The path downward to the dock beckons.^";
 ];
@@ -227,7 +227,7 @@
 	daynumber = 42;
 	settime(60,60);
 	achieved(21);
-	print "^'So THIS is what it feels like to be a superhero,' you grin, as you hop on Lunar Lightning. You feel the power of music and fiction and fate and your free choice to embrace all of it - and as you begin to pedal faster, you perceive something unfolding in the sky above you. The VALIS satellite! The Pink Beam that hit Phil Dick was just one note in a musical color-chord. Like a giant metal and ceramic flower opening up, the VALISpectrum Prismatic Reflector is coming online.
+	print "'So THIS is what it feels like to be a superhero,' you grin, as you hop on Lunar Lightning. You feel the power of music and fiction and fate and your free choice to embrace all of it - and as you begin to pedal faster, you perceive something unfolding in the sky above you. The VALIS satellite! The Pink Beam that hit Phil Dick was just one note in a musical color-chord. Like a giant metal and ceramic flower opening up, the VALISpectrum Prismatic Reflector is coming online.
 ^
 ^The transmission is strong. You are receiving an original fictional identity, the character of exactly who you actually are - a crazed middle aged hippie on a bike, rolling through the night singing songs of Loonie Revolution, using Plan 9 namespaces to fight for the acceptance of madness, weaving chaotic joy from the ordered strands of the multiverse. You are The Harmonist.
 ^
@@ -290,7 +290,7 @@
 [ Lotusdock_storyline;
 	madcon.timetrav = 7;
 	remove lotus;
-	print "^As you greet the dog, you hear a voice call out 'Lotus!' from a little further down the shore. To make a long story very short, the voice belongs to a five member traveling punk band called Police Lingo. They need a place to crash, and something makes you offer your house. They have to play a show at the Owl Sanctuary (the what??) and you agree to meet them back on Milwaukee street later. Staci heads back to Madcon. You should probably head home to get your house ready for guests.^";
+	print "As you greet the dog, you hear a voice call out 'Lotus!' from a little further down the shore. To make a long story very short, the voice belongs to a five member traveling punk band called Police Lingo. They need a place to crash, and something makes you offer your house. They have to play a show at the Owl Sanctuary (the what??) and you agree to meet them back on Milwaukee street later. Staci heads back to Madcon. You should probably head home to get your house ready for guests.^";
 ];
 
 [ Buddhahome_storyline;
@@ -376,7 +376,7 @@
 
 [ Tarotparty_storyline;
 	mendota_lakeside.wizard = 7;
-	"^(Lothlorien Co-op)
+	"(Lothlorien Co-op)
 ^
 ^You have completed your preparations for this, one of the first overt acts of the Loonie Revolution. Staci has compiled a collection of art and writing, each on a 1/4 size page, and you have photocopied them to create a number of unique books, each with a different subset of the possible pages. Every guest at the party receives one.
 ^
@@ -424,8 +424,9 @@
 
 [ Stopfire_storyline;
 	mendota_lakeside.wizard = 99;
+	startdaemon(victory);
 	achieved(48);
-	print "^You place the catapult on the ground to stabilize it, and turn the tensioning mechanism. Click. You double-check your aim. According to your instructions, the bind convergence should be starting in a moment, over the lake.
+	print "You place the catapult on the ground to stabilize it, and turn the tensioning mechanism. Click. You double-check your aim. According to your instructions, the bind convergence should be starting in a moment, over the lake.
 ^
 ^There it is - a patch of mist rising from the water. There is a bubbling grumble from the lake, and a slimy whisker of Cthulhu's moustache briefly surfaces. It twitches and throws a Molotov cocktain in a high arc toward Loth's section of shoreline. A second later, it vanishes back under the surface.
 
@@ -502,7 +503,7 @@
 
 [ Schumannbind_storyline;
 	xochi.email = 4;
-	print "^You focus your mind on Schumann's music, its mix of eccentricity, passion, and experimentation. You feel his great love for his wife Clara, and also the spidery cracks of the madness that claimed the last years of his life. You can see your life from his perspective and you realize that you can learn from his experiences. His life is mirrored in yours, but you can change the story, make it play out better. In death, Schumann grew to understand how stifling 19th century society was for many women, and how Clara had been forced to make her own creative life subsidiary to his. And his last few years in an asylum...those bad old songs should be sent down the Rhine river in a coffin!^";
+	print "You focus your mind on Schumann's music, its mix of eccentricity, passion, and experimentation. You feel his great love for his wife Clara, and also the spidery cracks of the madness that claimed the last years of his life. You can see your life from his perspective and you realize that you can learn from his experiences. His life is mirrored in yours, but you can change the story, make it play out better. In death, Schumann grew to understand how stifling 19th century society was for many women, and how Clara had been forced to make her own creative life subsidiary to his. And his last few years in an asylum...those bad old songs should be sent down the Rhine river in a coffin!^";
 	if (expertmode == false)
 		print "^You are eager to >talk to Xochi about what you have just experienced.^";
 ];
@@ -535,7 +536,7 @@
 	eventcount++;
 	xochi.email = 7;
 	achieved(26);
-	print "^Xochi looks unusually happy today. 'Hi Xochi, what's up?' you begin. She smiles, and takes a deep breath. 'Well, during the past week I started seeing someone, and...things are going really well and I think it's going to be something serious.' She is almost glowing with excitement. You feel an incredible joy as Schumann within you cheers. 'The song is rewritten!' Schumann says, 'let the music be made afresh!'
+	print "Xochi looks unusually happy today. 'Hi Xochi, what's up?' you begin. She smiles, and takes a deep breath. 'Well, during the past week I started seeing someone, and...things are going really well and I think it's going to be something serious.' She is almost glowing with excitement. You feel an incredible joy as Schumann within you cheers. 'The song is rewritten!' Schumann says, 'let the music be made afresh!'
 ^
 ^'So,' you say, 'I've been part of a good story for you?'
 ^
@@ -598,7 +599,7 @@
 
 [ Alef_storyline;
 	eside_hq.fictour = 3;
-	print "^As soon as you cross the threshold, a voluptuous redhead greets you. 'Jay isn't working tonight, but he told me about you.' You assume she is a time-traveler, and in communication with the orbital nexus. As she seats you, you catch a glimpse of a tattoo peeking out of her uniform below her right clavicle. 'What's your tattoo?' you ask. She smiles and laughs 'Oh! Something silly, my friend has the other half' and pulls aside her uniform to show a colorful monster chasing something. 'Wow, awesome!' you say, and you don't try too hard to conceal the fact that you are just as happy about the glimpse of her body as you are about the tattoo. You introduce yourself. Her name is Alef.
+	print "As soon as you cross the threshold, a voluptuous redhead greets you. 'Jay isn't working tonight, but he told me about you.' You assume she is a time-traveler, and in communication with the orbital nexus. As she seats you, you catch a glimpse of a tattoo peeking out of her uniform below her right clavicle. 'What's your tattoo?' you ask. She smiles and laughs 'Oh! Something silly, my friend has the other half' and pulls aside her uniform to show a colorful monster chasing something. 'Wow, awesome!' you say, and you don't try too hard to conceal the fact that you are just as happy about the glimpse of her body as you are about the tattoo. You introduce yourself. Her name is Alef.
 ^
 ^It seems natural to ask if she has any other interesting ink, and when you ask if she does, she says yes. You ask if you can see it, and she laughs and says 'not HERE' and you keep your eyes steady on hers and say 'Okay, let me know when you can take a break for a few minutes.' She pauses, thinks for a second, then says 'sure' with a tiny smile.
 ^
@@ -613,7 +614,7 @@
 [ Harmonybind_storyline;
 	eside_hq.fictour = 4;
 	achieved(46);
-	print "^The harmony envelops you completely, and the gravitational distortions begin pulsing an irresistible rhythm. You are conducting the music, playing piano, singing along, dancing, spinning in orbits around a singularity, every action reflected in amplified reaction, and finally carried down a shining silver river, drawn into a whirling vortex, your voice crying out as the infinite pull dissolves you...
+	print "The harmony envelops you completely, and the gravitational distortions begin pulsing an irresistible rhythm. You are conducting the music, playing piano, singing along, dancing, spinning in orbits around a singularity, every action reflected in amplified reaction, and finally carried down a shining silver river, drawn into a whirling vortex, your voice crying out as the infinite pull dissolves you...
 ^
 ^'Shhh!' Alef's voice in your ear. Her legs are tightly wrapped around your hips. 'You trying to get us busted?' You blink and try to re-enter reality, dizzy and sweaty. She separates herself from you, shrugs herself back into her dress, and whispers 'Sorry to run, but I gotta work. Don't follow me back in.'
 ^

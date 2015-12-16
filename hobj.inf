@@ -959,7 +959,7 @@ object	crown "wire and bead Crown"
 					startdaemon(crown);
 					"^(A scene from Madcon replays itself in your mind)
 ^
-^A beautiful asymmetric life-form, with eggplants growing on stalks on her left side and an extra pair of fungus-legs on her right, pulls you aside as you pass in the hallway. 'Listen,' she whispers, 'the Green Screeners are planning an attack on your central HQ. I don't think you can prevent it on the first loop of the subfiction, but once you complete the main framing story, we will open the Time Vault for you. If you want to create an alternate history then...good luck.'";
+^A beautiful asymmetric life-form, with eggplants growing on stalks on her left side and an extra pair of fungus-legs on her right, pulls you aside as you pass in the hallway. 'Listen,' she whispers, 'the Green Screeners are planning an attack on your central HQ. I don't think you can prevent it on the first loop of the fiction, but once you complete the main framing story and crucial subfictions we will open the Time Vault for you. If you want to create an alternate history then...good luck.'";
 				10:	mendota_lakeside.wizard++;
 					"^(A scene from Madcon replays itself in your mind)
 ^
@@ -974,6 +974,10 @@ object	crown "wire and bead Crown"
 ^At the big dance party, you are watching an individual in a slinky dress dance. They are waving a glowstick, and you realize they are spelling out letters in a message to you. 
 ^
 ^U S E T H E C A T A P U L T A T J A M E S M A D I S O N^";
+				14: mendota_lakeside.wizard++;
+					"^(A scene from Madcon replays itself in your mind)
+^
+^At a small party in a hotel room, someone is whispering to you from behind. 'Don't turn around. The Queen of the Green Screen is the leader of a powerful group of Editors. They have been active in your universe for a long time. They control reality using cheap illusions to make it seem less magical and interesting than it really is, because then they get to be the stars and put everyone else into minor roles in the background. You will need to disrupt her illusions.";
 				default: "There is no new information available from the crown right now.";
 			}
 	],
@@ -983,6 +987,10 @@ object	crown "wire and bead Crown"
 			"^The crown becomes warm and makes a quiet bell-like sound.";
 		}
 		if ((location == willy_west) && (mendota_lakeside.wizard == 11)) {
+			mendota_lakeside.wizard++;
+			"^The crown becomes warm and makes a quiet bell-like sound.";
+		}
+		if ((location == john_nolen) && (mendota_lakeside.wizard == 13)) {
 			mendota_lakeside.wizard++;
 			stopdaemon(crown);
 			"^The crown becomes warm and makes a quiet bell-like sound.";
@@ -1029,4 +1037,67 @@ object	catapult "catapult" time_vault
 		release: <<use self>>;
 	],
 	has container open;
+
+object	victory
+	with
+	daemon [;
+		if (location.wintext == 1) return true;
+		location.wintext++;
+		switch(location) {
+			cap_square: "^The state capitol is flying the Brass Cannon flag of the Loonie revolutionaries.";
+			state_street: "^The car-free area around State Street has been extended and unicycle taxis whiz by, passengers looking down at you from wobbly shoulder perches.";
+			miffyland: "^The Mifflin Street Block Chill is underway, a new tradition more relaxed than the yearly spring party.";
+			john_nolen: "^The bike path is now a six lane elevated and weatherproofed tunnel painted with a 999 foot long mural.";
+			willy_west: "^This area seems mostly unchanged. The green screen illusion was weaker here.";
+			willy_east: "^The north side of the street is now a continuous food-coffee-drinking garden mall. Psychedelic plants of all varieties arc over the sidewalks.";
+			atwood_av: "^The troublesome car traffic patterns in this neighborhood have been solved with teleportation portals. West-siders complain too much of the city budget is spent this way, but livability is worth it.";
+			atwood_shops: "^A time-travelers trading bazaar is passing through, exchanging magical objects from around the multiverse with the shops here.";
+			mon_cot: "^Coffee Lion has expanded into a miniature palace, complete with a dark lake of foamy espresso in front of it.";
+			mon_mid: "^Giant trees spread their branches across Monona, making the street into a tunnel through the forest.";
+			milw_street: "^Your street is unchanged, save for a small sign denoting the farmland to the north be preserved in perpetuity.";
+			mendota_lakeside: "^The lakeshore co-ops have finally completed a path connecting them. Rumor has it underground connecting tunnels have also been dug.";
+			james_madison: "^The sunlight reflects from the wings of seagulls flying into the wind over the shore.";
+			coffee_lion: "^You have a flashback of memory to another song you wrote during the spring, inspired by hearing a friend cover one of your favorite Dead songs here.
+^
+^I was singing along with a twenty-year bind
+^Summer 93 song I was out of my mind
+^I was on the moon but you were right there too
+^Not a moment too soon even though the time flew
+^Next month is June but right now its May
+^I may be a Loon but I'm happy for today";
+			eside_hq: "^You remember how hard you swooned for Alef, and a song you wrote for her:
+^
+^Every symphony needs a love theme
+^Even if its just a dream
+^So many times I thought it might be real
+^But things are seldom what they seem
+^I'm hoping sympathy's true vibration
+^Is the living beat I feel
+^If you come with me too sensation
+^We can harvest a crop of cream";
+			etown: "^You remember some rhymes you wrote for some of your other favorite waitstaff at the restaurant:
+^
+^Deja Alef Anastasia
+^Play their roles in this Fantasia
+^Three fine beauties sure to daze ya
+^East side HQ of the revolution
+^Rockin space pancakes are an institution
+^The late-night rites in our Loonie constitution";
+		}
+	];
+
+object	ring_of_tales "Ring of Tales" story_circle
+	with
+	name 'ring' 'tales',
+	description "This silver ring is cast in the form of Celtic braidwork, but when you look closer, you see it is a single Ouroborous Snake, slithering across its own body before singing its teeth into its own tail.",
+	before [;
+		take:
+			print "The ring feels warm to the touch, as if someone else had just been wearing it.^";
+			return false;
+		wear: 
+			achieved(52);
+			print "As you slide your finger into the ring, a voice speaks to you. 'Remember, you have lived an amazing story - and so has everyone else. Tell your tale, but not as an interruption to others. Sing your song, but not in a different key than of those already singing around you. March to whatever drum you hear, but watch where you're going, my much favored foolish friend.'^";
+			return false;
+	],
+	has clothing;
 

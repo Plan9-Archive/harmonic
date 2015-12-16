@@ -51,6 +51,7 @@
 ! 15 December todo list: story/time triggers, expert mode, commentary
 ! Start adding real character/scenes at Loth, show Staci as a Loonie
 ! Add post game bonus content, expand endgame puzzle, develop Queen
+! About 1k away from maxing v5 z machine w/no debugging.
 
 !============================================================================
 ! Configuration constants
@@ -137,6 +138,7 @@ Attribute outside;
 
 Class	Room
 	with
+	wintext 0,
 	description "UNIMPLEMENTED ROOM DESCRIPTION",
 	has	light;
 
