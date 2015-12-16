@@ -126,7 +126,7 @@ Abbreviate "lit";
 ! Configuration constants
 
 Release 9;
-Serial "151215";
+Serial "151216";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;

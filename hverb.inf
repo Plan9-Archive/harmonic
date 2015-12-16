@@ -474,7 +474,7 @@
 	move xelia_and_xochi to coffee_lion;
 	gelato_alchemy_lab.brew = 9;
 	achieved(32);
-	print "^You firmly insert the cylinder into the output junction of the tubes connected to the reaction spheres. Creamy gelato seems to condense at the intersection point and drip slowly down the inner edges of the cylinder. After a moment, it is half filled. Xochi and Xelia each add a shot of freshly brewed espresso to create an affogato.
+	print "You firmly insert the cylinder into the output junction of the tubes connected to the reaction spheres. Creamy gelato seems to condense at the intersection point and drip slowly down the inner edges of the cylinder. After a moment, it is half filled. Xochi and Xelia each add a shot of freshly brewed espresso to create an affogato.
 ^
 ^You hear the sound of the customer service bell being rung upstairs. 'Perfect timing!' they say in unison, then glance at each other and laugh again. You are ushered back upstairs with a tall cylinder of frothy gelato-espresso blended brew.^";
 	playerto(coffee_lion);

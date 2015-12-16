@@ -427,7 +427,7 @@ Prop	piano "piano" home
 		"Your trusty upright piano is made of dark polished wood. It was a gift for your sixteenth birthday, and it has been your companion for countless hours practicing, improvising, and composing.";
 	],
 	before [; play: 
-		if (piano.obsessionclear == 0) "^Your piano is almost completely buried beneath an avalanche of papers and books, and you are too obsessed with Plan 9 to bother cleaning it off.";
+		if (piano.obsessionclear == 0) "Your piano is almost completely buried beneath an avalanche of papers and books, and you are too obsessed with Plan 9 to bother cleaning it off.";
 		switch(self.playcount) {
 		0:	piano.playcount = piano.playcount + 1;
 			piano.obsessionclear = 3;
@@ -1093,7 +1093,7 @@ object	victory
 object	ring_of_tales "Ring of Tales" story_circle
 	with
 	name 'ring' 'tales',
-	description "This silver ring is cast in the form of Celtic braidwork, but when you look closer, you see it is a single Ouroborous Snake, slithering across its own body before singing its teeth into its own tail.",
+	description "This silver ring is cast in the form of Celtic braidwork, but when you look closer, you see it is a single Ouroborous Snake, slithering across its own body before sinking its fangs into its own tail.",
 	before [;
 		take:
 			print "The ring feels warm to the touch, as if someone else had just been wearing it.^";

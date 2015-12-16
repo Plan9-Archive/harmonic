@@ -95,7 +95,7 @@ Room	basement "My house, in the basement"
 	],
 	after [; go:
 		if (introgoal == 3)
-			print "^As soon as you enter the room, you sense something deeply unusual, but intriguing. The code running on your grid of Plan 9 machines, the complicated interwoven mesh of namespaces, seems to have hooked into the low-level machine code of the universe. New file descriptors have been mounted allowing access to fundamental abstractions. If you dare, you could bind two normally distinct perceptual constructs into a single union.^";
+			print "As soon as you enter the room, you sense something deeply unusual, but intriguing. The code running on your grid of Plan 9 machines, the complicated interwoven mesh of namespaces, seems to have hooked into the low-level machine code of the universe. New file descriptors have been mounted allowing access to fundamental abstractions. If you dare, you could bind two normally distinct perceptual constructs into a single union.^";
 		if (lost_in_grid.battle == 1) {
 			Gridbattle_storyline();
 			return true;
@@ -955,7 +955,7 @@ Scene	orbital_command "Orbital Command, Trans-Fictional Alliance"
 		3: "You make brief visits to the hidden rebel alliance base, the shadow gallery, the underground hideout of the humans, the hovering spaceships of the overlords, and finally the secret catapult on the moon. Everywhere, you make adjustments to the technology and share whatever source code is useful. Time to throw rocks.";
 		default:
 			achieved(30);
-			print "^The tour of co-operating fictions has been completed. The man in the Looney Toons hat waves you through, and the Lunar Transtemporal Fictionalization Flow Network returns you to the East Side HQ.^";
+			print "The tour of co-operating fictions has been completed. The man in the Looney Toons hat waves you through, and the Lunar Transtemporal Fictionalization Flow Network returns you to the East Side HQ.^";
 			playerto(eside_hq);
 			return true;
 		}

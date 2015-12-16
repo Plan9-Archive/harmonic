@@ -183,7 +183,7 @@
 	achieved(19);
 	daynumber = 36;
 	settime(60,60);
-	print "^As you step onto the dock extending out across the shimmering waves of Lake Mendota, you feel time stretch like soft taffy. All of your life that has brought you here, the arc from childhood to present, is fresh and clear in your mind. A future of joy, delight, and purpose stretches limitlessly onward. The present moment expands to become large enough to include both path and future. It is like a perfect hyperspherical mirror at the center of your light-cone, reflecting the totality of your existence. You realize that you have always been, and always will be, here on the dock in this purple-pink-golden moment.
+	print "^As you step onto the dock extending out across the shimmering waves of Lake Mendota, you feel time stretch like soft taffy. All of your life that has brought you here, the arc from childhood to present, is fresh and clear in your mind. A future of joy, delight, and purpose stretches limitlessly onward. The present moment expands to become large enough to include both past and future. It is like a perfect hyperspherical mirror at the center of your light-cone, reflecting the totality of your existence. You realize that you have always been, and always will be, here on the dock in this purple-pink-golden moment.
 ^
 ^You have known Staci for over twenty years. Ten years ago, when Elgin was two, she made you his godfather. Some years, you saw her and Clark a few times a month, usually just sitting and talking amidst the chaos of raising children in a small apartment. You always liked her, but never had a chance to talk about anything very serious or personal. In past years, she often looked tired and worn-down by stress. Now, here on the dock at Loth, she seems radiantly happy.
 ^
@@ -348,7 +348,7 @@
 
 [ Countryside_storyline;
 	mendota_lakeside.wizard = 5;
-	"^It is late August, and this sweet, ripe summer is nearing its end. You ate mushrooms earlier, and biking through Monona in the humid dusk, you saw the moon rising pink and full and shimmering around the edges, low over the rooftops of the suburban houses. Every time you looked up at it, you heard a chiming interval - a g-sharp in the midst of an E major chord, rising up to an e above a C-sharp minor.
+	"^It is late August, and this sweet, ripe summer is nearing its end. You ate mushrooms earlier, and biking through Monona in the humid dusk, you saw the moon rising pink and full and shimmering around the edges, low over the rooftops of the suburban houses. Every time you looked up at it, you heard a chiming interval - a G-sharp in the midst of an E major chord, rising up to an E above a C-sharp minor.
 ^
 ^Now, out in the countryside, the summer night air and the moon and the mushrooms coalesce into a smooth melody. 'Last full moon of summer 2013...' you sing, over and over as you ride.
 ^
@@ -446,7 +446,7 @@
 	eventcount++;
 	self.metjay = 1;
 	achieved(11);
-	print "^You step into the restaurant and get a table. During the graveyard shift, the waitstaff are often friendly and interesting people who are bored enough to be curious about whatever conversation you make. Filled with a sense of purpose, you tell your story to your server, Jay. He seems fascinated, and says he supports the cause of fighting unfairness in society and empathizes with your grievance with JCN. He tells you some of his own life story, how he had been raised in a restrictive, cult-like religion from which he had recently broken free. You have made a new friend and ally.^";
+	print "You step into the restaurant and get a table. During the graveyard shift, the waitstaff are often friendly and interesting people who are bored enough to be curious about whatever conversation you make. Filled with a sense of purpose, you tell your story to your server, Jay. He seems fascinated, and says he supports the cause of fighting unfairness in society and empathizes with your grievance with JCN. He tells you some of his own life story, how he had been raised in a restrictive, cult-like religion from which he had recently broken free. You have made a new friend and ally.^";
 	if (commentary == true)
 		print "^[I interacted with a lot of different waitstaff out at the east side HQ, but it didn't seem realistic to model all those characters and scenes. There is also a lot more connected with Jay than has made it into the game so far. Maybe I will still find room for at least the time-traveling closet. The actual name and concept 'Harmonic Time-Bind Ritual Symphony' was worked out at the restaurant with Jay as my server, so maybe that specific scene should appear in the game somehow, but keeping the introductory material moving is a challenge already.]^";
 ];
@@ -512,7 +512,7 @@
 	eventcount++;
 	xochi.email = 5;
 	achieved(25);
-	print "You are full of excitement as you walk up to the counter. 'Xochi, I have something amazing to tell you! Do you have a minute?' She nods yes, and you begin trying to explain:
+	print "You are full of excitement as you walk up to the counter. 'Xochi, I have something amazing to tell you! Do you have a minute?' She nods yes, and you explain:
 ^
 ^'I heard your song,' you begin, and she looks startled. 'It's incredible! You should write music and perform it to spread the word about the Loonie Revolution. I know plenty of people we can hire for recording and promotion. I promise this isn't about me htting on you - in fact, it's the opposite of that. The reason is - and this is a little hard to believe, I know - the reason is that I am actually the reincarnation of Robert Schumann, and you are the reincarnation of Clara Schumann, and Robert wants to change the the stories of the past. He learned that you should have been a great independent musician, and that's what I want to do, just help your career and propagandize for the Loonie Revolution and revitalize this universe to make our songs new!'
 ^
@@ -752,7 +752,7 @@
 ^Warm night air, the waves on the lake, all right there and make no mistake
 ^Reeling and rocking past the shadow of doubt 
 ^Nothing like feeling that old in and out
-^I know what its like to be alone, no hint of action on my phone
+^I know what its like to be alone, no hint of action on your phone
 ^I know how to groan and bitch and moan
 ^But it ain't too much dope that's stealing your hope
 ^In the dark groping for the end of your rope
@@ -764,10 +764,10 @@
 ^Every time that I walked out the door
 ^I fell in to a brand new story, each moment had its own kind of glory
 ^It's hard to believe but my dreams did come true
-^No guarantees but it could happen to you
+^No guarantee but it could happen to you
 ^So keep your ears open for those magic songs
 ^Spend the years hoping and singing along
-^The story and dreams that bloom in your mind
+^The stories and dreams that bloom in your mind
 ^The quarry that gleams, the doom that you find
 ^Flowery beams the moonlight unwinds...";
 ];
