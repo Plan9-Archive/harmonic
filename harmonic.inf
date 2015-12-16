@@ -1,5 +1,5 @@
 !% -v8
-!% -SDX
+!% -SDXe
 !% $MAX_VERBS=160
 !% $MAX_LABELS=1100
 
@@ -53,6 +53,74 @@
 ! Add post game bonus content, expand endgame puzzle, develop Queen
 ! About 1k away from maxing v5 z machine w/no debugging.
 ! Added easter egg, compile for v5 has 0 bytes free.
+
+!============================================================================
+! Abbreviations
+
+Abbreviate ". ";
+Abbreviate ", ";
+Abbreviate " the ";
+Abbreviate "You";
+Abbreviate "ing";
+Abbreviate "The";
+Abbreviate "you";
+Abbreviate "and";
+Abbreviate "tion";
+Abbreviate "with";
+Abbreviate "Coffee Lion";
+Abbreviate "Stac";
+Abbreviate "ter";
+Abbreviate "Loonie Revolu";
+Abbreviate "e a";
+Abbreviate " to ";
+Abbreviate "e s";
+Abbreviate "res";
+Abbreviate "e c";
+Abbreviate "e b";
+Abbreviate "oun";
+Abbreviate "ion";
+Abbreviate "e f";
+Abbreviate "e of";
+Abbreviate "ight";
+Abbreviate "Strawberry";
+Abbreviate "e l";
+Abbreviate "e w";
+Abbreviate "ent";
+Abbreviate "d a";
+Abbreviate "d b";
+Abbreviate "e n";
+Abbreviate "d f";
+Abbreviate "r a";
+Abbreviate "Harmonic Time-Bind Ritual Symphony";
+Abbreviate "e m";
+Abbreviate "e h";
+Abbreviate "d of";
+Abbreviate "State Street";
+Abbreviate "the";
+Abbreviate " of ";
+Abbreviate "s i";
+Abbreviate "t i";
+Abbreviate "story";
+Abbreviate "are";
+Abbreviate "con";
+Abbreviate "thi";
+Abbreviate "hav";
+Abbreviate "can";
+Abbreviate "tur";
+Abbreviate "Xochi";
+Abbreviate "str";
+Abbreviate "fro";
+Abbreviate "ate";
+Abbreviate "feel";
+Abbreviate "bou";
+Abbreviate "cal";
+Abbreviate "sho";
+Abbreviate "wor";
+Abbreviate "some";
+Abbreviate "will";
+Abbreviate "back";
+Abbreviate " in ";
+Abbreviate "lit";
 
 !============================================================================
 ! Configuration constants
