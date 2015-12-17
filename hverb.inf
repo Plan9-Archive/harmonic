@@ -182,13 +182,13 @@
 	}
 	if(((noun == chaos) && (second == substance)) || ((noun == substance) && (second == chaos))) {
 		atlantis_temple.chaosbind = true;
-		print "^You make the bind, and the Goddess of Chaos winks at you as she merges herself with the material substance of reality. She's been there all the time, of course.^";
+		print "You make the bind, and the Goddess of Chaos winks at you as she merges herself with the material substance of reality. She's been there all the time, of course.^";
 		return true;
 	}
 	if(((noun == storybind) && (second == fortune)) || ((noun == fortune) && (second == storybind))) {
 		fortune.dodge_fate = true;
 		achieved(35);
-		print "^The lens allows you to make the bind, and although there is no overt effect, you feel much less worried about potential plot twists. Things have been so magical this summer, and the feeling that everything is too good to be true, too perfect to last, has sometimes given you a vague unease. That feeling is gone now.^";
+		print "The lens allows you to make the bind, and although there is no overt effect, you feel much less worried about potential plot twists. Things have been so magical this summer, and the feeling that everything is too good to be true, too perfect to last, has sometimes given you a vague unease. That feeling is gone now.^";
 		return true;
 	}
 	"^You attempt the bind of ", (name) noun, " on top of ", (name) second, " but nothing interesting happens...";

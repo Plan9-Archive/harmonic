@@ -308,7 +308,7 @@ Decor	pasta "pasta" pasta_other
 
 Decor	wheel "wheel" cosmic_wheel
 	with
-	name 'firmament' 'harmony' 'spheres' 'creation' 'spacetime' 'universe' 'cosmos' 'galaxy' 'quantum',
+	name 'firmament' 'harmony' 'spheres' 'creation' 'spacetime' 'universe' 'cosmos' 'galaxy' 'galaxies' 'quantum',
 	description "The infinite immensity of the turning wheel of the axis of reality is beyond your capacity to understand or affect.";
 
 Decor	aerator "aerator" cascade_aerator
