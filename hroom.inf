@@ -806,7 +806,12 @@ Room	etown "Northeast edge of town"
 
 Room	ritual_spot "Ritual spot"
 	with
-	description "Past the edge of the city, a short path leads away from the road to a small clearing in a ring of boulders. It feels like a perfect place for performing a ceremony or ritual. The road continues northeast.",
+	description "Past the edge of the city, a short path leads away from the road to a small ring of boulders. It feels like a perfect place for performing a ceremony or ritual. The road continues northeast.",
+	before [;
+		use:
+			if(noun == animal_tarot)
+				"The scene here doesn't quite match the illustration on the box. Further northeast is probably better.";
+	],
 	sw_to etown,
 	ne_to [;
 		if ((player notin lunar_lightning) || (bikeskill < 1))
@@ -819,6 +824,11 @@ Room	ritual_spot "Ritual spot"
 Room	moon_forest "Moon Forest"
 	with
 	description "Tall trees encircle a meadow of silver grasses. The summer moon is out, rising above the trees in the eastern sky.",
+	ne_to [;
+		if ((player notin lunar_lightning) || (bikeskill < 3))
+			"You need to be in ultimate biking condition in addition to riding your bicycle to ride in that direction.";
+		return confluence;
+	],
 	sw_to ritual_spot,
 	cant_go "You would get completely lost if you went that way. The city lies back to the southwest.";
 
@@ -1196,4 +1206,56 @@ Scene	abandoned_apartment "Abandoned apartment"
 		listen: "You hear the calm yet menacing voice of the Green Queen.";
 	],
 	cant_go "The green screen has edited reality, you are stuck in the overlay of a supervillain's lair. The only exit the screen allows is down, to be integrated into the Queen's servers.";
+
+Room	confluence "Confluence"
+	with
+	description "A place of convergence. The road intersects with a larger highway here. A set of railroad tracks angles across the sloping ground and underneath the road, and a slow moving stream flows by at the bottom of the embankment. The stream flows through a gated arch into the hillside.",
+	after [;
+		go:
+			if (self hasnt visited)
+				print "You aren't sure how long you have been biking, but you have arrived in an unfamiliar place. You see a busy highway with heavy truck traffic ahead. Doesn't look too fun for biking. You pause to assess your surroundings, and your eye is drawn in the direction of flowing water which disappears into an intriguing tunnel.^";
+	],
+	sw_to moon_forest,
+	cant_go "You can start the long trip back to Madison to the SW. Or you could investigate the gated tunnel.";
+
+Scene	flow_network "Flow network"
+	with
+	description "You are sliding through a tube, carried along by a stream of water. In every direction, you see tubes and pipes of different sizes, each filled with a different substance. The flow in some looks like different hues of mercury, others are filled with swirls and puffs of colored gasses, and others resemble hourglasses, with orange and purple sands cascading continously through a series of constrictions.",
+	each_turn [;
+		switch(random(5)) {
+		1: print "^Beethoven ";
+		2: print "^Helen of Troy ";
+		3: print "^A half-remembered friend from grade school ";
+		4: print "^A flock of immortal seagulls ";
+		5: print "^A sleek silver robot ";
+		}
+		switch(random(5)) {
+		1: print "is talking to";
+		2: print "is running away from";
+		3: print "is studiously ignoring";
+		4: print "appears briefly, then vanishes and is replaced by";
+		5: print "is locked in a desperate battle for supremacy with";
+		}
+		switch(random(5)) {
+		1: print " a flock of sheep ";
+		2: print " the tenured faculty of MIT ";
+		3: print " a ragtag band of hobos ";
+		4: print " the Marx brothers ";
+		5: print " several cubist sculptures of couples having intercourse ";
+		}
+		switch(random(5)) {
+		1: print "on the summit of Mauna Loa.^";
+		2: print "on the playing fields of Eton.^";
+		3: print "inside a fetid dumpster.^";
+		4: print "beneath a sky with three suns.^";
+		5: print "beside a wise-looking elephant.^";
+		}
+	],
+	before [;
+		wait: "The unpredictable path of the pipe you are riding brings another scene into view.";
+	],
+	cant_go [;
+		print "The slightest effort of motion seems to send you down a previously unseen twist of the pipe, and with a slight splash you find yourself back in a more stable reality.^";
+		playerto(confluence);
+	];
 

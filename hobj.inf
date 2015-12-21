@@ -581,7 +581,7 @@ Prop	school_of_atlantis "School of Atlantis painting"
 	before [;
 		enter: 
 			scholars.speech = 0;
-			print "^With a confident suspension of disbelief, you fix your eye on one of the vanishing points of the four-dimensional perspective of the painting, and walk towards it. Your stomach gives a queasy twist, and with a feeling rather like stepping onto a top stair which is not actually there, you step into the painting.^";
+			print "With a confident suspension of disbelief, you fix your eye on one of the vanishing points of the four-dimensional perspective of the painting, and walk towards it. Your stomach gives a queasy twist, and with a feeling rather like stepping onto a top stair which is not actually there, you step into the painting.^";
 			playerto(atlantean_academy);
 			return true;
 	],
@@ -664,6 +664,28 @@ Prop	story_machine "Story Control Machine" infinite_loop
 			afterlife_antiques.gifts = 1;
 			"Subuniverse triggers to the moment you became the Harmonist.";
 	];
+
+Prop	arched_gate "tunnel into the hillside" confluence
+	with
+	name 'arch' 'gate' 'stream' 'tunnel' 'hill' 'hillside' 'arched' 'water',
+	description "The arch is about six feet tall, a perfect half circle. It and the metal gate are both shaped with the unmistakable curves and corners of Atlantean architecture. You can make out a series of symbols carved above the gate: a pair of glasses, an archer, a bottle, a flower, and a ring.",
+	each_turn [;
+		if ((self has locked) && (mirror_shades has worn) && (ring_of_tales has worn) && (artemis_prints in player) && (soap in player) && (purple_flower in player)) {
+			give self ~locked;
+			print "^A series of tones sound, each symbol above the gate glowing briefly in turn. With a loud metallic click, the gate signals that it has been unlocked.^";
+		}
+	],
+	before [;
+		enter: <<open self>>;
+	],
+	after [;
+		open:
+			achieved(53);
+			print "The stream is slow-moving and shallow. It is refreshingly cold as it swirls around your ankles as you swing the gate open. An indistinct pink glow beckons you forward. On your third step, there is suddenly nothing solid beneath your foot, and you lurch forward, plunging down a sharply angled smooth tube. Sudden exhiliration sweeps over you. An Atlantean waterslide! This should be fun...^";
+			playerto(flow_network);
+			return true;
+	],
+	has openable lockable locked;
 
 Prop	past "Past" loth_backyard
 	with
@@ -961,11 +983,11 @@ object	crown "wire and bead Crown"
 			switch(mendota_lakeside.wizard) {
 				8:	mendota_lakeside.wizard++;
 					startdaemon(crown);
-					"^(A scene from Madcon replays itself in your mind)
+					"(A scene from Madcon replays itself in your mind)
 ^
 ^A beautiful asymmetric life-form, with eggplants growing on stalks on her left side and an extra pair of fungus-legs on her right, pulls you aside as you pass in the hallway. 'Listen,' she whispers, 'the Green Screeners are planning an attack on your central HQ. I don't think you can prevent it on the first loop of the fiction, but once you complete the main framing story and crucial subfictions we will open the Time Vault for you. If you want to create an alternate history then...good luck.'";
 				10:	mendota_lakeside.wizard++;
-					"^(A scene from Madcon replays itself in your mind)
+					"(A scene from Madcon replays itself in your mind)
 ^
 ^You seat yourself for a panel. Someone left a folded up paper on the chair, which you glance at idly before giving it your full attention. 'Attention Moon Computer!' the note begins, 'we thought you might appreciate a list of tasks to complete to open the time vault
 ^
@@ -973,7 +995,7 @@ object	crown "wire and bead Crown"
 ^Creating a harmony inside the moon
 ^Confronting the Queen who leads the Green Screeners'^";
 				12:	mendota_lakeside.wizard++;
-					"^(A scene from Madcon replays itself in your mind)
+					"(A scene from Madcon replays itself in your mind)
 ^
 ^At the big dance party, you are watching an individual in a slinky dress dance. They are waving a glowstick, and you realize they are spelling out letters in a message to you. 
 ^
