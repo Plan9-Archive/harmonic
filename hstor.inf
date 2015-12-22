@@ -872,3 +872,30 @@
 ^There might be a perfect moment in the years you lose";
 ];
 
+[ Ouroborous_storyline;
+	flow_network.ouroborous = 1;
+	achieved(54);
+	print "The Ring of Tales comes to life as the bind happens. The snake swallows itself completely, consuming the multiverse and turning it inside out in the process. Parvati and Shiva dance a passionate tango and the transfinite web of universes is the jewelry and bells on their waists and ankles. You remember when you were younger, just a random cloud of atoms rotating around the sun. If you play piano quietly while leaning to one side, it feels a lot like it did back when you were just orbiting endlessly in deep space. The cycle of births and deaths is like riding a slide on a playground over and over. The climb up, the moment of uncertainty, and the sudden dizzy drop.
+^
+^A familiar whistle by your ear. The Large Cardinal greets you with a friendly lemma. It is perched on Alef's shoulder. Next to them is a 17-dimensional chipmunk - Chip in his native form.^";
+	if (loth_greatroom.lothstaci < 3) {
+		deadflag = 2;
+		"^Your friends say in unison 'Congratulations! You found the secret ending!' Chip explains, 'You made it all the way to here in the game, and you never actually started your relationship with Staci. My opinion is, you must be a monogamous wanna-be girlfriend who is jealous. Of course, you can play the game how you want, I'm not judging! Still, knowing what I know from the Moon Computer in other universes...you've missed out. That's all I have to say.'";
+	}
+	print "^As you are greeting your friends. your words are lost in a whooshing sound effect, and you catch a glimpse of a familiar blue box before the time rift closes. 'Hi, sorry, I'm a little behind schedule,' Staci announces. You think about asking how that can happen to a time travel machine, but you are too busy hugging her happily.
+^
+^'I was up really late last century,' Staci says, looking a little bleary, 'I remember I'm meeting you here but I forget when this is. Have we finished writing the game in your continuity?'
+^
+^'We're in the final scene now, the Oroborous bind. We still need to write character dialog and scenes at the castle, polish and test a lot, but no story is ever truly finished, right?'
+^
+^While Staci and you have been talking, Chip and the Cardinal and Alef have been working together, song-paint-proving a crystalline matrix of almost-paradoxical assertions. Their equations take the form of musical notes written on the staves of spacetime. The head of each note is a different arcane symbol. The Cardinal sings, and the theorem of the Identity of Protagonist and Author shifts your frame of reference...
+^
+^(22 December 2015 - in your home)
+^
+^Staci is about to wake up, and then you will show her your draft of the final scene. You anticipate the conversation. 'So, we set up the paradoxical realization; you as the player of the game have won by creating a strange loop. Your goal as the protagonist is to have the experiences that lead up to the creation of the game. You had the delusion that you were a character in a game, and your purpose as a character was to fight for the Loonie Revolution by bringing fiction into reality.' 
+^
+^Staci stares at the screen, and sees the next line of dialog is hers. She reads it aloud. 'So, the way you win the game is by creating the fiction of bringing fiction into reality, by making the game that you perceived yourself as a character within, the goal of which was to create that game? And by doing so, you make the fiction real, transform delusion into truth?'
+^
+^'I couldn't have said it better myself,' you answer, 'thanks for letting me be a character in your story.'^^";
+	getenter();
+];

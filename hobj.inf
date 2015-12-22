@@ -741,6 +741,18 @@ Prop	storybind "Story"
 	],
 	has proper;
 
+Prop	thebeginning "Beginning" flow_network
+	with
+	name 'beginning' 'begin' 'start' 'origin',
+	description "The start of the story is here, the promising birth of dreams, overflowing with potential.",
+	has proper;
+
+Prop	theend "End" flow_network
+	with
+	name 'end' 'ending' 'finish' 'conclusion',
+	description "The conclusion of the tale is here, the end of the journey, bathed in calm autumn twilight.",
+	has proper;
+
 !============================================================================
 ! The takeable objects
 

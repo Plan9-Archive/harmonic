@@ -56,7 +56,7 @@ Room	home "Inside my house"
 	],
 	initial [;
 		if (self hasnt visited)
-			print "(Read >help first and >content for the warning label. Get a >hint anytime.)
+			print "(Please read >help and >content. Check >goals or get a >hint anytime.)
 ^(1 April 2013 - 30 months earlier)
 ^
 ^After working obsessively since the New Year, you are finally ready to officially announce and release your software. You feel tense yet eager anticipation for the reaction from other Plan 9 users. When you are ready to unleash the Advanced Namespace Tools on the world, >release ANTS.^";
@@ -1220,6 +1220,7 @@ Room	confluence "Confluence"
 
 Scene	flow_network "Flow network"
 	with
+	ouroborous 0,
 	description "You are sliding through a tube, carried along by a stream of water. In every direction, you see tubes and pipes of different sizes, each filled with a different substance. The flow in some looks like different hues of mercury, others are filled with swirls and puffs of colored gasses, and others resemble hourglasses, with orange and purple sands cascading continously through a series of constrictions.",
 	each_turn [;
 		switch(random(9)) {
