@@ -354,8 +354,6 @@
 		"Your goal is to go to Coffee Lion and talk to Xelia.";
 	if (introgoal < 4)
 		"Your goal is to go to the basement of your home and bind fiction reality.";
-	if (elginbday < 2)
-		print "You'd like to wander around to visit new places.^";
 	if (xochi.email < 7)
 		print "You think you can develop your friendship with Xochi more.^";
 	if (eside_hq.metjay == 0)
@@ -376,6 +374,8 @@
 		print "Maybe Xochi has emailed you again.^";
 	if (xochi.email == 6)
 		print "You are looking forward to talking to Xochi again.^";
+	if (elginbday < 2)
+		"You'd like to wander around to visit new places.^";
 	if ((elginbday == 2) && (lunar_lightning.bought == 0))
 		"You need to go to Turning Wheel cycles and buy a bicycle.^";
 	if (elginbday == 2)
@@ -384,11 +384,79 @@
 		"You are hoping Staci has emailed you, go home and >use terminal.^";
 	if (elginbday == 5)
 		"You are excited to bike west to downtown, then north and west to reach Lothlorien co-op to see Staci.^";
-	print "(Additional goals under development)^";
+	if (elginbday < 8)
+		"Your goal is to bind future and past then go down to the dock.^";
+	if (elginbday < 10)
+		"Your goal is to go home and use your terminal, then >visit staci.^";
+	if (madcon.timetrav == 1)
+		print "The multiverse authors convention is open NE of the Capitol square.^";
+	if (loth_greatroom.lothstaci == 1)
+		print "Staci is waiting for you out on the porch, north of the Loth greatroom.^";
+
+	if (eside_hq.fictour == 1)
+		print "A visit to he 24-hour restaurant is on your agenda.^";
+	if (astral_enchantments.ceremony == 0)
+		print "There is probably something special waiting for you in Astral Enchantments.^";
+	if (afterlife_antiques.gifts == 1)
+		print "Intuition tells you to stop in to the Afterlife.^";
+	if (fortune notin turning_wheel)
+		print "Turning Wheel cycles probably has something new worth checking out.^";
+	if (loth_greatroom.lothstaci == 2)
+		print "You are eager to follow Staci upstairs to her room in Lothlorien.^";
+	if ((madcon.timetrav < 6) && (madcon.timetrav > 1))
+		print "You need to follow Lily. She was heading to the stores by State Street.^";
+	if (madcon.timetrav == 6)
+		print "Staci said she was going to be hanging out on the dock.^";
+	if (madcon.timetrav == 7)
+		print "You should head to your home to prepare for your guests.^";
+	if (madcon.timetrav == 8)
+		print "Madcon is happening NE of the Capitol square.^";
+	if (mendota_lakeside.wizard == 1)
+		print "Some more time at Lothlorien co-op sounds good to you.^";
+	if (mendota_lakeside.wizard == 2)
+		print "You want to visit a location from your past, west from State Street, for the 20 year time-bind.^";
+	if (mendota_lakeside.wizard == 3)
+		print "You are expected to perform with Staci at Nottingham co-op, NE from the Mendota lakeside neighborhood.^";
+	if (mendota_lakeside.wizard == 4)
+		print "You want to go for a bike ride out into the countryside. You can get there going southeast from the southern part of Monona drive, or southwest from Miffyland.^";
+	if (mendota_lakeside.wizard == 5)
+		print "You want to sing your song about the Last Full Moon for your friends, at Lothlorien.^";
+	if (mendota_lakeside.wizard == 6)
+		print "To prepare for the Tarot party at Loth, >wear wheel.^";
+	if (mendota_lakeside.wizard == 7)
+		print "You are expected to meet Staci out at the 24-hour restaurant.^";
+	if (mendota_lakeside.wizard < 8)
+		return true;
+	if (eside_hq.fictour == 2)
+		print "You want to visit the 24-hour restaurant.^";
+	if (fortune.dodge_fate == false) {
+		if (storybind notin moon_forest)
+			print "You want to try using the animal tarot deck from Afterlife in the Moon Forest northeast of town.^";
+		if (fortune notin turning_wheel)
+			print "You feel like you need to accomplish something in Turning Wheel cycles.^";
+		if ((storybind in moon_forest) && (fortune in turning_wheel))
+			print "You'd like to try using the remote lens to bind fortune and story together.^";
+	}
+	if (green_porch in miffyland)
+		print "You need to go to Miffyland and investigate the green porch.^";
+	if ((time_vault has open) && (mendota_lakeside.wizard < 99))
+		print "You need to go to Lady Wisdom's, get the items inside the safe, and use them at James Madison park.^";
+	if (coffee_lion.alchemy == 1)
+		print "You haven't been to Coffee Lion in awhile.^";
+	if (willy_coop.oldtest == 1)
+		print "It might be interesting to visit the Willy grocery co-op.^";
+	if (essentially_art.seminar == 1)
+		print "You have a feeling something is going on at Essentially Art.^";
+	if (lost_in_grid.battle == 1)
+		print "The new grid hardware has been delivered, you should go to the basement of your home to set it up.^";
+	if (lunar_lightning.explore < 9)
+		print "You might need more bike skill, but there are still more places to >explore.^";
+	if (loth_greatroom.lothstaci < 9)
+		print "You may need to complete more of the story, but there are still new scenes to see if you >visit staci.^";
 ];
 
 [ Helpsub;
-	"If you are new to Interactive Fiction, move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). A guide: http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
+	"Move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). An intro/guide: http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
 ^
 ^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. You can come up with ideas for what to do next if you >think. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. The >expert command makes the puzzles and story progression more challenging. >standard will return the game to normal difficulty. >verblist will show all verbs needed to score all points.^";
 ];

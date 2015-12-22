@@ -1222,33 +1222,49 @@ Scene	flow_network "Flow network"
 	with
 	description "You are sliding through a tube, carried along by a stream of water. In every direction, you see tubes and pipes of different sizes, each filled with a different substance. The flow in some looks like different hues of mercury, others are filled with swirls and puffs of colored gasses, and others resemble hourglasses, with orange and purple sands cascading continously through a series of constrictions.",
 	each_turn [;
-		switch(random(5)) {
+		switch(random(9)) {
 		1: print "^Beethoven ";
 		2: print "^Helen of Troy ";
 		3: print "^A half-remembered friend from grade school ";
 		4: print "^A flock of immortal seagulls ";
 		5: print "^A sleek silver robot ";
+		6: print "^The multiverse's most talented juggler ";
+		7: print "^A minor deity of a forgotten religion ";
+		8: print "^Glenda ";
+		9: print "^A bloodshot flying eyeball ";
 		}
-		switch(random(5)) {
+		switch(random(9)) {
 		1: print "is talking to";
 		2: print "is running away from";
 		3: print "is studiously ignoring";
 		4: print "appears briefly, then vanishes and is replaced by";
 		5: print "is locked in a desperate battle for supremacy with";
+		6: print "doesn't even notice";
+		7: print "appears embarassed by the odor of";
+		8: print "can't seem to decide what to do about";
+		9: print "calls out a greeting to";
 		}
-		switch(random(5)) {
+		switch(random(9)) {
 		1: print " a flock of sheep ";
 		2: print " the tenured faculty of MIT ";
 		3: print " a ragtag band of hobos ";
 		4: print " the Marx brothers ";
 		5: print " several cubist sculptures of couples having intercourse ";
+		6: print " a party of armored adventurers ";
+		7: print " a smiling cloud of mist ";
+		8: print " three monks in crimson robes ";
+		9: print " the guests at a masquerade ball ";
 		}
-		switch(random(5)) {
+		switch(random(9)) {
 		1: print "on the summit of Mauna Loa.^";
 		2: print "on the playing fields of Eton.^";
 		3: print "inside a fetid dumpster.^";
 		4: print "beneath a sky with three suns.^";
 		5: print "beside a wise-looking elephant.^";
+		6: print "standing on blue sand.^";
+		7: print "between two pillars covered in Atlantean hieroglyphs.^";
+		8: print "on the deck of a wooden sailing ship.^";
+		9: print "in the courtyard of Valhalla.^";
 		}
 	],
 	before [;
