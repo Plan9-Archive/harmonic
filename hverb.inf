@@ -343,10 +343,54 @@
 	};
 ];
 
+[ Goalssub;
+	if (home.antsreleased == 0)
+		"Your goal is to >release ants.";
+	if (introgoal < 1)
+		"Your goal is to go to the Coffee Lion cafe south of your home.";
+	if (introgoal < 2)
+		"Your goal is to go to the 24 hour restaurant northeast of your home.";
+	if (introgoal < 3)
+		"Your goal is to go to Coffee Lion and talk to Xelia.";
+	if (introgoal < 4)
+		"Your goal is to go to the basement of your home and bind fiction reality.";
+	if (elginbday < 2)
+		print "You'd like to wander around to visit new places.^";
+	if (xochi.email < 7)
+		print "You think you can develop your friendship with Xochi more.^";
+	if (eside_hq.metjay == 0)
+		print "Visiting the 24-hour restaurant seems like a good idea.^";
+	if (willy_coop.singing == 0)
+		print "Visiting the Willy street food co-op seems worth doing.^";
+	if (elginbday == 0)
+		print "Checking out Lady Wisdom's coffeeshop is on your mind.^";
+	if (xochi.email == 1)
+		print "You'd like to check your email by using your terminal.^";
+	if (xochi.email == 2)
+		print "Xochi's email has inspired you to play your piano.^";
+	if (xochi.email == 3)
+		print "If you are near your piano, you could probably bind schumann self.^";
+	if (xochi.email == 4)
+		print "You'd like to talk to Xochi.^";
+	if (xochi.email == 5)
+		print "Maybe Xochi has emailed you again.^";
+	if (xochi.email == 6)
+		print "You are looking forward to talking to Xochi again.^";
+	if ((elginbday == 2) && (lunar_lightning.bought == 0))
+		"You need to go to Turning Wheel cycles and buy a bicycle.^";
+	if (elginbday == 2)
+		"You need to ride your bike to Rossini's pizza, further south on Monona drive past Coffee Lion.";
+	if (elginbday == 4)
+		"You are hoping Staci has emailed you, go home and >use terminal.^";
+	if (elginbday == 5)
+		"You are excited to bike west to downtown, then north and west to reach Lothlorien co-op to see Staci.^";
+	print "(Additional goals under development)^";
+];
+
 [ Helpsub;
 	"If you are new to Interactive Fiction, move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). A guide: http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
 ^
-^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. The >expert command makes the puzzles and story progression more challenging. >standard will return the game to normal difficulty. >verblist will show all verbs needed to score all points.^";
+^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. You can come up with ideas for what to do next if you >think. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. The >expert command makes the puzzles and story progression more challenging. >standard will return the game to normal difficulty. >verblist will show all verbs needed to score all points.^";
 ];
 
 [ Hintsub;
@@ -743,6 +787,7 @@ Verb "exits" *	-> Exits;
 Verb "expert" *	-> Expert;
 Verb "explore" *	-> Explore;
 Verb "footnote" * number	-> Footnote;
+Verb "goals" *	-> Goals;
 Verb "help" *	-> Help;
 Verb "hint" *	-> Hint
 	* noun	-> Hint;

@@ -177,7 +177,8 @@ Object  LibraryMessages
 	Swim:   "The Madison lakes are beautiful to look at, and some people have the immune system required to cope with algae and bacteria, but you prefer to sit on the shore and watch the chromatic flickering of the ripples.";
 	Swing:	"You'd like to be a real swinger, but I guess they are calling it 'polyamory' nowadays.";
 	Taste:	"Everything tastes delicious, with a slight undertone of ginger and fresh basil.";
-	Think:	"Your mind feels like a colossal cavern, filled with wonders. You explore and find a few valuable thoughts you place in your mind's treasure display case.";
+	Think:	goalssub();
+			return true;
 	Wait:	"You feel yourself traveling through spacetime at the speed of light.";
 	Wake:	"You would rather stay within this infinitely fascinating dream we are dreaming together.";
 	Miscellany:

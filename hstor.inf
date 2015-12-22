@@ -440,12 +440,12 @@
 ^
 ^Now that you've saved the castle, the summer will never end. Somewhere in the 17th dimension, a chipmunk is always playing your game, laughing at your foolish adventures and wondering how much was really true. 'More than you think,' you smile to yourself as you hop on your bike. It feels like it's going to be another amazing day. Staci said she's looking forward to seeing you.
 ^
-^(Post-game secrets and extras are now available. The Story Control Machine at Infinite Loop is fully functional.)^";
+^(Post-game secrets and extras are now available. The Story Control Machine at Infinite Loop is fully functional. The way upward from the lakeshore path is open. Your biking skill has increased.)^";
 ];
 
 [ Jaymeet_storyline;
 	eventcount++;
-	self.metjay = 1;
+	eside_hq.metjay = 1;
 	achieved(11);
 	print "You step into the restaurant and get a table. During the graveyard shift, the waitstaff are often friendly and interesting people who are bored enough to be curious about whatever conversation you make. Filled with a sense of purpose, you tell your story to your server, Jay. He seems fascinated, and says he supports the cause of fighting unfairness in society and empathizes with your grievance with JCN. He tells you some of his own life story, how he had been raised in a restrictive, cult-like religion from which he had recently broken free. You have made a new friend and ally.^";
 	if (commentary == true)

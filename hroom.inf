@@ -1255,7 +1255,7 @@ Scene	flow_network "Flow network"
 		wait: "The unpredictable path of the pipe you are riding brings another scene into view.";
 	],
 	cant_go [;
-		print "The slightest effort of motion seems to send you down a previously unseen twist of the pipe, and with a slight splash you find yourself back in a more stable reality.^";
+		print "The slightest attempt at controlling your motion motion sends you down a previously unseen twist of the pipe, and with a splash you find yourself back in a more stable reality.^";
 		playerto(confluence);
 	];
 
