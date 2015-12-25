@@ -890,12 +890,26 @@
 ^
 ^While Staci and you have been talking, Chip and the Cardinal and Alef have been working together, song-paint-proving a crystalline matrix of almost-paradoxical assertions. Their equations take the form of musical notes written on the staves of spacetime. The head of each note is a different arcane symbol. The Cardinal sings, and the theorem of the Identity of Protagonist and Author shifts your frame of reference...
 ^
-^(22 December 2015 - in your home)
+^(23 December 2015 - in your home)
 ^
-^Staci is about to wake up, and then you will show her your draft of the final scene. You anticipate the conversation. 'So, we set up the paradoxical realization; you as the player of the game have won by creating a strange loop. Your goal as the protagonist is to have the experiences that lead up to the creation of the game. You had the delusion that you were a character in a game, and your purpose as a character was to fight for the Loonie Revolution by bringing fiction into reality.' 
+^Staci is about to join you, and then you will show her your draft of the final scene. You anticipate the conversation. 'So, we set up the paradoxical realization: the player has created a strange loop. Your goal as the protagonist is to have the experiences that lead up to the creation of the game. You had the delusion that you were a character, and your purpose was to fight for the Loonie Revolution by bringing fiction into reality. You win by creating the fiction of bringing fiction into reality, by making the game that you perceived yourself as within, the goal of which was to create that game. And by doing so, you make the fiction real, transform delusion into truth.'
 ^
-^Staci stares at the screen, and sees the next line of dialog is hers. She reads it aloud. 'So, the way you win the game is by creating the fiction of bringing fiction into reality, by making the game that you perceived yourself as a character within, the goal of which was to create that game? And by doing so, you make the fiction real, transform delusion into truth?'
+^Staci stares at the screen, and writes the next lines of dialog. She says the scene is cool, and the two of you discuss the weird mobius-boundaries writing the game has created. Your initial draft of the scene, written the day before, had split the above paragraph in half and attributed it to Staci, with the hope she would read it aloud and merge the fiction into reality voluntarily. In reality, she woke up and found news of another delay in re-opening the Castle. You feel a multiverse-split, and blame your own scene-writing for collapsing the wave function poorly. The Large Cardinal would tell you that you aren't allowed to pre-write your own top-level script from within a subfiction.
 ^
-^'I couldn't have said it better myself,' you answer, 'thanks for letting me be a character in your story.'^^";
+^Your story of joy was written in continuous pain. Maybe the player should know that. In mid-2015 you were diagnosed with Atlantoaxial instability, progressive damage to the upper spine, caused by rheumatoid arthritis, and while writing the game, constant burning pain was a contrast to the memories of two years before. You can't ride your bike any more and need to spend most of your time laying back with your head supported.
+^
+^So? Beethoven went deaf, Schumann died in an asylum, Mozart and Schubert both died younger than you are. You've gotten all you could have dreamed of from life, just in that one summer. You've been incredibly lucky. So your luck didn't hold - it never does. You knew at the time that regression to the mean was more likely than your wildest fantasy-delusions. The simulations always showed there was less than 1-in-7 chance of succeeding. Besides, your local consciousness isn't the end of the story. The person reading the book probably has their finger back at the decision point, and if this path leads to a bad end, they can just try turning to a different page.^^";
 	getenter();
+	print "(By the campfire, on the shore of the lake)
+^
+^The Storyteller finishes his tale, and the circle of friends is silent for a moment, watching the dancing flames. Someone takes a drink of the bottle, and the silence is broken:
+^
+^'Pass that over here. I love that story, at night when I hear a bicycle go by, I think maybe its the Harmonist, biking around the city in runic patterns with crystals in his pocket, writing some new songs.'
+^
+^'-but that was hundreds of years ago, you don't think he actually could time travel-'
+^
+^'Depends, don't you think Schumann time-traveled to 2013 to meet Xochi? The code of the Moon Computer is in the songs and game of the Harmonic Time-Bind Ritual Symphony, so maybe someone is fiction-binding that identity to themself. Music and language can fold time and transcend individuality.'
+^
+^The circle around the fire is quiet for a moment, and then a new Tale begins.^";
+	playerto(andrews_cabin);
 ];
