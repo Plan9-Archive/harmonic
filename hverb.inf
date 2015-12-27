@@ -151,6 +151,7 @@
 	52: "wearing the Ring of Tales";
 	53: "opening the confluence gate";
 	54: "binding beginning and end";
+	55: "being at home in the sky";
 	}
 ];
 
@@ -382,27 +383,27 @@
 	if (xochi.email == 6)
 		print "You are looking forward to talking to Xochi again.^";
 	if (elginbday < 2)
-		"You'd like to wander around to visit new places.^";
+		"You'd like to wander around to visit new places.";
 	if ((elginbday == 2) && (lunar_lightning.bought == 0))
-		"You need to go to Turning Wheel cycles and buy a bicycle.^";
+		"You need to go to Turning Wheel cycles and buy a bicycle.";
 	if (elginbday == 2)
 		"You need to ride your bike to Rossini's pizza, further south on Monona drive past Coffee Lion.";
 	if (elginbday == 4)
-		"You are hoping Staci has emailed you, go home and >use terminal.^";
+		"You are hoping Staci has emailed you, go home and >use terminal.";
 	if (elginbday == 5)
 		"You are excited to bike west to downtown, then north and west to reach Lothlorien co-op to see Staci.^";
 	if (elginbday < 8)
 		"Your goal is to bind future and past then go down to the dock.^";
 	if (elginbday < 10)
-		"Your goal is to go home and use your terminal, then >visit staci.^";
+		"Your goal is to go home and use your terminal, then >visit staci.";
 	if (madcon.timetrav == 1)
 		print "The multiverse authors convention is open NE of the Capitol square.^";
 	if (loth_greatroom.lothstaci == 1)
 		print "Staci is waiting for you out on the porch, north of the Loth greatroom.^";
 
 	if (eside_hq.fictour == 1)
-		print "A visit to he 24-hour restaurant is on your agenda.^";
-	if (astral_enchantments.ceremony == 0)
+		print "A visit to the 24-hour restaurant is on your agenda.^";
+	if (astral_enchantments.ceremony == 1)
 		print "There is probably something special waiting for you in Astral Enchantments.^";
 	if (afterlife_antiques.gifts == 1)
 		print "Intuition tells you to stop in to the Afterlife.^";
@@ -458,6 +459,8 @@
 		print "The new grid hardware has been delivered, you should go to the basement of your home to set it up.^";
 	if (lunar_lightning.explore < 9)
 		print "You might need more bike skill, but there are still more places to >explore.^";
+	if (piano.playcount < 9)
+		print "You might need to have more experiences, but there are still more songs to compose if you >play piano.^";
 	if (loth_greatroom.lothstaci < 9)
 		print "You may need to complete more of the story, but there are still new scenes to see if you >visit staci.^";
 ];
@@ -584,7 +587,7 @@
 		"Go to the Late Night restaurant ne of your home.";
 	if (mendota_lakeside.wizard < 99)
 		"To save the co-op, you need to follow the Xochi storyline through at least >bind schumann self (use the story control machine in Infinite Loop to control which barista is working), complete fictional scenes in Turning Wheel, Astral Enchantments, two in the Late Night restaurant, buy and take the tarot deck from the Afterlife, go to Moon Forest and >use tarot, >drop remote, go to Turning Wheel and >bind fortune story. Go to miffyland and >examine porch to confront the Queen. Complete her scene and go to Lady Wisdom's to get the items you need. Go to James Madison park, put the balloon in the catapult, and >release catapult.";	
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. Don't forget to get on your bike and >explore. Its often a good time to >visit staci. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 765 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. Don't forget to get on your bike and >explore. Its often a good time to >visit staci. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 774 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;

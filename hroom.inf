@@ -238,6 +238,8 @@ Room	willy_coop "Willy St. Grocery Co-op"
 	],
 	before [;
 		take:
+			if (soap in player)
+				"You already have the soap.";
 			if ((noun == food) || (noun == soap))
 				"You need to buy that instead.";
 		buy: 

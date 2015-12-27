@@ -362,6 +362,26 @@ Decor colorbeams "beams of color" inside_moon
 	description "You can't see what creates the beams of light criss-crossing the vast interior space. They are gorgeous, rich-hued and soft-edged. The changing distortions and magnifications that continuously alter their mesh remind you of a slow-motion film of a reflection in rippling water. You can examine the colors individually.",
 	has pluralname;
 
+Decor loth_art "artwork"
+	with
+	name 'art' 'artwork' 'artworks' 'wall' 'walls' 'picture' 'pictures' 'graffiti' 'painting' 'paintings',
+	count 0,
+	description [;
+		print "You inspect one of the many artworks here and see ";
+		switch(random(9)) {
+		1: "a circular piece of glass with concentric rings of different colors.";
+		2: "the words 'Art is Communication.'";
+		3: "a pair of disembodied eyes with cat-pupils staring at you.";
+		4: "a purple flower painted directly on the wall.";
+		5: "a wild and muddy swirl of disorganized brushstrokes on a piece of wood.";
+		6: "a pencil sketch of a young girl with wide eyes and delicate mechanical arms.";
+		7: "a photograph of an old blue pickup truck with 'fuck capitalism' stencilled on the side in black spray paint.";
+		8: "a sculpture of a goat or mule made of old nails.";
+		9: "a poster of the band KISS with the faces replaced by those of Foucault, Derrida, Guattari, and Maya Angelou.";
+		}
+	],
+	found_in loth_greatroom loth_upstairs;
+
 !============================================================================
 ! The immobile prop objects
 
@@ -681,7 +701,7 @@ Prop	arched_gate "tunnel into the hillside" confluence
 	after [;
 		open:
 			achieved(53);
-			print "The stream is slow-moving and shallow. It is refreshingly cold as it swirls around your ankles as you swing the gate open. An indistinct pink glow beckons you forward. On your third step, there is suddenly nothing solid beneath your foot, and you lurch forward, plunging down a sharply angled smooth tube. Sudden exhiliration sweeps over you. An Atlantean waterslide! This should be fun...^";
+			print "The stream is slow-moving and shallow. It is refreshingly cold as it swirls around your ankles as you swing the gate open. An indistinct pink glow beckons you forward. On your third step, there is suddenly nothing solid beneath your foot, and you lurch forward, plunging down a sharply angled smooth tube. Abrupt exhiliration sweeps over you. An Atlantean waterslide! This should be fun...^";
 			playerto(flow_network);
 			return true;
 	],
@@ -1005,15 +1025,15 @@ object	crown "wire and bead Crown"
 ^
 ^Five binds in your namespace
 ^Creating a harmony inside the moon
-^Confronting the Queen who leads the Green Screeners'^";
+^Confronting the Queen who leads the Green Screeners'";
 				12:	mendota_lakeside.wizard++;
 					"(A scene from Madcon replays itself in your mind)
 ^
 ^At the big dance party, you are watching an individual in a slinky dress dance. They are waving a glowstick, and you realize they are spelling out letters in a message to you. 
 ^
-^U S E T H E C A T A P U L T A T J A M E S M A D I S O N^";
+^U S E T H E C A T A P U L T A T J A M E S M A D I S O N";
 				14: mendota_lakeside.wizard++;
-					"^(A scene from Madcon replays itself in your mind)
+					"(A scene from Madcon replays itself in your mind)
 ^
 ^At a small party in a hotel room, someone is whispering to you from behind. 'Don't turn around. The Queen of the Green Screen is the leader of a powerful group of Editors. They have been active in your universe for a long time. They control reality using cheap illusions to make it seem less magical and interesting than it really is, because then they get to be the stars and put everyone else into minor roles in the background. You will need to disrupt her illusions. She is using an empty apartment in Miffyland as her base of operations.'";
 				default: "There is no new information available from the crown right now.";
@@ -1121,6 +1141,25 @@ object	victory
 ^East side HQ of the revolution
 ^Rockin space pancakes are an institution
 ^The late-night rites in our Loonie constitution";
+			se_trail: "^During the early-mid summer, on one of your first rides of the season around the Monona lake loop, you started writing a song about how your pants were falling off:
+^
+^Half Moon, my belt is too loose
+^Half Moon, my mind ain't too tight
+^Everything's going right since I left
+^My worries behind, tried to unwind
+^Each thread I might find thats a-frayed
+^Thought we could weave a better braid";
+			sw_trail: "^It feels like a good time to revisit some of your favorite trails from a previous lifetime of riding. You head west on the trail through the south greenbelt, passing Dunn's marsh and arriving at a high bridge. Years ago, it was railroad tracks and you used to creep across it with a sense of nervous excitement. Now, it's a paved cycle trail and it feels like your pedaling has propelled you from past to future. You wander the west side in a long, lazy loop of nostalgia before returning to the southwest trail.";
+			countryside: achieved(55);
+						"^The stars are liquid in the night. You have been watching them all summer, and now the constellations are a familiar landscape. You are on a new, unfamiliar branch of the trail, but looking up, you know where you are. You feel at home in the sky.";
+			loth_backyard: "^Late spring, you are sitting in the sunlight on the hillside by Loth, watching Lily play. She comes over to you. 'Magic' she says, and opens her hand above your head. Tiny blue flower petals cascade over you.
+^
+^Blue dream and a familiar beat
+^Golden gleam green leaves wooden seat
+^Hand outstretched amidst white flowers
+^Memory fetched by arcing bowers
+^Learning secrets of sparking powers
+^Warm breeze brought by blue May showers";
 		}
 	];
 
