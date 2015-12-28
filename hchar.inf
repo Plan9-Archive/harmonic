@@ -391,3 +391,49 @@ Character	queen "Queen of the Green Screen" abandoned_apartment
 	daemon "^The Queen is waiting for you downstairs, expecting you to become a slave process to her servers.",
 	has female;
 
+Character	lily "Lily"
+	with
+	name 'lily',
+	description "Lily is six years old, with long wavy brown hair.",
+	daemon [;
+		movechar();
+	],
+	has female;
+
+Character	nook "Nook"
+	with
+	name 'nook',
+	description "Nook is compact but built of indestructible volcanic rock. Alert eyes watch the world amidst a shag of hair and beard.",
+	daemon [;
+		movechar();
+	],
+	has male;
+
+object	thescholar "Scholar"
+	with
+	article "the",
+	name 'scholar',
+	description "Young, tall, and skinny, the scholar keeps a smile on his face while he speaks.",
+	daemon [;
+		movechar();
+	],
+	has male animate;
+
+object	thewizard "Wizard"
+	with
+	article "the",
+	name 'wizard',
+	description "The Wizard's penetrating eyes and immense red beard attest to his attainments in the mystic arts.",
+	daemon [;
+		movechar();
+	],
+	has male animate;
+
+Character	whirlwind "Whirlwind"
+	with
+	name 'whirlwind',
+	description "Pale and delicate enough to seem almost sylph-like physically, Whirlwind is animated by a quicksilver mind and mercurial temperament.",
+	daemon [;
+		movechar();
+	],
+	has female;

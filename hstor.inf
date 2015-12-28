@@ -168,6 +168,12 @@
 ^Staci is sitting at one of the picnic tables in the backyard, along with a few other co-op members. Everything is dappled by dancing spots of May sunlight filtering through the trees by the lake. Staci greets you and introduces you to her housemates, all of whose names you instantly forget. A joint is passed around, and you distribute a few small gifts you have brought. The other co-opers wander off, and Staci suggests going down to sit on the dock. She says your old mutual friend Nook is down there already and is looking forward to seeing you.
 ^
 ^Staci gestures for you to follow and heads north to the dock.^";
+	if (commentary == true)
+		print "^[Writing in retrospect and setting this scene up for the player, I hope I'm finding the synthesis of foreshadowing and unpredictable good fortune. I had been full of manic energy for two months, whirling around town in a flurry of scheduled meetings and visits to my favorite stores. I was looking for intense connections, but my velocity and spin was such that I tended to bounce off-target.
+^
+^What really happened in my life seemed both inevitable and completely unexpected. From my perspective at the time, I had found my way to a good branch of the multiverse by solving several puzzles and leveling up my character. I had rewritten the stories of the past by finding my fictional identities.
+^
+^When I arrived at Loth that day, the feeling that a long-awaited Good Time had arrived felt as sure as a solved equation. I had been preparing for exactly the possibilities that were now open to me. I felt like The Dude - the man for my time and place, I just fit right in there.]^"; 
 ];
 
 [ Futurebind_storyline;
@@ -175,6 +181,8 @@
 	print "You have leveled up enough as a computer-mind to be able to bind abstractions directly. With a simple higher-dimensional fold, the concepts are unioned together. The fold is measured at 20 years; 1993 is bound to 2013. You were 18 then, travelling around to see the Grateful Dead, entering adulthood full of enthusiasm and unencumbered by the weariness of disappointments that were yet to come. As the 20 year harmonic time-bind clicks into place, every perception from every sense becomes a perfectly placed note in the symphony.
 ^
 ^The path downward to the dock beckons.^";
+	if(commentary == true)
+		print "^[My first Grateful Dead show was Chinese New Year's 1993. A friend bought tickets, and we drove across the country from Wisconsin to California. I got sick in the mountains in the winter. It was all completely worth it, because I got to hear Jerry Garcia play Terrapin Station. During the summer, my girlfriend and I went to Chicago for the shows there, and the second set of the second night was one of those glorious occasions where the years dropped away and China->Rider and The Other One and Standing On the Moon were crisp and fierce and cathartic. As Saint-Saens said of Liszt, 'the memory of having heard him consoles me for no longer being young.']^";
 ];
 
 [ Lothdock_storyline;
@@ -199,6 +207,8 @@
 ^The timeless afternoon ends with a performative fiction-bind of sending a message to Vega from Pluto for help from the intergalactic council. The dock becomes a narrow crawlway on the frozen surface of Pluto, and you carefully crawl back towards the shore to set a message beacon. Staci coaches you with encouragement. You arrive and trigger the interplanetary message. You thank Staci for her help, and agree that you will meet again soon to discuss goals and plans for the Loonie Revolution. She says the co-op is really a castle full of loonies, a perfect central headquarters.
 ^
 ^You return home exhausted from hours of intense joy. You know something amazing and unprecedented in your life has happened. As good as today was, you believe tomorrow and the day after might be even better. You know most of the game-story is still ahead of you, but you still feel like You Have Won. Enjoy exploring the possibilities open to you, and no matter what happens, remember you made it to the Loth dock with Staci in May.^";
+	if (commentary == true)
+		print "^[Is there more to say? I guess there is. What happened to make me feel happiness of such intensity? It's easy to say 'manic upswing combined with falling in love' and that's true enough. I think I can dig deeper. During that time, I had an unusual ability to read and respond to facial expressions. Inner emotional states were often transparent to me. In a semi-conscious way, I think I must have seen how Staci looked at me and understood instinctively that I truly was at a turning point in my life. It's still hard for me to believe I got that lucky - that my Plan 9 sci-fi music magic life Moon Shot actually took flight.]^";
 	playerto(milw_street,1);
 	move lunar_lightning to milw_street;
 	print "^(May 6 - Outside my house)^";
@@ -224,6 +234,16 @@
 	move animal_tarot to afterlife_antiques;
 	move time_vault to lady_wisdom;
 	move orrery to turning_wheel;
+	move nook to loth_dock;
+	move lily to loth_backyard;
+	move whirlwind to loth_backyard;
+	move thescholar to loth_kitchen;
+	move thewizard to loth_kitchen;
+	startdaemon(lily);
+	startdaemon(nook);
+	startdaemon(whirlwind);
+	startdaemon(thescholar);
+	startdaemon(thewizard);
 	daynumber = 42;
 	settime(60,60);
 	achieved(21);
@@ -239,7 +259,9 @@
 ^
 ^(During your ride to the co-op, the fiction-bind transformed reality. Now that you are the Harmonist, you can find the entry points to other branches of the multiverse in previously visited locations.)
 ^
-^(27 May 2013 - The multiverse authors convention is open NE of the Capitol)^";	
+^(27 May 2013 - The multiverse authors convention is open NE of the Capitol)^";
+	if (commentary == true)
+		print "^[I understand it can all be explained as how much humans respond to cues from tone and mood, but I still find it interesting to think about the responses I received from people. The RZA has a line, 'third eye as bright as a street lamp', and that about captures it. Sympathetic vibrations are a real thing in acoustics, and human social interaction has similar dynamics. By the way, the Sitter in Gold is an artwork, and I didn't actually think it was a person. I did, however, think that the artwork was a living soul, sentient and aware, even if inert. The path of the ride was down Milwaukee to Winnebago and East Main, under East Wash at Yahara over to East Dayton, then by James Madison to Langdon and to Loth.]^";
 ];
 
 [ Staciporch_storyline;
@@ -325,30 +347,30 @@
 [ Pathsmoke_storyline;
 	mendota_lakeside.wizard = 3;
 	achieved(37);
-	"^You have agreed to rendezvous with your friends here, to perform an appropriate ritual to connect the past and present for the 20-year time bind. Your friends arrive over the next few minutes, and you motion toward the woods on the hillside by the path. 'We used to come here all the time.'
+	print "^You have agreed to rendezvous with your friends here, to perform an appropriate ritual to connect the past and present for the 20-year time bind. Your friends arrive over the next few minutes, and you motion toward the woods on the hillside by the path. 'We used to come here all the time.'
 ^
 ^You pick your way through the vegetation. In the old days, as teenagers hanging out down on State Street, nobody had apartments, houses, or even cars. Someone would manage to score a dimebag of jamaican brickweed from somewhere, and the crew would wander back to these woods to smoke. You form a circle, and pass the pipe around. Everyone shares anecdotes of their young days, stupid fun times with friends, crazy tales from last decade, last year, or last week. A story about music reminds a friend of something:
 ^
 ^'There's going to be a benefit music performance at Nottingham co-op, I think you and Staci should totally perform there. I know it will be cool, I'll let people know and you guys can go on first.' You and Staci agree to appear. Your friends wander off to find food, and you are left to contemplate the lake and the span of time.
 ^
-^(You can reach Nottingham going NE from the Mendota Lakeside area)";
+^(You can reach Nottingham going NE from the Mendota Lakeside area)^";
 ];
 
 [ Nottingham_storyline;
 	mendota_lakeside.wizard = 4;
 	bikeskill++;
-	"You arrive at Nottingham with Staci and Lily. They have agreed to open the performance with an acapella duet of 'My Eyes' from Dr. Horrible. As always, kids steal the show. Staci and you perform next, and it is a lot of fun, although you wonder why Staci didn't seem to follow any of your eye contact cues. (Maybe you should take the mirror shades off next time?) You close with a cover of 'In My Mind' (Footnote 12) and Staci nails the audience to the wall with the conviction of her delivery.
+	print "You arrive at Nottingham with Staci and Lily. They have agreed to open the performance with an acapella duet of 'My Eyes' from Dr. Horrible. As always, kids steal the show. Staci and you perform next, and it is a lot of fun, although you wonder why Staci didn't seem to follow any of your eye contact cues. (Maybe you should take the mirror shades off next time?) You close with a cover of 'In My Mind' (Footnote 12) and Staci nails the audience to the wall with the conviction of her delivery.
 ^
 ^Paul of the singing hippie housekeepers shows up, and his values do not mesh easily with the laid-back atmosphere at the co-ops. You wander away from the party with him, engaged in conversation about boundaries and healthy behavior and how Madison is still stuck in the Old Testament, and by the time the conversation ends and he departs, the concert is over.
 ^
 ^So much has been happening. A ride around the lakes, south into the countryside, would probably do you good.
 ^
-^(Your biking strength and stamina has increased)";
+^(Your biking strength and stamina has increased)^";
 ];
 
 [ Countryside_storyline;
 	mendota_lakeside.wizard = 5;
-	"^It is late August, and this sweet, ripe summer is nearing its end. You ate mushrooms earlier, and biking through Monona in the humid dusk, you saw the moon rising pink and full and shimmering around the edges, low over the rooftops of the suburban houses. Every time you looked up at it, you heard a chiming interval - a G-sharp in the midst of an E major chord, rising up to an E above a C-sharp minor.
+	print "^It is late August, and this sweet, ripe summer is nearing its end. You ate mushrooms earlier, and biking through Monona in the humid dusk, you saw the moon rising pink and full and shimmering around the edges, low over the rooftops of the suburban houses. Every time you looked up at it, you heard a chiming interval - a G-sharp in the midst of an E major chord, rising up to an E above a C-sharp minor.
 ^
 ^Now, out in the countryside, the summer night air and the moon and the mushrooms coalesce into a smooth melody. 'Last full moon of summer 2013...' you sing, over and over as you ride.
 ^
@@ -356,7 +378,7 @@
 ^
 ^By some unbelievable stroke of fortune, you found your Vindication this spring and summer. Your life became everything you had ever hoped it could be, you did exactly what you wanted to do, when you wanted to do it, and most importantly, you were treated with love and affection by other people, and found the intense closeness and deeper communication you always knew was possible.
 ^
-^You resolve to do your best to share the feeling you have right now. The deep glow of love and biking and writing music and having a beautiful castle full of friends and how delicious it is to breathe the night air. Soon, you will be at Loth and you can sing your new song for your friends.";
+^You resolve to do your best to share the feeling you have right now. The deep glow of love and biking and writing music and having a beautiful castle full of friends and how delicious it is to breathe the night air. Soon, you will be at Loth and you can sing your new song for your friends.^";
 ];
 
 [ Lothfullmoon_storyline;
@@ -376,7 +398,7 @@
 
 [ Tarotparty_storyline;
 	mendota_lakeside.wizard = 7;
-	"(Lothlorien Co-op)
+	print "(Lothlorien Co-op)
 ^
 ^You have completed your preparations for this, one of the first overt acts of the Loonie Revolution. Staci has compiled a collection of art and writing, each on a 1/4 size page, and you have photocopied them to create a number of unique books, each with a different subset of the possible pages. Every guest at the party receives one.
 ^
@@ -384,7 +406,7 @@
 ^
 ^You hear the Empress saying to someone, 'You are a wonderful character, I'm so glad I wrote you,' and your perceptions are Shuffled...
 ^
-^(You aren't quite certain how the party ended, or how you got back here. You know you are supposed to meet Staci with the kids at the late night restaurant.)";
+^(You aren't quite certain how the party ended, or how you got back here. You know you are supposed to meet Staci with the kids at the late night restaurant.)^";
 ];
 
 [ Soapbomb_storyline;
@@ -495,11 +517,11 @@
 [ Schumann_piano_storyline;
 	piano.playcount = piano.playcount + 1;
 	xochi.email = 3;
-	"The music on the rack is Schumann's 'Dichterliebe', an achingly beautiful early-romantic song cycle. You play the opening song, 'In the beautiful month of May', and sigh. Ever since you discovered these songs early in your teenage years, you have hoped to experience what is described in Heine's lyrics and Schumann's music, the heart singing like a bird, love unfolding like a flower. You have known love, but nothing that felt as tender and fresh and promising as this music.
+	print "The music on the rack is Schumann's 'Dichterliebe', an achingly beautiful early-romantic song cycle. You play the opening song, 'In the beautiful month of May', and sigh. Ever since you discovered these songs early in your teenage years, you have hoped to experience what is described in Heine's lyrics and Schumann's music, the heart singing like a bird, love unfolding like a flower. You have known love, but nothing that felt as tender and fresh and promising as this music.
 ^
 ^You have always felt a deep personal connection with Robert Schumann. One your most profound early experiences as a musician was playing a Schumann Romanze in F# and feeling the emotion within the music as if it was your own. At that moment, you learned that music could encode an individual's personality and feelings in a way that let them be directly re-experienced by other minds.
 ^
-^You realize that just as your mind is running your father's personality in parallel with your own, you could also >bind schumann self to reincarnate your favorite composer within yourself.";
+^You realize that just as your mind is running your father's personality in parallel with your own, you could also >bind schumann self to reincarnate your favorite composer within yourself.^";
 ];
 
 [ Schumannbind_storyline;
