@@ -395,18 +395,52 @@ Character	lily "Lily"
 	with
 	name 'lily',
 	description "Lily is six years old, with long wavy brown hair.",
+	initial [; switch(location) {
+		loth_upstairs: "Lily is running through the halls, playing hide-and-seek.";
+		loth_greatroom: "Lily is bouncing up and down on a couch, laughing.";
+		loth_porch: "Lily is standing by the railing, watching the lake.";
+		loth_kitchen: "Lily is having a snack.";
+		loth_backyard: "Lily is running up and down the hillside as she plays.";
+		loth_dock: "Lily is sitting and splashing her toes in the water.";
+		}
+	],
 	daemon [;
 		movechar();
 	],
+	life [;
+		switch(random(9)) {
+		1: "Lily laughs and throws an imaginary Chaos Bomb.";
+		2: "Lily sings part of a song from Dr. Horrible.";
+		3: "'As soon as I saw you at Rossini's, I knew who you must be.'";
+		4: "'The Loonie Re-vo-lu-TION! The Loonie Re-vo-lu-TION!' Lily chants.";
+		5: "'I think I'm going to want to eat some mac and cheese soon.'";
+		6: "'I can show you my transformation magic. Watch!' Lily makes a dramatic pirouette, 'Now I have wings and I can fly!'";
+		7: "Lily is busy sucking the juice out of a piece of fruit.";
+		8: "'Know who's awesome?' Lily asks, 'My mom!' she answers herself.";
+		9: "'The children's Loonie brigade is on the way to get donuts from the store!' Lily proclaims.";
+		}
+	],
+	before [; talk: <<wakeother self>>;],
 	has female;
 
 Character	nook "Nook"
 	with
 	name 'nook',
 	description "Nook is compact but built of indestructible volcanic rock. Alert eyes watch the world amidst a shag of hair and beard.",
+	initial [; switch(location) {
+		loth_upstairs: "Nook is standing by the doorway to Staci's room, looking relaxed and happy.";
+		loth_greatroom: "Nook is taking a brief nap on one of the couches.";
+		loth_porch: "Nook is sitting on the porch swing drinking a warm beer.";
+		loth_kitchen: "Nook is contemplating the beverages he has stored in the fridge.";
+		loth_backyard: "Nook is sitting on a picnic table, smoking a cigarette.";
+		loth_dock: "Nook is watching the waves, assisted by a 40 oz of Mickey's.";
+		}
+	],
 	daemon [;
 		movechar();
 	],
+	life "'I'm not sure just what you're up to with the Loonie Revolution and Plan 9, but I'm glad we have the chance to have this unique friendship.'",
+	before [; talk: <<wakeother self>>;],
 	has male;
 
 object	thescholar "Scholar"
@@ -414,9 +448,17 @@ object	thescholar "Scholar"
 	article "the",
 	name 'scholar',
 	description "Young, tall, and skinny, the scholar keeps a smile on his face while he speaks.",
+	initial [; switch(random(3)) {
+		1: "The Scholar is standing here.";
+		2: "The Scholar is pacing back and forth.";
+		3: "The Scholar is reading a book here.";
+		}
+	],
 	daemon [;
 		movechar();
 	],
+	life "'Lately I've been trying to be active rather than reactive.'",
+	before [; talk: <<wakeother self>>;],
 	has male animate;
 
 object	thewizard "Wizard"
@@ -424,16 +466,44 @@ object	thewizard "Wizard"
 	article "the",
 	name 'wizard',
 	description "The Wizard's penetrating eyes and immense red beard attest to his attainments in the mystic arts.",
+	initial [; switch(random(3)) {
+		1: "The Wizard listens and strokes his beard thoughtfully.";
+		2: "The Wizard is sitting still with both eyes closed.";
+		3: "The Wizard is here.";
+		}
+	],
 	daemon [;
 		movechar();
 	],
+	life "'I'd be honored to work on organizing some interesting esoteric events and ceremonies, I have quite a few ideas in mind. I think a costume-themed party with appropriate cinematic accompaniment would be an interesting experiment.'",
+	before [; talk: <<wakeother self>>;],
 	has male animate;
 
 Character	whirlwind "Whirlwind"
 	with
 	name 'whirlwind',
 	description "Pale and delicate enough to seem almost sylph-like physically, Whirlwind is animated by a quicksilver mind and mercurial temperament.",
+	initial [; switch(random(3)) {
+		1: "Whirlwind is looking through her shoulder bag.";
+		2: "Whirlwind is smiling as she listens.";
+		3: "Whirlwind is sitting cross-legged here.";
+		}
+	],
 	daemon [;
 		movechar();
 	],
+	life "'I've got a lot of writing to share if you'd like, and I know my kids are excited to contribute too.'",
+	before [; talk: <<wakeother self>>;],
 	has female;
+
+object	storageblank
+	with
+	initial [; switch(location) {
+		loth_upstairs:
+		loth_greatroom:
+		loth_porch:
+		loth_kitchen:
+		loth_backyard:
+		loth_dock:
+		}
+	];

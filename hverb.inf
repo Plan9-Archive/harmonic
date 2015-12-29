@@ -165,8 +165,8 @@
 
 [ Movechar whereami;
 	whereami=parent(self);
-	switch(random(6)) {
-		6:	if (self in location) {
+	switch(random(9)) {
+		9:	if (self in location) {
 				print "^";
 				if ((self == thescholar) || (self == thewizard))
 					print "The ";
@@ -189,6 +189,12 @@
 					1: move self to loth_kitchen;
 					2: move self to loth_dock;
 				}
+			}
+			if (parent(self) == location) {
+				print "^";
+				if ((self == thescholar) || (self == thewizard))
+					print "The ";
+				print (name) self, " arrives.^";
 			}
 	}
 ];
