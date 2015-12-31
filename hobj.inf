@@ -1096,8 +1096,15 @@ object	catapult "catapult" time_vault
 	],
 	has container open;
 
-object	victory
+object	victory "Excalibur"
 	with
+	name 'sword' 'excalibur',
+	description "A flickering red and blue glow dances along the edge of this magnificently crafted blade.",
+	react_before [;
+		attack:
+			remove noun;
+			"The sword cleaves its target in two, and the separated halves are deleted from the simulation, leaving no trace.";
+	],
 	daemon [;
 		if (location.wintext == 1) return true;
 		location.wintext++;
@@ -1112,7 +1119,10 @@ object	victory
 			atwood_shops: "^A time-travelers trading bazaar is passing through, exchanging magical objects from around the multiverse with the shops here.";
 			mon_cot: "^Coffee Lion has expanded into a miniature palace, complete with a dark lake of foamy espresso in front of it.";
 			mon_mid: "^Giant trees spread their branches across Monona, making the street into a tunnel through the forest.";
-			milw_street: "^Your street is unchanged, save for a small sign proclaiming the farmland to the north will be preserved in perpetuity.";
+			milw_street: move self to player;
+				"^Your street is unchanged, save for a small sign proclaiming the farmland to the north will be preserved in perpetuity.
+^
+^A rumble behind you makes you turn around, and you see a gigantic truck with tires larger than your bicycle looming over you. It is being driven by a Coffee Lion barista who started working recently. 'Here, you've earned this!' she says, leaning out of the window, and hands you a shining sword. She guns the engine and roars off.";
 			mendota_lakeside: "^The lakeshore co-ops have finally completed a path connecting them. Rumor has it underground connecting tunnels have also been dug.";
 			james_madison: "^The sunlight reflects from the wings of seagulls flying into the wind over the shore.";
 			coffee_lion: "^You have a flashback of memory to another song you wrote during the spring, inspired by hearing a friend cover one of your favorite Dead songs here.

@@ -547,6 +547,8 @@
 		"If you use the animal tarot in Moon Forest, it will give you access to the Story abstraction. You need to be a strong cyclist to reach it, which requires a visit to the Alchemy Lab underneath Coffee Lion.";
 	if ((noun == storybind) || (noun == fortune))
 		"The paired abstraction is in a different location. You will need to use the magic lenses from the afterlife to allow the abstractions to be bound together. Visits to Afterlife, Coffee Lion, Turning Wheel, and Moon Forest will be required.";
+	if (noun == arched_gate)
+		"The symbols written above the gate show what is needed to open it. You need to wear the mirror shades and ring of tales and be carrying the soap, the purple flower, and the artemis prints. The purple flower can be found using the >explore command and the ring of tales is found at the storyteller's circle, west and up from State Street.";
 	if (introgoal == 2)
 		"You need to return to Coffee Lion and >talk to xelia.";
 	if (introgoal == 3)

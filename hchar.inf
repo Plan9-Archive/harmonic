@@ -415,10 +415,25 @@ Character	lily "Lily"
 		4: "'The Loonie Re-vo-lu-TION! The Loonie Re-vo-lu-TION!' Lily chants.";
 		5: "'I think I'm going to want to eat some mac and cheese soon.'";
 		6: "'I can show you my transformation magic. Watch!' Lily makes a dramatic pirouette, 'Now I have wings and I can fly!'";
-		7: "Lily is busy sucking the juice out of a piece of fruit.";
+		7: "Lily is busy sucking the juice out of an orange.";
 		8: "'Know who's awesome?' Lily asks, 'My mom!' she answers herself.";
 		9: "'The children's Loonie brigade is on the way to get donuts from the store!' Lily proclaims.";
 		}
+	],
+	each_turn [;
+		if (thescholar in location)
+			switch(random(3)) {
+			1: "^Lily scowls angrily at the Scholar. 'My enemy!' she whispers.";
+			2: "^Lily makes a point of ignoring the Scholar.";
+			}
+		if (nook in location)
+			switch(random(3)) {
+			3: "^Lily decides to climb Nook and gets about halfway up before she changes her mind.";
+			}
+		if (whirlwind in location)
+			switch(random(3)) {
+			3: "^Lily asks Whirlwind when the other kids will be around to play.";
+			}
 	],
 	before [; talk: <<wakeother self>>;],
 	has female;
@@ -433,7 +448,7 @@ Character	nook "Nook"
 		loth_porch: "Nook is sitting on the porch swing drinking a warm beer.";
 		loth_kitchen: "Nook is contemplating the beverages he has stored in the fridge.";
 		loth_backyard: "Nook is sitting on a picnic table, smoking a cigarette.";
-		loth_dock: "Nook is watching the waves, assisted by a 40 oz of Mickey's.";
+		loth_dock: "Nook is watching the waves, assisted by a can of Mickey's.";
 		}
 	],
 	daemon [;
@@ -454,6 +469,15 @@ object	thescholar "Scholar"
 		3: "The Scholar is reading a book here.";
 		}
 	],
+	each_turn [;
+		if (nook in location)
+			switch(random(3)) {
+			3: "^The Scholar and Nook discuss construction of a rooftop catapult for defense against lake monsters.";
+			}
+		switch(random(4)) {
+		4: "^The Scholar lights a small item on fire and watches it burn.";
+		}
+	],
 	daemon [;
 		movechar();
 	],
@@ -467,8 +491,8 @@ object	thewizard "Wizard"
 	name 'wizard',
 	description "The Wizard's penetrating eyes and immense red beard attest to his attainments in the mystic arts.",
 	initial [; switch(random(3)) {
-		1: "The Wizard listens and strokes his beard thoughtfully.";
-		2: "The Wizard is sitting still with both eyes closed.";
+		1: "The Wizard is stroking his beard thoughtfully.";
+		2: "The Wizard is sitting still with one eye closed and one open.";
 		3: "The Wizard is here.";
 		}
 	],
@@ -476,6 +500,17 @@ object	thewizard "Wizard"
 		movechar();
 	],
 	life "'I'd be honored to work on organizing some interesting esoteric events and ceremonies, I have quite a few ideas in mind. I think a costume-themed party with appropriate cinematic accompaniment would be an interesting experiment.'",
+	each_turn [;
+		if (thescholar in location)
+			switch(random(3)) {
+			1: "^The Wizard and Scholar are discussing obscure but crucial events in the history of late 19th century secret societies.";
+			2: "^The Wizard and Scholar are studying a hand-written document and speculating it might be a palimpsest.";
+			}
+		if (nook in location)
+			switch(random(3)) {
+			3: "^The Wizard pulls a small bottle from his pocket, and hands it to Nook, who takes a sniff and a swallow and makes a peculiar face.";
+			}
+	],
 	before [; talk: <<wakeother self>>;],
 	has male animate;
 
@@ -485,7 +520,7 @@ Character	whirlwind "Whirlwind"
 	description "Pale and delicate enough to seem almost sylph-like physically, Whirlwind is animated by a quicksilver mind and mercurial temperament.",
 	initial [; switch(random(3)) {
 		1: "Whirlwind is looking through her shoulder bag.";
-		2: "Whirlwind is smiling as she listens.";
+		2: "Whirlwind is smiling as she looks around.";
 		3: "Whirlwind is sitting cross-legged here.";
 		}
 	],
@@ -493,6 +528,17 @@ Character	whirlwind "Whirlwind"
 		movechar();
 	],
 	life "'I've got a lot of writing to share if you'd like, and I know my kids are excited to contribute too.'",
+	each_turn [;
+		if (nook in location) 
+			switch(random(3)) {
+			1: "^Whirlwind is making a series of cryptic hand gestures at Nook.";
+			2: "^Whirlwind is resting her foot on Nook's knee.";
+		}
+		if (thewizard in location)
+			switch(random(3)) {
+			3: "^Whirlwind and the Wizard are silently passing a glass sphere back and forth.";
+			}
+	],
 	before [; talk: <<wakeother self>>;],
 	has female;
 

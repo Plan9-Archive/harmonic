@@ -447,6 +447,7 @@
 [ Stopfire_storyline;
 	mendota_lakeside.wizard = 99;
 	bikeskill++;
+	move victory to player;
 	startdaemon(victory);
 	achieved(48);
 	print "You place the catapult on the ground to stabilize it, and turn the tensioning mechanism. Click. You double-check your aim. According to your instructions, the bind convergence should be starting in a moment, over the lake.
