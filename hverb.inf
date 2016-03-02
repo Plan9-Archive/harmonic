@@ -203,9 +203,9 @@
 ! Verb functions
 
 [ Aboutsub;
-	"^Harmonic Time-Bind Ritual Symphony is a game based on my spring and summer during 2013. During that time, I was able to experience my life as a work of interactive fiction created by a brilliant author. I felt that the nature of the quantum multiverse meant that it was true that I was a character in novels and songs and videogames in other universes, and I played my role to the hilt. I believed my manic madness was a gift which I could use for artistic creativity, and that my racing mind was fully up to solving the puzzles that the designer of my reality had laid out for me. It was the most glorious experience imaginable, and by the middle of the summer I felt like I was becoming a kind of Ultima IV-style Avatar of multiversal artistic consciousness and with just a little more spiritual insight and creative freedom, I'd be able to unlock the Vishnu-path Extra Arms upgrade for my character, which I might need in case the tentacle in the lake that was a whisker of Cthulhu's Moustache attacked.
+	"Harmonic Time-Bind Ritual Symphony is a game based on my spring and summer during 2013. During that time, I was able to experience my life as a work of interactive fiction created by a brilliant author. I felt that the nature of the quantum multiverse meant that it was true that I was a character in novels and songs and videogames in other universes, and I played my role to the hilt. I believed my manic madness was a gift which I could use for artistic creativity, and that my racing mind was fully up to solving the puzzles that the designer of my reality had laid out for me. It was the most glorious experience imaginable, and by the middle of the summer I felt like I was becoming a kind of Ultima IV-style Avatar of multiversal artistic consciousness and with just a little more spiritual insight and creative freedom, I'd be able to unlock the Vishnu-path Extra Arms upgrade for my character, which I might need in case the tentacle in the lake that was a whisker of Cthulhu's Moustache attacked.
 ^
-^This game was created to share the wild, unbounded joy I felt in those months. Thanks to everyone who was a part of my life during that time, and thank you for playing this work of Interactive Fiction. Read >help for important tips. >design prints a spoiler-free essay on the design of the game.^";
+^This game was created to share the wild, unbounded joy I felt in those months. Thanks to everyone who was a part of my life during that time, and thank you for playing this work of Interactive Fiction. Read >help for important tips. >design prints a spoiler-free essay on the design of the game.";
 ];
 
 [ Bindsub;
@@ -382,7 +382,7 @@
 	9: "Lothlorien Co-op! If you had heard only a quarter of what I have heard about it, and I have heard very little of all there is to hear, you would be prepared for any sort of remarkable tale. (Tolkien, of Gandalf)";
 	10: "Heinrich Heine, set by Schumann in the first song of Dictherliebe.";
 	11: "The Wheel is turning and you can't slow down, you can't let go and you can't hold on, you can't go back and you can't stand still, if the thunder don't get you then the lightning will. (Hunter/Garcia)";
-	12: "Amanda Palmer,"; ! what album?
+	12: "Amanda Palmer 2011 single";
 	default: "Probably a special case of the Navier-Stokes equations.";
 	};
 ];
@@ -427,7 +427,7 @@
 	if (elginbday == 4)
 		"You are hoping Staci has emailed you, go home and >use terminal.";
 	if (elginbday == 5)
-		"You are excited to bike west to downtown, then north and west to reach Lothlorien co-op to see Staci.^";
+		"You are excited to bike west to downtown, then north and west to reach Lothlorien co-op to see Staci.";
 	if (elginbday < 8)
 		"Your goal is to bind future and past then go down to the dock.^";
 	if (elginbday < 10)

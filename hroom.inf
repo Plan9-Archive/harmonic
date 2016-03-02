@@ -876,7 +876,8 @@ Room	eside_hq "24-hour family restaurant"
 
 Room	andrews_cabin "Andrew's Cabin"
 	with
-	description "You are on the shore of Sturgeon Bay. There is a beautiful wood and stone cabin home here. After Halloween night out on the town, you visited Birmingham's, a family owned tavern full of tradition and memory. You bought firewood there, and after a brief struggle with wind and damp, you are circled round a roaring, crackling fire. Sitting and talking with friends old and new, you feel deep joy and contentment. The warmth of the fire circle is within your heart now, warming you from within on the rest of your journey.";
+	description "You are on the shore of Sturgeon Bay. There is a beautiful wood and stone cabin home here. After Halloween night out on the town, you visited Birmingham's, a family owned tavern full of tradition and memory. You bought firewood there, and after a brief struggle with wind and damp, you are circled round a roaring, crackling fire. Sitting and talking with friends old and new, you feel deep joy and contentment. The warmth of the fire circle is within your heart now, warming you from within on the rest of your journey.",
+	cant_go "Use the magic word XYZZY to return home.";
 
 Scene	tempest_gameworld "Tempest gameworld"
 	with

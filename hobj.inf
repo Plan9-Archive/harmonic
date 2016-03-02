@@ -989,7 +989,7 @@ object	animal_tarot "Animal Tarot deck"
 			if (self.bought == 1) "You already bought it.";
 			bankaccount = bankaccount - 20;
 			self.bought = 1;
-			"You buy the Animal Tarot. You make a mental note to show it to Staci.";
+			"You buy the Animal Tarot. You hope to find a setting similar to the box illustration and meet Staci there.";
 		use: 
 			if (location ~= moon_forest)
 				"You feel like you need to be in a special place before making use of these cards.";
