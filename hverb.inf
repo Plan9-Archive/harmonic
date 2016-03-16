@@ -78,6 +78,14 @@
 			Bday_visit_storyline();
 			Firstlothvisit_storyline();
 			}
+		54: if (madcon.timetrav < 2) {
+			print "(You head to Madcon NE of the Capitol)^";
+			Madconstart_storyline();
+			}
+		55: if (madcon.timetrav < 6) {
+			print "(You follow Lily to Infinite Loop)^";
+			Loop_storyline();
+			}
 		default: return true;
 		}
 	}
@@ -798,6 +806,16 @@
 	}
 	if(daynumber < 42) {
 		daynumber = 41;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 54) {
+		daynumber = 53;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 55) {
+		daynumber = 54;
 		settime(1380, 60);
 		return true;
 	}

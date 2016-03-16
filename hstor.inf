@@ -293,6 +293,8 @@
 
 [ Madconstart_storyline;
 	madcon.timetrav = 2;
+	daynumber = 54;
+	settime(60,60);
 	print "^You arrive at the start of Madcon, a busy chaos of arrivals from all pi to the 999th corners of the multiverse. Staci spots you and asks for a favor. 'I've got to be on a panel for time-sequence rewriting, can you take Lily to lunch now?' You agree. Lily is excited. 'Let's go to Pasta and Other! I want noodles. Come on!'
 ^
 ^Lily is leading the way. She exits the building, heading towards State Street. You need to follow.^";
@@ -302,6 +304,8 @@
 	madcon.timetrav = 6;
 	move lotus to loth_dock;
 	move staci to loth_dock;
+	daynumber = 55;
+	settime(60,60);
 	print "^Lily is fascinated by deity artworks and tools for rituals and prayer. Tara tells her she can pick out an item as a gift, and Lily chooses a necklace of pale sky-blue beads. Tara strokes it lightly as she hands it to Lily 'Very beautiful. This is the color of one aspect of Buddha. I've been feeling this color in the past few days. Perhaps one of the Buddhas is traveling near.'
 ^
 ^You thank Tara, and notice it's time to meet Staci after the panel. She wants to take a break back at the castle dock. Lily leaves with Staci, and after a few more minutes appreciating the items in Infinite Loop, you decide to join them on the dock for a dose of sunlight on the waves.^";
