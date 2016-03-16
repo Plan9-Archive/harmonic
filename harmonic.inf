@@ -68,6 +68,10 @@
 ! 2 March 2016 Lothlorien finally reopened on 22 February
 ! The last month and a half of waiting froze our game creativity
 ! Now the castle really is back it's a rush to finish for Spring Thing
+!
+! 15 March 2016 writing in storyline date triggers
+! Did it working in Loth Great room with everyone doing art
+! Yeah, it felt right. HOME
 
 !============================================================================
 ! Abbreviations
@@ -141,7 +145,7 @@ Abbreviate "lit";
 ! Configuration constants
 
 Release 12;
-Serial "151231";
+Serial "160315";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;

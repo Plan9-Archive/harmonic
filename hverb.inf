@@ -86,6 +86,43 @@
 			print "(You follow Lily to Infinite Loop)^";
 			Loop_storyline();
 			}
+		56: if (madcon.timetrav < 7) {
+			print "(You visit the Loth dock and notice a friendly dog)^";
+			Lotusdock_storyline();
+			}
+		57: if (madcon.timetrav < 8 ) {
+			print "(You return to your home to host the band)^";
+			Buddhahome_storyline();
+			}
+		60: if (mendota_lakeside.wizard < 1) {
+			print "(You return to Madcon)^";
+			Madconend_storyline();
+			}
+		72: if (mendota_lakeside.wizard < 2) {
+			print "(You head to Lothlorien)^";
+			Wizardparty_storyline();
+			}
+		79: if (mendota_lakeside.wizard < 3) {
+			print "(You visit the hillside behind the lakeshore path)^";
+			Pathsmoke_storyline();
+			}
+		86: if (mendota_lakeside.wizard < 4) {
+			print "(You head to Nottingham to play a performance)^";
+			Nottingham_storyline();
+			}
+		92: if (mendota_lakeside.wizard < 5) {
+			print "(You go for a long bike ride)^";	
+			Countryside_storyline();
+			Lothfullmoon_storyline();
+			}
+		99: if (mendota_lakeside.wizard < 7) {
+			print "(You wear the wheel to attend the tarot party)^";
+			Tarotparty_storyline();
+			}
+		101: if (mendota_lakeside.wizard < 8) {
+			print "(You take the children to the late night restaurant)^";
+			Soapbomb_storyline();
+			}
 		default: return true;
 		}
 	}
@@ -816,6 +853,51 @@
 	}
 	if(daynumber < 55) {
 		daynumber = 54;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 56) {
+		daynumber = 55;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 57) {
+		daynumber = 56;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 60) {
+		daynumber = 59;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 72) {
+		daynumber = 71;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 79) {
+		daynumber = 78;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 86) {
+		daynumber = 85;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 92) {
+		daynumber = 91;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 99) {
+		daynumber = 98;
+		settime(1380, 60);
+		return true;
+	}
+	if(daynumber < 101) {
+		daynumber = 100;
 		settime(1380, 60);
 		return true;
 	}

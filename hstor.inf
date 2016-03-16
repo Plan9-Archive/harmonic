@@ -316,11 +316,15 @@
 [ Lotusdock_storyline;
 	madcon.timetrav = 7;
 	remove lotus;
+	daynumber = 56;
+	settime(60,60);
 	print "As you greet the dog, you hear a voice call out 'Lotus!' from a little further down the shore. To make a long story very short, the voice belongs to a five member traveling punk band called Police Lingo. They need a place to crash, and something makes you offer your house. They have to play a show at the Owl Sanctuary (the what??) and you agree to meet them back on Milwaukee street later. Staci heads back to Madcon. You should probably head home to get your house ready for guests.^";
 ];
 
 [ Buddhahome_storyline;
 	madcon.timetrav = 8;
+	daynumber = 57;
+	settime(60.60);
 	"^It is a convergence of world-lines. Five young punk musicians, Staci Nook and yourself, and three co-opers who had been tagging along. Many realities diverge here. What are your boundaries? What are you open to? You feel yourself splitting into many selves at this branch point. In some, everyone is completely uninhibited and you all create a transcendent flower of higher-dimensional interpersonal molecular structure, the aliens show up and demand pancakes, and you all agree to move to the lesser Magellanic cloud and open the first non-Earth greasy spoon diner. In others, inhibition and insecurity fracture the social ground beneath you, rifts open, and your life ricochets off in a different direction, a vector of disappointment and regret.
 ^
 ^You decide to pilot a middle course in your current storyline, embracing a limited subset of the possible configurations. After a night of little sleep but much love, Police Lingo leaves you with many balloon animals, and Staci and the co-opers return to Madcon. You spend a few minutes cleaning up, and are now ready to head downtown and dive into the convention scene.";
@@ -330,6 +334,8 @@
 	madcon.timetrav = 0;
 	mendota_lakeside.wizard = 1;
 	move crown to player;
+	daynumber = 60;
+	settime(60,60);
 	achieved(36);
 	"^The convention is in full swing as you arrive. After a few introductions, a tall owl of multiple genders transfixes you with glowing orange eyes. 'For safety reasons, everyone agrees that author-level, continuity-breaking information should be wiped from your time-embedded consciousness. The experiences will be stored in your crown, of course, so nothing is lost long-term. Are you ready?' You nod agreement.
 ^
@@ -339,6 +345,8 @@
 [ Wizardparty_storyline;
 	mendota_lakeside.wizard = 2;
 	move wizard_head to loth_backyard;
+	daynumber = 72;
+	settime(60,60);
 	"^As you are nearing Loth, you hear a voice calling out: 'The moment is at hand - or rather, at head!' and a cheer goes up. Is it that day already? The Wizard had been promising a notable symbolic event. He had promised to enact his spiritual death and rebirth by beheading himself. 'Bring the sword!' the voice commands.
 ^
 ^Sounds like fun! You enter the backyard, which is full of people arrayed in a circle. The Wizard is at the center. Staci carries the sword to him, and with a single mighty stroke, he cuts his own head off. The crowd cheers wildly and toasts are made.
@@ -350,6 +358,8 @@
 
 [ Pathsmoke_storyline;
 	mendota_lakeside.wizard = 3;
+	daynumber = 79;
+	settime(60,60);
 	achieved(37);
 	print "^You have agreed to rendezvous with your friends here, to perform an appropriate ritual to connect the past and present for the 20-year time bind. Your friends arrive over the next few minutes, and you motion toward the woods on the hillside by the path. 'We used to come here all the time.'
 ^
@@ -363,6 +373,8 @@
 [ Nottingham_storyline;
 	mendota_lakeside.wizard = 4;
 	bikeskill++;
+	daynumber = 86;
+	settime(60,60);
 	print "You arrive at Nottingham with Staci and Lily. They have agreed to open the performance with an acapella duet of 'My Eyes' from Dr. Horrible. As always, kids steal the show. Staci and you perform next, and it is a lot of fun, although you wonder why Staci didn't seem to follow any of your eye contact cues. (Maybe you should take the mirror shades off next time?) You close with a cover of 'In My Mind' (Footnote 12) and Staci nails the audience to the wall with the conviction of her delivery.
 ^
 ^Paul of the singing hippie housekeepers shows up, and his values do not mesh easily with the laid-back atmosphere at the co-ops. You wander away from the party with him, engaged in conversation about boundaries and healthy behavior and how Madison is still stuck in the Old Testament, and by the time the conversation ends and he departs, the concert is over.
@@ -374,6 +386,8 @@
 
 [ Countryside_storyline;
 	mendota_lakeside.wizard = 5;
+	daynumber = 92;
+	settime(60,60);
 	print "^It is late August, and this sweet, ripe summer is nearing its end. You ate mushrooms earlier, and biking through Monona in the humid dusk, you saw the moon rising pink and full and shimmering around the edges, low over the rooftops of the suburban houses. Every time you looked up at it, you heard a chiming interval - a G-sharp in the midst of an E major chord, rising up to an E above a C-sharp minor.
 ^
 ^Now, out in the countryside, the summer night air and the moon and the mushrooms coalesce into a smooth melody. 'Last full moon of summer 2013...' you sing, over and over as you ride.
@@ -402,6 +416,8 @@
 
 [ Tarotparty_storyline;
 	mendota_lakeside.wizard = 7;
+	daynumber = 99;
+	settime(60,60);
 	print "(Lothlorien Co-op)
 ^
 ^You have completed your preparations for this, one of the first overt acts of the Loonie Revolution. Staci has compiled a collection of art and writing, each on a 1/4 size page, and you have photocopied them to create a number of unique books, each with a different subset of the possible pages. Every guest at the party receives one.
@@ -417,6 +433,8 @@
 	mendota_lakeside.wizard = 8;
 	move green_porch to miffyland;
 	startdaemon(time_vault);
+	daynumber = 101;
+	settime(60,60);
 	achieved(39);
 	print "^(September 11 2013)
 ^
