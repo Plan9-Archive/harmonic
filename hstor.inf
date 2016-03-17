@@ -405,7 +405,7 @@
 	achieved(38);
 	print "^You arrive at the co-op and serenade your friends up on the porch. At the moment you sing the final line of the song, 'oh it feels so good to have my arms around you' you embrace Nook. The flow of the gathering is uninterrupted, but slightly energized. Who is here exactly? Staci and Nook, of course, but who else? It's like a shifting gallery of happy, friendly people. You feel so incredibly good you try to squeeze your head inside Staci's arm. Mushrooms are fun.
 ^
-^The summer of 2013 has been going on for about two years, it seems. Couldn't be any shorter, not with everything that's happened. You remember the singing bowl guy running with his arms outstretched on the roof of a parking garage, you remember jumping up and down at a concert of cyberhippiejamtronic music, you remember countless bike rides, other performances, other parties, giving afro-pop tickets to the street people, the visit from the Lakota Grandmothers, every day pizza at Rossinis, coffee from the Lion, Space Pancakes at night (that smiley face the aliens put on the car is still there!) All those months and months worth of memories seem small compared to remembering time with Staci, such intense communication, talking and listening and learning the language of the waves, smoking another joint and passing the bag of mushrooms back and forth, eating maybe just one more little stem, then deciding to make some music and tearing off into a note-perfect first-time ever attempted rendition of some crazy bitch's song in D minor about a nervous breakdown.
+^The summer of 2013 has been going on for about two years, it seems. Couldn't be any shorter, not with everything that's happened. You remember the singing bowl guy running with his arms outstretched on the roof of a parking garage, you remember jumping up and down at a concert of cyberhippiejamtronic music, you remember countless bike rides, other performances, other parties, giving afro-pop tickets to the street people, the visit from the Lakota Grandmothers, every day pizza at Rossinis, coffee from the Lion, Space Pancakes at night (that smiley face the aliens put on the car is still there!) All those months and months worth of memories seem small compared to remembering time with Staci, such intense communication, talking and listening and learning the language of the waves, smoking another joint and passing the bag of mushrooms back and forth, eating maybe just one more little stem, then deciding to make some music and tearing off into a note-perfect first-time ever attempted rendition of some crazy woman's song in D minor about a nervous breakdown.
 ^
 ^You are vibrating like a tuning fork, resonating rainbow waves of higher dimensional sound from your extra arms. You get on your bike and ride home, and on the way you are invited into a house full of people and there is a piano and someone else plays and you are jamming 4-handed, some kind of psychedelic ragtime, and then you are back home. You wonder if any human in history has ever had as much fun as you have been having for the past few months.
 ^
@@ -743,7 +743,7 @@
 	remove green_porch;
 	stopdaemon(queen);
 	achieved(47);
-	print "The screen shatters easily. Can it really be this easy? You hear an angry shout from the Queen, 'Trivial vandalism! Do you think this makes any difference?' but you don't stick around to argue, you escape from the apartment, slamming the door loudly enough to wake yourself up. You are back in the student neighborhood and the green porch is nowhere to be seen.^";
+	print "The screen shatters easily. Can it really be this simple? You hear an angry shout from the Queen, 'Trivial vandalism! Do you think this makes any difference?' but you don't stick around to argue, you escape from the apartment, slamming the door loudly enough to wake yourself up. You are back in the student neighborhood and the green porch is nowhere to be seen.^";
 	playerto(miffyland, 1);
 ];
 
@@ -830,7 +830,7 @@
 ^Keeping me out of this dimension
 ^Turning the crank of your sexual tension
 ^You know this ain't no christian rock
-^It's anarcho-hindu throbbing cock
+^It's anarcho-pagan throbbing cock
 ^In your ear but don't fear just gimme your rear
 ^And take the tip of my spear between your hemispheres
 ^Is that clear?";

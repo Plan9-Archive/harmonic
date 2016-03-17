@@ -934,7 +934,7 @@
 ];
 
 [ Verblistsub;
-	"n s e w ne nw se sw u d in out, examine, take, drop, give, talk to, tell, use, play, buy, wear, ride, listen, break, bomb, visit, sing, lunar, explore, release, bind";
+	"n s e w ne nw se sw u d in out, examine, take, drop, give, talk to, tell, use, play, buy, wear, ride, listen, break, bomb, rub, push, insert, turn, visit, sing, lunar, explore, release, bind";
 ];
 
 [ Visitsub;
@@ -945,14 +945,12 @@
 	if (loth_greatroom.lothstaci >= 3) {
 		loth_greatroom.lothstaci++;
 		switch(loth_greatroom.lothstaci) {
-		4: "You pick Staci up, and decide to spend some time back at your place. You are playing a recording from the Dead's Europe '72 tour, with Pigpen's final performance of 'Turn on your Lovelight'. Pig always brought out the hard-swinging, tightly rhythmic side of the band to support his sexual swagger. Cruising, windows down, confident anticipation of love in the afternoon, blues rock on the car stereo...
-^
-^Hours later, you drop Staci off, both full of relaxed feelings of mutual affection and deepening trust and respect.";
+		4: "You pick Staci up, and decide to spend some time back at your place. You are playing a recording from the Dead's Europe '72 tour, with Pigpen's final performance of 'Turn on your Lovelight'. Pig always brought out the hard-swinging, tightly rhythmic side of the band to support his sexual swagger. Cruising, windows down, confident anticipation of love in the afternoon, blues rock on the car stereo...";
 		5: "A friend has told you that an amazing band will be playing at Yahara Fest today. You travel there, and nibble on some fungus right as the performance is about to begin. You walk through the crowd toward the stage, feeling increasingly electric. 'Please welcome...Climbing the Waltz!'
 ^
 ^The stage is now occupied by a time-traveling marching band, performing wild arrangements of original music and doing circus stunts at the same time. Staci and you dance like tripping puppets on strings, and as a rainstorm descends for the final portion of the show, you dance so hard the raindrops vaporize into steam when they land on your gyrating bodies.";
 		6:	achieved(43);
-			"You have agreed to perform at an anti-corporate personhood event. The Snowden revelations have just come out, and you feel the Revolution has momentum. Staci has agreed to sing a duet on the 'Orange Night Light' song. You go onstage wearing a green bicycle helmet and mirror shades. After chanting some lines about harmonic time-binding the light from the Valispectrum prismatic reflector, you deliver a rant praising Snowden. Staci joins you for your duet, and after you sing together, you spend a few minutes dancing wildly with other co-opers when the next act performs. There is a giddy sense of 'we can just do anything!' that fills you and Staci and Nook and your friends with limitless energy. After, you indulge in some rare alcohol consumption, and break a chair falling over backward. You remember nothing more from that night.";
+			"You have agreed to perform at an anti-corporate personhood event. The Snowden revelations have just come out, and you feel the Revolution has momentum. Staci has agreed to sing a duet on the 'Orange Night Light' song. You go onstage wearing a green bicycle helmet and mirror shades. After chanting some lines about harmonic time-binding the light from the Valispectrum prismatic reflector, you deliver a rant praising Snowden. Staci joins you for your duet, and after you sing together, you spend a few minutes dancing wildly with Whirlwind when the next act performs. There is a giddy sense of 'we can just do anything!' that fills you and Staci and Nook and your friends with limitless energy. After, you indulge in some rare alcohol consumption, and break a chair falling over backward. You remember nothing more from that night.";
 		7:	if (mendota_lakeside.wizard < 99) {
 				loth_greatroom.lothstaci--;
 				"You have another in a seemingly endless series of deligtful days with Staci, just chilling on the co-op porch swing and talking with whatever friends wander by.";
