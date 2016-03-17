@@ -362,6 +362,57 @@ Decor colorbeams "beams of color" inside_moon
 	description "You can't see what creates the beams of light criss-crossing the vast interior space. They are gorgeous, rich-hued and soft-edged. The changing distortions and magnifications that continuously alter their mesh remind you of a slow-motion film of a reflection in rippling water. You can examine the colors individually.",
 	has pluralname;
 
+Decor dock "Loth dock" loth_dock
+	with
+	name 'dock' 'wood' 'planks',
+	description "Physically, the dock is small, old, askew, and just barely suitable for launching a canoe. Experientially, the dock is a place of freedom from convention and convergence of the stories of diverse individuals. You can relax and be human here, a simple thing, but precious and rare.";
+
+Decor tree "tree by dock" loth_dock
+	with
+	name 'old' 'gnarled' 'tree',
+	description "This old tree-friend has more than a few tales to share. It's upper branches are still green and leafy, but down by the water, a thick section of trunk, damaged by a storm decades ago, arches white and polished over the water, loved by hands and feet of many visitors.",
+	before [;
+		climb: 
+			achieved(56);
+			"You decide your arthritis and eternal buzz aren't going to keep you out of the tree, and cautiously you navigate the footholds and angled stubby branch remnants to a delightful perch above the waves. You spend a few minutes communing with wood and water before scrambling back down.";
+	];
+
+Decor tables "picnic tables" loth_backyard
+	with
+	name 'picnic' 'tables' 'trees',
+	description "Shady blackberry trees curve over the old wooden picnic tables. Later, when the berries are ripe, they will litter the table and yard, rendering the garments of unwary sitters into a canvas of smeared dark fruits.",
+	has pluralname;
+
+Decor garden "garden" loth_backyard
+	with
+	name 'garden' 'fruits' 'herbs' 'vegetables',
+	description "The coop's garden is set into a middle layer of the terraced hillside. It is regularly pillaged by rabbits, because soft-hearted residents balk at the measures that would be needed to fight the neighborhood herbivores. Nevertheless, it provides a few peppers and herbs to season house meals as well as a splash of flowery color during spring.";
+
+Decor staircase "rock staircase" loth_backyard
+	with
+	name 'rock' 'rocky' 'staircase' 'firepit' 'dock',
+	description "Downward from you is the lower level of the backyard. A set of large limestone boulders wedged into the hillside provides crude stairs. Another ring of smaller rocks circles a recently used firepit, and a small wooden dock extends outward into the water.";
+
+Decor swing "porch swing" loth_porch
+	with
+	name 'porch' 'swing' 'bench',
+	description "The Loth swing is the happy result of do-it-yourself construction. Large wooden beams angle together to support a heavily used wooden bench hanging from chains. As large as a couch, it provides a perfect spot to sit and talk while watching the lake and the wind in the trees and the bats at twilight. Many of the happiest moments in your life willan-on-have been spent here.";
+
+Decor greatroom_stuff "greatroom stuff" loth_greatroom
+	with
+	name 'couch' 'couches' 'books' 'bookshelves' 'fireplace',
+	description "The couches, bookshelves, and other objects in the Great Room are a bewildering mix of styles and vintages. Each day finds them arrayed in new patterns, according to the ever-shifting purposes of socializing, performance, and children playing.";
+
+Decor greatroom_pianos "greatroom pianos" loth_greatroom
+	with
+	name 'piano' 'pianos',
+	description "Heavily played but still possessing a musical voice, the pair of old pianos anchor the far end of the room.",
+	before [;
+		play:
+			achieved(57);
+			"The Castle inspires in you its own special variants of the songs and themes of your ongoing compositions. Sometimes you punch out the e minor staccato chords of the 'dock theme', or during twilight just a succession of pianissimo arpeggios. One afternoon a friend from Louisiana was visiting and, inspired by thoughts of Gottschalk, you find your fingers blazing through a series of syncopated progressions reminiscent of celebratory Caribbean parades.";
+	];
+
 Decor loth_art "artwork"
 	with
 	name 'art' 'artwork' 'artworks' 'wall' 'walls' 'picture' 'pictures' 'graffiti' 'painting' 'paintings',
