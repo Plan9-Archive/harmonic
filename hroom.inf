@@ -249,7 +249,7 @@ Room	willy_coop "Willy St. Grocery Co-op"
 			if (noun == soap) {
 				bankaccount = bankaccount - 10;
 				move soap to player;
-				"You buy a bottle of Dr. Bronner's Pepermint Soap, the closest you can get to having God in a bottle.";
+				"You buy and take a bottle of Dr. Bronner's Pepermint Soap, the closest you can get to having God in a bottle.";
 			}
 	],
 	out_to willy_east,

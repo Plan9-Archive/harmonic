@@ -56,7 +56,7 @@
 	move reality to basement;
 	daynumber = 6;
 	settime(60,60);
-	print "You've observed that Xelia often dresses as fictional characters, and as you place your order, you comment on her current Alice in Wonderland outfit. She smiles slightly. 'Just something I enjoy doing to amuse myself.' As you drink your coffee, you contemplate the meaning of her wardrobe. She is altering her relationship to the world by taking symbols from fiction and applying them to herself. It reminds you of namespace operations in Plan 9, but with symbols and stories binding to real-life people as the targets. In fact, the mingling of imagination and reality seems to explain a lot of what you are experiencing. Since you took on the name of a fictional character for your computer work years ago, you seem to be traversing the narrative arc of that book in your own life. Your mind is spinning. You need to get home and check on your grid.^";
+	print "You've observed that Xelia often dresses as fictional characters, and as you place your order, you comment on her current Alice in Wonderland outfit. She smiles slightly. 'Just something I enjoy doing to amuse myself.' As you drink your coffee, you contemplate the meaning of her wardrobe. She is altering her relationship to the world by taking symbols from fiction and applying them to herself. It reminds you of namespace operations in Plan 9, but with symbols and stories binding to real-life people as the targets. In fact, the mingling of imagination and reality seems to explain a lot of what you are experiencing. Since you took on the name of a fictional character for your computer work years ago, you seem to be traversing the narrative arc of that book in your own life. Your mind is spinning. You need to get home and check on your grid, down in the basement.^";
 	if (commentary == true)
 		print "^[This passage is hard to set up correctly. It would be nice if Plan 9 concepts were introduced earlier, and the player could be led to make the connection between Plan 9 namespace binds and binding symbols from fiction themselves, but bogging the early story down with trying to teach much about Plan 9 seems like a bad idea.]^";
 ];
@@ -318,13 +318,13 @@
 	remove lotus;
 	daynumber = 56;
 	settime(60,60);
-	print "As you greet the dog, you hear a voice call out 'Lotus!' from a little further down the shore. To make a long story very short, the voice belongs to a five member traveling punk band called Police Lingo. They need a place to crash, and something makes you offer your house. They have to play a show at the Owl Sanctuary (the what??) and you agree to meet them back on Milwaukee street later. Staci heads back to Madcon. You should probably head home to get your house ready for guests.^";
+	print "As you greet the dog, you hear a voice call out 'Lotus!' from a little further down the shore. To make a long story very short, the voice belongs to a five member traveling punk band called Police Lingo. They need a place to crash, and something makes you offer your house. They have to play a show at the Owl Sanctuary (the what??) and you agree to meet them back on Milwaukee street later. Staci says she will head back to Madcon and meet you later. You should probably head home to get your house ready for guests.^";
 ];
 
 [ Buddhahome_storyline;
 	madcon.timetrav = 8;
 	daynumber = 57;
-	settime(60.60);
+	settime(60,60);
 	"^It is a convergence of world-lines. Five young punk musicians, Staci Nook and yourself, and three co-opers who had been tagging along. Many realities diverge here. What are your boundaries? What are you open to? You feel yourself splitting into many selves at this branch point. In some, everyone is completely uninhibited and you all create a transcendent flower of higher-dimensional interpersonal molecular structure, the aliens show up and demand pancakes, and you all agree to move to the lesser Magellanic cloud and open the first non-Earth greasy spoon diner. In others, inhibition and insecurity fracture the social ground beneath you, rifts open, and your life ricochets off in a different direction, a vector of disappointment and regret.
 ^
 ^You decide to pilot a middle course in your current storyline, embracing a limited subset of the possible configurations. After a night of little sleep but much love, Police Lingo leaves you with many balloon animals, and Staci and the co-opers return to Madcon. You spend a few minutes cleaning up, and are now ready to head downtown and dive into the convention scene.";
