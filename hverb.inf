@@ -551,7 +551,7 @@
 [ Helpsub;
 	"Move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). An intro/guide: http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
 ^
-^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. You can come up with ideas for what to do next if you >think. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. The >expert command makes the puzzles and story progression more challenging. >standard will return the game to normal difficulty. >verblist will show all verbs needed to score all points.^";
+^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. You can come up with ideas for what to do next if you >think. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. >verblist will show all verbs needed to score all points.^";
 ];
 
 [ Hintsub;
@@ -576,10 +576,40 @@
 		"The Space Pancakes can be used in a ritual for Hecate at the ritual spot located northeast of the edge of town.";
 	if (noun == terminal)
 		"The terminal has many functions, but all you need to do is >use terminal when appropriate. You will need to do so multiple times during the game.";
+	if (noun == wheel_costume)
+		"To start the tarot party scene, >wear wheel. That is the only purpose of the wheel costume.";
+	if (noun == crown)
+		"Once the endgame begins, the crown will provide several hints. Wear the crown, and when it makes a bell-like sound, >use crown.";
+	if (noun == mirror_shades)
+		"At the very end of the game, wearing the mirror shades is one of the requirements to pass the gate at Confluence.";
+	if (noun == wallet)
+		"Holds your money, that is all.";
+	if (noun == rose_heart)
+		"Give the rose quartz heart to Xochi.";
+	if (noun == victory)
+		"Just a trophy, that is all.";
+	if (noun == shelves)
+		"In your home, you can repeatedly >read books.";
+	if (noun == artemis_prints)
+		"The Artemis prints are one of the objects needed to pass through the gate at Confluence at the very end of the game.";
+	if (noun == school_of_atlantis)
+		"You can enter the School of Atlantis painting to engage in an instructive dialog with the scholars.";
+	if (noun == soap)
+		"The Dr. Bronner's Soap is one of the items needed to pass through the gate at Confluence at the end of the game.";
+	if (noun == balloon)
+		"To prepare for catapulting, >put balloon in catapult.";
+	if (noun == catapult)
+		"Take the catapult to James Madison park, put the balloon in it, and >release catapult.";
+	if (noun == strawberry)
+		"Your cat has no purpose except companionship and amusement.";
+	if (noun == lotus)
+		"Just >pet dog.";
 	if (noun == xelia)
 		"After you interact with xelia using a command like '>talk to xelia' you should return home and check out your basement. Afterward, you might >tell xelia about xochi";
 	if (noun == xochi)
 		"After you >talk to xochi, you should >use terminal at home. Also, you might find a gift for her at Astral Enchantments.";
+	if (noun == colette)
+		"Examine your bookshelves at home, then give the book 'forseewhy' to Colette.";
 	if (((noun == fiction) || (noun == reality)) && (introgoal == 3))
 		"You need to >bind fiction reality.";
 	if (((noun == past) || (noun == future)) && (elginbday == 6))

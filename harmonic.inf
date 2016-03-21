@@ -72,6 +72,10 @@
 ! 15 March 2016 writing in storyline date triggers
 ! Did it working in Loth Great room with everyone doing art
 ! Yeah, it felt right. HOME
+!
+! 21 March 2016 spent last night adding commentary
+! Laptop at the co-op has broken keyboard, 3edc column
+! Listening to wind and lake was still worth it
 
 !============================================================================
 ! Abbreviations
@@ -144,8 +148,8 @@ Abbreviate "lit";
 !============================================================================
 ! Configuration constants
 
-Release 13;
-Serial "160315";
+Release 14;
+Serial "160321";
 Constant Story "Harmonic Time-Bind Ritual Symphony";
 Constant AMUSING_PROVIDED;
 Constant DEATH_MENTION_UNDO;

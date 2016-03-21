@@ -895,8 +895,8 @@ Scene	tempest_gameworld "Tempest gameworld"
 			playerto(rossinis_arcade, 1);
 			return true;
 		default:
-			deadflag = 1;
-			"In the gameworld, death is instant for those who don't play the game. Dodge, shoot, or bomb is the only way to survive.";
+			print "In the gameworld, death is instant for those who don't play the game. Dodge, shoot, or bomb is the only way to survive. Please play again^";
+			playerto(rossinis_arcade, 1);
 	],
 	each_turn [;
 		tempest_gameworld.enemies = random(2, 3, 4);
