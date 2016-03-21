@@ -325,9 +325,11 @@
 	madcon.timetrav = 8;
 	daynumber = 57;
 	settime(60,60);
-	"^It is a convergence of world-lines. Five young punk musicians, Staci Nook and yourself, and three co-opers who had been tagging along. Many realities diverge here. What are your boundaries? What are you open to? You feel yourself splitting into many selves at this branch point. In some, everyone is completely uninhibited and you all create a transcendent flower of higher-dimensional interpersonal molecular structure, the aliens show up and demand pancakes, and you all agree to move to the lesser Magellanic cloud and open the first non-Earth greasy spoon diner. In others, inhibition and insecurity fracture the social ground beneath you, rifts open, and your life ricochets off in a different direction, a vector of disappointment and regret.
+	print "^It is a convergence of world-lines. Five young punk musicians, Staci Nook and yourself, and three co-opers who had been tagging along. Many realities diverge here. What are your boundaries? What are you open to? You feel yourself splitting into many selves at this branch point. In some, everyone is completely uninhibited and you all create a transcendent flower of higher-dimensional interpersonal molecular structure, the aliens show up and demand pancakes, and you all agree to move to the lesser Magellanic cloud and open the first non-Earth greasy spoon diner. In others, inhibition and insecurity fracture the social ground beneath you, rifts open, and your life ricochets off in a different direction, a vector of disappointment and regret.
 ^
-^You decide to pilot a middle course in your current storyline, embracing a limited subset of the possible configurations. After a night of little sleep but much love, Police Lingo leaves you with many balloon animals, and Staci and the co-opers return to Madcon. You spend a few minutes cleaning up, and are now ready to head downtown and dive into the convention scene.";
+^You decide to pilot a middle course in your current storyline, embracing a limited subset of the possible configurations. After a night of little sleep but much love, Police Lingo leaves you with many balloon animals, and Staci and the co-opers return to Madcon. You spend a few minutes cleaning up, and are now ready to head downtown and dive into the convention scene.^";
+	if (commentary == true)
+		print "^[During the weeks of maximum manic intensity and delusion, I was both concerned and excited by the possibility of 'radical fictionalization' - reality (and/or my perceptions thereof) going completely berserk. This night reminded me of scenes from several sci-fi novels, and it felt like the wildest version of this story would branch from here into a debauched parody of the Hitchhiker's Guide. Speaking of which, I haven't included much in the way of explicit call-outs to that game or the novels, but both were decisively formative of my ten-year old self, and the structural concept of a game branching into a wide variety of parallel alternate universes was directly relevant to my understanding of my own experiences and their later embodiment in this IF.]^";
 ];
 
 [ Madconend_storyline;
@@ -337,9 +339,11 @@
 	daynumber = 60;
 	settime(60,60);
 	achieved(36);
-	"^The convention is in full swing as you arrive. After a few introductions, a tall owl of multiple genders transfixes you with glowing orange eyes. 'For safety reasons, everyone agrees that author-level, continuity-breaking information should be wiped from your time-embedded consciousness. The experiences will be stored in your crown, of course, so nothing is lost long-term. Are you ready?' You nod agreement.
+	print "^The convention is in full swing as you arrive. After a few introductions, a tall owl of multiple genders transfixes you with glowing orange eyes. 'For safety reasons, everyone agrees that author-level, continuity-breaking information should be wiped from your time-embedded consciousness. The experiences will be stored in your crown, of course, so nothing is lost long-term. Are you ready?' You nod agreement.
 ^
-^It is two days later. You are exhausted but happy. The convention has been AMAZING, especially the part where...where...well, it was definitely amazing. You know that much at least. It seems like time to go relax at Lothlorien.";
+^It is two days later. You are exhausted but happy. The convention has been AMAZING, especially the part where...where...well, it was definitely amazing. You know that much at least. It seems like time to go relax at Lothlorien.^";
+	if (commentary == true)
+		print "^[In theory there should be an elaborate subsection of the game set at the con, but slow progress on character dialog has made it clear any such scene will have to wait for a subsequent sequel or expansion. Maybe someday Staci will write her own time-travelling game based on her years of con-stories.]";
 ];
 
 [ Wizardparty_storyline;
@@ -347,13 +351,15 @@
 	move wizard_head to loth_backyard;
 	daynumber = 72;
 	settime(60,60);
-	"^As you are nearing Loth, you hear a voice calling out: 'The moment is at hand - or rather, at head!' and a cheer goes up. Is it that day already? The Wizard had been promising a notable symbolic event. He had promised to enact his spiritual death and rebirth by beheading himself. 'Bring the sword!' the voice commands.
+	print "^As you are nearing Loth, you hear a voice calling out: 'The moment is at hand - or rather, at head!' and a cheer goes up. Is it that day already? The Wizard had been promising a notable symbolic event. He had promised to enact his spiritual death and rebirth by beheading himself. 'Bring the sword!' the voice commands.
 ^
 ^Sounds like fun! You enter the backyard, which is full of people arrayed in a circle. The Wizard is at the center. Staci carries the sword to him, and with a single mighty stroke, he cuts his own head off. The crowd cheers wildly and toasts are made.
 ^
 ^The Wizard holds his own head aloft triumphantly. 'Bring the ladder!' he demands. He stands on it, and mounts the head atop a long pole. The head will preside over the backyard for the rest of the summer. The following party goes late into the night, and you realize that it is about to be June 19th, a key anniversary in the 20 year harmonic time bind.
 ^
-^(You can now find a path west from State Street)";
+^(You can now find a path west from State Street)^";
+	if (commentary == true)
+		print "^[The chronology has been rearranged somewhat in the summer-section. FWIW, the Wizard's self-beheading was actually later, near the start of July rather than June. There was so much that happened that choosing a particular subset of events and ordering them will inevitably omit many. Capturing the flavor, the rhythm, the proverbial vibe, seems more the task than simple record-keeping of events.]^";
 ];
 
 [ Pathsmoke_storyline;
@@ -368,6 +374,8 @@
 ^'There's going to be a benefit music performance at Nottingham co-op, I think you and Staci should totally perform there. I know it will be cool, I'll let people know and you guys can go on first.' You and Staci agree to appear. Your friends wander off to find food, and you are left to contemplate the lake and the span of time.
 ^
 ^(You can reach Nottingham going NE from the Mendota Lakeside area)^";
+	if (commentary == true)
+		print "^[The appropriate soundtrack for this day, the specific occasion I was time-binding, was the June 19th 1993 Grateful Dead show at Soldier Field. That summer tour was a rare return to form on the part of an aging Jerry Garcia, and on that night, his guitar work on the 1st set-closing Deal and 2nd set's China-Rider and The Other One was itself a time-bind of an earlier era. I recall several more adventures from my 20-year celebration of that performance - especially how I ended it, by visiting a convenience store at 6 AM and paying for a full tray of fresh-baked muffins to be given out free to the next customers who wanted them.]^";
 ];
 
 [ Nottingham_storyline;
@@ -382,6 +390,8 @@
 ^So much has been happening. A ride around the lakes, south into the countryside, would probably do you good.
 ^
 ^(Your biking strength and stamina has increased)^";
+	if (commentary == true)
+		print "^[Opportunities for creative expression bloomed easily that summer. At the time, it seemed like Staci and I were just beginning what would be a long series of performances together, but things haven't fallen into place since then quite so easily. Musical practice and performance don't always fit into the flow of a relationship and shared lives. Perhaps with some hard work and good luck, more of the potential of our musical partnership will be realized.]^";
 ];
 
 [ Countryside_storyline;
@@ -397,6 +407,8 @@
 ^By some unbelievable stroke of fortune, you found your Vindication this spring and summer. Your life became everything you had ever hoped it could be, you did exactly what you wanted to do, when you wanted to do it, and most importantly, you were treated with love and affection by other people, and found the intense closeness and deeper communication you always knew was possible.
 ^
 ^You resolve to do your best to share the feeling you have right now. The deep glow of love and biking and writing music and having a beautiful castle full of friends and how delicious it is to breathe the night air. Soon, you will be at Loth and you can sing your new song for your friends.^";
+	if (commentary == true)
+		print "^[Why do I think this story is worth sharing? Because happiness wants to be shared. Probably this story doesn't represent your joy and dreams, but it shows that fulfillment and meaning can arrive in the most random and unexpected way possible, that you can choose the story you want to live and shake the dice and find some random numbers that work for you. Entropy just means 'new information' and we need it to make our stories dynamic.]^";
 ];
 
 [ Lothfullmoon_storyline;
@@ -412,6 +424,8 @@
 ^(The Wheel costume for the Tarot Party is now in your possession. Wear it to trigger the party event.)^";
 	playerto(milw_street,1);
 	print "^(21 August 2013 - Outside your home)^";
+	if (commentary == true)
+		print "^[After writing it all into game form, I can almost forget how much of it all really did happen, and then it all floods back to me, and I can hardly believe its not still 2013, because that summer lasted about two years at least, why not another few? So much from those times has stayed. Whenever I'm with Staci, which is quite often, the feeling is still like it was then, the music-magic is alive between us. We finally made it back Home. Long live the Elves!]^";
 ];
 
 [ Tarotparty_storyline;
@@ -427,6 +441,8 @@
 ^You hear the Empress saying to someone, 'You are a wonderful character, I'm so glad I wrote you,' and your perceptions are Shuffled...
 ^
 ^(You aren't quite certain how the party ended, or how you got back here. You know you are supposed to meet Staci with the kids at the late night restaurant.)^";
+	if (commentary == on)
+		print "^[Another scene which deserves an extended interactive embodiment rather than a brief cut-scene. Ideally with a full cast of cards from the Tarot deck, some of whom would be other characters in disguise. Fleshing out the several hypothetical sections with extensive multicharacter conversation would/will probably add another 25,000 words of game code. At some point during development, it became clear that several non-interactive passages of text intended as placeholders were actually going to be left in the final Spring Thing release, and at that point, we made a choice to present all the scenes intended as complex character interaction in this way. It seems like it would be rather jarring to have rich character interaction in only a small segment of the game. If it can't be realized continuously, it is better to maintain a continuous style in which the characters only 'spring to life' within the cutscenes. This risks distancing the player from the action, but this game is far enough down the path of 'lots of text, light interaction' that we might as well just be that way without regretting it.]^";
 ];
 
 [ Soapbomb_storyline;
@@ -456,7 +472,7 @@
 ^
 ^It wasn't really a religion of one, though. By opening herself to you, by listening and learning to speak your language, Staci anchored you to the social world, sharing her home, friendships, and family with you. Not just Staci, but all your friends helped give you a space to play with delusion, to alchemically transform it to free creative play and artistic inspiration. 
 ^
-^You sigh. Too much pontification at the end, let the reader figure it out, don't gloss yourself for them. Months of work remain to bring this virtual recreation of the Harmonic Time-Bind Ritual Symphony to completion, but the outline is in place.^";
+^Enough pontification - time for the alternate reality endgame. Change history to prevent the fire, then collect the needed items to pass beyond the Confluence further NE outside town. This final section of the game is ahistorical and more puzzle-focused.^";
 	getenter();
 	playerto(milw_street, 1);
 	print "(4 September 2013 - A week before the fire)
@@ -464,6 +480,8 @@
 ^The crown becomes warm and makes a quiet bell-like sound.
 ^
 ^(>wear crown and >use crown to interface with it)^";
+	if (commentary == true)
+		print "^[So, it's less than two weeks to the Spring Thing deadline, and here I am trying to finish this rather absurd commentary-track to the main storyline. In terms of words which are rather unlikely to be read by anyone, this commentary probably ranks high. I mean, even Staci hasn't interacted that much with the commentary, I've shown her a few pieces. There is an amazing passage in Emily Short's City of Secrets, in which the player is retracing the actions of someone else, and in doing so reads a passage of a journal in which the Queen wonders if all her creative efforts will be as nothing. I'm mostly at peace now with those issues, this game and its music represents years of work and a lifetime of preparation, but I'm used to the things I do being very far from the median of what people are into. The idea that everyone really is 'the star of their own movie', and there is SOME universe where you achieve success beyond your wildest dreams, and the 17-dimensional chipmunks buy more copies of your videogame than GTA - that idea is quite a comfort. Information goes to infinity somewhere in the multiverse, even if not on our personal timeline. Or, as the fortune cookie I got early in the Symphony said: 'Your sparkle will never fade.' True of you and me and the chipmunks too.]^";
 ];
 
 [ Stopfire_storyline;
@@ -486,6 +504,8 @@
 ^Now that you've saved the castle, the summer will never end. Somewhere in the 17th dimension, a chipmunk is always playing your game, laughing at your foolish adventures and wondering how much was really true. 'More than you think,' you smile to yourself as you hop on your bike. It feels like it's going to be another amazing day. Staci said she's looking forward to seeing you.
 ^
 ^(Post-game secrets and extras are now available. The Story Control Machine at Infinite Loop is fully functional. The way upward from the lakeshore path is open. You can travel further outside of town. Your biking skill has increased.)^";
+	if (commentary == true)
+		print "^[The true story of how the castle was saved is an epic multiyear saga that deserves a telling far more extensive than is possible here. That story has heroes and villians and I played only a small part in it. As I sit here now in March 2016, in my small room overlooking the lake, writing and listening to the language of the waves, I hope that these memories of the months right before the fire serve as some hint of why so many gave so much of themselves to save this house.]^";
 ];
 
 [ Jaymeet_storyline;
