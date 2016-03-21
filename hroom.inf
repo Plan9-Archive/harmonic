@@ -1,7 +1,7 @@
 !============================================================================
 ! The game locations
 
-Room    milw_street "Outside my house"
+Room    milw_street "Outside your house"
 	with	
 	name 'milwaukee' 'street',
 	description "Your section of Milwaukee Street is directly across from a small farm which remains as an agricultural island within the city. An open field and a barn are across the street. Toward the southwest is Atwood Street leading toward downtown. Monona Drive is to the south. The edge of town lies toward the northeast.",
@@ -25,7 +25,7 @@ Room    milw_street "Outside my house"
 	cant_go "You go for a brief walk in the neighborhood, then return home. You may travel sw, s, ne, or enter your house.",
 	has outside;
 
-Room	home "Inside my house"
+Room	home "Inside your house"
 	with	
 	name 'home' 'residence' 'house',
 	antsreleased 0,
@@ -87,7 +87,7 @@ Room	home "Inside my house"
 	d_to basement,
 	cant_go "You can go down to the basement or out to Milwaukee St.";
 
-Room	basement "My house, in the basement"
+Room	basement "Your house, in the basement"
 	with	
 	name 'basement' 'downstairs' 'storage',
 	description [;

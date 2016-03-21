@@ -586,6 +586,8 @@
 		"Holds your money, that is all.";
 	if (noun == rose_heart)
 		"Give the rose quartz heart to Xochi.";
+	if (noun == gelato_brew)
+		"Drink the affogato to increase your biking skill.";
 	if (noun == victory)
 		"Just a trophy, that is all.";
 	if (noun == shelves)
@@ -600,6 +602,10 @@
 		"To prepare for catapulting, >put balloon in catapult.";
 	if (noun == catapult)
 		"Take the catapult to James Madison park, put the balloon in it, and >release catapult.";
+	if (noun == ring_of_tales)
+		"Wearing the ring is one of the requirements to open the tunnel gate at Confluence.";
+	if (noun == purple_flower)
+		"Having this flower in your inventory is one of the requirements to open the gate at Confluence at the end of the game.";
 	if (noun == strawberry)
 		"Your cat has no purpose except companionship and amusement.";
 	if (noun == lotus)
@@ -702,7 +708,7 @@
 		"Go to the Late Night restaurant ne of your home.";
 	if (mendota_lakeside.wizard < 99)
 		"To save the co-op, you need to follow the Xochi storyline through at least >bind schumann self (use the story control machine in Infinite Loop to control which barista is working), complete fictional scenes in Turning Wheel, Astral Enchantments, two in the Late Night restaurant, buy and take the tarot deck from the Afterlife, go to Moon Forest and >use tarot, >drop remote, go to Turning Wheel and >bind fortune story. Go to miffyland and >examine porch to confront the Queen. Complete her scene and go to Lady Wisdom's to get the items you need. Go to James Madison park, put the balloon in the catapult, and >release catapult.";	
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. Don't forget to get on your bike and >explore. Its often a good time to >visit staci. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 792 points. 84 of those points can be permanently missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. Don't forget to get on your bike and >explore. Its often a good time to >visit staci. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 792 points. 84 of those points can be missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;
