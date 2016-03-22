@@ -199,6 +199,7 @@
 	55: "being at home in the sky";
 	56: "climbing the tree by the dock";
 	57: "playing the Lothlorien pianos";
+	58: "sitting on the Loth porch swing";
 	}
 ];
 
@@ -483,7 +484,6 @@
 		print "The multiverse authors convention is open NE of the Capitol square.^";
 	if (loth_greatroom.lothstaci == 1)
 		print "Staci is waiting for you out on the porch, north of the Loth greatroom.^";
-
 	if (eside_hq.fictour == 1)
 		print "A visit to the 24-hour restaurant is on your agenda.^";
 	if (astral_enchantments.ceremony == 1)
@@ -708,7 +708,7 @@
 		"Go to the Late Night restaurant ne of your home.";
 	if (mendota_lakeside.wizard < 99)
 		"To save the co-op, you need to follow the Xochi storyline through at least >bind schumann self (use the story control machine in Infinite Loop to control which barista is working), complete fictional scenes in Turning Wheel, Astral Enchantments, two in the Late Night restaurant, buy and take the tarot deck from the Afterlife, go to Moon Forest and >use tarot, >drop remote, go to Turning Wheel and >bind fortune story. Go to miffyland and >examine porch to confront the Queen. Complete her scene and go to Lady Wisdom's to get the items you need. Go to James Madison park, put the balloon in the catapult, and >release catapult.";	
-	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. Don't forget to get on your bike and >explore. Its often a good time to >visit staci. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 792 points. 84 of those points can be missed if certain optional actions are not performed before plot events.";
+	"There are many side stories to score additional points. Visit all the locations and interact with all the characters, acquire all the items, and visit your home for >email and to >play piano frequently. Don't forget to get on your bike and >explore. Its often a good time to >visit staci. >hint OBJECT and asking for a >hint in different locations may provide new information. The current maximum score is 801 points. 84 of those points can be missed if certain optional actions are not performed before plot events.";
 ];
 
 [ Insertcylsub;

@@ -396,7 +396,13 @@ Decor staircase "rock staircase" loth_backyard
 Decor swing "porch swing" loth_porch
 	with
 	name 'porch' 'swing' 'bench',
-	description "The Loth swing is the happy result of do-it-yourself construction. Large wooden beams angle together to support a heavily used wooden bench hanging from chains. As large as a couch, it provides a perfect spot to sit and talk while watching the lake and the wind in the trees and the bats at twilight. Many of the happiest moments in your life willan-on-have been spent here.";
+	description "The Loth swing is the happy result of do-it-yourself construction. Large wooden beams angle together to support a heavily used wooden bench hanging from chains. As large as a couch, it provides a perfect spot to sit and talk while watching the lake and the wind in the trees and the bats at twilight. Many of the happiest moments in your life willan-on-have been spent here.",
+	before [;
+		enter:
+			achieved(58);
+			print "From the swing, the view of the sky, trees, and lake is perfect. Whether it is a sunny afternoon or the middle of the night, this is a perfect spot for thought, conversation, or relaxation.";
+	],
+	has supporter enterable;
 
 Decor greatroom_stuff "greatroom stuff" loth_greatroom
 	with
