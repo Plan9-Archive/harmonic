@@ -321,8 +321,12 @@
 
 [ Creditssub;
 	"^Written and programmed by Ben Kidwell (mycroftiv)
-	 ^Co-written and edited and tested by Maevele Straw^
-	 ^Thanks to Inform Beginner's Guide and everyone maintaining Inform 6 resources^";
+^Co-written and edited and tested by Maevele Straw
+^Thanks to Inform Designer's Manual, Inform Beginner's Guide and all Inform 6 resources
+^Written and playtested entirely in Plan 9 ANTS, 9front and Bell Labs variants
+^IFspiration taken from too many sources to fully list, but include:
+^The games of Emily Short, Steve Meretzky, Andrew Plotkin, and IFcomp 2015
+^The Digital Antiquarian blog by Jimmy Maier^";
 ];
 
 [ Dancesub;
@@ -550,6 +554,8 @@
 		print "You might need to have more experiences, but there are still more songs to compose if you >play piano.^";
 	if (loth_greatroom.lothstaci < 9)
 		print "You may need to complete more of the story, but there are still new scenes to see if you >visit staci.^";
+	if ((mendota_lakeside.wizard == 99) && (flow_network.ouroborous == 0))
+		print "You have not yet completed the endgame puzzle of passing beyond the Confluence gate far NE of town.^";
 ];
 
 [ Helpsub;

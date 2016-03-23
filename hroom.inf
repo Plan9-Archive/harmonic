@@ -456,7 +456,8 @@ Room	lakeshore_path "Dirt path along the lakeshore"
 		return story_circle;
 	],
 	e_to state_street,
-	cant_go "You don't feel like spending time on the university campus right now. You can get back to state street to the east.";
+	cant_go "You don't feel like spending time on the university campus right now. You can get back to state street to the east.",
+	has outside;
 
 Room	story_circle "Story Circle"
 	with
@@ -643,7 +644,8 @@ Room	loth_porch "Lothlorien co-op, the first floor porch"
 	],
 	s_to loth_greatroom,
 	out_to loth_greatroom,
-	cant_go "You can go out from the porch to the Great Room.";
+	in_to loth_greatroom,
+	cant_go "You can go in from the porch to the Great Room.";
 
 Room	loth_kitchen "Lothlorien co-op, in the kitchen"
 	with

@@ -300,10 +300,10 @@ Character	scholars "the Scholars of Atlantis" atlantean_academy
 			'xelia':
 				scholars.speech++;
 				"'Xelia may seem like a supporting character, but she is really the key to the whole work. The central theme and most important moment is the bind of fiction onto reality. She crystallized that. Just as importantly, she also shapes the counterbalancing theme, the risk of dangerous and isolating delusions. Just because I felt...he felt...like everything was perfect doesn't mean it actually was. Reality has a way of ignoring your opinion and kicking you in the teeth, sometimes.'";
-			'chip':
+			'chip', 'astra':
 				scholars.speech++;
-				"'The Big Chipmunk himself. Astral Enchantments really was the portal where fantasy could enter reality the most easily. Intention is the core of magic, and Chip provided the perfect tools to focus the creative intentions of the composition. Crystals are physical music, molecules structured in a rhythmic spatial matrix. Chip showed there was an acceptable social context for the wildest flights of fancy. And selling all those rolling papers for the endless quantity of joints - that was important too.'";
-			'colette', 'astra', 'jay', 'xelia', 'jay', 'colette', 'daniel', 'matthew', 'paul':
+				"'The Big Chipmunk himself, and his starry partner. Astral Enchantments really was the portal where fantasy could enter reality the most easily. Intention is the core of magic, and they provided the perfect tools to focus the creative intentions of the composition. Crystals are physical music, molecules structured in a rhythmic spatial matrix. Chip and Astra showed there was an acceptable social context for the wildest flights of fancy. And selling all those rolling papers for the endless quantity of joints - that was important too.'";
+			'colette', 'jay', 'xelia', 'jay', 'colette', 'daniel', 'matthew', 'paul':
 				scholars.speech++;
 				"'It's hard to pick just one wonderful character to discuss with you. The symphony couldn't have unfolded without the participation of all the co-composers.'";
 			'terminal', 'computer', 'plan', 'ants', 'programming', 'coding', 'grid':
