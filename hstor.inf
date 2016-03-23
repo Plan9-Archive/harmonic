@@ -983,3 +983,16 @@
 ^The circle around the fire is quiet for a moment, and then a new Tale begins.^";
 	playerto(andrews_cabin);
 ];
+
+[ Fullcompletion_storyline;
+	achieved(60);
+	print "And with that, you have scored every point available, and are awarded a bonus 99 for 999 points total!
+^
+^(22 March 2016) - At the Castle, full moon and waves outside
+^
+Staci made delicious pad thai for house dinner. Sunset from the porch swing was peaceful, clouds reflected in a still lake. Now, at night, the wind has risen and the waves are singing outside your window. The game has been written, the story of the Loonie Revolution and the Harmonic Time-Bind Ritual Symphony has been told. What do you say to the player who has made it through everything? Can yet more words serve as a reward to one who has already read so many?
+^
+^You are still fighting for the revolution. You didn't make it back to the castle just to bask in the glory of the lake sunsets, as fine as they are. You aren't manic and delusional any more, but working on software and music and writing and trying to be a keeper of the flame of weirdness and freak culture at Lothlorien co-op - still fighting for revolutionary principles - is still what you want to be doing, and you are profoundly thankful that you are.
+^
+^Spring Thing 2016 starts within two weeks. Peace and Love to the players who have followed the journey this far, may you all find your place in whatever stories you wish to live.^";
+];
