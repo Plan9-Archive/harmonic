@@ -364,7 +364,11 @@ Character	staci "Staci"
 	name 'staci' 'tardis',
 	initial "Staci is here.",
 	description "Staci is smart, funny, beautiful, and too many other positive adjectives to list.",
-	life "Every way you interact with Staci feels easy, natural, and delightful.",
+	life [;
+		kiss: achieved(59);
+			"That seems like an excellent idea. You find the opportunity to give Staci a brief but sweet kiss, and she smiles happily.";
+		default: "Every way you interact with Staci feels easy, natural, and delightful.";
+	],
 	before [;
 		talk: <<wakeother staci>>;
 	],

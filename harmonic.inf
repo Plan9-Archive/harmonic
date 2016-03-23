@@ -163,7 +163,7 @@ Array task_scores ->
 	9 9 9 9 9 9 9 9 9 
 	9 9 9 9 9 9 69 9 9 
 	9 39 9 99 9 9 9 9 9
-	9 9 9 9 9 9 9 9 9;
+	9 9 9 9 9 99 9 9 9;
 
 Constant Headline
 "^9:15 PM 27 Sept. 2015
