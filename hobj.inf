@@ -711,7 +711,7 @@ Prop	story_machine "Story Control Machine" infinite_loop
 	with
 	article "the",
 	name 'story' 'control' 'machine' 'wheel' 'lever' 'button',
-	description "This machine looks like a devotional altar with many turning prayer wheels. A sign reads: 'Spin wheel to change baristas at Coffee Lion. Push button to reset fictional subuniverses.'",
+	description "This machine looks like a devotional altar with many turning prayer wheels. A sign reads: 'Spin wheel to change baristas at Coffee Lion. Push button to reset fictional subuniverses. Pull lever to reset songs and explorations.'",
 	before [;
 		turn: switch(random(3)) {
 			1:	remove xelia;
@@ -739,7 +739,13 @@ Prop	story_machine "Story Control Machine" infinite_loop
 			essentially_art.seminar = 1;
 			lost_in_grid.battle = 1;
 			afterlife_antiques.gifts = 1;
-			"Subuniverse triggers to the moment you became the Harmonist.";
+			"Subuniverse triggers reset to the moment you became the Harmonist.";
+		pull:
+			if (mendota_lakeside.wizard < 99)
+				"A piece of tape covers the lever. A note beneath it reads 'locked until story completion.'";
+			lunar_lightning.explore = 0;
+			piano.playcount = 2;
+			"Bike explorations and piano compositions reset.";
 	];
 
 Prop	arched_gate "tunnel into the hillside" confluence
@@ -760,6 +766,7 @@ Prop	arched_gate "tunnel into the hillside" confluence
 			achieved(53);
 			print "The stream is slow-moving and shallow. It is refreshingly cold as it swirls around your ankles as you swing the gate open. An indistinct pink glow beckons you forward. On your third step, there is suddenly nothing solid beneath your foot, and you lurch forward, plunging down a sharply angled smooth tube. Abrupt exhiliration sweeps over you. An Atlantean waterslide! This should be fun...^";
 			playerto(flow_network);
+			give self ~open;
 			return true;
 	],
 	has openable lockable locked;
