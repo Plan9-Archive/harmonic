@@ -326,7 +326,7 @@
 ^Written and playtested entirely in Plan 9 ANTS, 9front and Bell Labs variants
 ^IFspiration taken from too many sources to fully list, but include:
 ^The games of Emily Short, Steve Meretzky, Andrew Plotkin, and IFcomp 2015
-^The Digital Antiquarian blog by Jimmy Maier^";
+^The Digital Antiquarian blog by Jimmy Maher^";
 ];
 
 [ Dancesub;
@@ -569,7 +569,7 @@
 	if (home.antsreleased == 0)
 		"Just type 'release ants' at the > prompt";
 	if ((introgoal == 0) || (introgoal == 1)) 
-		"During the first part of the introduction, your choices are very limited and the story will advance just by travelling to the available locations using direction commands. (n s e w ne nw se sw out in up down)";
+		"During the first part of the introduction, your choices are very limited and the story will advance just by travelling to the Coffee Lion and the Late-night Restaurant using direction commands. (n s e w ne nw se sw out in up down)";
 	if ((noun == piano) && (piano.obsessionclear == 0))
 		"You need to continue through the introduction, then return home and >play piano.";
 	if (noun == piano)

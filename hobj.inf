@@ -489,7 +489,7 @@ Prop	terminal "terminal" home
 			if (elginbday == 8)
 				Bday_visit_storyline();
 			if (self.acted == 0)
-				print "^Your irc friends offer some valuable perspective on keeping your fictional self in contact with shared social reality.^";
+				print "^You spend some time talking with your irc friends, who offer valuable perspective on keeping yourself in contact with shared social reality.^";
 			self.acted = 0;
 			return true;
 	];
