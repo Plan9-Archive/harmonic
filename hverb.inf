@@ -665,9 +665,9 @@
 	if (location == atlantis_temple)
 		"You need to >bind chaos substance and wait a few turns.";
 	if (location == atlantean_academy)
-		"The scholars will suggest topics, you just need to >tell scholars about TOPIC.";
+		"The scholars will suggest topics, you just need to >tell scholars about TOPIC. For instance, when the scholars ask about items, you can >tell scholars about pendant.";
 	if (location == gelato_alchemy_lab)
-		">rub spheres then >push button then >insert cylinder";
+		">rub spheres, then >push button, then >insert cylinder";
 	if (location == ritual_spot)
 		"You need to bring food here to perform the ritual. You can acquire food by visiting the late-night restaurant nearby a few times.";
 	if (location == astral_enchantments)
