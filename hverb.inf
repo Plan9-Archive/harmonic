@@ -561,7 +561,7 @@
 [ Helpsub;
 	"Move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). An intro/guide: http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
 ^
-^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. You can come up with ideas for what to do next if you >think. Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. >verblist will show all verbs needed to score all points.^";
+^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. You can come up with ideas for what to do next if you >think (or check >goals). Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. >verblist will show all verbs needed to score all points. >summary will provide a mildly spoilery overview of the general plot of the game, and >walkthrough will provide a comprehensive command list to score all 999 points.^";
 ];
 
 [ Hintsub;
@@ -1021,6 +1021,383 @@
 	"You don't have anywhere to visit right now.";
 ];
 
+[ Walkthroughsub;
+	print "release ants
+read books
+w
+s
+e
+ne
+n
+s
+e
+talk to xelia
+w
+n
+e
+play piano
+d
+bind fiction reality
+u
+w
+sw
+w
+s
+n
+e
+n
+e
+talk to chip
+wear pendant
+buy stone
+w
+s
+se
+e
+talk to xochi
+give stone to xochi
+w
+n
+e
+use terminal
+play piano
+bind schumann self
+w
+s
+e
+talk to xochi
+w
+n
+e
+use terminal
+w
+s
+e
+talk to xochi
+w
+n
+ne
+n
+s
+sw
+sw
+w
+w
+s
+n
+e
+e
+n
+ne
+give 4cy to colette
+sw
+w
+buy prints
+take prints
+e
+n
+buy lunar
+s
+lunar
+s
+se
+e
+talk to xelia
+tell xelia about xochi
+w
+ride
+s
+w
+e
+use terminal
+w
+ride
+sw
+w
+w
+w
+w
+n
+n
+nw
+bind past future
+n
+ne
+n
+s
+lunar
+ne
+sw
+sw
+e
+use terminal
+visit staci
+n
+s
+u
+d
+e
+s
+s
+listen
+n
+e
+ne
+sw
+w
+nw
+se
+sw
+ne
+n
+nw
+n
+pet dog
+u
+se
+e
+s
+s
+e
+e
+e
+ne
+e
+w
+ne
+n
+n
+e
+w
+d
+s
+sw
+sw
+w
+w
+lunar
+w
+n
+ne
+sw
+w
+n
+s
+w
+e
+n
+ne
+lunar
+s
+s
+sw
+se
+ne
+nw
+w
+n
+play tempest
+play tempest
+play tempest
+play tempest
+bomb
+s
+e
+n
+e
+rub spheres
+push button
+insert cylinder
+drink affogato
+w
+n
+e
+d
+lunar
+w
+u
+w
+lunar
+sw
+n
+e
+listen
+sing
+bind chaos substance
+wait
+wait
+w
+n
+turn orrery
+inventory
+drop spoke
+s
+ne
+buy tarot
+take tarot
+sw
+ride
+s
+w
+w
+w
+n
+n
+w
+wear wheel
+ne
+n
+wear crown
+use crown
+ne
+n
+listen
+wait
+wait
+wait
+bind red green
+lunar
+ne
+take remote
+ne
+use tarot
+drop remote
+sw
+sw
+sw
+sw
+use crown
+n
+n
+bind fortune story
+s
+w
+enter painting
+tell scholars about symphony
+tell scholars about pendant
+tell scholars about piano
+tell scholars about staci
+e
+ride
+s
+w
+w
+use crown
+w
+use crown
+w
+x porch
+x queen
+x screen
+listen
+break screen
+e
+e
+s
+take all
+n
+lunar
+w
+n
+n
+put balloon in catapult
+release catapult
+wear shades
+sw
+w
+s
+buy soap
+n
+ride
+w
+w
+w
+n
+w
+u
+take ring
+wear ring
+d
+ride
+e
+e
+s
+e
+e
+e
+ne
+ne
+ne
+ne
+ne
+x tunnel
+explore
+explore
+explore
+explore
+explore
+explore
+explore
+w
+explore
+take flower
+n
+explore
+n
+e
+w
+ne
+ne
+ne
+ne
+enter tunnel
+bind beginning end
+x fire
+xyzzy
+e
+play piano
+play piano
+play piano
+play piano
+play piano
+play piano
+play piano
+play piano
+w
+lunar
+s
+e
+talk to xelia
+w
+ride
+s
+se
+sw
+visit staci
+visit staci
+visit staci
+visit staci
+visit staci
+visit staci
+visit staci
+nw
+ne
+n
+n
+w
+play piano
+n
+sit on swing
+s
+d
+n
+d
+climb tree
+kiss staci
+win
+amusing^";
+];
+
 [ Winsub;
 	deadflag = 2;
 	"Sure, you win! Success is for you to define. If you want to keep playing, just >undo.";
@@ -1082,6 +1459,7 @@ Verb "use" * noun	-> Use;
 Verb "vacation" *	-> Vacation;
 Verb "verblist" *	-> Verblist;
 Verb "visit" * topic	-> Visit;
+Verb "walkthrough" *	-> Walkthrough;
 Verb "win" *	-> Win;
 Verb "xyzzy" *	-> Xyzzy;
 
