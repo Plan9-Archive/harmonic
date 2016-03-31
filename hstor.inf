@@ -956,7 +956,7 @@
 		deadflag = 2;
 		"^Your friends say in unison 'Congratulations! You found the secret ending!' Chip explains, 'You made it all the way to here in the game, and you never actually started your relationship with Staci. My opinion is, you must be a monogamous wanna-be girlfriend who is jealous. Of course, you can play the game how you want, I'm not judging! Still, knowing what I know from the Moon Computer in other universes...you've missed out. That's all I have to say.'";
 	}
-	print "^As you are greeting your friends. your words are lost in a whooshing sound effect, and you catch a glimpse of a familiar blue box before the time rift closes. 'Hi, sorry, I'm a little behind schedule,' Staci announces. You think about asking how that can happen to a time travel machine, but you are too busy hugging her happily.
+	print "^As you are greeting your friends. your words are lost in a whooshing sound effect, and you catch a glimpse of a familiar blue box before the time rift closes. 'Hi, sorry, I'm a little behind schedule,' Staci announces. You think about asking how that can happen to a time travel machine (Staci is the Space-Time Autonomous Continuum Integrator), but you are too busy hugging her happily.
 ^
 ^'I was up really late last century,' Staci says, looking a little bleary, 'I remember I'm meeting you here but I forget when this is. Have we finished writing the game in your continuity?'
 ^

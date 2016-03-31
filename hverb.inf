@@ -321,7 +321,8 @@
 
 [ Creditssub;
 	"^Written and programmed by Ben Kidwell (mycroftiv)
-^Co-written and edited and tested by Maevele Straw
+^Co-written, edited and tested by Maevele Straw
+^Cover art by Nicole Swain
 ^Thanks to Inform Designer's Manual, Inform Beginner's Guide and all Inform 6 resources
 ^Written and playtested entirely in Plan 9 ANTS, 9front and Bell Labs variants
 ^IFspiration taken from too many sources to fully list, but include:
@@ -561,7 +562,7 @@
 [ Helpsub;
 	"Move around using compass directions (n s e w ne nw se sw up down in out), examine things (x NAME), take things and look in your inventory (take NAME, i), and talk to characters (talk to NAME). An intro/guide: http://inform7.com/learn/eg/dm/IntroductionToIF.pdf
 ^
-^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. You can come up with ideas for what to do next if you >think (or check >goals). Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. >verblist will show all verbs needed to score all points. >summary will provide a mildly spoilery overview of the general plot of the game, and >walkthrough will provide a comprehensive command list to score all 999 points.^";
+^An important verb is the >bind NAME NAME command from the Plan 9 operating system, which forms a conceptual union. You can come up with ideas for what to do next if you >think (or check >goals). Specific hints from the >hint command are available based on your location and progression in the story. You can also type >hint NAME for hints about objects in your vicinity. All required plot-advancing conversations are triggered by >talk to. Characters may have new >talk to responses after story events. Optional conversations are available with >ask NAME about and >tell NAME about. If you are not progressing on your own, the game will automatically trigger some plot events based on an internal timer. You can use >sleep to advance a day, and >story to skip to the next event. >clockoff will deactivate automatic story progression. >clockon to reactivate. >verblist will show all verbs needed to score all points. >summary will provide a mildly spoilery overview of the general plot of the game, and >walkthrough will provide a comprehensive command list to score all 999 points. >about and >credits provide some additional background and authorship information.^";
 ];
 
 [ Hintsub;
