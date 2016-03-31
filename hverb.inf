@@ -952,6 +952,10 @@
 	"You aren't allowed to skip any further ahead in the storyline.";
 ];
 
+[ Summarysub;
+	print "The game is divided into roughly three main sections. During the first part, realistic scenes will play out in Coffee Lion, the Late Night restaurant, Astral Enchantments, and Lady Wisdom's. This is a good time to finish the side-quest involving Xochi at Coffee Lion. Once you are invited to Elgin's birthday party, you will need to acquire a bicycle, which opens up most of the rest of the map. After the birthday party at Rossini's Pizza, you will be able to go to Lothlorien Co-op in the NW corner of the downtown area. After your second visit there, the main middle section of the game opens up. At this point, multiple alternate fictional realities become available in the previously visited locations. You can investigate them now or wait until later. The main storyline continues with Madcon and other downtown-focused events. The reality-based storyline concludes with the events of September 11 2013. At this point, the final, fully fictionalized, game segment begins. This is somewhat more puzzle focused, and will require you to complete most of the alternate-reality scenes, if you have not already. After you 'fix history', there is an endgame challenge of making it through the Confluence gate far NE of town. If you complete that, there will still most likely be quite a few optional points to collect from miscellaneous activities to achieve the full 999-point score. Note that it is possible to miss optional points during a playthrough. The main storyline through the endgame should always be completable, but a perfect score is only achievable by missing nothing and doing everything at the right time. The full walkthrough has a complete move sequence for a 999 point game.^";
+];
+
 [ Talksub;
 	if(noun hasnt animate)
 		"The soundwaves of your voice bounce off the ", (name) noun, " affecting its molecular structure in subtle ways.";
@@ -1070,6 +1074,7 @@ Extend "sleep" replace *	-> Sleepwait;
 Verb "spin" = 'turn';
 Verb "standard" *	-> Standard;
 Verb "story" *	-> Story;
+Verb "summary" *	-> Summary;
 Verb "talk" * noun -> Talk
 	* 'to'/'with' noun -> Talk;
 Verb "titles" *	-> Title;
