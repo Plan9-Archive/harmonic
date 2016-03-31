@@ -511,6 +511,8 @@ Prop	piano "piano" home
 			achieved(3);
 			"You sit at the keyboard, and your fingers find a leitmotiv-like descending sequence of a Db-major chord and a series of descending overlapping thids that trace out an Ab-major ninth. Played as a repeating pattern spanning the whole keyboard, this becomes a central refrain of your improvisations for the next several months, the core melodic seed of the Harmonic Time-Bind Ritual Symphony.
 ^
+^(http://files.9gridchan.org/harmonic/maintheme.mp3)
+^
 ^(As the game progresses, you will compose many songs about your experiences. Return home to >play piano frequently.)";
 		1:	if (xochi.email == 2) {
 				Schumann_piano_storyline();

@@ -986,7 +986,7 @@
 ];
 
 [ Verblistsub;
-	"n s e w ne nw se sw u d in out, examine, take, drop, give, talk to, tell, use, play, buy, wear, ride, listen, kiss, break, bomb, rub, push, insert, turn, climb, visit, sing, lunar, explore, release, bind";
+	"n s e w ne nw se sw u d in out, examine, take, drop, give, talk to, tell, use, play, buy, wear, ride, listen, kiss, break, bomb, rub, push, insert, turn, climb, visit, sing, lunar, explore, xyzzy, release, bind";
 ];
 
 [ Visitsub;

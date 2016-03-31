@@ -57,6 +57,7 @@ Room	home "Inside your house"
 	initial [;
 		if (self hasnt visited)
 			print "(Please read >help and >content. Check >goals or get a >hint anytime.)
+^(Game soundtrack and additional files found at http://files.9gridchan.org/harmonic)
 ^(1 April 2013 - 30 months earlier)
 ^
 ^After working obsessively since the New Year, you are finally ready to officially announce and release your software. You feel tense yet eager anticipation for the reaction from other Plan 9 users. When you are ready to unleash the Advanced Namespace Tools on the world, >release ANTS.^";
