@@ -281,7 +281,7 @@ Room	willy_west "Willy Street, west end"
 	in_to lady_wisdom,
 	e_to willy_east,
 	w_to john_nolen,
-	cant_go "You can go e, nw, w, or in.",
+	cant_go "You can go e, w, or in.",
 	has outside;
 
 Room	lady_wisdom "Lady Wisdom's Coffeeshop"
