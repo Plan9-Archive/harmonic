@@ -624,7 +624,7 @@
 [ Spacepancakes_storyline;
 	move space_pancakes to player;
 	eside_hq.metjay = 3;
-	print "^As you order your standard meal of pancakes, eggs, and potatoes, you remember an anecdote about a midwestern farmer in the 1970s who claims that space aliens gave him pancakes. It was used as evidence for the mysterious nature of reality. It had seemed absurd and implausible to you in the past, but now it makes perfect sense. A profound possibility occurs to you - maybe the pancakes the aliens gave to the farmer were Earth pancakes taken from somewhere else? In fact, maybe the aliens took pancakes from the future backwards in time - it could be that if you take the pancakes with you, aliens will show up and steal your them to give to the farmer. You request a to-go container and prepare yourself for the possibility of an extraterrestrial encounter of the pancake kind.^";
+	print "^As you order your standard meal of pancakes, eggs, and potatoes, you remember an anecdote about a midwestern farmer in the 1970s who claims that space aliens gave him pancakes. It was used as evidence for the mysterious nature of reality. It had seemed absurd and implausible to you in the past, but now it makes perfect sense. A profound possibility occurs to you - maybe the pancakes the aliens gave to the farmer were Earth pancakes taken from somewhere else? In fact, maybe the aliens took pancakes from the future backwards in time - it could be that if you take the pancakes with you, aliens will show up and steal them to give to the farmer. You request a to-go container and prepare yourself for the possibility of an extraterrestrial encounter of the pancake kind.^";
 ];
 
 [ Oldtest_storyline;

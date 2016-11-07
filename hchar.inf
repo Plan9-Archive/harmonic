@@ -20,7 +20,7 @@ Character	strawberry "Strawberry" basement
 		answer: "Strawberry says arooooo. (Footnote 5)";
 	],
 	before [; 
-		pet: "Strawberry begins to purr as you stroke her, but after a few seconds, she decides that she is a fighter, not a lover. She bats at your hand with a paw, and looks up at you expecantly, hoping you will attack her.";
+		pet: "Strawberry begins to purr as you stroke her, but after a few seconds, she decides that she is a fighter, not a lover. She bats at your hand with a paw, and looks up at you expectantly, hoping you will attack her.";
 		play: "You find one of your cat toys (a cloth catnip-filled rabbit on a string dangling from a stick) and spend wiggle it back and forth a few inches from Strawberry's nose. She blinks rapidly, and tries to catch it. You pull it back from her claws, and she pounces. Her paws are on the rabbit for a moment, but you lift it up quickly, and she jumps up to follow, spending a second or two on her back legs waving her paws in the air. After another few moments, Strawberry loses interest and you put the cat toy away.";
 		take: "Strawberry lets you hold her for about fifteen seconds before squirming free of your grasp, climbing your shoulder with help from sharp tiny claws, and hops to the floor behind you.";
 		talk: "Strawberry responds with a quizzical 'yerp?' You explain yourself more clearly, and she answers 'pllrrrmm..' in a non-committal manner.";

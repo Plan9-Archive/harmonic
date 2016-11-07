@@ -137,7 +137,7 @@
 	settime(0,60);
 	move wallet to player;
 	move mirror_shades to player;
-	print "^^The full moon amidst clouds spills milky brightness everywhere. Summer is just barely over but the air is still warm and moist. Staci is standing on tip-toe, looking over the edge of the rooftops and treebranches. 'Oh! I can tell it's started,' she says. You stand up and walk across the porch, slipping your arm around her as you turn to watch the sky. What had been a low full circle wreathed by clouds is higher now and shinining clearly, but no longer full - darkness is creeping across the surface as the Moon swings into Earth's shadow. You peer upwards together, savoring the moment. The night air is sweet and warm, you are with someone you love...and the Castle is about to reopen.^^";
+	print "^^The full moon amidst clouds spills milky brightness everywhere. Summer is just barely over but the air is still warm and moist. Staci is standing on tip-toe, looking over the edge of the rooftops and treebranches. 'Oh! I can tell it's started,' she says. You stand up and walk across the porch, slipping your arm around her as you turn to watch the sky. What had been a low full circle wreathed by clouds is higher now and shining clearly, but no longer full - darkness is creeping across the surface as the Moon swings into Earth's shadow. You peer upwards together, savoring the moment. The night air is sweet and warm, you are with someone you love...and the Castle is about to reopen.^^";
 	getenter();
 ];
 
