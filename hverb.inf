@@ -1416,7 +1416,7 @@ Include "Grammar";
 
 Verb "about" *	-> About;
 Verb "bind"	* noun noun	-> Bind
-	* 'to'/'with'/'and'/'on'/'in' noun -> Bind;
+	* noun 'to'/'with'/'and'/'on'/'in' noun -> Bind;
 Verb "bomb" *	-> Bomb;
 Verb "clockon" *	-> Clockon;
 Verb "clockoff" *	-> Clockoff;
