@@ -19,7 +19,7 @@ Decor	schumann	"music" home
 
 Decor	grid "grid" basement
 	with	
-	name 'grid' 'table' 'computer' 'computers' 'cables' 'ethernet' 'servers' 'spiderwebs' 'power' 'desk' '9grid',
+	name 'grid' 'table' 'computer' 'computers' 'cable' 'cables' 'ethernet' 'server' 'servers' 'spiderwebs' 'power' 'desk' '9grid',
 	description [; 
 		print "The physical hardware of your grid is cheap and worn. A mixture of no-name hardware and old dell minitowers, the processor speed, RAM, and storage space is all well below the current standard. The software is a different story - your Advanced Namespace Tools weave the physical boxes together into a coordinated whole. Sometimes you feel like the data within, how it is organized and flows, is like a living thing.^";
 		if (introgoal >= 3)
@@ -122,7 +122,7 @@ Decor	rossext "rossinis exterior" mon_mid
 
 Decor	artifacts "astral enchantment artifacts" astral_enchantments
 	with
-	name 'art' 'artworks' 'sculptures' 'sage' 'incense' 'buttons' 'stickers' 'tapestries' 'papers' 'pipes' 'guides' 'artifacts',
+	name 'art' 'artworks' 'sculptures' 'sage' 'incense' 'button' 'buttons' 'sticker' 'stickers' 'tapestry' 'tapestries' 'papers' 'pipe' 'pipes' 'guide' 'guides' 'artifact' 'artifacts',
 	buycount 0,
 	description "All of the items in the store are well-suited to decorative and spiritual use.",
 	before [;
@@ -136,7 +136,7 @@ Decor	artifacts "astral enchantment artifacts" astral_enchantments
 
 Decor	home_artifacts "house decorations from Astral Enchantments" home
 	with
-	name 'trinkets' 'totems' 'banner' 'tapestry' 'scarf' 'pan' 'charms' 'mystic' 'goddess' 'pan' 'scultpure',
+	name 'trinket' 'trinkets' 'totem' 'totems' 'banner' 'tapestry' 'scarf' 'pan' 'charm' 'charms' 'mystic' 'goddess' 'pan' 'scultpure',
 	description "You think your decorations from Astral Enchantments improve the look of your home considerably. It definitely seems like a loonie lives here.",
 	before [;
 		take: "You prefer to leave it where it is.";
@@ -145,7 +145,7 @@ Decor	home_artifacts "house decorations from Astral Enchantments" home
 
 Decor	curiosities "antiques and curiosities in afterlife" afterlife_antiques
 	with
-	name 'antiques' 'curiosities' 'antique' 'curiosity' 'tchotchke' 'heirloom' 'paintings' 'medical' 'equipment' 'animals' 'taxidermy' 'furniture' 'lamps',
+	name 'antique' 'antiques' 'curiosity' 'curiosities' 'tchotchke' 'heirloom' 'painting' 'paintings' 'medical' 'equipment' 'animals' 'taxidermy' 'furniture' 'lamp' 'lamps',
 	buycount 0,
 	description "The density and diversity of the items for sale here is almost indescribable. Strange paintings cover the walls, old and scary looking medical equipment bristles from cabinets, taxidermied animals stare at you from every direction, peculiar tools are piled atop one-of-a-kind furniture and illuminated by the glow of a dozen strange sculptural lamps.",
 	before [;
@@ -166,7 +166,7 @@ Decor	curiosities "antiques and curiosities in afterlife" afterlife_antiques
 
 Decor	art_objects "art in Essentially Art" essentially_art
 	with
-	name 'art' 'sculptures' 'paintings' 'drawings' 'photos' 'photographs',
+	name 'art' 'sculpture' 'sculptures' 'paintings' 'drawing' 'drawings' 'photo' 'photos' 'photograph' 'photographs',
 	description "Most of the art here has a strongly local character. Lots of paintings and photographs of the Wisconsin landscape and wildlife. Nothing appeals to you as much as Artemis print series.",
 	before [;
 		take: "Not yours to take.";
@@ -175,7 +175,7 @@ Decor	art_objects "art in Essentially Art" essentially_art
 
 Decor	home_curiosities "house antiques from Afterlife" home
 	with
-	name 'portrait' 'beethoven' 'radio' 'taxidermy' 'turkey' 'claws' 'purple' 'candle' 'postcards' 'antiques' 'curiosities',
+	name 'portrait' 'beethoven' 'radio' 'taxidermy' 'turkey' 'claws' 'purple' 'candle' 'postcards' 'antique' 'antiques' 'curiosity' 'curiosities',
 	description "The aura of strange magic in your house, a heady blend of woo-woo and spiritualism, is enhanced by your collection of curiosities.",
 	before [;
 		take: "You have arranged your mystic objects carefully and you don't want to disturb their positioning.";
@@ -203,7 +203,7 @@ Decor	lake_monona "Lake Monona" john_nolen
 
 Decor	memorabilia "memorabilia" rossinis_pizza
 	with
-	name 'memorabilia' 'posters' 'albums' 'elvis' 'marilyn' 'novelties' 'novelty' 'alarm' 'clocks' 'peter' 'frampton' 'electric' 'guitar',
+	name 'memorabilia' 'poster' 'posters' 'albums' 'elvis' 'marilyn' 'novelties' 'novelty' 'alarm' 'clock' 'clocks' 'peter' 'frampton' 'electric' 'guitar',
 	description "Posters for old movies and music cover the walls. Elvis Presley, Marilyn Monroe, TV stars of the 70s. Mid 20th century novelty items like Babe Ruth alarm clocks and an electric guitar signed by Peter Frampton sit up on shelves.",
 	has pluralname;
 
@@ -258,19 +258,19 @@ Decor	arcade "arcade machines" rossinis_arcade,
 
 Decor	figures "figures" atlantis_temple
 	with
-	name 'figures' 'people' 'man' 'woman' 'pillar' 'temple',
+	name 'figure' 'figures' 'people' 'man' 'woman' 'pillar' 'temple',
 	description "You can't make out any detail of anything here.",
 	before "You can't interact with anything other than the abstractions here.";
 
 Decor	alchemy_supplies "alchemical supplies" gelato_alchemy_lab
 	with
-	name 'shelves' 'bottles' 'plants' 'minerals',
+	name 'shelf' 'shelves' 'bottle' 'bottles' 'plant' 'plants' 'mineral' 'minerals',
 	description "There wide variety of shapes and colors of the bottles is exceeded by the diversity and strangeness of the materials identified on the labels. Traditional herbs mingle with exotica like seemingly empty jars labeled 'Armadillo Dreams' and 'Large Even Primes'",
 	has pluralname;
 
 Decor	alchemy_apparatus "alchemical apparatus" gelato_alchemy_lab
 	with 
-	name 'alchemical' 'apparatus' 'maze' 'spheres' 'tubes' 'button' 'cylinder' 'glass',
+	name 'alchemical' 'apparatus' 'maze' 'sphere' 'spheres' 'tube' 'tubes' 'button' 'cylinder' 'glass',
 	description "You thought the cabling of your basement grid was complex, but it is simplicity compared to the knotted spirals of tubing connecting the numerous distillation and condensation chambers of the alchemy apparatus. Glass, chromed steel, tarnished brass, rubber, plastic, wood, even cloth and fur, are all used as materials for different spheres, cylinders, and curved textured surfaces.",
 	react_before [;
 		rub: gelato_alchemy_lab.brew++;
@@ -281,7 +281,7 @@ Decor	alchemy_apparatus "alchemical apparatus" gelato_alchemy_lab
 
 Decor	termites "termites" lost_in_grid
 	with
-	name 'termites' 'insects' 'bugs' 'enemies' 'fork',
+	name 'termite' 'termites' 'insect' 'insects' 'bug' 'bugs' 'enemies' 'fork',
 	description "The termites are ugly and noisome. They look like screen-caps from a 90s full-motion video game and they move like they have turned the 9p protocol into some kind of xml-ized monstrosity with a php-web frontend, a c++ backend, and an enterprise java middleware layer.",
 	before [;
 		attack: "There are far too many of them.";
@@ -290,7 +290,7 @@ Decor	termites "termites" lost_in_grid
 
 Decor	devotional_objects "devotional objects" infinite_loop
 	with
-	name 'devotional' 'objects' 'statues' 'beads' 'tools',
+	name 'devotional' 'object' 'objects' 'statue' 'statues' 'bead' 'beads' 'tool' 'tools',
 	description "Statues, prayer beads, prayer wheels, mandalas, and other tools for giving devotion to Buddhist deities.",
 	before [;
 		take: "They aren't yours to take.";
@@ -313,7 +313,7 @@ Decor	wheel "wheel" cosmic_wheel
 
 Decor	aerator "aerator" cascade_aerator
 	with
-	name 'sugar' 'river' 'basin' 'cascade' 'aerator' 'trail' 'military' 'ridge' 'water' 'waterfalls' 'hillface' 'piled' 'rock' 'path',
+	name 'sugar' 'river' 'basin' 'cascade' 'aerator' 'trail' 'military' 'ridge' 'water' 'waterfall' 'waterfalls' 'hillface' 'piled' 'rock' 'path',
 	description "Your mind is filled with night air, stars, and the bubbling sound of water tumbling over rocks.";
 
 Decor	glenda "glenda" bunnyworld
@@ -364,7 +364,7 @@ Decor colorbeams "beams of color" inside_moon
 
 Decor dock "Loth dock" loth_dock
 	with
-	name 'dock' 'wood' 'planks',
+	name 'dock' 'wood' 'plank' 'planks',
 	description "Physically, the dock is small, old, askew, and just barely suitable for launching a canoe. Experientially, the dock is a place of freedom from convention and convergence of the stories of diverse individuals. You can relax and be human here, a simple thing, but precious and rare.";
 
 Decor tree "tree by dock" loth_dock
@@ -379,13 +379,13 @@ Decor tree "tree by dock" loth_dock
 
 Decor tables "picnic tables" loth_backyard
 	with
-	name 'picnic' 'tables' 'trees',
+	name 'picnic' 'table' 'tables' 'tree' 'trees',
 	description "Shady blackberry trees curve over the old wooden picnic tables. Later, when the berries are ripe, they will litter the table and yard, rendering the garments of unwary sitters into a canvas of smeared dark fruits.",
 	has pluralname;
 
 Decor garden "garden" loth_backyard
 	with
-	name 'garden' 'fruits' 'herbs' 'vegetables',
+	name 'garden' 'fruit' 'fruits' 'herb' 'herbs' 'vegetable' 'vegetables',
 	description "The coop's garden is set into a middle layer of the terraced hillside. It is regularly pillaged by rabbits, because soft-hearted residents balk at the measures that would be needed to fight the neighborhood herbivores. Nevertheless, it provides a few peppers and herbs to season house meals as well as a splash of flowery color during spring.";
 
 Decor staircase "rock staircase" loth_backyard
@@ -406,7 +406,7 @@ Decor swing "porch swing" loth_porch
 
 Decor greatroom_stuff "greatroom stuff" loth_greatroom
 	with
-	name 'couch' 'couches' 'books' 'bookshelves' 'fireplace',
+	name 'couch' 'couches' 'books' 'bookshelves' 'shelves' 'fireplace',
 	description "The couches, bookshelves, and other objects in the Great Room are a bewildering mix of styles and vintages. Each day finds them arrayed in new patterns, according to the ever-shifting purposes of socializing, performance, and children playing.";
 
 Decor greatroom_pianos "greatroom pianos" loth_greatroom
@@ -444,7 +444,7 @@ Decor loth_art "artwork"
 
 Prop	shelves "bookshelves" home
 	with	
-	name 'shelves' 'bookshelves' 'books' 'book' 'library',
+	name 'shelf' 'shelves' 'bookshelf' 'bookshelves' 'books' 'book' 'library',
 	readcounter 0,
 	description [;
 		self.readcounter = self.readcounter +1;
