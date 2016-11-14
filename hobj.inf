@@ -585,7 +585,7 @@ Prop	time_vault "Time Vault"
 		if (xochi.email > 3)
 			if (atlantis_temple.chaosbind == true)
 				if (fortune.dodge_fate == true)
-					if (eside_hq.fictour == 4)
+					if (eside_hq.fictour > 2)
 						if (green_screen.broken == 1) {
 							give self open;
 							stopdaemon(self);
