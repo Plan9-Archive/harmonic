@@ -591,6 +591,14 @@ Room	loth_backyard "Lothlorien co-op, the back yard"
 			Lothbackyard_storyline();
 			return true;
 		}
+		if (mendota_lakeside.wizard == 1) {
+			Wizardparty_storyline();
+			return true;
+		}
+		if (mendota_lakeside.wizard == 5) {
+			Lothfullmoon_storyline();
+			return true;
+		}
 	],
 	before [; go:
 		if ((elginbday == 6) && ((noun == d_obj) || (noun == n_obj)))
@@ -620,6 +628,16 @@ Room	loth_greatroom "Lothlorien co-op, the Great Room (1st floor)"
 	with
 	lothstaci 0,
 	description "A huge living room, with two pianos, several couches, bookshelves, assorted art, and a fireplace.",
+	each_turn [;
+		if (mendota_lakeside.wizard == 1) {
+			Wizardparty_storyline();
+			return true;
+		}
+		if (mendota_lakeside.wizard == 5) {
+			Lothfullmoon_storyline();
+			return true;
+		}
+	],
 	after [; go:
 		if (elginbday == 5){
 			playerto(loth_backyard);
