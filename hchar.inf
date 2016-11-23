@@ -462,6 +462,31 @@ Character	nook "Nook"
 	before [; talk: <<wakeother self>>;],
 	has male;
 
+object	thewerewolf "Werewolf"
+	with
+	article "the",
+	name 'werewolf',
+	description "The Werewolf is a poised, calm, articulate woman - when the moon isn't full.",
+	initial [; switch(location) {
+		loth_greatroom: "The Werewolf relaxes across any number of laps with her head upside down, discussing dream divination as it relates to botany.";
+		loth_kitchen: "The Werewolf snacks on mushrooms and offers you some. They look highly unusual, even for unusual mushrooms, so you wish her the best and pass.";
+		loth_backyard: "The Werewolf lunges across the yard with a whooping noise to tackle hug another dear friend, knocking them both tumbling down the hill in a jumble of elbows, hair and brightly patterned skirts.";
+		default: "The Werewolf is watching the scene with a glint in her eye.";
+		}
+	],
+	each_turn [;
+		if (thescholar in location)
+			switch(random(3)) {
+			3: "^The Werewolf and the Scholar argue playfully about Kant, culminating in a staff battle in the yard. She doesn't bite him this time.";
+			}
+	],
+	daemon [;
+		movechar();
+	],
+	life "'Your project sounds very idealistic, I wish you a lot of luck bringing your dreams into reality.'",
+	before [; talk: <<wakeother self>>;],
+	has female animate;
+
 object	thescholar "Scholar"
 	with
 	article "the",

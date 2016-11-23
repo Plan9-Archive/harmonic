@@ -220,7 +220,7 @@
 	switch(random(9)) {
 		9:	if (self in location) {
 				print "^";
-				if ((self == thescholar) || (self == thewizard))
+				if ((self == thescholar) || (self == thewizard) || (self == thewerewolf))
 					print "The ";
 				print (name) self, " wanders off.^";
 			}
@@ -244,7 +244,7 @@
 			}
 			if (parent(self) == location) {
 				print "^";
-				if ((self == thescholar) || (self == thewizard))
+				if ((self == thescholar) || (self == thewizard) || (self == thewerewolf))
 					print "The ";
 				print (name) self, " arrives.^";
 			}
