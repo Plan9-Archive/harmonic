@@ -348,7 +348,18 @@ Character	lotus "dog"
 	with
 	name 'lotus' 'dog',
 	initial "A dog is wandering around on the dock.",
+	woof 0,
 	description "The dog is a chocolate Labrador, strong, smart, and friendly. He has a sky-blue bandana tied around his neck.",
+	each_turn [;
+		self.woof++;
+		switch (self.woof) {
+			2: "^The dog is watching you.";
+			3: "^The dog presses its nose against you for a sniff.";
+			5: "^The dog hops into the water, breaks off a low-hanging branch with its teeth, then returns triumphantly to the dock.";
+			7: print "^The dog seems eager for attention, and you reach out your hand to say hello.";
+				<<wakeother self>>;
+		}
+	],
 	life [;
 		lotusdock_storyline();
 		return true;
@@ -370,7 +381,8 @@ Character	staci "Staci"
 		default: "Every way you interact with Staci feels easy, natural, and delightful.";
 	],
 	before [;
-		talk: <<wakeother staci>>;
+		talk: if (madcon.timetrav < 7) "'You should pet this dog, its really friendly.'";
+			<<wakeother staci>>;
 	],
 	has female;
 
