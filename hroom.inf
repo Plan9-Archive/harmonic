@@ -688,6 +688,8 @@ Room	loth_upstairs "Lothlorien co-op, upstairs"
 	d_to loth_greatroom,
 	cant_go "You can go down to the Great Room.";
 
+Room	loth_hobbithole "Secret Hobbit Hole";
+
 Room	mon_cot "Monona Drive and Cottage Grove Road"
 	with
 	description "Traffic is heavy at the intersection of these roads. Nearby to the east is Coffee Lion Cafe. Monona Drive continues to the south, Atwood Avenue is northwest, and your home is to the north.",

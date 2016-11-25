@@ -228,18 +228,26 @@
 				loth_upstairs: move self to loth_greatroom;
 				loth_porch: move self to loth_greatroom;
 				loth_dock: move self to loth_backyard;
-				loth_greatroom: switch(random(3)) {
+				loth_greatroom: switch(random(4)) {
 					1: move self to loth_upstairs;
 					2: move self to loth_kitchen;
 					3: move self to loth_porch;
+					4: move self to loth_hobbithole;
 				}
-				loth_kitchen: switch(random(2)) {
+				loth_kitchen: switch(random(3)) {
 					1: move self to loth_greatroom;
 					2: move self to loth_backyard;
+					3: move self to loth_hobbithole;
 				}
-				loth_backyard: switch(random(2)) {
+				loth_backyard: switch(random(3)) {
 					1: move self to loth_kitchen;
 					2: move self to loth_dock;
+					3: move self to loth_hobbithole;
+				}
+				loth_hobbithole: switch(random(3)) {
+					1: move self to loth_greatroom;
+					2: move self to loth_kitchen;
+					3: move self to loth_backyard;
 				}
 			}
 			if (parent(self) == location) {
