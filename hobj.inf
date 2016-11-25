@@ -668,8 +668,8 @@ Prop	school_of_atlantis "School of Atlantis painting"
 
 Prop	orrery "Metaphysical Orrery"
 	with
-	name 'metaphysical' 'orrery',
-	description "This astonishing device looks like what would happen if fifteen bicycles were being ridden across the surface of a neutron star and then suffered a catastrophic impact with a ferris wheel. Every variety of rotary and cyclical motion is manifest within the fractal nest of gears, chains, and wheels.",
+	name 'metaphysical' 'orrery' 'crank' 'handle',
+	description "This astonishing device looks like what would happen if fifteen bicycles were being ridden across the surface of a neutron star and then suffered a catastrophic impact with a ferris wheel. Every variety of rotary and cyclical motion is manifest within the fractal nest of gears, chains, and wheels. It has a large handle to crank the mechanism.",
 	before [;
 		turn: 
 			print "You turn the orrery. Despite the quantity of moving parts and interconnections, there is no sound but a quiet even hum. You shift gear ratios and small information vortexes appear, centered on each rotating element. You spin faster, and the vortexes deepen and expand. Turbulence patterns are appearing in the space between them. You entrain with the motion of the machine and upshift again, the vortexes merge and emit musical tones, each corresponding to a gear ratio, and a towering wave of overtones crashes over you. You are knocked off the machine, and spend a moment floundering in the chromatic sea. Your flailing arms make contact with something solid, and you instinctively grasp onto it. It is moving, and you find yourself being lifted out of the water. You grip harder as it rises, rises, and rises higher. From your increasingly vertiginous vantage point, you realize you are clinging to a spoke of...^";

@@ -356,7 +356,7 @@ Character	lotus "dog"
 			2: "^The dog is watching you.";
 			3: "^The dog presses its nose against you for a sniff.";
 			5: "^The dog hops into the water, breaks off a low-hanging branch with its teeth, then returns triumphantly to the dock.";
-			7: print "^The dog seems eager for attention, and you reach out your hand to say hello.";
+			7: print "^The dog seems eager for attention, and you reach out your hand to say hello. ";
 				<<wakeother self>>;
 		}
 	],
