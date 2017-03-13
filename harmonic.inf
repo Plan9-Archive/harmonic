@@ -1,7 +1,7 @@
 !% -v8
 !% -SDXes
 !% $MAX_VERBS=165
-!% $MAX_LABELS=1100
+!% $MAX_LABELS=1200
 
 ! Library Version: Inform 6 -- Release 6/12-beta1 -- Serial number 140724
 !
@@ -193,7 +193,7 @@ Constant Headline
 !============================================================================
 ! Include parser, new library messages, verblib
 
-Include "Parser";
+Include "parser";
 Object  LibraryMessages
 	with	
 	before [;
@@ -225,7 +225,7 @@ Object  LibraryMessages
 		if (lm_n == 39)
 			"This game world does not provide that level of detail.";
 	];
-Include "VerbLib";
+Include "verblib";
 
 !============================================================================
 ! Global variables

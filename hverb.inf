@@ -1420,7 +1420,7 @@ amusing^";
 !============================================================================
 ! Grammar and Verbs
 
-Include "Grammar";
+Include "grammar";
 
 Verb "about" *	-> About;
 Verb "bind"	* noun noun	-> Bind
